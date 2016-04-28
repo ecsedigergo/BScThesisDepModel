@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.DepModel
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: hu.bme.mit.DepModel; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: hu.bme.mit.serializer,
+ hu.bme.mit.depModel,
+ hu.bme.mit.parser.antlr.internal,
+ hu.bme.mit.depModel.impl,
+ hu.bme.mit,
+ hu.bme.mit.services,
+ hu.bme.mit.depModel.util,
+ hu.bme.mit.parser.antlr,
+ hu.bme.mit.validation,
+ hu.bme.mit.scoping,
+ hu.bme.mit.generator
+Import-Package: org.apache.log4j
