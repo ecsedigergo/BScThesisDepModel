@@ -3,17 +3,14 @@
  */
 package hu.bme.mit.scoping
 
-import hu.bme.mit.depModel.DepModel
 import hu.bme.mit.depModel.DepModelPackage
 import hu.bme.mit.depModel.PortIn
-import hu.bme.mit.depModel.PortOut
 import hu.bme.mit.depModel.PortType
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.EcoreUtil2
-import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
-import hu.bme.mit.depModel.AbstractElement
+import org.eclipse.xtext.scoping.impl.FilteringScope
 
 /**
  * This class contains custom scoping description.
@@ -23,38 +20,25 @@ import hu.bme.mit.depModel.AbstractElement
  */
 class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 	override getScope(EObject context, EReference reference) {
-		if (context instanceof PortIn) {
-			val portIn = context as PortIn
-			if (reference == DepModelPackage.Literals.PORT_IN__PORT_IN_SUPER_TYPE) {
-				val system = EcoreUtil2.getContainerOfType(portIn,DepModel)
-				if (system == null) {
-					return IScope.NULLSCOPE
-				}
-				val portType =  EcoreUtil2.getAllContentsOfType(system, PortType)
-				print(portType)
-				if (portType == null) {
-					return IScope.NULLSCOPE
-				}else{
-					return Scopes.scopeFor(portType )
-				}
-			}
-		}
-		if (context instanceof PortOut) {
-			val portOut = context as PortOut
-			if (reference == DepModelPackage.Literals.PORT_OUT__PORT_OUT_SUPER_TYPE) {
-				val system = EcoreUtil2.getRootContainer(portOut)
-				if (system == null) {
-					return IScope.NULLSCOPE
-				}
-				val portType =  EcoreUtil2.getAllContentsOfType(system, PortType)
-				
-				if (portType == null) {
-					return IScope.NULLSCOPE
-				}else{
-					return Scopes.scopeFor(portType)
-				}
-			}
+		if (context instanceof PortIn && reference == DepModelPackage.Literals.PORT_IN__PORT_IN_SUPER_TYPE) {
+			val rootElement = EcoreUtil2.getRootContainer(context)
+			val candidates_portType = EcoreUtil2.getAllContentsOfType(rootElement, PortType)
+			return Scopes.scopeFor(candidates_portType)
+			//val existingScope = Scopes.scopeFor(candidates_portType)
+			//return new FilteringScope(existingScope, [getEObjectOrProxy != context])
+
 		}
 		return super.getScope(context, reference)
 	}
+//	override getScope(EObject context, EReference reference) {
+//    if (context instanceof Element
+//            && reference == MyDslPackage.Literals.ELEMENT__SUPER_ELEMENT) {
+//        val rootElement = EcoreUtil2.getRootContainer(context)
+//        val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Element)
+//        val existingScope = Scopes.scopeFor(candidates)
+//        // Scope that filters out the context element from the candidates list
+//        return new FilteringScope(existingScope, [getEObjectOrProxy != context])
+//    }
+//    return super.getScope(context, reference);
+//}
 }

@@ -4,10 +4,8 @@
 package hu.bme.mit.scoping;
 
 import com.google.common.base.Objects;
-import hu.bme.mit.depModel.DepModel;
 import hu.bme.mit.depModel.DepModelPackage;
 import hu.bme.mit.depModel.PortIn;
-import hu.bme.mit.depModel.PortOut;
 import hu.bme.mit.depModel.PortType;
 import hu.bme.mit.scoping.AbstractDepModelScopeProvider;
 import java.util.List;
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 /**
  * This class contains custom scoping description.
@@ -28,42 +25,17 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if ((context instanceof PortIn)) {
-      final PortIn portIn = ((PortIn) context);
+    boolean _and = false;
+    if (!(context instanceof PortIn)) {
+      _and = false;
+    } else {
       boolean _equals = Objects.equal(reference, DepModelPackage.Literals.PORT_IN__PORT_IN_SUPER_TYPE);
-      if (_equals) {
-        final DepModel system = EcoreUtil2.<DepModel>getContainerOfType(portIn, DepModel.class);
-        boolean _equals_1 = Objects.equal(system, null);
-        if (_equals_1) {
-          return IScope.NULLSCOPE;
-        }
-        final List<PortType> portType = EcoreUtil2.<PortType>getAllContentsOfType(system, PortType.class);
-        InputOutput.<List<PortType>>print(portType);
-        boolean _equals_2 = Objects.equal(portType, null);
-        if (_equals_2) {
-          return IScope.NULLSCOPE;
-        } else {
-          return Scopes.scopeFor(portType);
-        }
-      }
+      _and = _equals;
     }
-    if ((context instanceof PortOut)) {
-      final PortOut portOut = ((PortOut) context);
-      boolean _equals_3 = Objects.equal(reference, DepModelPackage.Literals.PORT_OUT__PORT_OUT_SUPER_TYPE);
-      if (_equals_3) {
-        final EObject system_1 = EcoreUtil2.getRootContainer(portOut);
-        boolean _equals_4 = Objects.equal(system_1, null);
-        if (_equals_4) {
-          return IScope.NULLSCOPE;
-        }
-        final List<PortType> portType_1 = EcoreUtil2.<PortType>getAllContentsOfType(system_1, PortType.class);
-        boolean _equals_5 = Objects.equal(portType_1, null);
-        if (_equals_5) {
-          return IScope.NULLSCOPE;
-        } else {
-          return Scopes.scopeFor(portType_1);
-        }
-      }
+    if (_and) {
+      final EObject rootElement = EcoreUtil2.getRootContainer(context);
+      final List<PortType> candidates_portType = EcoreUtil2.<PortType>getAllContentsOfType(rootElement, PortType.class);
+      return Scopes.scopeFor(candidates_portType);
     }
     return super.getScope(context, reference);
   }
