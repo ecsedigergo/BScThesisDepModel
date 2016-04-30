@@ -78,19 +78,19 @@ ErrorModelDec:
 	'}';
 
 ErrorModelElement:
-	StateDec | TransitionDec | ErrorPortDec;
+	StateDec | TransitionDec; //| ErrorPortDec;
 
-ErrorPortDec:
-	ErrorPortIn | ErrorPortOut
-;
-
-ErrorPortIn:
-	'error' 'port' 'in' name=QualifiedName ':' ErrorPortInSuperType=[PortType]
-;
-
-ErrorPortOut:
-	'error' 'port' 'out' name=QualifiedName ':' ErrorPortOutSuperType=[PortType]
-;
+//ErrorPortDec:
+//	ErrorPortIn | ErrorPortOut
+//;
+//
+//ErrorPortIn:
+//	'error' 'port' 'in' name=QualifiedName ':' ErrorPortInSuperType=[PortType]
+//;
+//
+//ErrorPortOut:
+//	'error' 'port' 'out' name=QualifiedName ':' ErrorPortOutSuperType=[PortType]
+//;
 
 StateDec:
 	'error' 'state' name=QualifiedName;

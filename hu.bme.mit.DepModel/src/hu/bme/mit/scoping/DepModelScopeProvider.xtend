@@ -3,18 +3,22 @@
  */
 package hu.bme.mit.scoping
 
+import hu.bme.mit.depModel.ActionDec
+import hu.bme.mit.depModel.ComponentConnDec
+import hu.bme.mit.depModel.ComponentImpl
+import hu.bme.mit.depModel.ComponentType
 import hu.bme.mit.depModel.DepModelPackage
 import hu.bme.mit.depModel.ErrorModes
 import hu.bme.mit.depModel.PortIn
+import hu.bme.mit.depModel.PortOut
+import hu.bme.mit.depModel.SystemPortIn
+import hu.bme.mit.depModel.SystemPortOut
 import hu.bme.mit.depModel.TriggerDec
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
-import hu.bme.mit.depModel.ActionDec
-import hu.bme.mit.depModel.PortOut
-import hu.bme.mit.depModel.ComponentType
 
 /**
  * This class contains custom scoping description.
@@ -32,7 +36,7 @@ class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 				if(compT == null) return IScope.NULLSCOPE
 				val portI = EcoreUtil2.getAllContentsOfType(compT, PortIn)
 				if(portI == null) return IScope.NULLSCOPE
-				
+
 				return Scopes.scopeFor(portI)
 			}
 
@@ -53,7 +57,7 @@ class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 				if(compT == null) return IScope.NULLSCOPE
 				val portI = EcoreUtil2.getAllContentsOfType(compT, PortOut)
 				if(portI == null) return IScope.NULLSCOPE
-				
+
 				return Scopes.scopeFor(portI)
 			}
 			if (reference == DepModelPackage.Literals.ACTION_DEC__ERROR_MODE) {
@@ -63,6 +67,53 @@ class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 				if(modes == null) return IScope.NULLSCOPE
 
 				return Scopes.scopeFor(modes)
+
+			}
+		}
+		if (context instanceof ComponentConnDec) {
+			val conn = context as ComponentConnDec
+			if (reference == DepModelPackage.Literals.COMPONENT_CONN_DEC__SOURCE_PORT) {
+				val compImpl = EcoreUtil2.getContainerOfType(conn.sourceComp, ComponentImpl)
+				if(compImpl == null) return IScope.NULLSCOPE
+				val compType = compImpl.superType
+				val portImpl = EcoreUtil2.getAllContentsOfType(compType, PortOut)
+				if(portImpl == null) return IScope.NULLSCOPE
+
+				return Scopes.scopeFor(portImpl)
+			}
+			if (reference == DepModelPackage.Literals.COMPONENT_CONN_DEC__TARGET_PORT) {
+				val compImpl = EcoreUtil2.getContainerOfType(conn.targetComp, ComponentImpl)
+				if(compImpl == null) return IScope.NULLSCOPE
+				val compType = compImpl.superType
+				val portImpl = EcoreUtil2.getAllContentsOfType(compType, PortIn)
+				if(portImpl == null) return IScope.NULLSCOPE
+
+				return Scopes.scopeFor(portImpl)
+			}
+		}
+		if (context instanceof SystemPortIn) {
+			val inPortDec = context as SystemPortIn
+			if (reference == DepModelPackage.Literals.SYSTEM_PORT_IN__IN_PORT) {
+				val compI = EcoreUtil2.getContainerOfType(inPortDec.inComp, ComponentImpl)
+				if(compI == null) return IScope.NULLSCOPE
+				val compT = compI.superType
+				val ports = EcoreUtil2.getAllContentsOfType(compT, PortIn)
+				if(ports == null) return IScope.NULLSCOPE
+
+				return Scopes.scopeFor(ports)
+
+			}
+		}
+		if (context instanceof SystemPortOut) {
+			val inPortDec = context as SystemPortOut
+			if (reference == DepModelPackage.Literals.SYSTEM_PORT_OUT__OUT_PORT) {
+				val compI = EcoreUtil2.getContainerOfType(inPortDec.outComp, ComponentImpl)
+				if(compI == null) return IScope.NULLSCOPE
+				val compT = compI.superType
+				val ports = EcoreUtil2.getAllContentsOfType(compT, PortOut)
+				if(ports == null) return IScope.NULLSCOPE
+
+				return Scopes.scopeFor(ports)
 
 			}
 		}

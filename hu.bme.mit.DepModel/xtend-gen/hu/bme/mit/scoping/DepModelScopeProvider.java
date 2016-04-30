@@ -5,6 +5,8 @@ package hu.bme.mit.scoping;
 
 import com.google.common.base.Objects;
 import hu.bme.mit.depModel.ActionDec;
+import hu.bme.mit.depModel.ComponentConnDec;
+import hu.bme.mit.depModel.ComponentImpl;
 import hu.bme.mit.depModel.ComponentType;
 import hu.bme.mit.depModel.DepModelPackage;
 import hu.bme.mit.depModel.ErrorModes;
@@ -12,6 +14,8 @@ import hu.bme.mit.depModel.PortDec;
 import hu.bme.mit.depModel.PortIn;
 import hu.bme.mit.depModel.PortOut;
 import hu.bme.mit.depModel.PortType;
+import hu.bme.mit.depModel.SystemPortIn;
+import hu.bme.mit.depModel.SystemPortOut;
 import hu.bme.mit.depModel.TriggerDec;
 import hu.bme.mit.scoping.AbstractDepModelScopeProvider;
 import java.util.List;
@@ -95,6 +99,79 @@ public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
           return IScope.NULLSCOPE;
         }
         return Scopes.scopeFor(modes_1);
+      }
+    }
+    if ((context instanceof ComponentConnDec)) {
+      final ComponentConnDec conn = ((ComponentConnDec) context);
+      boolean _equals_12 = Objects.equal(reference, DepModelPackage.Literals.COMPONENT_CONN_DEC__SOURCE_PORT);
+      if (_equals_12) {
+        ComponentImpl _sourceComp = conn.getSourceComp();
+        final ComponentImpl compImpl = EcoreUtil2.<ComponentImpl>getContainerOfType(_sourceComp, ComponentImpl.class);
+        boolean _equals_13 = Objects.equal(compImpl, null);
+        if (_equals_13) {
+          return IScope.NULLSCOPE;
+        }
+        final ComponentType compType = compImpl.getSuperType();
+        final List<PortOut> portImpl = EcoreUtil2.<PortOut>getAllContentsOfType(compType, PortOut.class);
+        boolean _equals_14 = Objects.equal(portImpl, null);
+        if (_equals_14) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(portImpl);
+      }
+      boolean _equals_15 = Objects.equal(reference, DepModelPackage.Literals.COMPONENT_CONN_DEC__TARGET_PORT);
+      if (_equals_15) {
+        ComponentImpl _targetComp = conn.getTargetComp();
+        final ComponentImpl compImpl_1 = EcoreUtil2.<ComponentImpl>getContainerOfType(_targetComp, ComponentImpl.class);
+        boolean _equals_16 = Objects.equal(compImpl_1, null);
+        if (_equals_16) {
+          return IScope.NULLSCOPE;
+        }
+        final ComponentType compType_1 = compImpl_1.getSuperType();
+        final List<PortIn> portImpl_1 = EcoreUtil2.<PortIn>getAllContentsOfType(compType_1, PortIn.class);
+        boolean _equals_17 = Objects.equal(portImpl_1, null);
+        if (_equals_17) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(portImpl_1);
+      }
+    }
+    if ((context instanceof SystemPortIn)) {
+      final SystemPortIn inPortDec = ((SystemPortIn) context);
+      boolean _equals_18 = Objects.equal(reference, DepModelPackage.Literals.SYSTEM_PORT_IN__IN_PORT);
+      if (_equals_18) {
+        ComponentImpl _inComp = inPortDec.getInComp();
+        final ComponentImpl compI = EcoreUtil2.<ComponentImpl>getContainerOfType(_inComp, ComponentImpl.class);
+        boolean _equals_19 = Objects.equal(compI, null);
+        if (_equals_19) {
+          return IScope.NULLSCOPE;
+        }
+        final ComponentType compT_2 = compI.getSuperType();
+        final List<PortIn> ports = EcoreUtil2.<PortIn>getAllContentsOfType(compT_2, PortIn.class);
+        boolean _equals_20 = Objects.equal(ports, null);
+        if (_equals_20) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(ports);
+      }
+    }
+    if ((context instanceof SystemPortOut)) {
+      final SystemPortOut inPortDec_1 = ((SystemPortOut) context);
+      boolean _equals_21 = Objects.equal(reference, DepModelPackage.Literals.SYSTEM_PORT_OUT__OUT_PORT);
+      if (_equals_21) {
+        ComponentImpl _outComp = inPortDec_1.getOutComp();
+        final ComponentImpl compI_1 = EcoreUtil2.<ComponentImpl>getContainerOfType(_outComp, ComponentImpl.class);
+        boolean _equals_22 = Objects.equal(compI_1, null);
+        if (_equals_22) {
+          return IScope.NULLSCOPE;
+        }
+        final ComponentType compT_3 = compI_1.getSuperType();
+        final List<PortOut> ports_1 = EcoreUtil2.<PortOut>getAllContentsOfType(compT_3, PortOut.class);
+        boolean _equals_23 = Objects.equal(ports_1, null);
+        if (_equals_23) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(ports_1);
       }
     }
     return super.getScope(context, reference);
