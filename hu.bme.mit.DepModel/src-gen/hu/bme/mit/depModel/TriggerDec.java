@@ -13,7 +13,7 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.TriggerDec#getTriggerName <em>Trigger Name</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.TriggerDec#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.TriggerDec#getPortInstance <em>Port Instance</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.TriggerDec#getErrorMode <em>Error Mode</em>}</li>
  * </ul>
@@ -25,30 +25,30 @@ package hu.bme.mit.depModel;
 public interface TriggerDec extends TransitionFeatureDec
 {
   /**
-   * Returns the value of the '<em><b>Trigger Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Trigger Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Trigger Name</em>' attribute.
-   * @see #setTriggerName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getTriggerDec_TriggerName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see hu.bme.mit.depModel.DepModelPackage#getTriggerDec_Name()
    * @model
    * @generated
    */
-  String getTriggerName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.TriggerDec#getTriggerName <em>Trigger Name</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.depModel.TriggerDec#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Trigger Name</em>' attribute.
-   * @see #getTriggerName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setTriggerName(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Port Instance</b></em>' reference.

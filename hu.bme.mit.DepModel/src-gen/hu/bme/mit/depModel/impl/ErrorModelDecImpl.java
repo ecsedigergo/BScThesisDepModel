@@ -9,15 +9,12 @@ import hu.bme.mit.depModel.ErrorModelElement;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.ErrorModelDecImpl#getErrorModelName <em>Error Model Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ErrorModelDecImpl#getEmodelElements <em>Emodel Elements</em>}</li>
  * </ul>
  *
@@ -38,26 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ErrorModelDecImpl extends ComponentFeaturesDecImpl implements ErrorModelDec
 {
-  /**
-   * The default value of the '{@link #getErrorModelName() <em>Error Model Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getErrorModelName()
-   * @generated
-   * @ordered
-   */
-  protected static final String ERROR_MODEL_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getErrorModelName() <em>Error Model Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getErrorModelName()
-   * @generated
-   * @ordered
-   */
-  protected String errorModelName = ERROR_MODEL_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getEmodelElements() <em>Emodel Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -87,29 +63,6 @@ public class ErrorModelDecImpl extends ComponentFeaturesDecImpl implements Error
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.ERROR_MODEL_DEC;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getErrorModelName()
-  {
-    return errorModelName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setErrorModelName(String newErrorModelName)
-  {
-    String oldErrorModelName = errorModelName;
-    errorModelName = newErrorModelName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.ERROR_MODEL_DEC__ERROR_MODEL_NAME, oldErrorModelName, errorModelName));
   }
 
   /**
@@ -152,8 +105,6 @@ public class ErrorModelDecImpl extends ComponentFeaturesDecImpl implements Error
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_MODEL_DEC__ERROR_MODEL_NAME:
-        return getErrorModelName();
       case DepModelPackage.ERROR_MODEL_DEC__EMODEL_ELEMENTS:
         return getEmodelElements();
     }
@@ -171,9 +122,6 @@ public class ErrorModelDecImpl extends ComponentFeaturesDecImpl implements Error
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_MODEL_DEC__ERROR_MODEL_NAME:
-        setErrorModelName((String)newValue);
-        return;
       case DepModelPackage.ERROR_MODEL_DEC__EMODEL_ELEMENTS:
         getEmodelElements().clear();
         getEmodelElements().addAll((Collection<? extends ErrorModelElement>)newValue);
@@ -192,9 +140,6 @@ public class ErrorModelDecImpl extends ComponentFeaturesDecImpl implements Error
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_MODEL_DEC__ERROR_MODEL_NAME:
-        setErrorModelName(ERROR_MODEL_NAME_EDEFAULT);
-        return;
       case DepModelPackage.ERROR_MODEL_DEC__EMODEL_ELEMENTS:
         getEmodelElements().clear();
         return;
@@ -212,29 +157,10 @@ public class ErrorModelDecImpl extends ComponentFeaturesDecImpl implements Error
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_MODEL_DEC__ERROR_MODEL_NAME:
-        return ERROR_MODEL_NAME_EDEFAULT == null ? errorModelName != null : !ERROR_MODEL_NAME_EDEFAULT.equals(errorModelName);
       case DepModelPackage.ERROR_MODEL_DEC__EMODEL_ELEMENTS:
         return emodelElements != null && !emodelElements.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ErrorModelName: ");
-    result.append(errorModelName);
-    result.append(')');
-    return result.toString();
   }
 
 } //ErrorModelDecImpl

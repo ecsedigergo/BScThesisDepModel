@@ -9,15 +9,12 @@ import hu.bme.mit.depModel.TransitionFeatureDec;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.TransitionDecImpl#getEventName <em>Event Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.TransitionDecImpl#getFeatures <em>Features</em>}</li>
  * </ul>
  *
@@ -38,26 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class TransitionDecImpl extends ErrorModelElementImpl implements TransitionDec
 {
-  /**
-   * The default value of the '{@link #getEventName() <em>Event Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEventName()
-   * @generated
-   * @ordered
-   */
-  protected static final String EVENT_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEventName() <em>Event Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEventName()
-   * @generated
-   * @ordered
-   */
-  protected String eventName = EVENT_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -87,29 +63,6 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.TRANSITION_DEC;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getEventName()
-  {
-    return eventName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEventName(String newEventName)
-  {
-    String oldEventName = eventName;
-    eventName = newEventName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.TRANSITION_DEC__EVENT_NAME, oldEventName, eventName));
   }
 
   /**
@@ -152,8 +105,6 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__EVENT_NAME:
-        return getEventName();
       case DepModelPackage.TRANSITION_DEC__FEATURES:
         return getFeatures();
     }
@@ -171,9 +122,6 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__EVENT_NAME:
-        setEventName((String)newValue);
-        return;
       case DepModelPackage.TRANSITION_DEC__FEATURES:
         getFeatures().clear();
         getFeatures().addAll((Collection<? extends TransitionFeatureDec>)newValue);
@@ -192,9 +140,6 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__EVENT_NAME:
-        setEventName(EVENT_NAME_EDEFAULT);
-        return;
       case DepModelPackage.TRANSITION_DEC__FEATURES:
         getFeatures().clear();
         return;
@@ -212,29 +157,10 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__EVENT_NAME:
-        return EVENT_NAME_EDEFAULT == null ? eventName != null : !EVENT_NAME_EDEFAULT.equals(eventName);
       case DepModelPackage.TRANSITION_DEC__FEATURES:
         return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (EventName: ");
-    result.append(eventName);
-    result.append(')');
-    return result.toString();
   }
 
 } //TransitionDecImpl

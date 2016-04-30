@@ -13,7 +13,6 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.SystemPortOut#getSysPortOutName <em>Sys Port Out Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.SystemPortOut#getOutComp <em>Out Comp</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.SystemPortOut#getOutPort <em>Out Port</em>}</li>
  * </ul>
@@ -24,32 +23,6 @@ package hu.bme.mit.depModel;
  */
 public interface SystemPortOut extends SystemPortDec
 {
-  /**
-   * Returns the value of the '<em><b>Sys Port Out Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Sys Port Out Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sys Port Out Name</em>' attribute.
-   * @see #setSysPortOutName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getSystemPortOut_SysPortOutName()
-   * @model
-   * @generated
-   */
-  String getSysPortOutName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.SystemPortOut#getSysPortOutName <em>Sys Port Out Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Sys Port Out Name</em>' attribute.
-   * @see #getSysPortOutName()
-   * @generated
-   */
-  void setSysPortOutName(String value);
-
   /**
    * Returns the value of the '<em><b>Out Comp</b></em>' reference.
    * <!-- begin-user-doc -->

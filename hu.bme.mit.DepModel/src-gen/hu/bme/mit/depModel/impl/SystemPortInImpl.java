@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.SystemPortInImpl#getSysPortInName <em>Sys Port In Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.SystemPortInImpl#getInComp <em>In Comp</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.SystemPortInImpl#getInPort <em>In Port</em>}</li>
  * </ul>
@@ -32,26 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
 {
-  /**
-   * The default value of the '{@link #getSysPortInName() <em>Sys Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSysPortInName()
-   * @generated
-   * @ordered
-   */
-  protected static final String SYS_PORT_IN_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSysPortInName() <em>Sys Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSysPortInName()
-   * @generated
-   * @ordered
-   */
-  protected String sysPortInName = SYS_PORT_IN_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getInComp() <em>In Comp</em>}' reference.
    * <!-- begin-user-doc -->
@@ -91,29 +70,6 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.SYSTEM_PORT_IN;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getSysPortInName()
-  {
-    return sysPortInName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSysPortInName(String newSysPortInName)
-  {
-    String oldSysPortInName = sysPortInName;
-    sysPortInName = newSysPortInName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.SYSTEM_PORT_IN__SYS_PORT_IN_NAME, oldSysPortInName, sysPortInName));
   }
 
   /**
@@ -212,8 +168,6 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_PORT_IN__SYS_PORT_IN_NAME:
-        return getSysPortInName();
       case DepModelPackage.SYSTEM_PORT_IN__IN_COMP:
         if (resolve) return getInComp();
         return basicGetInComp();
@@ -234,9 +188,6 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_PORT_IN__SYS_PORT_IN_NAME:
-        setSysPortInName((String)newValue);
-        return;
       case DepModelPackage.SYSTEM_PORT_IN__IN_COMP:
         setInComp((ComponentImpl)newValue);
         return;
@@ -257,9 +208,6 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_PORT_IN__SYS_PORT_IN_NAME:
-        setSysPortInName(SYS_PORT_IN_NAME_EDEFAULT);
-        return;
       case DepModelPackage.SYSTEM_PORT_IN__IN_COMP:
         setInComp((ComponentImpl)null);
         return;
@@ -280,31 +228,12 @@ public class SystemPortInImpl extends SystemPortDecImpl implements SystemPortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_PORT_IN__SYS_PORT_IN_NAME:
-        return SYS_PORT_IN_NAME_EDEFAULT == null ? sysPortInName != null : !SYS_PORT_IN_NAME_EDEFAULT.equals(sysPortInName);
       case DepModelPackage.SYSTEM_PORT_IN__IN_COMP:
         return inComp != null;
       case DepModelPackage.SYSTEM_PORT_IN__IN_PORT:
         return inPort != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (SysPortInName: ");
-    result.append(sysPortInName);
-    result.append(')');
-    return result.toString();
   }
 
 } //SystemPortInImpl

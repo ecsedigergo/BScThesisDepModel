@@ -13,7 +13,6 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.PortOut#getPortOutName <em>Port Out Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.PortOut#getPortOutSuperType <em>Port Out Super Type</em>}</li>
  * </ul>
  *
@@ -23,32 +22,6 @@ package hu.bme.mit.depModel;
  */
 public interface PortOut extends PortDec
 {
-  /**
-   * Returns the value of the '<em><b>Port Out Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Port Out Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Port Out Name</em>' attribute.
-   * @see #setPortOutName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getPortOut_PortOutName()
-   * @model
-   * @generated
-   */
-  String getPortOutName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.PortOut#getPortOutName <em>Port Out Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port Out Name</em>' attribute.
-   * @see #getPortOutName()
-   * @generated
-   */
-  void setPortOutName(String value);
-
   /**
    * Returns the value of the '<em><b>Port Out Super Type</b></em>' reference.
    * <!-- begin-user-doc -->

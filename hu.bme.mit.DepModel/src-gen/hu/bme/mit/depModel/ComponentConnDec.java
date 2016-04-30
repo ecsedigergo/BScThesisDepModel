@@ -13,7 +13,6 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.ComponentConnDec#getCompConnName <em>Comp Conn Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ComponentConnDec#getSourceComp <em>Source Comp</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ComponentConnDec#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ComponentConnDec#getTargetComp <em>Target Comp</em>}</li>
@@ -26,32 +25,6 @@ package hu.bme.mit.depModel;
  */
 public interface ComponentConnDec extends SysFeaturesDec
 {
-  /**
-   * Returns the value of the '<em><b>Comp Conn Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Comp Conn Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Comp Conn Name</em>' attribute.
-   * @see #setCompConnName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getComponentConnDec_CompConnName()
-   * @model
-   * @generated
-   */
-  String getCompConnName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.ComponentConnDec#getCompConnName <em>Comp Conn Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Comp Conn Name</em>' attribute.
-   * @see #getCompConnName()
-   * @generated
-   */
-  void setCompConnName(String value);
-
   /**
    * Returns the value of the '<em><b>Source Comp</b></em>' reference.
    * <!-- begin-user-doc -->

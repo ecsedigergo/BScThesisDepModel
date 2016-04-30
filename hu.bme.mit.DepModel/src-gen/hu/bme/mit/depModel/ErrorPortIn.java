@@ -13,7 +13,6 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.ErrorPortIn#getErrorPortInName <em>Error Port In Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ErrorPortIn#getErrorPortInSuperType <em>Error Port In Super Type</em>}</li>
  * </ul>
  *
@@ -23,32 +22,6 @@ package hu.bme.mit.depModel;
  */
 public interface ErrorPortIn extends ErrorPortDec
 {
-  /**
-   * Returns the value of the '<em><b>Error Port In Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Error Port In Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Error Port In Name</em>' attribute.
-   * @see #setErrorPortInName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getErrorPortIn_ErrorPortInName()
-   * @model
-   * @generated
-   */
-  String getErrorPortInName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.ErrorPortIn#getErrorPortInName <em>Error Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Error Port In Name</em>' attribute.
-   * @see #getErrorPortInName()
-   * @generated
-   */
-  void setErrorPortInName(String value);
-
   /**
    * Returns the value of the '<em><b>Error Port In Super Type</b></em>' reference.
    * <!-- begin-user-doc -->

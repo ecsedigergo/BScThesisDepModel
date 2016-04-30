@@ -13,7 +13,7 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.ActionDec#getActionName <em>Action Name</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.ActionDec#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ActionDec#getPortInstance <em>Port Instance</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ActionDec#getErrorMode <em>Error Mode</em>}</li>
  * </ul>
@@ -25,30 +25,30 @@ package hu.bme.mit.depModel;
 public interface ActionDec extends TransitionFeatureDec
 {
   /**
-   * Returns the value of the '<em><b>Action Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Action Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Action Name</em>' attribute.
-   * @see #setActionName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getActionDec_ActionName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see hu.bme.mit.depModel.DepModelPackage#getActionDec_Name()
    * @model
    * @generated
    */
-  String getActionName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.ActionDec#getActionName <em>Action Name</em>}' attribute.
+   * Sets the value of the '{@link hu.bme.mit.depModel.ActionDec#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Action Name</em>' attribute.
-   * @see #getActionName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setActionName(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Port Instance</b></em>' reference.

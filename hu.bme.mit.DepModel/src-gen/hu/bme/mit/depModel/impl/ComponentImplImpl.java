@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.ComponentImplImpl#getCompImplName <em>Comp Impl Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ComponentImplImpl#getSuperType <em>Super Type</em>}</li>
  * </ul>
  *
@@ -30,26 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ComponentImplImpl extends SysFeaturesDecImpl implements ComponentImpl
 {
-  /**
-   * The default value of the '{@link #getCompImplName() <em>Comp Impl Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompImplName()
-   * @generated
-   * @ordered
-   */
-  protected static final String COMP_IMPL_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCompImplName() <em>Comp Impl Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompImplName()
-   * @generated
-   * @ordered
-   */
-  protected String compImplName = COMP_IMPL_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -79,29 +58,6 @@ public class ComponentImplImpl extends SysFeaturesDecImpl implements ComponentIm
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.COMPONENT_IMPL;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getCompImplName()
-  {
-    return compImplName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCompImplName(String newCompImplName)
-  {
-    String oldCompImplName = compImplName;
-    compImplName = newCompImplName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.COMPONENT_IMPL__COMP_IMPL_NAME, oldCompImplName, compImplName));
   }
 
   /**
@@ -157,8 +113,6 @@ public class ComponentImplImpl extends SysFeaturesDecImpl implements ComponentIm
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_IMPL__COMP_IMPL_NAME:
-        return getCompImplName();
       case DepModelPackage.COMPONENT_IMPL__SUPER_TYPE:
         if (resolve) return getSuperType();
         return basicGetSuperType();
@@ -176,9 +130,6 @@ public class ComponentImplImpl extends SysFeaturesDecImpl implements ComponentIm
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_IMPL__COMP_IMPL_NAME:
-        setCompImplName((String)newValue);
-        return;
       case DepModelPackage.COMPONENT_IMPL__SUPER_TYPE:
         setSuperType((ComponentType)newValue);
         return;
@@ -196,9 +147,6 @@ public class ComponentImplImpl extends SysFeaturesDecImpl implements ComponentIm
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_IMPL__COMP_IMPL_NAME:
-        setCompImplName(COMP_IMPL_NAME_EDEFAULT);
-        return;
       case DepModelPackage.COMPONENT_IMPL__SUPER_TYPE:
         setSuperType((ComponentType)null);
         return;
@@ -216,29 +164,10 @@ public class ComponentImplImpl extends SysFeaturesDecImpl implements ComponentIm
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_IMPL__COMP_IMPL_NAME:
-        return COMP_IMPL_NAME_EDEFAULT == null ? compImplName != null : !COMP_IMPL_NAME_EDEFAULT.equals(compImplName);
       case DepModelPackage.COMPONENT_IMPL__SUPER_TYPE:
         return superType != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (CompImplName: ");
-    result.append(compImplName);
-    result.append(')');
-    return result.toString();
   }
 
 } //ComponentImplImpl

@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.ActionDecImpl#getActionName <em>Action Name</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.impl.ActionDecImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ActionDecImpl#getPortInstance <em>Port Instance</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ActionDecImpl#getErrorMode <em>Error Mode</em>}</li>
  * </ul>
@@ -33,24 +33,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ActionDecImpl extends TransitionFeatureDecImpl implements ActionDec
 {
   /**
-   * The default value of the '{@link #getActionName() <em>Action Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActionName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ACTION_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getActionName() <em>Action Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActionName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String actionName = ACTION_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPortInstance() <em>Port Instance</em>}' reference.
@@ -98,9 +98,9 @@ public class ActionDecImpl extends TransitionFeatureDecImpl implements ActionDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getActionName()
+  public String getName()
   {
-    return actionName;
+    return name;
   }
 
   /**
@@ -108,12 +108,12 @@ public class ActionDecImpl extends TransitionFeatureDecImpl implements ActionDec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setActionName(String newActionName)
+  public void setName(String newName)
   {
-    String oldActionName = actionName;
-    actionName = newActionName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.ACTION_DEC__ACTION_NAME, oldActionName, actionName));
+      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.ACTION_DEC__NAME, oldName, name));
   }
 
   /**
@@ -212,8 +212,8 @@ public class ActionDecImpl extends TransitionFeatureDecImpl implements ActionDec
   {
     switch (featureID)
     {
-      case DepModelPackage.ACTION_DEC__ACTION_NAME:
-        return getActionName();
+      case DepModelPackage.ACTION_DEC__NAME:
+        return getName();
       case DepModelPackage.ACTION_DEC__PORT_INSTANCE:
         if (resolve) return getPortInstance();
         return basicGetPortInstance();
@@ -234,8 +234,8 @@ public class ActionDecImpl extends TransitionFeatureDecImpl implements ActionDec
   {
     switch (featureID)
     {
-      case DepModelPackage.ACTION_DEC__ACTION_NAME:
-        setActionName((String)newValue);
+      case DepModelPackage.ACTION_DEC__NAME:
+        setName((String)newValue);
         return;
       case DepModelPackage.ACTION_DEC__PORT_INSTANCE:
         setPortInstance((PortDec)newValue);
@@ -257,8 +257,8 @@ public class ActionDecImpl extends TransitionFeatureDecImpl implements ActionDec
   {
     switch (featureID)
     {
-      case DepModelPackage.ACTION_DEC__ACTION_NAME:
-        setActionName(ACTION_NAME_EDEFAULT);
+      case DepModelPackage.ACTION_DEC__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case DepModelPackage.ACTION_DEC__PORT_INSTANCE:
         setPortInstance((PortDec)null);
@@ -280,8 +280,8 @@ public class ActionDecImpl extends TransitionFeatureDecImpl implements ActionDec
   {
     switch (featureID)
     {
-      case DepModelPackage.ACTION_DEC__ACTION_NAME:
-        return ACTION_NAME_EDEFAULT == null ? actionName != null : !ACTION_NAME_EDEFAULT.equals(actionName);
+      case DepModelPackage.ACTION_DEC__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DepModelPackage.ACTION_DEC__PORT_INSTANCE:
         return portInstance != null;
       case DepModelPackage.ACTION_DEC__ERROR_MODE:
@@ -301,8 +301,8 @@ public class ActionDecImpl extends TransitionFeatureDecImpl implements ActionDec
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ActionName: ");
-    result.append(actionName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

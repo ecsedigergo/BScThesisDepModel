@@ -4,13 +4,20 @@
 package hu.bme.mit.depModel.impl;
 
 import hu.bme.mit.depModel.DepModelPackage;
+import hu.bme.mit.depModel.ErrorModes;
 import hu.bme.mit.depModel.PortType;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.PortTypeImpl#getPortName <em>Port Name</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.impl.PortTypeImpl#getEModes <em>EModes</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +35,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class PortTypeImpl extends AbstractElementImpl implements PortType
 {
   /**
-   * The default value of the '{@link #getPortName() <em>Port Name</em>}' attribute.
+   * The cached value of the '{@link #getEModes() <em>EModes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPortName()
+   * @see #getEModes()
    * @generated
    * @ordered
    */
-  protected static final String PORT_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPortName() <em>Port Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPortName()
-   * @generated
-   * @ordered
-   */
-  protected String portName = PORT_NAME_EDEFAULT;
+  protected EList<ErrorModes> eModes;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +70,13 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPortName()
+  public EList<ErrorModes> getEModes()
   {
-    return portName;
+    if (eModes == null)
+    {
+      eModes = new EObjectContainmentEList<ErrorModes>(ErrorModes.class, this, DepModelPackage.PORT_TYPE__EMODES);
+    }
+    return eModes;
   }
 
   /**
@@ -83,12 +84,15 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPortName(String newPortName)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldPortName = portName;
-    portName = newPortName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.PORT_TYPE__PORT_NAME, oldPortName, portName));
+    switch (featureID)
+    {
+      case DepModelPackage.PORT_TYPE__EMODES:
+        return ((InternalEList<?>)getEModes()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -101,8 +105,8 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_TYPE__PORT_NAME:
-        return getPortName();
+      case DepModelPackage.PORT_TYPE__EMODES:
+        return getEModes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -112,13 +116,15 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_TYPE__PORT_NAME:
-        setPortName((String)newValue);
+      case DepModelPackage.PORT_TYPE__EMODES:
+        getEModes().clear();
+        getEModes().addAll((Collection<? extends ErrorModes>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +140,8 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_TYPE__PORT_NAME:
-        setPortName(PORT_NAME_EDEFAULT);
+      case DepModelPackage.PORT_TYPE__EMODES:
+        getEModes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -151,27 +157,10 @@ public class PortTypeImpl extends AbstractElementImpl implements PortType
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_TYPE__PORT_NAME:
-        return PORT_NAME_EDEFAULT == null ? portName != null : !PORT_NAME_EDEFAULT.equals(portName);
+      case DepModelPackage.PORT_TYPE__EMODES:
+        return eModes != null && !eModes.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (PortName: ");
-    result.append(portName);
-    result.append(')');
-    return result.toString();
   }
 
 } //PortTypeImpl

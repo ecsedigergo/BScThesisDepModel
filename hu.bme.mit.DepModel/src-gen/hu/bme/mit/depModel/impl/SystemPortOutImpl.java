@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.SystemPortOutImpl#getSysPortOutName <em>Sys Port Out Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.SystemPortOutImpl#getOutComp <em>Out Comp</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.SystemPortOutImpl#getOutPort <em>Out Port</em>}</li>
  * </ul>
@@ -32,26 +31,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOut
 {
-  /**
-   * The default value of the '{@link #getSysPortOutName() <em>Sys Port Out Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSysPortOutName()
-   * @generated
-   * @ordered
-   */
-  protected static final String SYS_PORT_OUT_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSysPortOutName() <em>Sys Port Out Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSysPortOutName()
-   * @generated
-   * @ordered
-   */
-  protected String sysPortOutName = SYS_PORT_OUT_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getOutComp() <em>Out Comp</em>}' reference.
    * <!-- begin-user-doc -->
@@ -91,29 +70,6 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.SYSTEM_PORT_OUT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getSysPortOutName()
-  {
-    return sysPortOutName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSysPortOutName(String newSysPortOutName)
-  {
-    String oldSysPortOutName = sysPortOutName;
-    sysPortOutName = newSysPortOutName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.SYSTEM_PORT_OUT__SYS_PORT_OUT_NAME, oldSysPortOutName, sysPortOutName));
   }
 
   /**
@@ -212,8 +168,6 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_PORT_OUT__SYS_PORT_OUT_NAME:
-        return getSysPortOutName();
       case DepModelPackage.SYSTEM_PORT_OUT__OUT_COMP:
         if (resolve) return getOutComp();
         return basicGetOutComp();
@@ -234,9 +188,6 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_PORT_OUT__SYS_PORT_OUT_NAME:
-        setSysPortOutName((String)newValue);
-        return;
       case DepModelPackage.SYSTEM_PORT_OUT__OUT_COMP:
         setOutComp((ComponentImpl)newValue);
         return;
@@ -257,9 +208,6 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_PORT_OUT__SYS_PORT_OUT_NAME:
-        setSysPortOutName(SYS_PORT_OUT_NAME_EDEFAULT);
-        return;
       case DepModelPackage.SYSTEM_PORT_OUT__OUT_COMP:
         setOutComp((ComponentImpl)null);
         return;
@@ -280,31 +228,12 @@ public class SystemPortOutImpl extends SystemPortDecImpl implements SystemPortOu
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_PORT_OUT__SYS_PORT_OUT_NAME:
-        return SYS_PORT_OUT_NAME_EDEFAULT == null ? sysPortOutName != null : !SYS_PORT_OUT_NAME_EDEFAULT.equals(sysPortOutName);
       case DepModelPackage.SYSTEM_PORT_OUT__OUT_COMP:
         return outComp != null;
       case DepModelPackage.SYSTEM_PORT_OUT__OUT_PORT:
         return outPort != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (SysPortOutName: ");
-    result.append(sysPortOutName);
-    result.append(')');
-    return result.toString();
   }
 
 } //SystemPortOutImpl

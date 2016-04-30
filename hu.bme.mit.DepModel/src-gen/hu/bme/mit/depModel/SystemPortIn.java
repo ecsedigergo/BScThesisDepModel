@@ -13,7 +13,6 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.SystemPortIn#getSysPortInName <em>Sys Port In Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.SystemPortIn#getInComp <em>In Comp</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.SystemPortIn#getInPort <em>In Port</em>}</li>
  * </ul>
@@ -24,32 +23,6 @@ package hu.bme.mit.depModel;
  */
 public interface SystemPortIn extends SystemPortDec
 {
-  /**
-   * Returns the value of the '<em><b>Sys Port In Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Sys Port In Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sys Port In Name</em>' attribute.
-   * @see #setSysPortInName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getSystemPortIn_SysPortInName()
-   * @model
-   * @generated
-   */
-  String getSysPortInName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.SystemPortIn#getSysPortInName <em>Sys Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Sys Port In Name</em>' attribute.
-   * @see #getSysPortInName()
-   * @generated
-   */
-  void setSysPortInName(String value);
-
   /**
    * Returns the value of the '<em><b>In Comp</b></em>' reference.
    * <!-- begin-user-doc -->

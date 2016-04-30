@@ -9,12 +9,6 @@ package hu.bme.mit.depModel;
  * A representation of the model object '<em><b>State Dec</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link hu.bme.mit.depModel.StateDec#getStateName <em>State Name</em>}</li>
- * </ul>
  *
  * @see hu.bme.mit.depModel.DepModelPackage#getStateDec()
  * @model
@@ -22,30 +16,4 @@ package hu.bme.mit.depModel;
  */
 public interface StateDec extends ErrorModelElement
 {
-  /**
-   * Returns the value of the '<em><b>State Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>State Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>State Name</em>' attribute.
-   * @see #setStateName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getStateDec_StateName()
-   * @model
-   * @generated
-   */
-  String getStateName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.StateDec#getStateName <em>State Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>State Name</em>' attribute.
-   * @see #getStateName()
-   * @generated
-   */
-  void setStateName(String value);
-
 } // StateDec

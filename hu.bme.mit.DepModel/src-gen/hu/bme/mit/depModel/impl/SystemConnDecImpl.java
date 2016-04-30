@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.SystemConnDecImpl#getSysConnName <em>Sys Conn Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.SystemConnDecImpl#getSourceSystem <em>Source System</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.SystemConnDecImpl#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.SystemConnDecImpl#getTargetSystem <em>Target System</em>}</li>
@@ -34,26 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemConnDec
 {
-  /**
-   * The default value of the '{@link #getSysConnName() <em>Sys Conn Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSysConnName()
-   * @generated
-   * @ordered
-   */
-  protected static final String SYS_CONN_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSysConnName() <em>Sys Conn Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSysConnName()
-   * @generated
-   * @ordered
-   */
-  protected String sysConnName = SYS_CONN_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSourceSystem() <em>Source System</em>}' reference.
    * <!-- begin-user-doc -->
@@ -113,29 +92,6 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.SYSTEM_CONN_DEC;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getSysConnName()
-  {
-    return sysConnName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSysConnName(String newSysConnName)
-  {
-    String oldSysConnName = sysConnName;
-    sysConnName = newSysConnName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.SYSTEM_CONN_DEC__SYS_CONN_NAME, oldSysConnName, sysConnName));
   }
 
   /**
@@ -320,8 +276,6 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_CONN_DEC__SYS_CONN_NAME:
-        return getSysConnName();
       case DepModelPackage.SYSTEM_CONN_DEC__SOURCE_SYSTEM:
         if (resolve) return getSourceSystem();
         return basicGetSourceSystem();
@@ -348,9 +302,6 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_CONN_DEC__SYS_CONN_NAME:
-        setSysConnName((String)newValue);
-        return;
       case DepModelPackage.SYSTEM_CONN_DEC__SOURCE_SYSTEM:
         setSourceSystem((SystemDec)newValue);
         return;
@@ -377,9 +328,6 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_CONN_DEC__SYS_CONN_NAME:
-        setSysConnName(SYS_CONN_NAME_EDEFAULT);
-        return;
       case DepModelPackage.SYSTEM_CONN_DEC__SOURCE_SYSTEM:
         setSourceSystem((SystemDec)null);
         return;
@@ -406,8 +354,6 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_CONN_DEC__SYS_CONN_NAME:
-        return SYS_CONN_NAME_EDEFAULT == null ? sysConnName != null : !SYS_CONN_NAME_EDEFAULT.equals(sysConnName);
       case DepModelPackage.SYSTEM_CONN_DEC__SOURCE_SYSTEM:
         return sourceSystem != null;
       case DepModelPackage.SYSTEM_CONN_DEC__SOURCE_PORT:
@@ -418,23 +364,6 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
         return targetPort != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (SysConnName: ");
-    result.append(sysConnName);
-    result.append(')');
-    return result.toString();
   }
 
 } //SystemConnDecImpl

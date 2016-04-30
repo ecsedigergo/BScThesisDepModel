@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.PortOutImpl#getPortOutName <em>Port Out Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.PortOutImpl#getPortOutSuperType <em>Port Out Super Type</em>}</li>
  * </ul>
  *
@@ -30,26 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class PortOutImpl extends PortDecImpl implements PortOut
 {
-  /**
-   * The default value of the '{@link #getPortOutName() <em>Port Out Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPortOutName()
-   * @generated
-   * @ordered
-   */
-  protected static final String PORT_OUT_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPortOutName() <em>Port Out Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPortOutName()
-   * @generated
-   * @ordered
-   */
-  protected String portOutName = PORT_OUT_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getPortOutSuperType() <em>Port Out Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -79,29 +58,6 @@ public class PortOutImpl extends PortDecImpl implements PortOut
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.PORT_OUT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getPortOutName()
-  {
-    return portOutName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPortOutName(String newPortOutName)
-  {
-    String oldPortOutName = portOutName;
-    portOutName = newPortOutName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.PORT_OUT__PORT_OUT_NAME, oldPortOutName, portOutName));
   }
 
   /**
@@ -157,8 +113,6 @@ public class PortOutImpl extends PortDecImpl implements PortOut
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_OUT__PORT_OUT_NAME:
-        return getPortOutName();
       case DepModelPackage.PORT_OUT__PORT_OUT_SUPER_TYPE:
         if (resolve) return getPortOutSuperType();
         return basicGetPortOutSuperType();
@@ -176,9 +130,6 @@ public class PortOutImpl extends PortDecImpl implements PortOut
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_OUT__PORT_OUT_NAME:
-        setPortOutName((String)newValue);
-        return;
       case DepModelPackage.PORT_OUT__PORT_OUT_SUPER_TYPE:
         setPortOutSuperType((PortType)newValue);
         return;
@@ -196,9 +147,6 @@ public class PortOutImpl extends PortDecImpl implements PortOut
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_OUT__PORT_OUT_NAME:
-        setPortOutName(PORT_OUT_NAME_EDEFAULT);
-        return;
       case DepModelPackage.PORT_OUT__PORT_OUT_SUPER_TYPE:
         setPortOutSuperType((PortType)null);
         return;
@@ -216,29 +164,10 @@ public class PortOutImpl extends PortDecImpl implements PortOut
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_OUT__PORT_OUT_NAME:
-        return PORT_OUT_NAME_EDEFAULT == null ? portOutName != null : !PORT_OUT_NAME_EDEFAULT.equals(portOutName);
       case DepModelPackage.PORT_OUT__PORT_OUT_SUPER_TYPE:
         return portOutSuperType != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (PortOutName: ");
-    result.append(portOutName);
-    result.append(')');
-    return result.toString();
   }
 
 } //PortOutImpl

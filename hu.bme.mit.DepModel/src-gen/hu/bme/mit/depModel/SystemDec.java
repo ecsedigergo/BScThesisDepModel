@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.SystemDec#getSysName <em>Sys Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.SystemDec#getSysFeatures <em>Sys Features</em>}</li>
  * </ul>
  *
@@ -24,32 +23,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface SystemDec extends ComponentModelDec
 {
-  /**
-   * Returns the value of the '<em><b>Sys Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Sys Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sys Name</em>' attribute.
-   * @see #setSysName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getSystemDec_SysName()
-   * @model
-   * @generated
-   */
-  String getSysName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.SystemDec#getSysName <em>Sys Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Sys Name</em>' attribute.
-   * @see #getSysName()
-   * @generated
-   */
-  void setSysName(String value);
-
   /**
    * Returns the value of the '<em><b>Sys Features</b></em>' containment reference list.
    * The list contents are of type {@link hu.bme.mit.depModel.SysFeaturesDec}.

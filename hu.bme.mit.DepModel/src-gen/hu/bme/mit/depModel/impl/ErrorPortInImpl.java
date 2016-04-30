@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.ErrorPortInImpl#getErrorPortInName <em>Error Port In Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ErrorPortInImpl#getErrorPortInSuperType <em>Error Port In Super Type</em>}</li>
  * </ul>
  *
@@ -30,26 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ErrorPortInImpl extends ErrorPortDecImpl implements ErrorPortIn
 {
-  /**
-   * The default value of the '{@link #getErrorPortInName() <em>Error Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getErrorPortInName()
-   * @generated
-   * @ordered
-   */
-  protected static final String ERROR_PORT_IN_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getErrorPortInName() <em>Error Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getErrorPortInName()
-   * @generated
-   * @ordered
-   */
-  protected String errorPortInName = ERROR_PORT_IN_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getErrorPortInSuperType() <em>Error Port In Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -79,29 +58,6 @@ public class ErrorPortInImpl extends ErrorPortDecImpl implements ErrorPortIn
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.ERROR_PORT_IN;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getErrorPortInName()
-  {
-    return errorPortInName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setErrorPortInName(String newErrorPortInName)
-  {
-    String oldErrorPortInName = errorPortInName;
-    errorPortInName = newErrorPortInName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_NAME, oldErrorPortInName, errorPortInName));
   }
 
   /**
@@ -157,8 +113,6 @@ public class ErrorPortInImpl extends ErrorPortDecImpl implements ErrorPortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_NAME:
-        return getErrorPortInName();
       case DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE:
         if (resolve) return getErrorPortInSuperType();
         return basicGetErrorPortInSuperType();
@@ -176,9 +130,6 @@ public class ErrorPortInImpl extends ErrorPortDecImpl implements ErrorPortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_NAME:
-        setErrorPortInName((String)newValue);
-        return;
       case DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE:
         setErrorPortInSuperType((PortType)newValue);
         return;
@@ -196,9 +147,6 @@ public class ErrorPortInImpl extends ErrorPortDecImpl implements ErrorPortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_NAME:
-        setErrorPortInName(ERROR_PORT_IN_NAME_EDEFAULT);
-        return;
       case DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE:
         setErrorPortInSuperType((PortType)null);
         return;
@@ -216,29 +164,10 @@ public class ErrorPortInImpl extends ErrorPortDecImpl implements ErrorPortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_NAME:
-        return ERROR_PORT_IN_NAME_EDEFAULT == null ? errorPortInName != null : !ERROR_PORT_IN_NAME_EDEFAULT.equals(errorPortInName);
       case DepModelPackage.ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE:
         return errorPortInSuperType != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ErrorPortInName: ");
-    result.append(errorPortInName);
-    result.append(')');
-    return result.toString();
   }
 
 } //ErrorPortInImpl

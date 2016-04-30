@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl#getCompConnName <em>Comp Conn Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl#getSourceComp <em>Source Comp</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl#getTargetComp <em>Target Comp</em>}</li>
@@ -35,26 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ComponentConnDecImpl extends SysFeaturesDecImpl implements ComponentConnDec
 {
-  /**
-   * The default value of the '{@link #getCompConnName() <em>Comp Conn Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompConnName()
-   * @generated
-   * @ordered
-   */
-  protected static final String COMP_CONN_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCompConnName() <em>Comp Conn Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompConnName()
-   * @generated
-   * @ordered
-   */
-  protected String compConnName = COMP_CONN_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSourceComp() <em>Source Comp</em>}' reference.
    * <!-- begin-user-doc -->
@@ -114,29 +93,6 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.COMPONENT_CONN_DEC;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getCompConnName()
-  {
-    return compConnName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCompConnName(String newCompConnName)
-  {
-    String oldCompConnName = compConnName;
-    compConnName = newCompConnName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.COMPONENT_CONN_DEC__COMP_CONN_NAME, oldCompConnName, compConnName));
   }
 
   /**
@@ -321,8 +277,6 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_CONN_DEC__COMP_CONN_NAME:
-        return getCompConnName();
       case DepModelPackage.COMPONENT_CONN_DEC__SOURCE_COMP:
         if (resolve) return getSourceComp();
         return basicGetSourceComp();
@@ -349,9 +303,6 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_CONN_DEC__COMP_CONN_NAME:
-        setCompConnName((String)newValue);
-        return;
       case DepModelPackage.COMPONENT_CONN_DEC__SOURCE_COMP:
         setSourceComp((ComponentImpl)newValue);
         return;
@@ -378,9 +329,6 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_CONN_DEC__COMP_CONN_NAME:
-        setCompConnName(COMP_CONN_NAME_EDEFAULT);
-        return;
       case DepModelPackage.COMPONENT_CONN_DEC__SOURCE_COMP:
         setSourceComp((ComponentImpl)null);
         return;
@@ -407,8 +355,6 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_CONN_DEC__COMP_CONN_NAME:
-        return COMP_CONN_NAME_EDEFAULT == null ? compConnName != null : !COMP_CONN_NAME_EDEFAULT.equals(compConnName);
       case DepModelPackage.COMPONENT_CONN_DEC__SOURCE_COMP:
         return sourceComp != null;
       case DepModelPackage.COMPONENT_CONN_DEC__SOURCE_PORT:
@@ -419,23 +365,6 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
         return targetPort != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (CompConnName: ");
-    result.append(compConnName);
-    result.append(')');
-    return result.toString();
   }
 
 } //ComponentConnDecImpl

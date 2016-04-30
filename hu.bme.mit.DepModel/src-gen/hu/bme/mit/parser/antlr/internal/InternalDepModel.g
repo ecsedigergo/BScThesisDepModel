@@ -199,17 +199,17 @@ rulePortType returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPortTypeAccess().getPortNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getPortTypeAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
-				lv_PortName_2_0=ruleQualifiedName
+				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPortTypeRule());
 					}
 					set(
 						$current,
-						"PortName",
-						lv_PortName_2_0,
+						"name",
+						lv_name_2_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -219,10 +219,75 @@ rulePortType returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getPortTypeAccess().getLeftCurlyBracketKeyword_3());
 		}
-		otherlv_4='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPortTypeAccess().getEModesErrorModesParserRuleCall_4_0());
+				}
+				lv_eModes_4_0=ruleErrorModes
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPortTypeRule());
+					}
+					add(
+						$current,
+						"eModes",
+						lv_eModes_4_0,
+						"hu.bme.mit.DepModel.ErrorModes");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getPortTypeAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getPortTypeAccess().getRightCurlyBracketKeyword_5());
 		}
+	)
+;
+
+// Entry rule entryRuleErrorModes
+entryRuleErrorModes returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getErrorModesRule()); }
+	iv_ruleErrorModes=ruleErrorModes
+	{ $current=$iv_ruleErrorModes.current; }
+	EOF;
+
+// Rule ErrorModes
+ruleErrorModes returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='error'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getErrorModesAccess().getErrorKeyword_0());
+		}
+		otherlv_1='mode'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getErrorModesAccess().getModeKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getErrorModesAccess().getNameQualifiedNameParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleQualifiedName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getErrorModesRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"hu.bme.mit.DepModel.QualifiedName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -289,17 +354,17 @@ ruleSystemConnDec returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemConnDecAccess().getSysConnNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getSystemConnDecAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
-				lv_SysConnName_2_0=ruleQualifiedName
+				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemConnDecRule());
 					}
 					set(
 						$current,
-						"SysConnName",
-						lv_SysConnName_2_0,
+						"name",
+						lv_name_2_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -403,17 +468,17 @@ ruleSystemDec returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemDecAccess().getSysNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getSystemDecAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
-				lv_SysName_2_0=ruleQualifiedName
+				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemDecRule());
 					}
 					set(
 						$current,
-						"SysName",
-						lv_SysName_2_0,
+						"name",
+						lv_name_2_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -570,17 +635,17 @@ ruleSystemPortIn returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemPortInAccess().getSysPortInNameQualifiedNameParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSystemPortInAccess().getNameQualifiedNameParserRuleCall_3_0());
 				}
-				lv_SysPortInName_3_0=ruleQualifiedName
+				lv_name_3_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemPortInRule());
 					}
 					set(
 						$current,
-						"SysPortInName",
-						lv_SysPortInName_3_0,
+						"name",
+						lv_name_3_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -654,17 +719,17 @@ ruleSystemPortOut returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSystemPortOutAccess().getSysPortOutNameQualifiedNameParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSystemPortOutAccess().getNameQualifiedNameParserRuleCall_3_0());
 				}
-				lv_SysPortOutName_3_0=ruleQualifiedName
+				lv_name_3_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSystemPortOutRule());
 					}
 					set(
 						$current,
-						"SysPortOutName",
-						lv_SysPortOutName_3_0,
+						"name",
+						lv_name_3_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -733,9 +798,9 @@ ruleComponentConnDec returns [EObject current=null]
 		}
 		(
 			(
-				lv_CompConnName_2_0=RULE_ID
+				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_CompConnName_2_0, grammarAccess.getComponentConnDecAccess().getCompConnNameIDTerminalRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getComponentConnDecAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -743,8 +808,8 @@ ruleComponentConnDec returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"CompConnName",
-						lv_CompConnName_2_0,
+						"name",
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -847,17 +912,17 @@ ruleComponentImpl returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getComponentImplAccess().getCompImplNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getComponentImplAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
-				lv_CompImplName_2_0=ruleQualifiedName
+				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getComponentImplRule());
 					}
 					set(
 						$current,
-						"CompImplName",
-						lv_CompImplName_2_0,
+						"name",
+						lv_name_2_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -910,17 +975,17 @@ ruleComponentType returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getComponentTypeAccess().getCompTypeNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getComponentTypeAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
-				lv_CompTypeName_2_0=ruleQualifiedName
+				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getComponentTypeRule());
 					}
 					set(
 						$current,
-						"CompTypeName",
-						lv_CompTypeName_2_0,
+						"name",
+						lv_name_2_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1059,17 +1124,17 @@ rulePortIn returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPortInAccess().getPortInNameQualifiedNameParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getPortInAccess().getNameQualifiedNameParserRuleCall_3_0());
 				}
-				lv_PortInName_3_0=ruleQualifiedName
+				lv_name_3_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPortInRule());
 					}
 					set(
 						$current,
-						"PortInName",
-						lv_PortInName_3_0,
+						"name",
+						lv_name_3_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1126,17 +1191,17 @@ rulePortOut returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPortOutAccess().getPortOutNameQualifiedNameParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getPortOutAccess().getNameQualifiedNameParserRuleCall_3_0());
 				}
-				lv_PortOutName_3_0=ruleQualifiedName
+				lv_name_3_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPortOutRule());
 					}
 					set(
 						$current,
-						"PortOutName",
-						lv_PortOutName_3_0,
+						"name",
+						lv_name_3_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1189,17 +1254,17 @@ ruleErrorModelDec returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getErrorModelDecAccess().getErrorModelNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getErrorModelDecAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
-				lv_ErrorModelName_2_0=ruleQualifiedName
+				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getErrorModelDecRule());
 					}
 					set(
 						$current,
-						"ErrorModelName",
-						lv_ErrorModelName_2_0,
+						"name",
+						lv_name_2_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1340,24 +1405,24 @@ ruleErrorPortIn returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getErrorPortInAccess().getPortKeyword_1());
 		}
-		otherlv_2='out'
+		otherlv_2='in'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getErrorPortInAccess().getOutKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getErrorPortInAccess().getInKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getErrorPortInAccess().getErrorPortInNameQualifiedNameParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getErrorPortInAccess().getNameQualifiedNameParserRuleCall_3_0());
 				}
-				lv_ErrorPortInName_3_0=ruleQualifiedName
+				lv_name_3_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getErrorPortInRule());
 					}
 					set(
 						$current,
-						"ErrorPortInName",
-						lv_ErrorPortInName_3_0,
+						"name",
+						lv_name_3_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1407,24 +1472,24 @@ ruleErrorPortOut returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getErrorPortOutAccess().getPortKeyword_1());
 		}
-		otherlv_2='in'
+		otherlv_2='out'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getErrorPortOutAccess().getInKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getErrorPortOutAccess().getOutKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getErrorPortOutAccess().getErrorPortOutNameQualifiedNameParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getErrorPortOutAccess().getNameQualifiedNameParserRuleCall_3_0());
 				}
-				lv_ErrorPortOutName_3_0=ruleQualifiedName
+				lv_name_3_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getErrorPortOutRule());
 					}
 					set(
 						$current,
-						"ErrorPortOutName",
-						lv_ErrorPortOutName_3_0,
+						"name",
+						lv_name_3_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1477,17 +1542,17 @@ ruleStateDec returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStateDecAccess().getStateNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getStateDecAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
-				lv_StateName_2_0=ruleQualifiedName
+				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStateDecRule());
 					}
 					set(
 						$current,
-						"StateName",
-						lv_StateName_2_0,
+						"name",
+						lv_name_2_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1519,17 +1584,17 @@ ruleTransitionDec returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTransitionDecAccess().getEventNameQualifiedNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getTransitionDecAccess().getNameQualifiedNameParserRuleCall_1_0());
 				}
-				lv_EventName_1_0=ruleQualifiedName
+				lv_name_1_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTransitionDecRule());
 					}
 					set(
 						$current,
-						"EventName",
-						lv_EventName_1_0,
+						"name",
+						lv_name_1_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1707,17 +1772,17 @@ ruleTriggerDec returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTriggerDecAccess().getTriggerNameQualifiedNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getTriggerDecAccess().getNameQualifiedNameParserRuleCall_1_0());
 				}
-				lv_TriggerName_1_0=ruleQualifiedName
+				lv_name_1_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTriggerDecRule());
 					}
 					set(
 						$current,
-						"TriggerName",
-						lv_TriggerName_1_0,
+						"name",
+						lv_name_1_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
@@ -1783,17 +1848,17 @@ ruleActionDec returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getActionDecAccess().getActionNameQualifiedNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getActionDecAccess().getNameQualifiedNameParserRuleCall_1_0());
 				}
-				lv_ActionName_1_0=ruleQualifiedName
+				lv_name_1_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getActionDecRule());
 					}
 					set(
 						$current,
-						"ActionName",
-						lv_ActionName_1_0,
+						"name",
+						lv_name_1_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}

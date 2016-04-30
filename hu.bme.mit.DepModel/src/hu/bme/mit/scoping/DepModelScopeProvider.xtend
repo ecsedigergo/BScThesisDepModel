@@ -4,12 +4,17 @@
 package hu.bme.mit.scoping
 
 import hu.bme.mit.depModel.DepModelPackage
+import hu.bme.mit.depModel.ErrorModes
 import hu.bme.mit.depModel.PortIn
-import hu.bme.mit.depModel.PortType
+import hu.bme.mit.depModel.TriggerDec
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
+import hu.bme.mit.depModel.ActionDec
+import hu.bme.mit.depModel.PortOut
+import hu.bme.mit.depModel.ComponentType
 
 /**
  * This class contains custom scoping description.
@@ -18,32 +23,63 @@ import org.eclipse.xtext.scoping.Scopes
  * on how and when to use it.
  */
 class DepModelScopeProvider extends AbstractDepModelScopeProvider {
-
-
 	override getScope(EObject context, EReference reference) {
-		if (context instanceof PortIn) {
-			val port = context as PortIn
-			if (reference == DepModelPackage.Literals.PORT_IN__PORT_IN_SUPER_TYPE) {
-				val rootElement = EcoreUtil2.getRootContainer(port)
-				val candidates_portType = EcoreUtil2.getAllContentsOfType(rootElement,PortType)
-				//val ize = EcoreUtil2.getAllProperContents(candidates_portType,false)
-				return Scopes.scopeFor(candidates_portType)
+
+		if (context instanceof TriggerDec) {
+			val trigger = context as TriggerDec
+			if (reference == DepModelPackage.Literals.TRIGGER_DEC__PORT_INSTANCE) {
+				val compT = EcoreUtil2.getContainerOfType(trigger, ComponentType)
+				if(compT == null) return IScope.NULLSCOPE
+				val portI = EcoreUtil2.getAllContentsOfType(compT, PortIn)
+				if(portI == null) return IScope.NULLSCOPE
 				
+				return Scopes.scopeFor(portI)
 			}
-		// val existingScope = Scopes.scopeFor(candidates_portType)
-		// return new FilteringScope(existingScope, [getEObjectOrProxy != context])
+
+			if (reference == DepModelPackage.Literals.TRIGGER_DEC__ERROR_MODE) {
+				val portInImpl = EcoreUtil2.getContainerOfType(trigger.portInstance, PortIn)
+				if(portInImpl == null) return IScope.NULLSCOPE
+				val modes = EcoreUtil2.getAllContentsOfType(portInImpl.portInSuperType, ErrorModes)
+				if(modes == null) return IScope.NULLSCOPE
+
+				return Scopes.scopeFor(modes)
+
+			}
 		}
-		return super.getScope(context, reference)
+		if (context instanceof ActionDec) {
+			val action = context as ActionDec
+			if (reference == DepModelPackage.Literals.ACTION_DEC__PORT_INSTANCE) {
+				val compT = EcoreUtil2.getContainerOfType(action, ComponentType)
+				if(compT == null) return IScope.NULLSCOPE
+				val portI = EcoreUtil2.getAllContentsOfType(compT, PortOut)
+				if(portI == null) return IScope.NULLSCOPE
+				
+				return Scopes.scopeFor(portI)
+			}
+			if (reference == DepModelPackage.Literals.ACTION_DEC__ERROR_MODE) {
+				val portOutImpl = EcoreUtil2.getContainerOfType(action.portInstance, PortOut)
+				if(portOutImpl == null) return IScope.NULLSCOPE
+				val modes = EcoreUtil2.getAllContentsOfType(portOutImpl.portOutSuperType, ErrorModes)
+				if(modes == null) return IScope.NULLSCOPE
+
+				return Scopes.scopeFor(modes)
+
+			}
+		}
+
+		return super.getScope(context, reference);
 	}
-//	override getScope(EObject context, EReference reference) {
-//    if (context instanceof Element
-//            && reference == MyDslPackage.Literals.ELEMENT__SUPER_ELEMENT) {
-//        val rootElement = EcoreUtil2.getRootContainer(context)
-//        val candidates = EcoreUtil2.getAllContentsOfType(rootElement, Element)
-//        val existingScope = Scopes.scopeFor(candidates)
-//        // Scope that filters out the context element from the candidates list
-//        return new FilteringScope(existingScope, [getEObjectOrProxy != context])
-//    }
-//    return super.getScope(context, reference);
-//}
 }
+/*
+ * 			if (reference == ComponentModelPackage.Literals.COMP_CONN_DEC__SOURCE_PORT) {
+ * 				val compI = EcoreUtil2.getContainerOfType(conn.sourceComp, ComponentImpl)
+ * 				if(compI == null) return IScope.NULLSCOPE
+
+ * 				val compT = compI.superType
+ * 				val ports = EcoreUtil2.getAllContentsOfType(compT, OutPort)
+ * 				if (ports == null) {
+ * 					return IScope.NULLSCOPE
+ * 				} else {
+ * 					return Scopes.scopeFor(ports)
+ * 				}
+ }*/

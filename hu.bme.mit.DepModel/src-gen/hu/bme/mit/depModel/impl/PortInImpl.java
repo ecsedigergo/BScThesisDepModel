@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.PortInImpl#getPortInName <em>Port In Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.PortInImpl#getPortInSuperType <em>Port In Super Type</em>}</li>
  * </ul>
  *
@@ -30,26 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class PortInImpl extends PortDecImpl implements PortIn
 {
-  /**
-   * The default value of the '{@link #getPortInName() <em>Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPortInName()
-   * @generated
-   * @ordered
-   */
-  protected static final String PORT_IN_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPortInName() <em>Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPortInName()
-   * @generated
-   * @ordered
-   */
-  protected String portInName = PORT_IN_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getPortInSuperType() <em>Port In Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -79,29 +58,6 @@ public class PortInImpl extends PortDecImpl implements PortIn
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.PORT_IN;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getPortInName()
-  {
-    return portInName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPortInName(String newPortInName)
-  {
-    String oldPortInName = portInName;
-    portInName = newPortInName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.PORT_IN__PORT_IN_NAME, oldPortInName, portInName));
   }
 
   /**
@@ -157,8 +113,6 @@ public class PortInImpl extends PortDecImpl implements PortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_IN__PORT_IN_NAME:
-        return getPortInName();
       case DepModelPackage.PORT_IN__PORT_IN_SUPER_TYPE:
         if (resolve) return getPortInSuperType();
         return basicGetPortInSuperType();
@@ -176,9 +130,6 @@ public class PortInImpl extends PortDecImpl implements PortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_IN__PORT_IN_NAME:
-        setPortInName((String)newValue);
-        return;
       case DepModelPackage.PORT_IN__PORT_IN_SUPER_TYPE:
         setPortInSuperType((PortType)newValue);
         return;
@@ -196,9 +147,6 @@ public class PortInImpl extends PortDecImpl implements PortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_IN__PORT_IN_NAME:
-        setPortInName(PORT_IN_NAME_EDEFAULT);
-        return;
       case DepModelPackage.PORT_IN__PORT_IN_SUPER_TYPE:
         setPortInSuperType((PortType)null);
         return;
@@ -216,29 +164,10 @@ public class PortInImpl extends PortDecImpl implements PortIn
   {
     switch (featureID)
     {
-      case DepModelPackage.PORT_IN__PORT_IN_NAME:
-        return PORT_IN_NAME_EDEFAULT == null ? portInName != null : !PORT_IN_NAME_EDEFAULT.equals(portInName);
       case DepModelPackage.PORT_IN__PORT_IN_SUPER_TYPE:
         return portInSuperType != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (PortInName: ");
-    result.append(portInName);
-    result.append(')');
-    return result.toString();
   }
 
 } //PortInImpl

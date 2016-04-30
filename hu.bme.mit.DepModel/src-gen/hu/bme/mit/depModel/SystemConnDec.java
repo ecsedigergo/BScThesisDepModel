@@ -13,7 +13,6 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.SystemConnDec#getSysConnName <em>Sys Conn Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.SystemConnDec#getSourceSystem <em>Source System</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.SystemConnDec#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.SystemConnDec#getTargetSystem <em>Target System</em>}</li>
@@ -26,32 +25,6 @@ package hu.bme.mit.depModel;
  */
 public interface SystemConnDec extends ComponentModelDec
 {
-  /**
-   * Returns the value of the '<em><b>Sys Conn Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Sys Conn Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sys Conn Name</em>' attribute.
-   * @see #setSysConnName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getSystemConnDec_SysConnName()
-   * @model
-   * @generated
-   */
-  String getSysConnName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.SystemConnDec#getSysConnName <em>Sys Conn Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Sys Conn Name</em>' attribute.
-   * @see #getSysConnName()
-   * @generated
-   */
-  void setSysConnName(String value);
-
   /**
    * Returns the value of the '<em><b>Source System</b></em>' reference.
    * <!-- begin-user-doc -->

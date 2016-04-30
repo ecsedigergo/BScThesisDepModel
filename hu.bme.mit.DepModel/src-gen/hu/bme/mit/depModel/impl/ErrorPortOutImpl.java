@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.ErrorPortOutImpl#getErrorPortOutName <em>Error Port Out Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ErrorPortOutImpl#getErrorPortOutSuperType <em>Error Port Out Super Type</em>}</li>
  * </ul>
  *
@@ -30,26 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ErrorPortOutImpl extends ErrorPortDecImpl implements ErrorPortOut
 {
-  /**
-   * The default value of the '{@link #getErrorPortOutName() <em>Error Port Out Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getErrorPortOutName()
-   * @generated
-   * @ordered
-   */
-  protected static final String ERROR_PORT_OUT_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getErrorPortOutName() <em>Error Port Out Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getErrorPortOutName()
-   * @generated
-   * @ordered
-   */
-  protected String errorPortOutName = ERROR_PORT_OUT_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getErrorPortOutSuperType() <em>Error Port Out Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -79,29 +58,6 @@ public class ErrorPortOutImpl extends ErrorPortDecImpl implements ErrorPortOut
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.ERROR_PORT_OUT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getErrorPortOutName()
-  {
-    return errorPortOutName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setErrorPortOutName(String newErrorPortOutName)
-  {
-    String oldErrorPortOutName = errorPortOutName;
-    errorPortOutName = newErrorPortOutName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_NAME, oldErrorPortOutName, errorPortOutName));
   }
 
   /**
@@ -157,8 +113,6 @@ public class ErrorPortOutImpl extends ErrorPortDecImpl implements ErrorPortOut
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_NAME:
-        return getErrorPortOutName();
       case DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE:
         if (resolve) return getErrorPortOutSuperType();
         return basicGetErrorPortOutSuperType();
@@ -176,9 +130,6 @@ public class ErrorPortOutImpl extends ErrorPortDecImpl implements ErrorPortOut
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_NAME:
-        setErrorPortOutName((String)newValue);
-        return;
       case DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE:
         setErrorPortOutSuperType((PortType)newValue);
         return;
@@ -196,9 +147,6 @@ public class ErrorPortOutImpl extends ErrorPortDecImpl implements ErrorPortOut
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_NAME:
-        setErrorPortOutName(ERROR_PORT_OUT_NAME_EDEFAULT);
-        return;
       case DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE:
         setErrorPortOutSuperType((PortType)null);
         return;
@@ -216,29 +164,10 @@ public class ErrorPortOutImpl extends ErrorPortDecImpl implements ErrorPortOut
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_NAME:
-        return ERROR_PORT_OUT_NAME_EDEFAULT == null ? errorPortOutName != null : !ERROR_PORT_OUT_NAME_EDEFAULT.equals(errorPortOutName);
       case DepModelPackage.ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE:
         return errorPortOutSuperType != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ErrorPortOutName: ");
-    result.append(errorPortOutName);
-    result.append(')');
-    return result.toString();
   }
 
 } //ErrorPortOutImpl

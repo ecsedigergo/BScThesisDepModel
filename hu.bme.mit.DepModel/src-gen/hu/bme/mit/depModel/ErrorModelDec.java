@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.ErrorModelDec#getErrorModelName <em>Error Model Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ErrorModelDec#getEmodelElements <em>Emodel Elements</em>}</li>
  * </ul>
  *
@@ -24,32 +23,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface ErrorModelDec extends ComponentFeaturesDec
 {
-  /**
-   * Returns the value of the '<em><b>Error Model Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Error Model Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Error Model Name</em>' attribute.
-   * @see #setErrorModelName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getErrorModelDec_ErrorModelName()
-   * @model
-   * @generated
-   */
-  String getErrorModelName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.ErrorModelDec#getErrorModelName <em>Error Model Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Error Model Name</em>' attribute.
-   * @see #getErrorModelName()
-   * @generated
-   */
-  void setErrorModelName(String value);
-
   /**
    * Returns the value of the '<em><b>Emodel Elements</b></em>' containment reference list.
    * The list contents are of type {@link hu.bme.mit.depModel.ErrorModelElement}.

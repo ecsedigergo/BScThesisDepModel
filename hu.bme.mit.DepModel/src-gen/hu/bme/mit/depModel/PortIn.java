@@ -13,7 +13,6 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.PortIn#getPortInName <em>Port In Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.PortIn#getPortInSuperType <em>Port In Super Type</em>}</li>
  * </ul>
  *
@@ -23,32 +22,6 @@ package hu.bme.mit.depModel;
  */
 public interface PortIn extends PortDec
 {
-  /**
-   * Returns the value of the '<em><b>Port In Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Port In Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Port In Name</em>' attribute.
-   * @see #setPortInName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getPortIn_PortInName()
-   * @model
-   * @generated
-   */
-  String getPortInName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.PortIn#getPortInName <em>Port In Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port In Name</em>' attribute.
-   * @see #getPortInName()
-   * @generated
-   */
-  void setPortInName(String value);
-
   /**
    * Returns the value of the '<em><b>Port In Super Type</b></em>' reference.
    * <!-- begin-user-doc -->

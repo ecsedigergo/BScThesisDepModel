@@ -9,15 +9,12 @@ import hu.bme.mit.depModel.DepModelPackage;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.ComponentTypeImpl#getCompTypeName <em>Comp Type Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ComponentTypeImpl#getComponentFeatures <em>Component Features</em>}</li>
  * </ul>
  *
@@ -38,26 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ComponentTypeImpl extends SysFeaturesDecImpl implements ComponentType
 {
-  /**
-   * The default value of the '{@link #getCompTypeName() <em>Comp Type Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompTypeName()
-   * @generated
-   * @ordered
-   */
-  protected static final String COMP_TYPE_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCompTypeName() <em>Comp Type Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompTypeName()
-   * @generated
-   * @ordered
-   */
-  protected String compTypeName = COMP_TYPE_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getComponentFeatures() <em>Component Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -87,29 +63,6 @@ public class ComponentTypeImpl extends SysFeaturesDecImpl implements ComponentTy
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.COMPONENT_TYPE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getCompTypeName()
-  {
-    return compTypeName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCompTypeName(String newCompTypeName)
-  {
-    String oldCompTypeName = compTypeName;
-    compTypeName = newCompTypeName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.COMPONENT_TYPE__COMP_TYPE_NAME, oldCompTypeName, compTypeName));
   }
 
   /**
@@ -152,8 +105,6 @@ public class ComponentTypeImpl extends SysFeaturesDecImpl implements ComponentTy
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_TYPE__COMP_TYPE_NAME:
-        return getCompTypeName();
       case DepModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
         return getComponentFeatures();
     }
@@ -171,9 +122,6 @@ public class ComponentTypeImpl extends SysFeaturesDecImpl implements ComponentTy
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_TYPE__COMP_TYPE_NAME:
-        setCompTypeName((String)newValue);
-        return;
       case DepModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
         getComponentFeatures().clear();
         getComponentFeatures().addAll((Collection<? extends ComponentFeaturesDec>)newValue);
@@ -192,9 +140,6 @@ public class ComponentTypeImpl extends SysFeaturesDecImpl implements ComponentTy
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_TYPE__COMP_TYPE_NAME:
-        setCompTypeName(COMP_TYPE_NAME_EDEFAULT);
-        return;
       case DepModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
         getComponentFeatures().clear();
         return;
@@ -212,29 +157,10 @@ public class ComponentTypeImpl extends SysFeaturesDecImpl implements ComponentTy
   {
     switch (featureID)
     {
-      case DepModelPackage.COMPONENT_TYPE__COMP_TYPE_NAME:
-        return COMP_TYPE_NAME_EDEFAULT == null ? compTypeName != null : !COMP_TYPE_NAME_EDEFAULT.equals(compTypeName);
       case DepModelPackage.COMPONENT_TYPE__COMPONENT_FEATURES:
         return componentFeatures != null && !componentFeatures.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (CompTypeName: ");
-    result.append(compTypeName);
-    result.append(')');
-    return result.toString();
   }
 
 } //ComponentTypeImpl

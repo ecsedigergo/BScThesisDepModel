@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.ErrorModesImpl#getErrorModeName <em>Error Mode Name</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.impl.ErrorModesImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ErrorModesImpl extends MinimalEObjectImpl.Container implements ErrorModes
 {
   /**
-   * The default value of the '{@link #getErrorModeName() <em>Error Mode Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getErrorModeName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ERROR_MODE_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getErrorModeName() <em>Error Mode Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getErrorModeName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String errorModeName = ERROR_MODE_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class ErrorModesImpl extends MinimalEObjectImpl.Container implements Erro
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getErrorModeName()
+  public String getName()
   {
-    return errorModeName;
+    return name;
   }
 
   /**
@@ -84,12 +84,12 @@ public class ErrorModesImpl extends MinimalEObjectImpl.Container implements Erro
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setErrorModeName(String newErrorModeName)
+  public void setName(String newName)
   {
-    String oldErrorModeName = errorModeName;
-    errorModeName = newErrorModeName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.ERROR_MODES__ERROR_MODE_NAME, oldErrorModeName, errorModeName));
+      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.ERROR_MODES__NAME, oldName, name));
   }
 
   /**
@@ -102,8 +102,8 @@ public class ErrorModesImpl extends MinimalEObjectImpl.Container implements Erro
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_MODES__ERROR_MODE_NAME:
-        return getErrorModeName();
+      case DepModelPackage.ERROR_MODES__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +118,8 @@ public class ErrorModesImpl extends MinimalEObjectImpl.Container implements Erro
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_MODES__ERROR_MODE_NAME:
-        setErrorModeName((String)newValue);
+      case DepModelPackage.ERROR_MODES__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +135,8 @@ public class ErrorModesImpl extends MinimalEObjectImpl.Container implements Erro
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_MODES__ERROR_MODE_NAME:
-        setErrorModeName(ERROR_MODE_NAME_EDEFAULT);
+      case DepModelPackage.ERROR_MODES__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +152,8 @@ public class ErrorModesImpl extends MinimalEObjectImpl.Container implements Erro
   {
     switch (featureID)
     {
-      case DepModelPackage.ERROR_MODES__ERROR_MODE_NAME:
-        return ERROR_MODE_NAME_EDEFAULT == null ? errorModeName != null : !ERROR_MODE_NAME_EDEFAULT.equals(errorModeName);
+      case DepModelPackage.ERROR_MODES__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -169,8 +169,8 @@ public class ErrorModesImpl extends MinimalEObjectImpl.Container implements Erro
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (ErrorModeName: ");
-    result.append(errorModeName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

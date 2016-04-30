@@ -96,13 +96,22 @@ public interface DepModelPackage extends EPackage
   int ABSTRACT_ELEMENT = 1;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ELEMENT__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Abstract Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_ELEMENT_FEATURE_COUNT = 0;
+  int ABSTRACT_ELEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.PortTypeImpl <em>Port Type</em>}' class.
@@ -115,13 +124,22 @@ public interface DepModelPackage extends EPackage
   int PORT_TYPE = 2;
 
   /**
-   * The feature id for the '<em><b>Port Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT_TYPE__PORT_NAME = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int PORT_TYPE__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>EModes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PORT_TYPE__EMODES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Port Type</em>' class.
@@ -143,13 +161,13 @@ public interface DepModelPackage extends EPackage
   int ERROR_MODES = 3;
 
   /**
-   * The feature id for the '<em><b>Error Mode Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ERROR_MODES__ERROR_MODE_NAME = 0;
+  int ERROR_MODES__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Error Modes</em>' class.
@@ -171,6 +189,15 @@ public interface DepModelPackage extends EPackage
   int COMPONENT_MODEL_DEC = 4;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_MODEL_DEC__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
    * The number of structural features of the '<em>Component Model Dec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -190,13 +217,13 @@ public interface DepModelPackage extends EPackage
   int SYSTEM_CONN_DEC = 5;
 
   /**
-   * The feature id for the '<em><b>Sys Conn Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__SYS_CONN_NAME = COMPONENT_MODEL_DEC_FEATURE_COUNT + 0;
+  int SYSTEM_CONN_DEC__NAME = COMPONENT_MODEL_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Source System</b></em>' reference.
@@ -205,7 +232,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__SOURCE_SYSTEM = COMPONENT_MODEL_DEC_FEATURE_COUNT + 1;
+  int SYSTEM_CONN_DEC__SOURCE_SYSTEM = COMPONENT_MODEL_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Source Port</b></em>' reference.
@@ -214,7 +241,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__SOURCE_PORT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 2;
+  int SYSTEM_CONN_DEC__SOURCE_PORT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Target System</b></em>' reference.
@@ -223,7 +250,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__TARGET_SYSTEM = COMPONENT_MODEL_DEC_FEATURE_COUNT + 3;
+  int SYSTEM_CONN_DEC__TARGET_SYSTEM = COMPONENT_MODEL_DEC_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Target Port</b></em>' reference.
@@ -232,7 +259,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC__TARGET_PORT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 4;
+  int SYSTEM_CONN_DEC__TARGET_PORT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>System Conn Dec</em>' class.
@@ -241,7 +268,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC_FEATURE_COUNT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 5;
+  int SYSTEM_CONN_DEC_FEATURE_COUNT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.SystemDecImpl <em>System Dec</em>}' class.
@@ -254,13 +281,13 @@ public interface DepModelPackage extends EPackage
   int SYSTEM_DEC = 6;
 
   /**
-   * The feature id for the '<em><b>Sys Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC__SYS_NAME = COMPONENT_MODEL_DEC_FEATURE_COUNT + 0;
+  int SYSTEM_DEC__NAME = COMPONENT_MODEL_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Sys Features</b></em>' containment reference list.
@@ -269,7 +296,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC__SYS_FEATURES = COMPONENT_MODEL_DEC_FEATURE_COUNT + 1;
+  int SYSTEM_DEC__SYS_FEATURES = COMPONENT_MODEL_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>System Dec</em>' class.
@@ -278,7 +305,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_DEC_FEATURE_COUNT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 2;
+  int SYSTEM_DEC_FEATURE_COUNT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.SysFeaturesDecImpl <em>Sys Features Dec</em>}' class.
@@ -291,13 +318,22 @@ public interface DepModelPackage extends EPackage
   int SYS_FEATURES_DEC = 7;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYS_FEATURES_DEC__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Sys Features Dec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYS_FEATURES_DEC_FEATURE_COUNT = 0;
+  int SYS_FEATURES_DEC_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.SystemPortDecImpl <em>System Port Dec</em>}' class.
@@ -308,6 +344,15 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   int SYSTEM_PORT_DEC = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM_PORT_DEC__NAME = SYS_FEATURES_DEC__NAME;
 
   /**
    * The number of structural features of the '<em>System Port Dec</em>' class.
@@ -329,13 +374,13 @@ public interface DepModelPackage extends EPackage
   int SYSTEM_PORT_IN = 9;
 
   /**
-   * The feature id for the '<em><b>Sys Port In Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM_PORT_IN__SYS_PORT_IN_NAME = SYSTEM_PORT_DEC_FEATURE_COUNT + 0;
+  int SYSTEM_PORT_IN__NAME = SYSTEM_PORT_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>In Comp</b></em>' reference.
@@ -344,7 +389,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_PORT_IN__IN_COMP = SYSTEM_PORT_DEC_FEATURE_COUNT + 1;
+  int SYSTEM_PORT_IN__IN_COMP = SYSTEM_PORT_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>In Port</b></em>' reference.
@@ -353,7 +398,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_PORT_IN__IN_PORT = SYSTEM_PORT_DEC_FEATURE_COUNT + 2;
+  int SYSTEM_PORT_IN__IN_PORT = SYSTEM_PORT_DEC_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>System Port In</em>' class.
@@ -362,7 +407,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_PORT_IN_FEATURE_COUNT = SYSTEM_PORT_DEC_FEATURE_COUNT + 3;
+  int SYSTEM_PORT_IN_FEATURE_COUNT = SYSTEM_PORT_DEC_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.SystemPortOutImpl <em>System Port Out</em>}' class.
@@ -375,13 +420,13 @@ public interface DepModelPackage extends EPackage
   int SYSTEM_PORT_OUT = 10;
 
   /**
-   * The feature id for the '<em><b>Sys Port Out Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM_PORT_OUT__SYS_PORT_OUT_NAME = SYSTEM_PORT_DEC_FEATURE_COUNT + 0;
+  int SYSTEM_PORT_OUT__NAME = SYSTEM_PORT_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Out Comp</b></em>' reference.
@@ -390,7 +435,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_PORT_OUT__OUT_COMP = SYSTEM_PORT_DEC_FEATURE_COUNT + 1;
+  int SYSTEM_PORT_OUT__OUT_COMP = SYSTEM_PORT_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Out Port</b></em>' reference.
@@ -399,7 +444,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_PORT_OUT__OUT_PORT = SYSTEM_PORT_DEC_FEATURE_COUNT + 2;
+  int SYSTEM_PORT_OUT__OUT_PORT = SYSTEM_PORT_DEC_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>System Port Out</em>' class.
@@ -408,7 +453,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_PORT_OUT_FEATURE_COUNT = SYSTEM_PORT_DEC_FEATURE_COUNT + 3;
+  int SYSTEM_PORT_OUT_FEATURE_COUNT = SYSTEM_PORT_DEC_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl <em>Component Conn Dec</em>}' class.
@@ -421,13 +466,13 @@ public interface DepModelPackage extends EPackage
   int COMPONENT_CONN_DEC = 11;
 
   /**
-   * The feature id for the '<em><b>Comp Conn Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_CONN_DEC__COMP_CONN_NAME = SYS_FEATURES_DEC_FEATURE_COUNT + 0;
+  int COMPONENT_CONN_DEC__NAME = SYS_FEATURES_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Source Comp</b></em>' reference.
@@ -436,7 +481,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CONN_DEC__SOURCE_COMP = SYS_FEATURES_DEC_FEATURE_COUNT + 1;
+  int COMPONENT_CONN_DEC__SOURCE_COMP = SYS_FEATURES_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Source Port</b></em>' reference.
@@ -445,7 +490,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CONN_DEC__SOURCE_PORT = SYS_FEATURES_DEC_FEATURE_COUNT + 2;
+  int COMPONENT_CONN_DEC__SOURCE_PORT = SYS_FEATURES_DEC_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Target Comp</b></em>' reference.
@@ -454,7 +499,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CONN_DEC__TARGET_COMP = SYS_FEATURES_DEC_FEATURE_COUNT + 3;
+  int COMPONENT_CONN_DEC__TARGET_COMP = SYS_FEATURES_DEC_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Target Port</b></em>' reference.
@@ -463,7 +508,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CONN_DEC__TARGET_PORT = SYS_FEATURES_DEC_FEATURE_COUNT + 4;
+  int COMPONENT_CONN_DEC__TARGET_PORT = SYS_FEATURES_DEC_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Component Conn Dec</em>' class.
@@ -472,7 +517,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_CONN_DEC_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 5;
+  int COMPONENT_CONN_DEC_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ComponentImplImpl <em>Component Impl</em>}' class.
@@ -485,13 +530,13 @@ public interface DepModelPackage extends EPackage
   int COMPONENT_IMPL = 12;
 
   /**
-   * The feature id for the '<em><b>Comp Impl Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_IMPL__COMP_IMPL_NAME = SYS_FEATURES_DEC_FEATURE_COUNT + 0;
+  int COMPONENT_IMPL__NAME = SYS_FEATURES_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -500,7 +545,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_IMPL__SUPER_TYPE = SYS_FEATURES_DEC_FEATURE_COUNT + 1;
+  int COMPONENT_IMPL__SUPER_TYPE = SYS_FEATURES_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Component Impl</em>' class.
@@ -509,7 +554,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_IMPL_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 2;
+  int COMPONENT_IMPL_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ComponentTypeImpl <em>Component Type</em>}' class.
@@ -522,13 +567,13 @@ public interface DepModelPackage extends EPackage
   int COMPONENT_TYPE = 13;
 
   /**
-   * The feature id for the '<em><b>Comp Type Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_TYPE__COMP_TYPE_NAME = SYS_FEATURES_DEC_FEATURE_COUNT + 0;
+  int COMPONENT_TYPE__NAME = SYS_FEATURES_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Component Features</b></em>' containment reference list.
@@ -537,7 +582,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_TYPE__COMPONENT_FEATURES = SYS_FEATURES_DEC_FEATURE_COUNT + 1;
+  int COMPONENT_TYPE__COMPONENT_FEATURES = SYS_FEATURES_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Component Type</em>' class.
@@ -546,7 +591,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_TYPE_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 2;
+  int COMPONENT_TYPE_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ComponentFeaturesDecImpl <em>Component Features Dec</em>}' class.
@@ -559,13 +604,22 @@ public interface DepModelPackage extends EPackage
   int COMPONENT_FEATURES_DEC = 14;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_FEATURES_DEC__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Component Features Dec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURES_DEC_FEATURE_COUNT = 0;
+  int COMPONENT_FEATURES_DEC_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.PortDecImpl <em>Port Dec</em>}' class.
@@ -576,6 +630,15 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   int PORT_DEC = 15;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PORT_DEC__NAME = COMPONENT_FEATURES_DEC__NAME;
 
   /**
    * The number of structural features of the '<em>Port Dec</em>' class.
@@ -597,13 +660,13 @@ public interface DepModelPackage extends EPackage
   int PORT_IN = 16;
 
   /**
-   * The feature id for the '<em><b>Port In Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT_IN__PORT_IN_NAME = PORT_DEC_FEATURE_COUNT + 0;
+  int PORT_IN__NAME = PORT_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Port In Super Type</b></em>' reference.
@@ -612,7 +675,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_IN__PORT_IN_SUPER_TYPE = PORT_DEC_FEATURE_COUNT + 1;
+  int PORT_IN__PORT_IN_SUPER_TYPE = PORT_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Port In</em>' class.
@@ -621,7 +684,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_IN_FEATURE_COUNT = PORT_DEC_FEATURE_COUNT + 2;
+  int PORT_IN_FEATURE_COUNT = PORT_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.PortOutImpl <em>Port Out</em>}' class.
@@ -634,13 +697,13 @@ public interface DepModelPackage extends EPackage
   int PORT_OUT = 17;
 
   /**
-   * The feature id for the '<em><b>Port Out Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT_OUT__PORT_OUT_NAME = PORT_DEC_FEATURE_COUNT + 0;
+  int PORT_OUT__NAME = PORT_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Port Out Super Type</b></em>' reference.
@@ -649,7 +712,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_OUT__PORT_OUT_SUPER_TYPE = PORT_DEC_FEATURE_COUNT + 1;
+  int PORT_OUT__PORT_OUT_SUPER_TYPE = PORT_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Port Out</em>' class.
@@ -658,7 +721,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_OUT_FEATURE_COUNT = PORT_DEC_FEATURE_COUNT + 2;
+  int PORT_OUT_FEATURE_COUNT = PORT_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ErrorModelDecImpl <em>Error Model Dec</em>}' class.
@@ -671,13 +734,13 @@ public interface DepModelPackage extends EPackage
   int ERROR_MODEL_DEC = 18;
 
   /**
-   * The feature id for the '<em><b>Error Model Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ERROR_MODEL_DEC__ERROR_MODEL_NAME = COMPONENT_FEATURES_DEC_FEATURE_COUNT + 0;
+  int ERROR_MODEL_DEC__NAME = COMPONENT_FEATURES_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Emodel Elements</b></em>' containment reference list.
@@ -686,7 +749,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ERROR_MODEL_DEC__EMODEL_ELEMENTS = COMPONENT_FEATURES_DEC_FEATURE_COUNT + 1;
+  int ERROR_MODEL_DEC__EMODEL_ELEMENTS = COMPONENT_FEATURES_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Error Model Dec</em>' class.
@@ -695,7 +758,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ERROR_MODEL_DEC_FEATURE_COUNT = COMPONENT_FEATURES_DEC_FEATURE_COUNT + 2;
+  int ERROR_MODEL_DEC_FEATURE_COUNT = COMPONENT_FEATURES_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ErrorModelElementImpl <em>Error Model Element</em>}' class.
@@ -708,13 +771,22 @@ public interface DepModelPackage extends EPackage
   int ERROR_MODEL_ELEMENT = 19;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ERROR_MODEL_ELEMENT__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Error Model Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ERROR_MODEL_ELEMENT_FEATURE_COUNT = 0;
+  int ERROR_MODEL_ELEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ErrorPortDecImpl <em>Error Port Dec</em>}' class.
@@ -725,6 +797,15 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   int ERROR_PORT_DEC = 20;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ERROR_PORT_DEC__NAME = ERROR_MODEL_ELEMENT__NAME;
 
   /**
    * The number of structural features of the '<em>Error Port Dec</em>' class.
@@ -746,13 +827,13 @@ public interface DepModelPackage extends EPackage
   int ERROR_PORT_IN = 21;
 
   /**
-   * The feature id for the '<em><b>Error Port In Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ERROR_PORT_IN__ERROR_PORT_IN_NAME = ERROR_PORT_DEC_FEATURE_COUNT + 0;
+  int ERROR_PORT_IN__NAME = ERROR_PORT_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Error Port In Super Type</b></em>' reference.
@@ -761,7 +842,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE = ERROR_PORT_DEC_FEATURE_COUNT + 1;
+  int ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE = ERROR_PORT_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Error Port In</em>' class.
@@ -770,7 +851,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ERROR_PORT_IN_FEATURE_COUNT = ERROR_PORT_DEC_FEATURE_COUNT + 2;
+  int ERROR_PORT_IN_FEATURE_COUNT = ERROR_PORT_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ErrorPortOutImpl <em>Error Port Out</em>}' class.
@@ -783,13 +864,13 @@ public interface DepModelPackage extends EPackage
   int ERROR_PORT_OUT = 22;
 
   /**
-   * The feature id for the '<em><b>Error Port Out Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ERROR_PORT_OUT__ERROR_PORT_OUT_NAME = ERROR_PORT_DEC_FEATURE_COUNT + 0;
+  int ERROR_PORT_OUT__NAME = ERROR_PORT_DEC__NAME;
 
   /**
    * The feature id for the '<em><b>Error Port Out Super Type</b></em>' reference.
@@ -798,7 +879,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE = ERROR_PORT_DEC_FEATURE_COUNT + 1;
+  int ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE = ERROR_PORT_DEC_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Error Port Out</em>' class.
@@ -807,7 +888,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ERROR_PORT_OUT_FEATURE_COUNT = ERROR_PORT_DEC_FEATURE_COUNT + 2;
+  int ERROR_PORT_OUT_FEATURE_COUNT = ERROR_PORT_DEC_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.StateDecImpl <em>State Dec</em>}' class.
@@ -820,13 +901,13 @@ public interface DepModelPackage extends EPackage
   int STATE_DEC = 23;
 
   /**
-   * The feature id for the '<em><b>State Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE_DEC__STATE_NAME = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
+  int STATE_DEC__NAME = ERROR_MODEL_ELEMENT__NAME;
 
   /**
    * The number of structural features of the '<em>State Dec</em>' class.
@@ -835,7 +916,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEC_FEATURE_COUNT = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 1;
+  int STATE_DEC_FEATURE_COUNT = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.TransitionDecImpl <em>Transition Dec</em>}' class.
@@ -848,13 +929,13 @@ public interface DepModelPackage extends EPackage
   int TRANSITION_DEC = 24;
 
   /**
-   * The feature id for the '<em><b>Event Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSITION_DEC__EVENT_NAME = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
+  int TRANSITION_DEC__NAME = ERROR_MODEL_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -863,7 +944,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSITION_DEC__FEATURES = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 1;
+  int TRANSITION_DEC__FEATURES = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Transition Dec</em>' class.
@@ -872,7 +953,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSITION_DEC_FEATURE_COUNT = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 2;
+  int TRANSITION_DEC_FEATURE_COUNT = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.TransitionFeatureDecImpl <em>Transition Feature Dec</em>}' class.
@@ -941,13 +1022,13 @@ public interface DepModelPackage extends EPackage
   int TRIGGER_DEC = 27;
 
   /**
-   * The feature id for the '<em><b>Trigger Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRIGGER_DEC__TRIGGER_NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
+  int TRIGGER_DEC__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Port Instance</b></em>' reference.
@@ -987,13 +1068,13 @@ public interface DepModelPackage extends EPackage
   int ACTION_DEC = 28;
 
   /**
-   * The feature id for the '<em><b>Action Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_DEC__ACTION_NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
+  int ACTION_DEC__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Port Instance</b></em>' reference.
@@ -1074,6 +1155,17 @@ public interface DepModelPackage extends EPackage
   EClass getAbstractElement();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.AbstractElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.depModel.AbstractElement#getName()
+   * @see #getAbstractElement()
+   * @generated
+   */
+  EAttribute getAbstractElement_Name();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.PortType <em>Port Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1084,15 +1176,15 @@ public interface DepModelPackage extends EPackage
   EClass getPortType();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.PortType#getPortName <em>Port Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.depModel.PortType#getEModes <em>EModes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Port Name</em>'.
-   * @see hu.bme.mit.depModel.PortType#getPortName()
+   * @return the meta object for the containment reference list '<em>EModes</em>'.
+   * @see hu.bme.mit.depModel.PortType#getEModes()
    * @see #getPortType()
    * @generated
    */
-  EAttribute getPortType_PortName();
+  EReference getPortType_EModes();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.ErrorModes <em>Error Modes</em>}'.
@@ -1105,15 +1197,15 @@ public interface DepModelPackage extends EPackage
   EClass getErrorModes();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ErrorModes#getErrorModeName <em>Error Mode Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ErrorModes#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Error Mode Name</em>'.
-   * @see hu.bme.mit.depModel.ErrorModes#getErrorModeName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.depModel.ErrorModes#getName()
    * @see #getErrorModes()
    * @generated
    */
-  EAttribute getErrorModes_ErrorModeName();
+  EAttribute getErrorModes_Name();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.ComponentModelDec <em>Component Model Dec</em>}'.
@@ -1134,17 +1226,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getSystemConnDec();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.SystemConnDec#getSysConnName <em>Sys Conn Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Sys Conn Name</em>'.
-   * @see hu.bme.mit.depModel.SystemConnDec#getSysConnName()
-   * @see #getSystemConnDec()
-   * @generated
-   */
-  EAttribute getSystemConnDec_SysConnName();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.SystemConnDec#getSourceSystem <em>Source System</em>}'.
@@ -1201,17 +1282,6 @@ public interface DepModelPackage extends EPackage
   EClass getSystemDec();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.SystemDec#getSysName <em>Sys Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Sys Name</em>'.
-   * @see hu.bme.mit.depModel.SystemDec#getSysName()
-   * @see #getSystemDec()
-   * @generated
-   */
-  EAttribute getSystemDec_SysName();
-
-  /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.depModel.SystemDec#getSysFeatures <em>Sys Features</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1233,6 +1303,17 @@ public interface DepModelPackage extends EPackage
   EClass getSysFeaturesDec();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.SysFeaturesDec#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.depModel.SysFeaturesDec#getName()
+   * @see #getSysFeaturesDec()
+   * @generated
+   */
+  EAttribute getSysFeaturesDec_Name();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.SystemPortDec <em>System Port Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1251,17 +1332,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getSystemPortIn();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.SystemPortIn#getSysPortInName <em>Sys Port In Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Sys Port In Name</em>'.
-   * @see hu.bme.mit.depModel.SystemPortIn#getSysPortInName()
-   * @see #getSystemPortIn()
-   * @generated
-   */
-  EAttribute getSystemPortIn_SysPortInName();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.SystemPortIn#getInComp <em>In Comp</em>}'.
@@ -1296,17 +1366,6 @@ public interface DepModelPackage extends EPackage
   EClass getSystemPortOut();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.SystemPortOut#getSysPortOutName <em>Sys Port Out Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Sys Port Out Name</em>'.
-   * @see hu.bme.mit.depModel.SystemPortOut#getSysPortOutName()
-   * @see #getSystemPortOut()
-   * @generated
-   */
-  EAttribute getSystemPortOut_SysPortOutName();
-
-  /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.SystemPortOut#getOutComp <em>Out Comp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1337,17 +1396,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getComponentConnDec();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ComponentConnDec#getCompConnName <em>Comp Conn Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comp Conn Name</em>'.
-   * @see hu.bme.mit.depModel.ComponentConnDec#getCompConnName()
-   * @see #getComponentConnDec()
-   * @generated
-   */
-  EAttribute getComponentConnDec_CompConnName();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ComponentConnDec#getSourceComp <em>Source Comp</em>}'.
@@ -1404,17 +1452,6 @@ public interface DepModelPackage extends EPackage
   EClass getComponentImpl();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ComponentImpl#getCompImplName <em>Comp Impl Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comp Impl Name</em>'.
-   * @see hu.bme.mit.depModel.ComponentImpl#getCompImplName()
-   * @see #getComponentImpl()
-   * @generated
-   */
-  EAttribute getComponentImpl_CompImplName();
-
-  /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ComponentImpl#getSuperType <em>Super Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1434,17 +1471,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getComponentType();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ComponentType#getCompTypeName <em>Comp Type Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Comp Type Name</em>'.
-   * @see hu.bme.mit.depModel.ComponentType#getCompTypeName()
-   * @see #getComponentType()
-   * @generated
-   */
-  EAttribute getComponentType_CompTypeName();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.depModel.ComponentType#getComponentFeatures <em>Component Features</em>}'.
@@ -1468,6 +1494,17 @@ public interface DepModelPackage extends EPackage
   EClass getComponentFeaturesDec();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ComponentFeaturesDec#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.depModel.ComponentFeaturesDec#getName()
+   * @see #getComponentFeaturesDec()
+   * @generated
+   */
+  EAttribute getComponentFeaturesDec_Name();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.PortDec <em>Port Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1486,17 +1523,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getPortIn();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.PortIn#getPortInName <em>Port In Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Port In Name</em>'.
-   * @see hu.bme.mit.depModel.PortIn#getPortInName()
-   * @see #getPortIn()
-   * @generated
-   */
-  EAttribute getPortIn_PortInName();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.PortIn#getPortInSuperType <em>Port In Super Type</em>}'.
@@ -1520,17 +1546,6 @@ public interface DepModelPackage extends EPackage
   EClass getPortOut();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.PortOut#getPortOutName <em>Port Out Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Port Out Name</em>'.
-   * @see hu.bme.mit.depModel.PortOut#getPortOutName()
-   * @see #getPortOut()
-   * @generated
-   */
-  EAttribute getPortOut_PortOutName();
-
-  /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.PortOut#getPortOutSuperType <em>Port Out Super Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1550,17 +1565,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getErrorModelDec();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ErrorModelDec#getErrorModelName <em>Error Model Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Error Model Name</em>'.
-   * @see hu.bme.mit.depModel.ErrorModelDec#getErrorModelName()
-   * @see #getErrorModelDec()
-   * @generated
-   */
-  EAttribute getErrorModelDec_ErrorModelName();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.depModel.ErrorModelDec#getEmodelElements <em>Emodel Elements</em>}'.
@@ -1584,6 +1588,17 @@ public interface DepModelPackage extends EPackage
   EClass getErrorModelElement();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ErrorModelElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.depModel.ErrorModelElement#getName()
+   * @see #getErrorModelElement()
+   * @generated
+   */
+  EAttribute getErrorModelElement_Name();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.ErrorPortDec <em>Error Port Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1602,17 +1617,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getErrorPortIn();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ErrorPortIn#getErrorPortInName <em>Error Port In Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Error Port In Name</em>'.
-   * @see hu.bme.mit.depModel.ErrorPortIn#getErrorPortInName()
-   * @see #getErrorPortIn()
-   * @generated
-   */
-  EAttribute getErrorPortIn_ErrorPortInName();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ErrorPortIn#getErrorPortInSuperType <em>Error Port In Super Type</em>}'.
@@ -1636,17 +1640,6 @@ public interface DepModelPackage extends EPackage
   EClass getErrorPortOut();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ErrorPortOut#getErrorPortOutName <em>Error Port Out Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Error Port Out Name</em>'.
-   * @see hu.bme.mit.depModel.ErrorPortOut#getErrorPortOutName()
-   * @see #getErrorPortOut()
-   * @generated
-   */
-  EAttribute getErrorPortOut_ErrorPortOutName();
-
-  /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ErrorPortOut#getErrorPortOutSuperType <em>Error Port Out Super Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1668,17 +1661,6 @@ public interface DepModelPackage extends EPackage
   EClass getStateDec();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.StateDec#getStateName <em>State Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>State Name</em>'.
-   * @see hu.bme.mit.depModel.StateDec#getStateName()
-   * @see #getStateDec()
-   * @generated
-   */
-  EAttribute getStateDec_StateName();
-
-  /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.TransitionDec <em>Transition Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1687,17 +1669,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getTransitionDec();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.TransitionDec#getEventName <em>Event Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Event Name</em>'.
-   * @see hu.bme.mit.depModel.TransitionDec#getEventName()
-   * @see #getTransitionDec()
-   * @generated
-   */
-  EAttribute getTransitionDec_EventName();
 
   /**
    * Returns the meta object for the containment reference list '{@link hu.bme.mit.depModel.TransitionDec#getFeatures <em>Features</em>}'.
@@ -1763,15 +1734,15 @@ public interface DepModelPackage extends EPackage
   EClass getTriggerDec();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.TriggerDec#getTriggerName <em>Trigger Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.TriggerDec#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Trigger Name</em>'.
-   * @see hu.bme.mit.depModel.TriggerDec#getTriggerName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.depModel.TriggerDec#getName()
    * @see #getTriggerDec()
    * @generated
    */
-  EAttribute getTriggerDec_TriggerName();
+  EAttribute getTriggerDec_Name();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.TriggerDec#getPortInstance <em>Port Instance</em>}'.
@@ -1806,15 +1777,15 @@ public interface DepModelPackage extends EPackage
   EClass getActionDec();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ActionDec#getActionName <em>Action Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ActionDec#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Action Name</em>'.
-   * @see hu.bme.mit.depModel.ActionDec#getActionName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see hu.bme.mit.depModel.ActionDec#getName()
    * @see #getActionDec()
    * @generated
    */
-  EAttribute getActionDec_ActionName();
+  EAttribute getActionDec_Name();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ActionDec#getPortInstance <em>Port Instance</em>}'.
@@ -1900,6 +1871,14 @@ public interface DepModelPackage extends EPackage
     EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT_ELEMENT__NAME = eINSTANCE.getAbstractElement_Name();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.PortTypeImpl <em>Port Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1910,12 +1889,12 @@ public interface DepModelPackage extends EPackage
     EClass PORT_TYPE = eINSTANCE.getPortType();
 
     /**
-     * The meta object literal for the '<em><b>Port Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>EModes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PORT_TYPE__PORT_NAME = eINSTANCE.getPortType_PortName();
+    EReference PORT_TYPE__EMODES = eINSTANCE.getPortType_EModes();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ErrorModesImpl <em>Error Modes</em>}' class.
@@ -1928,12 +1907,12 @@ public interface DepModelPackage extends EPackage
     EClass ERROR_MODES = eINSTANCE.getErrorModes();
 
     /**
-     * The meta object literal for the '<em><b>Error Mode Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ERROR_MODES__ERROR_MODE_NAME = eINSTANCE.getErrorModes_ErrorModeName();
+    EAttribute ERROR_MODES__NAME = eINSTANCE.getErrorModes_Name();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ComponentModelDecImpl <em>Component Model Dec</em>}' class.
@@ -1954,14 +1933,6 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass SYSTEM_CONN_DEC = eINSTANCE.getSystemConnDec();
-
-    /**
-     * The meta object literal for the '<em><b>Sys Conn Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SYSTEM_CONN_DEC__SYS_CONN_NAME = eINSTANCE.getSystemConnDec_SysConnName();
 
     /**
      * The meta object literal for the '<em><b>Source System</b></em>' reference feature.
@@ -2006,14 +1977,6 @@ public interface DepModelPackage extends EPackage
     EClass SYSTEM_DEC = eINSTANCE.getSystemDec();
 
     /**
-     * The meta object literal for the '<em><b>Sys Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SYSTEM_DEC__SYS_NAME = eINSTANCE.getSystemDec_SysName();
-
-    /**
      * The meta object literal for the '<em><b>Sys Features</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2030,6 +1993,14 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass SYS_FEATURES_DEC = eINSTANCE.getSysFeaturesDec();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYS_FEATURES_DEC__NAME = eINSTANCE.getSysFeaturesDec_Name();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.SystemPortDecImpl <em>System Port Dec</em>}' class.
@@ -2050,14 +2021,6 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass SYSTEM_PORT_IN = eINSTANCE.getSystemPortIn();
-
-    /**
-     * The meta object literal for the '<em><b>Sys Port In Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SYSTEM_PORT_IN__SYS_PORT_IN_NAME = eINSTANCE.getSystemPortIn_SysPortInName();
 
     /**
      * The meta object literal for the '<em><b>In Comp</b></em>' reference feature.
@@ -2086,14 +2049,6 @@ public interface DepModelPackage extends EPackage
     EClass SYSTEM_PORT_OUT = eINSTANCE.getSystemPortOut();
 
     /**
-     * The meta object literal for the '<em><b>Sys Port Out Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SYSTEM_PORT_OUT__SYS_PORT_OUT_NAME = eINSTANCE.getSystemPortOut_SysPortOutName();
-
-    /**
      * The meta object literal for the '<em><b>Out Comp</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2118,14 +2073,6 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass COMPONENT_CONN_DEC = eINSTANCE.getComponentConnDec();
-
-    /**
-     * The meta object literal for the '<em><b>Comp Conn Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPONENT_CONN_DEC__COMP_CONN_NAME = eINSTANCE.getComponentConnDec_CompConnName();
 
     /**
      * The meta object literal for the '<em><b>Source Comp</b></em>' reference feature.
@@ -2170,14 +2117,6 @@ public interface DepModelPackage extends EPackage
     EClass COMPONENT_IMPL = eINSTANCE.getComponentImpl();
 
     /**
-     * The meta object literal for the '<em><b>Comp Impl Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPONENT_IMPL__COMP_IMPL_NAME = eINSTANCE.getComponentImpl_CompImplName();
-
-    /**
      * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2196,14 +2135,6 @@ public interface DepModelPackage extends EPackage
     EClass COMPONENT_TYPE = eINSTANCE.getComponentType();
 
     /**
-     * The meta object literal for the '<em><b>Comp Type Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPONENT_TYPE__COMP_TYPE_NAME = eINSTANCE.getComponentType_CompTypeName();
-
-    /**
      * The meta object literal for the '<em><b>Component Features</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2220,6 +2151,14 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass COMPONENT_FEATURES_DEC = eINSTANCE.getComponentFeaturesDec();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_FEATURES_DEC__NAME = eINSTANCE.getComponentFeaturesDec_Name();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.PortDecImpl <em>Port Dec</em>}' class.
@@ -2242,14 +2181,6 @@ public interface DepModelPackage extends EPackage
     EClass PORT_IN = eINSTANCE.getPortIn();
 
     /**
-     * The meta object literal for the '<em><b>Port In Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PORT_IN__PORT_IN_NAME = eINSTANCE.getPortIn_PortInName();
-
-    /**
      * The meta object literal for the '<em><b>Port In Super Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2266,14 +2197,6 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass PORT_OUT = eINSTANCE.getPortOut();
-
-    /**
-     * The meta object literal for the '<em><b>Port Out Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PORT_OUT__PORT_OUT_NAME = eINSTANCE.getPortOut_PortOutName();
 
     /**
      * The meta object literal for the '<em><b>Port Out Super Type</b></em>' reference feature.
@@ -2294,14 +2217,6 @@ public interface DepModelPackage extends EPackage
     EClass ERROR_MODEL_DEC = eINSTANCE.getErrorModelDec();
 
     /**
-     * The meta object literal for the '<em><b>Error Model Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ERROR_MODEL_DEC__ERROR_MODEL_NAME = eINSTANCE.getErrorModelDec_ErrorModelName();
-
-    /**
      * The meta object literal for the '<em><b>Emodel Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2318,6 +2233,14 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass ERROR_MODEL_ELEMENT = eINSTANCE.getErrorModelElement();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ERROR_MODEL_ELEMENT__NAME = eINSTANCE.getErrorModelElement_Name();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ErrorPortDecImpl <em>Error Port Dec</em>}' class.
@@ -2340,14 +2263,6 @@ public interface DepModelPackage extends EPackage
     EClass ERROR_PORT_IN = eINSTANCE.getErrorPortIn();
 
     /**
-     * The meta object literal for the '<em><b>Error Port In Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ERROR_PORT_IN__ERROR_PORT_IN_NAME = eINSTANCE.getErrorPortIn_ErrorPortInName();
-
-    /**
      * The meta object literal for the '<em><b>Error Port In Super Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2364,14 +2279,6 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass ERROR_PORT_OUT = eINSTANCE.getErrorPortOut();
-
-    /**
-     * The meta object literal for the '<em><b>Error Port Out Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ERROR_PORT_OUT__ERROR_PORT_OUT_NAME = eINSTANCE.getErrorPortOut_ErrorPortOutName();
 
     /**
      * The meta object literal for the '<em><b>Error Port Out Super Type</b></em>' reference feature.
@@ -2392,14 +2299,6 @@ public interface DepModelPackage extends EPackage
     EClass STATE_DEC = eINSTANCE.getStateDec();
 
     /**
-     * The meta object literal for the '<em><b>State Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STATE_DEC__STATE_NAME = eINSTANCE.getStateDec_StateName();
-
-    /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.TransitionDecImpl <em>Transition Dec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2408,14 +2307,6 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass TRANSITION_DEC = eINSTANCE.getTransitionDec();
-
-    /**
-     * The meta object literal for the '<em><b>Event Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TRANSITION_DEC__EVENT_NAME = eINSTANCE.getTransitionDec_EventName();
 
     /**
      * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
@@ -2472,12 +2363,12 @@ public interface DepModelPackage extends EPackage
     EClass TRIGGER_DEC = eINSTANCE.getTriggerDec();
 
     /**
-     * The meta object literal for the '<em><b>Trigger Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRIGGER_DEC__TRIGGER_NAME = eINSTANCE.getTriggerDec_TriggerName();
+    EAttribute TRIGGER_DEC__NAME = eINSTANCE.getTriggerDec_Name();
 
     /**
      * The meta object literal for the '<em><b>Port Instance</b></em>' reference feature.
@@ -2506,12 +2397,12 @@ public interface DepModelPackage extends EPackage
     EClass ACTION_DEC = eINSTANCE.getActionDec();
 
     /**
-     * The meta object literal for the '<em><b>Action Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_DEC__ACTION_NAME = eINSTANCE.getActionDec_ActionName();
+    EAttribute ACTION_DEC__NAME = eINSTANCE.getActionDec_Name();
 
     /**
      * The meta object literal for the '<em><b>Port Instance</b></em>' reference feature.

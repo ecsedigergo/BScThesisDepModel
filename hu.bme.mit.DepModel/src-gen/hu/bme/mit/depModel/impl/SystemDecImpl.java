@@ -9,15 +9,12 @@ import hu.bme.mit.depModel.SystemDec;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.SystemDecImpl#getSysName <em>Sys Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.SystemDecImpl#getSysFeatures <em>Sys Features</em>}</li>
  * </ul>
  *
@@ -38,26 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SystemDecImpl extends ComponentModelDecImpl implements SystemDec
 {
-  /**
-   * The default value of the '{@link #getSysName() <em>Sys Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSysName()
-   * @generated
-   * @ordered
-   */
-  protected static final String SYS_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSysName() <em>Sys Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSysName()
-   * @generated
-   * @ordered
-   */
-  protected String sysName = SYS_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSysFeatures() <em>Sys Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -87,29 +63,6 @@ public class SystemDecImpl extends ComponentModelDecImpl implements SystemDec
   protected EClass eStaticClass()
   {
     return DepModelPackage.Literals.SYSTEM_DEC;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getSysName()
-  {
-    return sysName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSysName(String newSysName)
-  {
-    String oldSysName = sysName;
-    sysName = newSysName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.SYSTEM_DEC__SYS_NAME, oldSysName, sysName));
   }
 
   /**
@@ -152,8 +105,6 @@ public class SystemDecImpl extends ComponentModelDecImpl implements SystemDec
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_DEC__SYS_NAME:
-        return getSysName();
       case DepModelPackage.SYSTEM_DEC__SYS_FEATURES:
         return getSysFeatures();
     }
@@ -171,9 +122,6 @@ public class SystemDecImpl extends ComponentModelDecImpl implements SystemDec
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_DEC__SYS_NAME:
-        setSysName((String)newValue);
-        return;
       case DepModelPackage.SYSTEM_DEC__SYS_FEATURES:
         getSysFeatures().clear();
         getSysFeatures().addAll((Collection<? extends SysFeaturesDec>)newValue);
@@ -192,9 +140,6 @@ public class SystemDecImpl extends ComponentModelDecImpl implements SystemDec
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_DEC__SYS_NAME:
-        setSysName(SYS_NAME_EDEFAULT);
-        return;
       case DepModelPackage.SYSTEM_DEC__SYS_FEATURES:
         getSysFeatures().clear();
         return;
@@ -212,29 +157,10 @@ public class SystemDecImpl extends ComponentModelDecImpl implements SystemDec
   {
     switch (featureID)
     {
-      case DepModelPackage.SYSTEM_DEC__SYS_NAME:
-        return SYS_NAME_EDEFAULT == null ? sysName != null : !SYS_NAME_EDEFAULT.equals(sysName);
       case DepModelPackage.SYSTEM_DEC__SYS_FEATURES:
         return sysFeatures != null && !sysFeatures.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (SysName: ");
-    result.append(sysName);
-    result.append(')');
-    return result.toString();
   }
 
 } //SystemDecImpl

@@ -4,9 +4,15 @@
 package hu.bme.mit.scoping;
 
 import com.google.common.base.Objects;
+import hu.bme.mit.depModel.ActionDec;
+import hu.bme.mit.depModel.ComponentType;
 import hu.bme.mit.depModel.DepModelPackage;
+import hu.bme.mit.depModel.ErrorModes;
+import hu.bme.mit.depModel.PortDec;
 import hu.bme.mit.depModel.PortIn;
+import hu.bme.mit.depModel.PortOut;
 import hu.bme.mit.depModel.PortType;
+import hu.bme.mit.depModel.TriggerDec;
 import hu.bme.mit.scoping.AbstractDepModelScopeProvider;
 import java.util.List;
 import org.eclipse.emf.ecore.EObject;
@@ -25,13 +31,70 @@ import org.eclipse.xtext.scoping.Scopes;
 public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if ((context instanceof PortIn)) {
-      final PortIn port = ((PortIn) context);
-      boolean _equals = Objects.equal(reference, DepModelPackage.Literals.PORT_IN__PORT_IN_SUPER_TYPE);
+    if ((context instanceof TriggerDec)) {
+      final TriggerDec trigger = ((TriggerDec) context);
+      boolean _equals = Objects.equal(reference, DepModelPackage.Literals.TRIGGER_DEC__PORT_INSTANCE);
       if (_equals) {
-        final EObject rootElement = EcoreUtil2.getRootContainer(port);
-        final List<PortType> candidates_portType = EcoreUtil2.<PortType>getAllContentsOfType(rootElement, PortType.class);
-        return Scopes.scopeFor(candidates_portType);
+        final ComponentType compT = EcoreUtil2.<ComponentType>getContainerOfType(trigger, ComponentType.class);
+        boolean _equals_1 = Objects.equal(compT, null);
+        if (_equals_1) {
+          return IScope.NULLSCOPE;
+        }
+        final List<PortIn> portI = EcoreUtil2.<PortIn>getAllContentsOfType(compT, PortIn.class);
+        boolean _equals_2 = Objects.equal(portI, null);
+        if (_equals_2) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(portI);
+      }
+      boolean _equals_3 = Objects.equal(reference, DepModelPackage.Literals.TRIGGER_DEC__ERROR_MODE);
+      if (_equals_3) {
+        PortDec _portInstance = trigger.getPortInstance();
+        final PortIn portInImpl = EcoreUtil2.<PortIn>getContainerOfType(_portInstance, PortIn.class);
+        boolean _equals_4 = Objects.equal(portInImpl, null);
+        if (_equals_4) {
+          return IScope.NULLSCOPE;
+        }
+        PortType _portInSuperType = portInImpl.getPortInSuperType();
+        final List<ErrorModes> modes = EcoreUtil2.<ErrorModes>getAllContentsOfType(_portInSuperType, ErrorModes.class);
+        boolean _equals_5 = Objects.equal(modes, null);
+        if (_equals_5) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(modes);
+      }
+    }
+    if ((context instanceof ActionDec)) {
+      final ActionDec action = ((ActionDec) context);
+      boolean _equals_6 = Objects.equal(reference, DepModelPackage.Literals.ACTION_DEC__PORT_INSTANCE);
+      if (_equals_6) {
+        final ComponentType compT_1 = EcoreUtil2.<ComponentType>getContainerOfType(action, ComponentType.class);
+        boolean _equals_7 = Objects.equal(compT_1, null);
+        if (_equals_7) {
+          return IScope.NULLSCOPE;
+        }
+        final List<PortOut> portI_1 = EcoreUtil2.<PortOut>getAllContentsOfType(compT_1, PortOut.class);
+        boolean _equals_8 = Objects.equal(portI_1, null);
+        if (_equals_8) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(portI_1);
+      }
+      boolean _equals_9 = Objects.equal(reference, DepModelPackage.Literals.ACTION_DEC__ERROR_MODE);
+      if (_equals_9) {
+        PortDec _portInstance_1 = action.getPortInstance();
+        final PortOut portOutImpl = EcoreUtil2.<PortOut>getContainerOfType(_portInstance_1, PortOut.class);
+        boolean _equals_10 = Objects.equal(portOutImpl, null);
+        if (_equals_10) {
+          return IScope.NULLSCOPE;
+        }
+        PortType _portOutSuperType = portOutImpl.getPortOutSuperType();
+        final List<ErrorModes> modes_1 = EcoreUtil2.<ErrorModes>getAllContentsOfType(_portOutSuperType, ErrorModes.class);
+        boolean _equals_11 = Objects.equal(modes_1, null);
+        if (_equals_11) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(modes_1);
       }
     }
     return super.getScope(context, reference);

@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.TriggerDecImpl#getTriggerName <em>Trigger Name</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.impl.TriggerDecImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.TriggerDecImpl#getPortInstance <em>Port Instance</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.TriggerDecImpl#getErrorMode <em>Error Mode</em>}</li>
  * </ul>
@@ -33,24 +33,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class TriggerDecImpl extends TransitionFeatureDecImpl implements TriggerDec
 {
   /**
-   * The default value of the '{@link #getTriggerName() <em>Trigger Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTriggerName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String TRIGGER_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTriggerName() <em>Trigger Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTriggerName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String triggerName = TRIGGER_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPortInstance() <em>Port Instance</em>}' reference.
@@ -98,9 +98,9 @@ public class TriggerDecImpl extends TransitionFeatureDecImpl implements TriggerD
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTriggerName()
+  public String getName()
   {
-    return triggerName;
+    return name;
   }
 
   /**
@@ -108,12 +108,12 @@ public class TriggerDecImpl extends TransitionFeatureDecImpl implements TriggerD
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTriggerName(String newTriggerName)
+  public void setName(String newName)
   {
-    String oldTriggerName = triggerName;
-    triggerName = newTriggerName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.TRIGGER_DEC__TRIGGER_NAME, oldTriggerName, triggerName));
+      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.TRIGGER_DEC__NAME, oldName, name));
   }
 
   /**
@@ -212,8 +212,8 @@ public class TriggerDecImpl extends TransitionFeatureDecImpl implements TriggerD
   {
     switch (featureID)
     {
-      case DepModelPackage.TRIGGER_DEC__TRIGGER_NAME:
-        return getTriggerName();
+      case DepModelPackage.TRIGGER_DEC__NAME:
+        return getName();
       case DepModelPackage.TRIGGER_DEC__PORT_INSTANCE:
         if (resolve) return getPortInstance();
         return basicGetPortInstance();
@@ -234,8 +234,8 @@ public class TriggerDecImpl extends TransitionFeatureDecImpl implements TriggerD
   {
     switch (featureID)
     {
-      case DepModelPackage.TRIGGER_DEC__TRIGGER_NAME:
-        setTriggerName((String)newValue);
+      case DepModelPackage.TRIGGER_DEC__NAME:
+        setName((String)newValue);
         return;
       case DepModelPackage.TRIGGER_DEC__PORT_INSTANCE:
         setPortInstance((PortDec)newValue);
@@ -257,8 +257,8 @@ public class TriggerDecImpl extends TransitionFeatureDecImpl implements TriggerD
   {
     switch (featureID)
     {
-      case DepModelPackage.TRIGGER_DEC__TRIGGER_NAME:
-        setTriggerName(TRIGGER_NAME_EDEFAULT);
+      case DepModelPackage.TRIGGER_DEC__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case DepModelPackage.TRIGGER_DEC__PORT_INSTANCE:
         setPortInstance((PortDec)null);
@@ -280,8 +280,8 @@ public class TriggerDecImpl extends TransitionFeatureDecImpl implements TriggerD
   {
     switch (featureID)
     {
-      case DepModelPackage.TRIGGER_DEC__TRIGGER_NAME:
-        return TRIGGER_NAME_EDEFAULT == null ? triggerName != null : !TRIGGER_NAME_EDEFAULT.equals(triggerName);
+      case DepModelPackage.TRIGGER_DEC__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DepModelPackage.TRIGGER_DEC__PORT_INSTANCE:
         return portInstance != null;
       case DepModelPackage.TRIGGER_DEC__ERROR_MODE:
@@ -301,8 +301,8 @@ public class TriggerDecImpl extends TransitionFeatureDecImpl implements TriggerD
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (TriggerName: ");
-    result.append(triggerName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

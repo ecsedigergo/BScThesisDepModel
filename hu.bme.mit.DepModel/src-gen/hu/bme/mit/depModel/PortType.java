@@ -3,6 +3,7 @@
  */
 package hu.bme.mit.depModel;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +14,7 @@ package hu.bme.mit.depModel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.PortType#getPortName <em>Port Name</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.PortType#getEModes <em>EModes</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.depModel.DepModelPackage#getPortType()
@@ -23,29 +24,19 @@ package hu.bme.mit.depModel;
 public interface PortType extends AbstractElement
 {
   /**
-   * Returns the value of the '<em><b>Port Name</b></em>' attribute.
+   * Returns the value of the '<em><b>EModes</b></em>' containment reference list.
+   * The list contents are of type {@link hu.bme.mit.depModel.ErrorModes}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Port Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>EModes</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Port Name</em>' attribute.
-   * @see #setPortName(String)
-   * @see hu.bme.mit.depModel.DepModelPackage#getPortType_PortName()
-   * @model
+   * @return the value of the '<em>EModes</em>' containment reference list.
+   * @see hu.bme.mit.depModel.DepModelPackage#getPortType_EModes()
+   * @model containment="true"
    * @generated
    */
-  String getPortName();
-
-  /**
-   * Sets the value of the '{@link hu.bme.mit.depModel.PortType#getPortName <em>Port Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port Name</em>' attribute.
-   * @see #getPortName()
-   * @generated
-   */
-  void setPortName(String value);
+  EList<ErrorModes> getEModes();
 
 } // PortType
