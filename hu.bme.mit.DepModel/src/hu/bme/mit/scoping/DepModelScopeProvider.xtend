@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.scoping.Scopes
-import org.eclipse.xtext.scoping.impl.FilteringScope
 
 /**
  * This class contains custom scoping description.
@@ -19,14 +18,20 @@ import org.eclipse.xtext.scoping.impl.FilteringScope
  * on how and when to use it.
  */
 class DepModelScopeProvider extends AbstractDepModelScopeProvider {
-	override getScope(EObject context, EReference reference) {
-		if (context instanceof PortIn && reference == DepModelPackage.Literals.PORT_IN__PORT_IN_SUPER_TYPE) {
-			val rootElement = EcoreUtil2.getRootContainer(context)
-			val candidates_portType = EcoreUtil2.getAllContentsOfType(rootElement, PortType)
-			return Scopes.scopeFor(candidates_portType)
-			//val existingScope = Scopes.scopeFor(candidates_portType)
-			//return new FilteringScope(existingScope, [getEObjectOrProxy != context])
 
+
+	override getScope(EObject context, EReference reference) {
+		if (context instanceof PortIn) {
+			val port = context as PortIn
+			if (reference == DepModelPackage.Literals.PORT_IN__PORT_IN_SUPER_TYPE) {
+				val rootElement = EcoreUtil2.getRootContainer(port)
+				val candidates_portType = EcoreUtil2.getAllContentsOfType(rootElement,PortType)
+				//val ize = EcoreUtil2.getAllProperContents(candidates_portType,false)
+				return Scopes.scopeFor(candidates_portType)
+				
+			}
+		// val existingScope = Scopes.scopeFor(candidates_portType)
+		// return new FilteringScope(existingScope, [getEObjectOrProxy != context])
 		}
 		return super.getScope(context, reference)
 	}

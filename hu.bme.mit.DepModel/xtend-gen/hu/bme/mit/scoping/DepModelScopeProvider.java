@@ -25,17 +25,14 @@ import org.eclipse.xtext.scoping.Scopes;
 public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    boolean _and = false;
-    if (!(context instanceof PortIn)) {
-      _and = false;
-    } else {
+    if ((context instanceof PortIn)) {
+      final PortIn port = ((PortIn) context);
       boolean _equals = Objects.equal(reference, DepModelPackage.Literals.PORT_IN__PORT_IN_SUPER_TYPE);
-      _and = _equals;
-    }
-    if (_and) {
-      final EObject rootElement = EcoreUtil2.getRootContainer(context);
-      final List<PortType> candidates_portType = EcoreUtil2.<PortType>getAllContentsOfType(rootElement, PortType.class);
-      return Scopes.scopeFor(candidates_portType);
+      if (_equals) {
+        final EObject rootElement = EcoreUtil2.getRootContainer(port);
+        final List<PortType> candidates_portType = EcoreUtil2.<PortType>getAllContentsOfType(rootElement, PortType.class);
+        return Scopes.scopeFor(candidates_portType);
+      }
     }
     return super.getScope(context, reference);
   }

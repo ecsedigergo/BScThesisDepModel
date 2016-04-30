@@ -91,9 +91,6 @@ ErrorPortOut:
 	'error' 'port' 'in' ErrorPortOutName=QualifiedName ':' ErrorPortOutSuperType=[PortType]
 ;
 
-
-
-
 StateDec:
 	'error' 'state' StateName=QualifiedName;
 

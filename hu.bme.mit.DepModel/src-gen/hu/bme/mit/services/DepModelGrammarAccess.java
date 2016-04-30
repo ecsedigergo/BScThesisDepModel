@@ -96,13 +96,12 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//PortType:
-		//	'port' 'type' PortName=QualifiedName '{'
-		//	//(eModes=ErrorModes)*
-		//	'}';
+		//	'port' 'type' PortName=QualifiedName '{' //(eModes=ErrorModes)*
+		// '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'port' 'type' PortName=QualifiedName '{' //(eModes=ErrorModes)*
-		//'}'
+		// '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'port'
@@ -121,7 +120,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		////(eModes=ErrorModes)*
-		//'}'
+		// '}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class ErrorModesElements extends AbstractParserRuleElementFinder {
@@ -158,7 +157,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSystemDecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		////Component Model ********************************************************************
-		//ComponentModelDec:
+		// ComponentModelDec:
 		//	SystemConnDec | SystemDec;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -196,8 +195,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTargetPortSystemPortDecIDTerminalRuleCall_10_0_1 = (RuleCall)cTargetPortSystemPortDecCrossReference_10_0.eContents().get(1);
 		
 		//SystemConnDec:
-		//	'system' 'connection' SysConnName=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
-		//	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
+		//	'system' 'connection' SysConnName=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec] 'to'
+		//	targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'system' 'connection' SysConnName=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec] 'to'
@@ -277,9 +276,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SystemDec:
-		//	'system' 'declaration' SysName=QualifiedName '{'
-		//	sysFeatures+=SysFeaturesDec*
-		//	'}';
+		//	'system' 'declaration' SysName=QualifiedName '{' sysFeatures+=SysFeaturesDec* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'system' 'declaration' SysName=QualifiedName '{' sysFeatures+=SysFeaturesDec* '}'
@@ -506,8 +503,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTargetPortPortInIDTerminalRuleCall_10_0_1 = (RuleCall)cTargetPortPortInCrossReference_10_0.eContents().get(1);
 		
 		//ComponentConnDec:
-		//	'component' 'connection' CompConnName=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut]
-		//	'to' targetComp=[ComponentImpl] '.' targetPort=[PortIn];
+		//	'component' 'connection' CompConnName=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
+		//	targetComp=[ComponentImpl] '.' targetPort=[PortIn];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'component' 'connection' CompConnName=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
@@ -630,9 +627,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ComponentType:
-		//	'component' 'type' CompTypeName=QualifiedName '{'
-		//	componentFeatures+=ComponentFeaturesDec*
-		//	'}';
+		//	'component' 'type' CompTypeName=QualifiedName '{' componentFeatures+=ComponentFeaturesDec* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'component' 'type' CompTypeName=QualifiedName '{' componentFeatures+=ComponentFeaturesDec* '}'
@@ -807,10 +802,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		////Error Model *********************************
-		//ErrorModelDec:
-		//	'error' 'model' ErrorModelName=QualifiedName '{'
-		//	emodelElements+=ErrorModelElement*
-		//	'}';
+		// ErrorModelDec:
+		//	'error' 'model' ErrorModelName=QualifiedName '{' emodelElements+=ErrorModelElement* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'error' 'model' ErrorModelName=QualifiedName '{' emodelElements+=ErrorModelElement* '}'
@@ -1015,9 +1008,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TransitionDec:
-		//	'transition' EventName=QualifiedName '{'
-		//	Features+=TransitionFeatureDec*
-		//	'}';
+		//	'transition' EventName=QualifiedName '{' Features+=TransitionFeatureDec* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'transition' EventName=QualifiedName '{' Features+=TransitionFeatureDec* '}'
@@ -1393,9 +1384,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PortType:
-	//	'port' 'type' PortName=QualifiedName '{'
-	//	//(eModes=ErrorModes)*
-	//	'}';
+	//	'port' 'type' PortName=QualifiedName '{' //(eModes=ErrorModes)*
+	// '}';
 	public PortTypeElements getPortTypeAccess() {
 		return pPortType;
 	}
@@ -1415,7 +1405,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	////Component Model ********************************************************************
-	//ComponentModelDec:
+	// ComponentModelDec:
 	//	SystemConnDec | SystemDec;
 	public ComponentModelDecElements getComponentModelDecAccess() {
 		return pComponentModelDec;
@@ -1426,8 +1416,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SystemConnDec:
-	//	'system' 'connection' SysConnName=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
-	//	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
+	//	'system' 'connection' SysConnName=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec] 'to'
+	//	targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
 	public SystemConnDecElements getSystemConnDecAccess() {
 		return pSystemConnDec;
 	}
@@ -1437,9 +1427,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SystemDec:
-	//	'system' 'declaration' SysName=QualifiedName '{'
-	//	sysFeatures+=SysFeaturesDec*
-	//	'}';
+	//	'system' 'declaration' SysName=QualifiedName '{' sysFeatures+=SysFeaturesDec* '}';
 	public SystemDecElements getSystemDecAccess() {
 		return pSystemDec;
 	}
@@ -1489,8 +1477,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ComponentConnDec:
-	//	'component' 'connection' CompConnName=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut]
-	//	'to' targetComp=[ComponentImpl] '.' targetPort=[PortIn];
+	//	'component' 'connection' CompConnName=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
+	//	targetComp=[ComponentImpl] '.' targetPort=[PortIn];
 	public ComponentConnDecElements getComponentConnDecAccess() {
 		return pComponentConnDec;
 	}
@@ -1510,9 +1498,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ComponentType:
-	//	'component' 'type' CompTypeName=QualifiedName '{'
-	//	componentFeatures+=ComponentFeaturesDec*
-	//	'}';
+	//	'component' 'type' CompTypeName=QualifiedName '{' componentFeatures+=ComponentFeaturesDec* '}';
 	public ComponentTypeElements getComponentTypeAccess() {
 		return pComponentType;
 	}
@@ -1562,10 +1548,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	////Error Model *********************************
-	//ErrorModelDec:
-	//	'error' 'model' ErrorModelName=QualifiedName '{'
-	//	emodelElements+=ErrorModelElement*
-	//	'}';
+	// ErrorModelDec:
+	//	'error' 'model' ErrorModelName=QualifiedName '{' emodelElements+=ErrorModelElement* '}';
 	public ErrorModelDecElements getErrorModelDecAccess() {
 		return pErrorModelDec;
 	}
@@ -1625,9 +1609,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TransitionDec:
-	//	'transition' EventName=QualifiedName '{'
-	//	Features+=TransitionFeatureDec*
-	//	'}';
+	//	'transition' EventName=QualifiedName '{' Features+=TransitionFeatureDec* '}';
 	public TransitionDecElements getTransitionDecAccess() {
 		return pTransitionDec;
 	}
