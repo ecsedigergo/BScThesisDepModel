@@ -204,40 +204,13 @@ public interface DepModelFactory extends EFactory
   ErrorModelElement createErrorModelElement();
 
   /**
-   * Returns a new object of class '<em>Error Port Dec</em>'.
+   * Returns a new object of class '<em>State</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Error Port Dec</em>'.
+   * @return a new object of class '<em>State</em>'.
    * @generated
    */
-  ErrorPortDec createErrorPortDec();
-
-  /**
-   * Returns a new object of class '<em>Error Port In</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Error Port In</em>'.
-   * @generated
-   */
-  ErrorPortIn createErrorPortIn();
-
-  /**
-   * Returns a new object of class '<em>Error Port Out</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Error Port Out</em>'.
-   * @generated
-   */
-  ErrorPortOut createErrorPortOut();
-
-  /**
-   * Returns a new object of class '<em>State Dec</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>State Dec</em>'.
-   * @generated
-   */
-  StateDec createStateDec();
+  State createState();
 
   /**
    * Returns a new object of class '<em>Transition Dec</em>'.
@@ -267,31 +240,31 @@ public interface DepModelFactory extends EFactory
   TransitionState createTransitionState();
 
   /**
-   * Returns a new object of class '<em>Trigger Dec</em>'.
+   * Returns a new object of class '<em>Trigger</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Trigger Dec</em>'.
+   * @return a new object of class '<em>Trigger</em>'.
    * @generated
    */
-  TriggerDec createTriggerDec();
+  Trigger createTrigger();
 
   /**
-   * Returns a new object of class '<em>Action Dec</em>'.
+   * Returns a new object of class '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Dec</em>'.
+   * @return a new object of class '<em>Action</em>'.
    * @generated
    */
-  ActionDec createActionDec();
+  Action createAction();
 
   /**
-   * Returns a new object of class '<em>Occurrence Dec</em>'.
+   * Returns a new object of class '<em>Occurrence</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Occurrence Dec</em>'.
+   * @return a new object of class '<em>Occurrence</em>'.
    * @generated
    */
-  OccurrenceDec createOccurrenceDec();
+  Occurrence createOccurrence();
 
   /**
    * Returns the package supported by this factory.

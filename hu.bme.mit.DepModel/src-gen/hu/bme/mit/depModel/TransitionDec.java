@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.TransitionDec#getFeatures <em>Features</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.TransitionDec#getTransFeatures <em>Trans Features</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.depModel.DepModelPackage#getTransitionDec()
@@ -24,19 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface TransitionDec extends ErrorModelElement
 {
   /**
-   * Returns the value of the '<em><b>Features</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Trans Features</b></em>' containment reference list.
    * The list contents are of type {@link hu.bme.mit.depModel.TransitionFeatureDec}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Trans Features</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Features</em>' containment reference list.
-   * @see hu.bme.mit.depModel.DepModelPackage#getTransitionDec_Features()
+   * @return the value of the '<em>Trans Features</em>' containment reference list.
+   * @see hu.bme.mit.depModel.DepModelPackage#getTransitionDec_TransFeatures()
    * @model containment="true"
    * @generated
    */
-  EList<TransitionFeatureDec> getFeatures();
+  EList<TransitionFeatureDec> getTransFeatures();
 
 } // TransitionDec

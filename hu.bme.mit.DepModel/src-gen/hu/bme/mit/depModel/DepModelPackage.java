@@ -789,14 +789,14 @@ public interface DepModelPackage extends EPackage
   int ERROR_MODEL_ELEMENT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.depModel.impl.ErrorPortDecImpl <em>Error Port Dec</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.depModel.impl.StateImpl <em>State</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.depModel.impl.ErrorPortDecImpl
-   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getErrorPortDec()
+   * @see hu.bme.mit.depModel.impl.StateImpl
+   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getState()
    * @generated
    */
-  int ERROR_PORT_DEC = 20;
+  int STATE = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -805,118 +805,16 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ERROR_PORT_DEC__NAME = ERROR_MODEL_ELEMENT__NAME;
+  int STATE__NAME = ERROR_MODEL_ELEMENT__NAME;
 
   /**
-   * The number of structural features of the '<em>Error Port Dec</em>' class.
+   * The number of structural features of the '<em>State</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ERROR_PORT_DEC_FEATURE_COUNT = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.depModel.impl.ErrorPortInImpl <em>Error Port In</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.depModel.impl.ErrorPortInImpl
-   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getErrorPortIn()
-   * @generated
-   */
-  int ERROR_PORT_IN = 21;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ERROR_PORT_IN__NAME = ERROR_PORT_DEC__NAME;
-
-  /**
-   * The feature id for the '<em><b>Error Port In Super Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE = ERROR_PORT_DEC_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Error Port In</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ERROR_PORT_IN_FEATURE_COUNT = ERROR_PORT_DEC_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.depModel.impl.ErrorPortOutImpl <em>Error Port Out</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.depModel.impl.ErrorPortOutImpl
-   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getErrorPortOut()
-   * @generated
-   */
-  int ERROR_PORT_OUT = 22;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ERROR_PORT_OUT__NAME = ERROR_PORT_DEC__NAME;
-
-  /**
-   * The feature id for the '<em><b>Error Port Out Super Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE = ERROR_PORT_DEC_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Error Port Out</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ERROR_PORT_OUT_FEATURE_COUNT = ERROR_PORT_DEC_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link hu.bme.mit.depModel.impl.StateDecImpl <em>State Dec</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see hu.bme.mit.depModel.impl.StateDecImpl
-   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getStateDec()
-   * @generated
-   */
-  int STATE_DEC = 23;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATE_DEC__NAME = ERROR_MODEL_ELEMENT__NAME;
-
-  /**
-   * The number of structural features of the '<em>State Dec</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATE_DEC_FEATURE_COUNT = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
+  int STATE_FEATURE_COUNT = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.TransitionDecImpl <em>Transition Dec</em>}' class.
@@ -926,7 +824,7 @@ public interface DepModelPackage extends EPackage
    * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getTransitionDec()
    * @generated
    */
-  int TRANSITION_DEC = 24;
+  int TRANSITION_DEC = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -938,13 +836,13 @@ public interface DepModelPackage extends EPackage
   int TRANSITION_DEC__NAME = ERROR_MODEL_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Features</b></em>' containment reference list.
+   * The feature id for the '<em><b>Trans Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSITION_DEC__FEATURES = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
+  int TRANSITION_DEC__TRANS_FEATURES = ERROR_MODEL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Transition Dec</em>' class.
@@ -963,7 +861,7 @@ public interface DepModelPackage extends EPackage
    * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getTransitionFeatureDec()
    * @generated
    */
-  int TRANSITION_FEATURE_DEC = 25;
+  int TRANSITION_FEATURE_DEC = 22;
 
   /**
    * The number of structural features of the '<em>Transition Feature Dec</em>' class.
@@ -982,7 +880,7 @@ public interface DepModelPackage extends EPackage
    * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getTransitionState()
    * @generated
    */
-  int TRANSITION_STATE = 26;
+  int TRANSITION_STATE = 23;
 
   /**
    * The feature id for the '<em><b>Source State</b></em>' reference.
@@ -1012,14 +910,14 @@ public interface DepModelPackage extends EPackage
   int TRANSITION_STATE_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.depModel.impl.TriggerDecImpl <em>Trigger Dec</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.depModel.impl.TriggerImpl <em>Trigger</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.depModel.impl.TriggerDecImpl
-   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getTriggerDec()
+   * @see hu.bme.mit.depModel.impl.TriggerImpl
+   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getTrigger()
    * @generated
    */
-  int TRIGGER_DEC = 27;
+  int TRIGGER = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1028,7 +926,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRIGGER_DEC__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
+  int TRIGGER__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Port Instance</b></em>' reference.
@@ -1037,7 +935,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRIGGER_DEC__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
+  int TRIGGER__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Error Mode</b></em>' reference.
@@ -1046,26 +944,26 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRIGGER_DEC__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
+  int TRIGGER__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Trigger Dec</em>' class.
+   * The number of structural features of the '<em>Trigger</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRIGGER_DEC_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 3;
+  int TRIGGER_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.depModel.impl.ActionDecImpl <em>Action Dec</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.depModel.impl.ActionImpl <em>Action</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.depModel.impl.ActionDecImpl
-   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getActionDec()
+   * @see hu.bme.mit.depModel.impl.ActionImpl
+   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getAction()
    * @generated
    */
-  int ACTION_DEC = 28;
+  int ACTION = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1074,7 +972,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEC__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
+  int ACTION__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Port Instance</b></em>' reference.
@@ -1083,7 +981,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEC__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
+  int ACTION__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Error Mode</b></em>' reference.
@@ -1092,35 +990,35 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEC__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
+  int ACTION__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Action Dec</em>' class.
+   * The number of structural features of the '<em>Action</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_DEC_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 3;
+  int ACTION_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link hu.bme.mit.depModel.impl.OccurrenceDecImpl <em>Occurrence Dec</em>}' class.
+   * The meta object id for the '{@link hu.bme.mit.depModel.impl.OccurrenceImpl <em>Occurrence</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see hu.bme.mit.depModel.impl.OccurrenceDecImpl
-   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getOccurrenceDec()
+   * @see hu.bme.mit.depModel.impl.OccurrenceImpl
+   * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getOccurrence()
    * @generated
    */
-  int OCCURRENCE_DEC = 29;
+  int OCCURRENCE = 26;
 
   /**
-   * The number of structural features of the '<em>Occurrence Dec</em>' class.
+   * The number of structural features of the '<em>Occurrence</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEC_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
+  int OCCURRENCE_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
 
   /**
@@ -1599,66 +1497,14 @@ public interface DepModelPackage extends EPackage
   EAttribute getErrorModelElement_Name();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.depModel.ErrorPortDec <em>Error Port Dec</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.depModel.State <em>State</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Error Port Dec</em>'.
-   * @see hu.bme.mit.depModel.ErrorPortDec
+   * @return the meta object for class '<em>State</em>'.
+   * @see hu.bme.mit.depModel.State
    * @generated
    */
-  EClass getErrorPortDec();
-
-  /**
-   * Returns the meta object for class '{@link hu.bme.mit.depModel.ErrorPortIn <em>Error Port In</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Error Port In</em>'.
-   * @see hu.bme.mit.depModel.ErrorPortIn
-   * @generated
-   */
-  EClass getErrorPortIn();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ErrorPortIn#getErrorPortInSuperType <em>Error Port In Super Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Error Port In Super Type</em>'.
-   * @see hu.bme.mit.depModel.ErrorPortIn#getErrorPortInSuperType()
-   * @see #getErrorPortIn()
-   * @generated
-   */
-  EReference getErrorPortIn_ErrorPortInSuperType();
-
-  /**
-   * Returns the meta object for class '{@link hu.bme.mit.depModel.ErrorPortOut <em>Error Port Out</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Error Port Out</em>'.
-   * @see hu.bme.mit.depModel.ErrorPortOut
-   * @generated
-   */
-  EClass getErrorPortOut();
-
-  /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ErrorPortOut#getErrorPortOutSuperType <em>Error Port Out Super Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Error Port Out Super Type</em>'.
-   * @see hu.bme.mit.depModel.ErrorPortOut#getErrorPortOutSuperType()
-   * @see #getErrorPortOut()
-   * @generated
-   */
-  EReference getErrorPortOut_ErrorPortOutSuperType();
-
-  /**
-   * Returns the meta object for class '{@link hu.bme.mit.depModel.StateDec <em>State Dec</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>State Dec</em>'.
-   * @see hu.bme.mit.depModel.StateDec
-   * @generated
-   */
-  EClass getStateDec();
+  EClass getState();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.TransitionDec <em>Transition Dec</em>}'.
@@ -1671,15 +1517,15 @@ public interface DepModelPackage extends EPackage
   EClass getTransitionDec();
 
   /**
-   * Returns the meta object for the containment reference list '{@link hu.bme.mit.depModel.TransitionDec#getFeatures <em>Features</em>}'.
+   * Returns the meta object for the containment reference list '{@link hu.bme.mit.depModel.TransitionDec#getTransFeatures <em>Trans Features</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Features</em>'.
-   * @see hu.bme.mit.depModel.TransitionDec#getFeatures()
+   * @return the meta object for the containment reference list '<em>Trans Features</em>'.
+   * @see hu.bme.mit.depModel.TransitionDec#getTransFeatures()
    * @see #getTransitionDec()
    * @generated
    */
-  EReference getTransitionDec_Features();
+  EReference getTransitionDec_TransFeatures();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.TransitionFeatureDec <em>Transition Feature Dec</em>}'.
@@ -1724,100 +1570,100 @@ public interface DepModelPackage extends EPackage
   EReference getTransitionState_TargetState();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.depModel.TriggerDec <em>Trigger Dec</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.depModel.Trigger <em>Trigger</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Trigger Dec</em>'.
-   * @see hu.bme.mit.depModel.TriggerDec
+   * @return the meta object for class '<em>Trigger</em>'.
+   * @see hu.bme.mit.depModel.Trigger
    * @generated
    */
-  EClass getTriggerDec();
+  EClass getTrigger();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.TriggerDec#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.Trigger#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.depModel.TriggerDec#getName()
-   * @see #getTriggerDec()
+   * @see hu.bme.mit.depModel.Trigger#getName()
+   * @see #getTrigger()
    * @generated
    */
-  EAttribute getTriggerDec_Name();
+  EAttribute getTrigger_Name();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.TriggerDec#getPortInstance <em>Port Instance</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.Trigger#getPortInstance <em>Port Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Port Instance</em>'.
-   * @see hu.bme.mit.depModel.TriggerDec#getPortInstance()
-   * @see #getTriggerDec()
+   * @see hu.bme.mit.depModel.Trigger#getPortInstance()
+   * @see #getTrigger()
    * @generated
    */
-  EReference getTriggerDec_PortInstance();
+  EReference getTrigger_PortInstance();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.TriggerDec#getErrorMode <em>Error Mode</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.Trigger#getErrorMode <em>Error Mode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Error Mode</em>'.
-   * @see hu.bme.mit.depModel.TriggerDec#getErrorMode()
-   * @see #getTriggerDec()
+   * @see hu.bme.mit.depModel.Trigger#getErrorMode()
+   * @see #getTrigger()
    * @generated
    */
-  EReference getTriggerDec_ErrorMode();
+  EReference getTrigger_ErrorMode();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.depModel.ActionDec <em>Action Dec</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.depModel.Action <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Dec</em>'.
-   * @see hu.bme.mit.depModel.ActionDec
+   * @return the meta object for class '<em>Action</em>'.
+   * @see hu.bme.mit.depModel.Action
    * @generated
    */
-  EClass getActionDec();
+  EClass getAction();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ActionDec#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.Action#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.depModel.ActionDec#getName()
-   * @see #getActionDec()
+   * @see hu.bme.mit.depModel.Action#getName()
+   * @see #getAction()
    * @generated
    */
-  EAttribute getActionDec_Name();
+  EAttribute getAction_Name();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ActionDec#getPortInstance <em>Port Instance</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.Action#getPortInstance <em>Port Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Port Instance</em>'.
-   * @see hu.bme.mit.depModel.ActionDec#getPortInstance()
-   * @see #getActionDec()
+   * @see hu.bme.mit.depModel.Action#getPortInstance()
+   * @see #getAction()
    * @generated
    */
-  EReference getActionDec_PortInstance();
+  EReference getAction_PortInstance();
 
   /**
-   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.ActionDec#getErrorMode <em>Error Mode</em>}'.
+   * Returns the meta object for the reference '{@link hu.bme.mit.depModel.Action#getErrorMode <em>Error Mode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Error Mode</em>'.
-   * @see hu.bme.mit.depModel.ActionDec#getErrorMode()
-   * @see #getActionDec()
+   * @see hu.bme.mit.depModel.Action#getErrorMode()
+   * @see #getAction()
    * @generated
    */
-  EReference getActionDec_ErrorMode();
+  EReference getAction_ErrorMode();
 
   /**
-   * Returns the meta object for class '{@link hu.bme.mit.depModel.OccurrenceDec <em>Occurrence Dec</em>}'.
+   * Returns the meta object for class '{@link hu.bme.mit.depModel.Occurrence <em>Occurrence</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Occurrence Dec</em>'.
-   * @see hu.bme.mit.depModel.OccurrenceDec
+   * @return the meta object for class '<em>Occurrence</em>'.
+   * @see hu.bme.mit.depModel.Occurrence
    * @generated
    */
-  EClass getOccurrenceDec();
+  EClass getOccurrence();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2243,60 +2089,14 @@ public interface DepModelPackage extends EPackage
     EAttribute ERROR_MODEL_ELEMENT__NAME = eINSTANCE.getErrorModelElement_Name();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ErrorPortDecImpl <em>Error Port Dec</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.StateImpl <em>State</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.depModel.impl.ErrorPortDecImpl
-     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getErrorPortDec()
+     * @see hu.bme.mit.depModel.impl.StateImpl
+     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getState()
      * @generated
      */
-    EClass ERROR_PORT_DEC = eINSTANCE.getErrorPortDec();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ErrorPortInImpl <em>Error Port In</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.depModel.impl.ErrorPortInImpl
-     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getErrorPortIn()
-     * @generated
-     */
-    EClass ERROR_PORT_IN = eINSTANCE.getErrorPortIn();
-
-    /**
-     * The meta object literal for the '<em><b>Error Port In Super Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE = eINSTANCE.getErrorPortIn_ErrorPortInSuperType();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ErrorPortOutImpl <em>Error Port Out</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.depModel.impl.ErrorPortOutImpl
-     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getErrorPortOut()
-     * @generated
-     */
-    EClass ERROR_PORT_OUT = eINSTANCE.getErrorPortOut();
-
-    /**
-     * The meta object literal for the '<em><b>Error Port Out Super Type</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE = eINSTANCE.getErrorPortOut_ErrorPortOutSuperType();
-
-    /**
-     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.StateDecImpl <em>State Dec</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see hu.bme.mit.depModel.impl.StateDecImpl
-     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getStateDec()
-     * @generated
-     */
-    EClass STATE_DEC = eINSTANCE.getStateDec();
+    EClass STATE = eINSTANCE.getState();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.TransitionDecImpl <em>Transition Dec</em>}' class.
@@ -2309,12 +2109,12 @@ public interface DepModelPackage extends EPackage
     EClass TRANSITION_DEC = eINSTANCE.getTransitionDec();
 
     /**
-     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Trans Features</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRANSITION_DEC__FEATURES = eINSTANCE.getTransitionDec_Features();
+    EReference TRANSITION_DEC__TRANS_FEATURES = eINSTANCE.getTransitionDec_TransFeatures();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.TransitionFeatureDecImpl <em>Transition Feature Dec</em>}' class.
@@ -2353,14 +2153,14 @@ public interface DepModelPackage extends EPackage
     EReference TRANSITION_STATE__TARGET_STATE = eINSTANCE.getTransitionState_TargetState();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.TriggerDecImpl <em>Trigger Dec</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.TriggerImpl <em>Trigger</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.depModel.impl.TriggerDecImpl
-     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getTriggerDec()
+     * @see hu.bme.mit.depModel.impl.TriggerImpl
+     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getTrigger()
      * @generated
      */
-    EClass TRIGGER_DEC = eINSTANCE.getTriggerDec();
+    EClass TRIGGER = eINSTANCE.getTrigger();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2368,7 +2168,7 @@ public interface DepModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRIGGER_DEC__NAME = eINSTANCE.getTriggerDec_Name();
+    EAttribute TRIGGER__NAME = eINSTANCE.getTrigger_Name();
 
     /**
      * The meta object literal for the '<em><b>Port Instance</b></em>' reference feature.
@@ -2376,7 +2176,7 @@ public interface DepModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRIGGER_DEC__PORT_INSTANCE = eINSTANCE.getTriggerDec_PortInstance();
+    EReference TRIGGER__PORT_INSTANCE = eINSTANCE.getTrigger_PortInstance();
 
     /**
      * The meta object literal for the '<em><b>Error Mode</b></em>' reference feature.
@@ -2384,17 +2184,17 @@ public interface DepModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRIGGER_DEC__ERROR_MODE = eINSTANCE.getTriggerDec_ErrorMode();
+    EReference TRIGGER__ERROR_MODE = eINSTANCE.getTrigger_ErrorMode();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ActionDecImpl <em>Action Dec</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ActionImpl <em>Action</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.depModel.impl.ActionDecImpl
-     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getActionDec()
+     * @see hu.bme.mit.depModel.impl.ActionImpl
+     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getAction()
      * @generated
      */
-    EClass ACTION_DEC = eINSTANCE.getActionDec();
+    EClass ACTION = eINSTANCE.getAction();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2402,7 +2202,7 @@ public interface DepModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_DEC__NAME = eINSTANCE.getActionDec_Name();
+    EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
 
     /**
      * The meta object literal for the '<em><b>Port Instance</b></em>' reference feature.
@@ -2410,7 +2210,7 @@ public interface DepModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTION_DEC__PORT_INSTANCE = eINSTANCE.getActionDec_PortInstance();
+    EReference ACTION__PORT_INSTANCE = eINSTANCE.getAction_PortInstance();
 
     /**
      * The meta object literal for the '<em><b>Error Mode</b></em>' reference feature.
@@ -2418,17 +2218,17 @@ public interface DepModelPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACTION_DEC__ERROR_MODE = eINSTANCE.getActionDec_ErrorMode();
+    EReference ACTION__ERROR_MODE = eINSTANCE.getAction_ErrorMode();
 
     /**
-     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.OccurrenceDecImpl <em>Occurrence Dec</em>}' class.
+     * The meta object literal for the '{@link hu.bme.mit.depModel.impl.OccurrenceImpl <em>Occurrence</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see hu.bme.mit.depModel.impl.OccurrenceDecImpl
-     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getOccurrenceDec()
+     * @see hu.bme.mit.depModel.impl.OccurrenceImpl
+     * @see hu.bme.mit.depModel.impl.DepModelPackageImpl#getOccurrence()
      * @generated
      */
-    EClass OCCURRENCE_DEC = eINSTANCE.getOccurrenceDec();
+    EClass OCCURRENCE = eINSTANCE.getOccurrence();
 
   }
 

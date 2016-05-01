@@ -42,7 +42,6 @@ public class DepModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComponentFeaturesDecAccess().getAlternatives(), "rule__ComponentFeaturesDec__Alternatives");
 					put(grammarAccess.getPortDecAccess().getAlternatives(), "rule__PortDec__Alternatives");
 					put(grammarAccess.getErrorModelElementAccess().getAlternatives(), "rule__ErrorModelElement__Alternatives");
-					put(grammarAccess.getErrorPortDecAccess().getAlternatives(), "rule__ErrorPortDec__Alternatives");
 					put(grammarAccess.getTransitionFeatureDecAccess().getAlternatives(), "rule__TransitionFeatureDec__Alternatives");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
@@ -58,14 +57,12 @@ public class DepModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPortInAccess().getGroup(), "rule__PortIn__Group__0");
 					put(grammarAccess.getPortOutAccess().getGroup(), "rule__PortOut__Group__0");
 					put(grammarAccess.getErrorModelDecAccess().getGroup(), "rule__ErrorModelDec__Group__0");
-					put(grammarAccess.getErrorPortInAccess().getGroup(), "rule__ErrorPortIn__Group__0");
-					put(grammarAccess.getErrorPortOutAccess().getGroup(), "rule__ErrorPortOut__Group__0");
-					put(grammarAccess.getStateDecAccess().getGroup(), "rule__StateDec__Group__0");
+					put(grammarAccess.getStateAccess().getGroup(), "rule__State__Group__0");
 					put(grammarAccess.getTransitionDecAccess().getGroup(), "rule__TransitionDec__Group__0");
 					put(grammarAccess.getTransitionFeatureDecAccess().getGroup_3(), "rule__TransitionFeatureDec__Group_3__0");
 					put(grammarAccess.getTransitionStateAccess().getGroup(), "rule__TransitionState__Group__0");
-					put(grammarAccess.getTriggerDecAccess().getGroup(), "rule__TriggerDec__Group__0");
-					put(grammarAccess.getActionDecAccess().getGroup(), "rule__ActionDec__Group__0");
+					put(grammarAccess.getTriggerAccess().getGroup(), "rule__Trigger__Group__0");
+					put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 					put(grammarAccess.getDOUBLEAccess().getGroup(), "rule__DOUBLE__Group__0");
 					put(grammarAccess.getDepModelAccess().getElementsAssignment(), "rule__DepModel__ElementsAssignment");
 					put(grammarAccess.getPortTypeAccess().getNameAssignment_2(), "rule__PortType__NameAssignment_2");
@@ -99,21 +96,17 @@ public class DepModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPortOutAccess().getPortOutSuperTypeAssignment_5(), "rule__PortOut__PortOutSuperTypeAssignment_5");
 					put(grammarAccess.getErrorModelDecAccess().getNameAssignment_2(), "rule__ErrorModelDec__NameAssignment_2");
 					put(grammarAccess.getErrorModelDecAccess().getEmodelElementsAssignment_4(), "rule__ErrorModelDec__EmodelElementsAssignment_4");
-					put(grammarAccess.getErrorPortInAccess().getNameAssignment_3(), "rule__ErrorPortIn__NameAssignment_3");
-					put(grammarAccess.getErrorPortInAccess().getErrorPortInSuperTypeAssignment_5(), "rule__ErrorPortIn__ErrorPortInSuperTypeAssignment_5");
-					put(grammarAccess.getErrorPortOutAccess().getNameAssignment_3(), "rule__ErrorPortOut__NameAssignment_3");
-					put(grammarAccess.getErrorPortOutAccess().getErrorPortOutSuperTypeAssignment_5(), "rule__ErrorPortOut__ErrorPortOutSuperTypeAssignment_5");
-					put(grammarAccess.getStateDecAccess().getNameAssignment_2(), "rule__StateDec__NameAssignment_2");
+					put(grammarAccess.getStateAccess().getNameAssignment_2(), "rule__State__NameAssignment_2");
 					put(grammarAccess.getTransitionDecAccess().getNameAssignment_1(), "rule__TransitionDec__NameAssignment_1");
-					put(grammarAccess.getTransitionDecAccess().getFeaturesAssignment_3(), "rule__TransitionDec__FeaturesAssignment_3");
+					put(grammarAccess.getTransitionDecAccess().getTransFeaturesAssignment_3(), "rule__TransitionDec__TransFeaturesAssignment_3");
 					put(grammarAccess.getTransitionStateAccess().getSourceStateAssignment_1(), "rule__TransitionState__SourceStateAssignment_1");
 					put(grammarAccess.getTransitionStateAccess().getTargetStateAssignment_3(), "rule__TransitionState__TargetStateAssignment_3");
-					put(grammarAccess.getTriggerDecAccess().getNameAssignment_1(), "rule__TriggerDec__NameAssignment_1");
-					put(grammarAccess.getTriggerDecAccess().getPortInstanceAssignment_3(), "rule__TriggerDec__PortInstanceAssignment_3");
-					put(grammarAccess.getTriggerDecAccess().getErrorModeAssignment_5(), "rule__TriggerDec__ErrorModeAssignment_5");
-					put(grammarAccess.getActionDecAccess().getNameAssignment_1(), "rule__ActionDec__NameAssignment_1");
-					put(grammarAccess.getActionDecAccess().getPortInstanceAssignment_3(), "rule__ActionDec__PortInstanceAssignment_3");
-					put(grammarAccess.getActionDecAccess().getErrorModeAssignment_5(), "rule__ActionDec__ErrorModeAssignment_5");
+					put(grammarAccess.getTriggerAccess().getNameAssignment_1(), "rule__Trigger__NameAssignment_1");
+					put(grammarAccess.getTriggerAccess().getPortInstanceAssignment_3(), "rule__Trigger__PortInstanceAssignment_3");
+					put(grammarAccess.getTriggerAccess().getErrorModeAssignment_5(), "rule__Trigger__ErrorModeAssignment_5");
+					put(grammarAccess.getActionAccess().getNameAssignment_1(), "rule__Action__NameAssignment_1");
+					put(grammarAccess.getActionAccess().getPortInstanceAssignment_3(), "rule__Action__PortInstanceAssignment_3");
+					put(grammarAccess.getActionAccess().getErrorModeAssignment_5(), "rule__Action__ErrorModeAssignment_5");
 				}
 			};
 		}

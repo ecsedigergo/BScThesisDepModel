@@ -4,7 +4,6 @@
 package hu.bme.mit.serializer;
 
 import com.google.inject.Inject;
-import hu.bme.mit.depModel.ActionDec;
 import hu.bme.mit.depModel.ComponentConnDec;
 import hu.bme.mit.depModel.ComponentImpl;
 import hu.bme.mit.depModel.ComponentType;
@@ -12,20 +11,18 @@ import hu.bme.mit.depModel.DepModel;
 import hu.bme.mit.depModel.DepModelPackage;
 import hu.bme.mit.depModel.ErrorModelDec;
 import hu.bme.mit.depModel.ErrorModes;
-import hu.bme.mit.depModel.ErrorPortIn;
-import hu.bme.mit.depModel.ErrorPortOut;
-import hu.bme.mit.depModel.OccurrenceDec;
+import hu.bme.mit.depModel.Occurrence;
 import hu.bme.mit.depModel.PortIn;
 import hu.bme.mit.depModel.PortOut;
 import hu.bme.mit.depModel.PortType;
-import hu.bme.mit.depModel.StateDec;
+import hu.bme.mit.depModel.State;
 import hu.bme.mit.depModel.SystemConnDec;
 import hu.bme.mit.depModel.SystemDec;
 import hu.bme.mit.depModel.SystemPortIn;
 import hu.bme.mit.depModel.SystemPortOut;
 import hu.bme.mit.depModel.TransitionDec;
 import hu.bme.mit.depModel.TransitionState;
-import hu.bme.mit.depModel.TriggerDec;
+import hu.bme.mit.depModel.Trigger;
 import hu.bme.mit.services.DepModelGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -52,8 +49,8 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == DepModelPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case DepModelPackage.ACTION_DEC:
-				sequence_ActionDec(context, (ActionDec) semanticObject); 
+			case DepModelPackage.ACTION:
+				sequence_Action(context, (hu.bme.mit.depModel.Action) semanticObject); 
 				return; 
 			case DepModelPackage.COMPONENT_CONN_DEC:
 				sequence_ComponentConnDec(context, (ComponentConnDec) semanticObject); 
@@ -73,14 +70,8 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case DepModelPackage.ERROR_MODES:
 				sequence_ErrorModes(context, (ErrorModes) semanticObject); 
 				return; 
-			case DepModelPackage.ERROR_PORT_IN:
-				sequence_ErrorPortIn(context, (ErrorPortIn) semanticObject); 
-				return; 
-			case DepModelPackage.ERROR_PORT_OUT:
-				sequence_ErrorPortOut(context, (ErrorPortOut) semanticObject); 
-				return; 
-			case DepModelPackage.OCCURRENCE_DEC:
-				sequence_TransitionFeatureDec(context, (OccurrenceDec) semanticObject); 
+			case DepModelPackage.OCCURRENCE:
+				sequence_TransitionFeatureDec(context, (Occurrence) semanticObject); 
 				return; 
 			case DepModelPackage.PORT_IN:
 				sequence_PortIn(context, (PortIn) semanticObject); 
@@ -91,8 +82,8 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case DepModelPackage.PORT_TYPE:
 				sequence_PortType(context, (PortType) semanticObject); 
 				return; 
-			case DepModelPackage.STATE_DEC:
-				sequence_StateDec(context, (StateDec) semanticObject); 
+			case DepModelPackage.STATE:
+				sequence_State(context, (State) semanticObject); 
 				return; 
 			case DepModelPackage.SYSTEM_CONN_DEC:
 				sequence_SystemConnDec(context, (SystemConnDec) semanticObject); 
@@ -112,8 +103,8 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case DepModelPackage.TRANSITION_STATE:
 				sequence_TransitionState(context, (TransitionState) semanticObject); 
 				return; 
-			case DepModelPackage.TRIGGER_DEC:
-				sequence_TriggerDec(context, (TriggerDec) semanticObject); 
+			case DepModelPackage.TRIGGER:
+				sequence_Trigger(context, (Trigger) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -122,25 +113,25 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     TransitionFeatureDec returns ActionDec
-	 *     ActionDec returns ActionDec
+	 *     TransitionFeatureDec returns Action
+	 *     Action returns Action
 	 *
 	 * Constraint:
 	 *     (name=QualifiedName portInstance=[PortDec|ID] errorMode=[ErrorModes|ID])
 	 */
-	protected void sequence_ActionDec(ISerializationContext context, ActionDec semanticObject) {
+	protected void sequence_Action(ISerializationContext context, hu.bme.mit.depModel.Action semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ACTION_DEC__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ACTION_DEC__NAME));
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ACTION_DEC__PORT_INSTANCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ACTION_DEC__PORT_INSTANCE));
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ACTION_DEC__ERROR_MODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ACTION_DEC__ERROR_MODE));
+			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ACTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ACTION__NAME));
+			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ACTION__PORT_INSTANCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ACTION__PORT_INSTANCE));
+			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ACTION__ERROR_MODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ACTION__ERROR_MODE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getActionDecAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getActionDecAccess().getPortInstancePortDecIDTerminalRuleCall_3_0_1(), semanticObject.getPortInstance());
-		feeder.accept(grammarAccess.getActionDecAccess().getErrorModeErrorModesIDTerminalRuleCall_5_0_1(), semanticObject.getErrorMode());
+		feeder.accept(grammarAccess.getActionAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getActionAccess().getPortInstancePortDecIDTerminalRuleCall_3_0_1(), semanticObject.getPortInstance());
+		feeder.accept(grammarAccess.getActionAccess().getErrorModeErrorModesIDTerminalRuleCall_5_0_1(), semanticObject.getErrorMode());
 		feeder.finish();
 	}
 	
@@ -151,7 +142,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ComponentConnDec returns ComponentConnDec
 	 *
 	 * Constraint:
-	 *     (name=ID sourceComp=[ComponentImpl|ID] sourcePort=[PortOut|ID] targetComp=[ComponentImpl|ID] targetPort=[PortIn|ID])
+	 *     (name=QualifiedName sourceComp=[ComponentImpl|ID] sourcePort=[PortOut|ID] targetComp=[ComponentImpl|ID] targetPort=[PortIn|ID])
 	 */
 	protected void sequence_ComponentConnDec(ISerializationContext context, ComponentConnDec semanticObject) {
 		if (errorAcceptor != null) {
@@ -167,7 +158,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.COMPONENT_CONN_DEC__TARGET_PORT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComponentConnDecAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getComponentConnDecAccess().getNameQualifiedNameParserRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplIDTerminalRuleCall_4_0_1(), semanticObject.getSourceComp());
 		feeder.accept(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutIDTerminalRuleCall_6_0_1(), semanticObject.getSourcePort());
 		feeder.accept(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplIDTerminalRuleCall_8_0_1(), semanticObject.getTargetComp());
@@ -256,52 +247,6 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     ErrorModelElement returns ErrorPortIn
-	 *     ErrorPortDec returns ErrorPortIn
-	 *     ErrorPortIn returns ErrorPortIn
-	 *
-	 * Constraint:
-	 *     (name=QualifiedName ErrorPortInSuperType=[PortType|ID])
-	 */
-	protected void sequence_ErrorPortIn(ISerializationContext context, ErrorPortIn semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ERROR_MODEL_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ERROR_MODEL_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getErrorPortInAccess().getNameQualifiedNameParserRuleCall_3_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getErrorPortInAccess().getErrorPortInSuperTypePortTypeIDTerminalRuleCall_5_0_1(), semanticObject.getErrorPortInSuperType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ErrorModelElement returns ErrorPortOut
-	 *     ErrorPortDec returns ErrorPortOut
-	 *     ErrorPortOut returns ErrorPortOut
-	 *
-	 * Constraint:
-	 *     (name=QualifiedName ErrorPortOutSuperType=[PortType|ID])
-	 */
-	protected void sequence_ErrorPortOut(ISerializationContext context, ErrorPortOut semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ERROR_MODEL_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ERROR_MODEL_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getErrorPortOutAccess().getNameQualifiedNameParserRuleCall_3_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getErrorPortOutAccess().getErrorPortOutSuperTypePortTypeIDTerminalRuleCall_5_0_1(), semanticObject.getErrorPortOutSuperType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     ComponentFeaturesDec returns PortIn
 	 *     PortDec returns PortIn
 	 *     PortIn returns PortIn
@@ -361,19 +306,19 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     ErrorModelElement returns StateDec
-	 *     StateDec returns StateDec
+	 *     ErrorModelElement returns State
+	 *     State returns State
 	 *
 	 * Constraint:
 	 *     name=QualifiedName
 	 */
-	protected void sequence_StateDec(ISerializationContext context, StateDec semanticObject) {
+	protected void sequence_State(ISerializationContext context, State semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.ERROR_MODEL_ELEMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ERROR_MODEL_ELEMENT__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStateDecAccess().getNameQualifiedNameParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -385,7 +330,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     SystemConnDec returns SystemConnDec
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName sourceSystem=[SystemDec|ID] sourcePort=[SystemPortDec|ID] targetSystem=[SystemDec|ID] targetPort=[SystemPortDec|ID])
+	 *     (name=QualifiedName sourceSystem=[SystemDec|ID] sourcePort=[SystemPortOut|ID] targetSystem=[SystemDec|ID] targetPort=[SystemPortIn|ID])
 	 */
 	protected void sequence_SystemConnDec(ISerializationContext context, SystemConnDec semanticObject) {
 		if (errorAcceptor != null) {
@@ -403,9 +348,9 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSystemConnDecAccess().getNameQualifiedNameParserRuleCall_2_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecIDTerminalRuleCall_4_0_1(), semanticObject.getSourceSystem());
-		feeder.accept(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortDecIDTerminalRuleCall_6_0_1(), semanticObject.getSourcePort());
+		feeder.accept(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutIDTerminalRuleCall_6_0_1(), semanticObject.getSourcePort());
 		feeder.accept(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecIDTerminalRuleCall_8_0_1(), semanticObject.getTargetSystem());
-		feeder.accept(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortDecIDTerminalRuleCall_10_0_1(), semanticObject.getTargetPort());
+		feeder.accept(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInIDTerminalRuleCall_10_0_1(), semanticObject.getTargetPort());
 		feeder.finish();
 	}
 	
@@ -482,7 +427,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     TransitionDec returns TransitionDec
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName Features+=TransitionFeatureDec*)
+	 *     (name=QualifiedName transFeatures+=TransitionFeatureDec*)
 	 */
 	protected void sequence_TransitionDec(ISerializationContext context, TransitionDec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -491,12 +436,12 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     TransitionFeatureDec returns OccurrenceDec
+	 *     TransitionFeatureDec returns Occurrence
 	 *
 	 * Constraint:
-	 *     {OccurrenceDec}
+	 *     {Occurrence}
 	 */
-	protected void sequence_TransitionFeatureDec(ISerializationContext context, OccurrenceDec semanticObject) {
+	protected void sequence_TransitionFeatureDec(ISerializationContext context, Occurrence semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -507,7 +452,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     TransitionState returns TransitionState
 	 *
 	 * Constraint:
-	 *     (sourceState=[StateDec|ID] targetState=[StateDec|ID])
+	 *     (sourceState=[State|ID] targetState=[State|ID])
 	 */
 	protected void sequence_TransitionState(ISerializationContext context, TransitionState semanticObject) {
 		if (errorAcceptor != null) {
@@ -517,33 +462,33 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.TRANSITION_STATE__TARGET_STATE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTransitionStateAccess().getSourceStateStateDecIDTerminalRuleCall_1_0_1(), semanticObject.getSourceState());
-		feeder.accept(grammarAccess.getTransitionStateAccess().getTargetStateStateDecIDTerminalRuleCall_3_0_1(), semanticObject.getTargetState());
+		feeder.accept(grammarAccess.getTransitionStateAccess().getSourceStateStateIDTerminalRuleCall_1_0_1(), semanticObject.getSourceState());
+		feeder.accept(grammarAccess.getTransitionStateAccess().getTargetStateStateIDTerminalRuleCall_3_0_1(), semanticObject.getTargetState());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     TransitionFeatureDec returns TriggerDec
-	 *     TriggerDec returns TriggerDec
+	 *     TransitionFeatureDec returns Trigger
+	 *     Trigger returns Trigger
 	 *
 	 * Constraint:
 	 *     (name=QualifiedName portInstance=[PortDec|ID] errorMode=[ErrorModes|ID])
 	 */
-	protected void sequence_TriggerDec(ISerializationContext context, TriggerDec semanticObject) {
+	protected void sequence_Trigger(ISerializationContext context, Trigger semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.TRIGGER_DEC__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.TRIGGER_DEC__NAME));
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.TRIGGER_DEC__PORT_INSTANCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.TRIGGER_DEC__PORT_INSTANCE));
-			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.TRIGGER_DEC__ERROR_MODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.TRIGGER_DEC__ERROR_MODE));
+			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.TRIGGER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.TRIGGER__NAME));
+			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.TRIGGER__PORT_INSTANCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.TRIGGER__PORT_INSTANCE));
+			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.TRIGGER__ERROR_MODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.TRIGGER__ERROR_MODE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTriggerDecAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getTriggerDecAccess().getPortInstancePortDecIDTerminalRuleCall_3_0_1(), semanticObject.getPortInstance());
-		feeder.accept(grammarAccess.getTriggerDecAccess().getErrorModeErrorModesIDTerminalRuleCall_5_0_1(), semanticObject.getErrorMode());
+		feeder.accept(grammarAccess.getTriggerAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getTriggerAccess().getPortInstancePortDecIDTerminalRuleCall_3_0_1(), semanticObject.getPortInstance());
+		feeder.accept(grammarAccess.getTriggerAccess().getErrorModeErrorModesIDTerminalRuleCall_5_0_1(), semanticObject.getErrorMode());
 		feeder.finish();
 	}
 	

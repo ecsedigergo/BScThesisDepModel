@@ -4,7 +4,7 @@
 package hu.bme.mit.scoping;
 
 import com.google.common.base.Objects;
-import hu.bme.mit.depModel.ActionDec;
+import hu.bme.mit.depModel.Action;
 import hu.bme.mit.depModel.ComponentConnDec;
 import hu.bme.mit.depModel.ComponentImpl;
 import hu.bme.mit.depModel.ComponentType;
@@ -14,9 +14,11 @@ import hu.bme.mit.depModel.PortDec;
 import hu.bme.mit.depModel.PortIn;
 import hu.bme.mit.depModel.PortOut;
 import hu.bme.mit.depModel.PortType;
+import hu.bme.mit.depModel.SystemConnDec;
+import hu.bme.mit.depModel.SystemDec;
 import hu.bme.mit.depModel.SystemPortIn;
 import hu.bme.mit.depModel.SystemPortOut;
-import hu.bme.mit.depModel.TriggerDec;
+import hu.bme.mit.depModel.Trigger;
 import hu.bme.mit.scoping.AbstractDepModelScopeProvider;
 import java.util.List;
 import org.eclipse.emf.ecore.EObject;
@@ -35,9 +37,9 @@ import org.eclipse.xtext.scoping.Scopes;
 public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if ((context instanceof TriggerDec)) {
-      final TriggerDec trigger = ((TriggerDec) context);
-      boolean _equals = Objects.equal(reference, DepModelPackage.Literals.TRIGGER_DEC__PORT_INSTANCE);
+    if ((context instanceof Trigger)) {
+      final Trigger trigger = ((Trigger) context);
+      boolean _equals = Objects.equal(reference, DepModelPackage.Literals.TRIGGER__PORT_INSTANCE);
       if (_equals) {
         final ComponentType compT = EcoreUtil2.<ComponentType>getContainerOfType(trigger, ComponentType.class);
         boolean _equals_1 = Objects.equal(compT, null);
@@ -51,7 +53,7 @@ public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
         }
         return Scopes.scopeFor(portI);
       }
-      boolean _equals_3 = Objects.equal(reference, DepModelPackage.Literals.TRIGGER_DEC__ERROR_MODE);
+      boolean _equals_3 = Objects.equal(reference, DepModelPackage.Literals.TRIGGER__ERROR_MODE);
       if (_equals_3) {
         PortDec _portInstance = trigger.getPortInstance();
         final PortIn portInImpl = EcoreUtil2.<PortIn>getContainerOfType(_portInstance, PortIn.class);
@@ -68,9 +70,9 @@ public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
         return Scopes.scopeFor(modes);
       }
     }
-    if ((context instanceof ActionDec)) {
-      final ActionDec action = ((ActionDec) context);
-      boolean _equals_6 = Objects.equal(reference, DepModelPackage.Literals.ACTION_DEC__PORT_INSTANCE);
+    if ((context instanceof Action)) {
+      final Action action = ((Action) context);
+      boolean _equals_6 = Objects.equal(reference, DepModelPackage.Literals.ACTION__PORT_INSTANCE);
       if (_equals_6) {
         final ComponentType compT_1 = EcoreUtil2.<ComponentType>getContainerOfType(action, ComponentType.class);
         boolean _equals_7 = Objects.equal(compT_1, null);
@@ -84,7 +86,7 @@ public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
         }
         return Scopes.scopeFor(portI_1);
       }
-      boolean _equals_9 = Objects.equal(reference, DepModelPackage.Literals.ACTION_DEC__ERROR_MODE);
+      boolean _equals_9 = Objects.equal(reference, DepModelPackage.Literals.ACTION__ERROR_MODE);
       if (_equals_9) {
         PortDec _portInstance_1 = action.getPortInstance();
         final PortOut portOutImpl = EcoreUtil2.<PortOut>getContainerOfType(_portInstance_1, PortOut.class);
@@ -172,6 +174,42 @@ public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
           return IScope.NULLSCOPE;
         }
         return Scopes.scopeFor(ports_1);
+      }
+    }
+    if ((context instanceof SystemConnDec)) {
+      final SystemConnDec conn_1 = ((SystemConnDec) context);
+      boolean _equals_24 = Objects.equal(reference, DepModelPackage.Literals.SYSTEM_CONN_DEC__SOURCE_PORT);
+      if (_equals_24) {
+        SystemDec _sourceSystem = conn_1.getSourceSystem();
+        final SystemDec systemD = EcoreUtil2.<SystemDec>getContainerOfType(_sourceSystem, SystemDec.class);
+        boolean _equals_25 = Objects.equal(systemD, null);
+        if (_equals_25) {
+          return IScope.NULLSCOPE;
+        }
+        final List<SystemPortOut> ports_2 = EcoreUtil2.<SystemPortOut>getAllContentsOfType(systemD, SystemPortOut.class);
+        boolean _equals_26 = Objects.equal(ports_2, null);
+        if (_equals_26) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(ports_2);
+      }
+    }
+    if ((context instanceof SystemConnDec)) {
+      final SystemConnDec conn_2 = ((SystemConnDec) context);
+      boolean _equals_27 = Objects.equal(reference, DepModelPackage.Literals.SYSTEM_CONN_DEC__TARGET_PORT);
+      if (_equals_27) {
+        SystemDec _targetSystem = conn_2.getTargetSystem();
+        final SystemDec systemD_1 = EcoreUtil2.<SystemDec>getContainerOfType(_targetSystem, SystemDec.class);
+        boolean _equals_28 = Objects.equal(systemD_1, null);
+        if (_equals_28) {
+          return IScope.NULLSCOPE;
+        }
+        final List<SystemPortIn> ports_3 = EcoreUtil2.<SystemPortIn>getAllContentsOfType(systemD_1, SystemPortIn.class);
+        boolean _equals_29 = Objects.equal(ports_3, null);
+        if (_equals_29) {
+          return IScope.NULLSCOPE;
+        }
+        return Scopes.scopeFor(ports_3);
       }
     }
     return super.getScope(context, reference);

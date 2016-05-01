@@ -60,12 +60,12 @@ public interface SystemConnDec extends ComponentModelDec
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source Port</em>' reference.
-   * @see #setSourcePort(SystemPortDec)
+   * @see #setSourcePort(SystemPortOut)
    * @see hu.bme.mit.depModel.DepModelPackage#getSystemConnDec_SourcePort()
    * @model
    * @generated
    */
-  SystemPortDec getSourcePort();
+  SystemPortOut getSourcePort();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.depModel.SystemConnDec#getSourcePort <em>Source Port</em>}' reference.
@@ -75,7 +75,7 @@ public interface SystemConnDec extends ComponentModelDec
    * @see #getSourcePort()
    * @generated
    */
-  void setSourcePort(SystemPortDec value);
+  void setSourcePort(SystemPortOut value);
 
   /**
    * Returns the value of the '<em><b>Target System</b></em>' reference.
@@ -112,12 +112,12 @@ public interface SystemConnDec extends ComponentModelDec
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target Port</em>' reference.
-   * @see #setTargetPort(SystemPortDec)
+   * @see #setTargetPort(SystemPortIn)
    * @see hu.bme.mit.depModel.DepModelPackage#getSystemConnDec_TargetPort()
    * @model
    * @generated
    */
-  SystemPortDec getTargetPort();
+  SystemPortIn getTargetPort();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.depModel.SystemConnDec#getTargetPort <em>Target Port</em>}' reference.
@@ -127,6 +127,6 @@ public interface SystemConnDec extends ComponentModelDec
    * @see #getTargetPort()
    * @generated
    */
-  void setTargetPort(SystemPortDec value);
+  void setTargetPort(SystemPortIn value);
 
 } // SystemConnDec

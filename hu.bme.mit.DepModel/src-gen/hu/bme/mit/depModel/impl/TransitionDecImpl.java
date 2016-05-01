@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.depModel.impl.TransitionDecImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.impl.TransitionDecImpl#getTransFeatures <em>Trans Features</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class TransitionDecImpl extends ErrorModelElementImpl implements TransitionDec
 {
   /**
-   * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
+   * The cached value of the '{@link #getTransFeatures() <em>Trans Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeatures()
+   * @see #getTransFeatures()
    * @generated
    * @ordered
    */
-  protected EList<TransitionFeatureDec> features;
+  protected EList<TransitionFeatureDec> transFeatures;
 
   /**
    * <!-- begin-user-doc -->
@@ -70,13 +70,13 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TransitionFeatureDec> getFeatures()
+  public EList<TransitionFeatureDec> getTransFeatures()
   {
-    if (features == null)
+    if (transFeatures == null)
     {
-      features = new EObjectContainmentEList<TransitionFeatureDec>(TransitionFeatureDec.class, this, DepModelPackage.TRANSITION_DEC__FEATURES);
+      transFeatures = new EObjectContainmentEList<TransitionFeatureDec>(TransitionFeatureDec.class, this, DepModelPackage.TRANSITION_DEC__TRANS_FEATURES);
     }
-    return features;
+    return transFeatures;
   }
 
   /**
@@ -89,8 +89,8 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__FEATURES:
-        return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+      case DepModelPackage.TRANSITION_DEC__TRANS_FEATURES:
+        return ((InternalEList<?>)getTransFeatures()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -105,8 +105,8 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__FEATURES:
-        return getFeatures();
+      case DepModelPackage.TRANSITION_DEC__TRANS_FEATURES:
+        return getTransFeatures();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,9 +122,9 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__FEATURES:
-        getFeatures().clear();
-        getFeatures().addAll((Collection<? extends TransitionFeatureDec>)newValue);
+      case DepModelPackage.TRANSITION_DEC__TRANS_FEATURES:
+        getTransFeatures().clear();
+        getTransFeatures().addAll((Collection<? extends TransitionFeatureDec>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,8 +140,8 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__FEATURES:
-        getFeatures().clear();
+      case DepModelPackage.TRANSITION_DEC__TRANS_FEATURES:
+        getTransFeatures().clear();
         return;
     }
     super.eUnset(featureID);
@@ -157,8 +157,8 @@ public class TransitionDecImpl extends ErrorModelElementImpl implements Transiti
   {
     switch (featureID)
     {
-      case DepModelPackage.TRANSITION_DEC__FEATURES:
-        return features != null && !features.isEmpty();
+      case DepModelPackage.TRANSITION_DEC__TRANS_FEATURES:
+        return transFeatures != null && !transFeatures.isEmpty();
     }
     return super.eIsSet(featureID);
   }

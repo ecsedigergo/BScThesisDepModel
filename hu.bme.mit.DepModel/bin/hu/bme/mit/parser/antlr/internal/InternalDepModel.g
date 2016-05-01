@@ -400,7 +400,7 @@ ruleSystemConnDec returns [EObject current=null]
 				}
 				otherlv_6=RULE_ID
 				{
-					newLeafNode(otherlv_6, grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortDecCrossReference_6_0());
+					newLeafNode(otherlv_6, grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutCrossReference_6_0());
 				}
 			)
 		)
@@ -434,7 +434,7 @@ ruleSystemConnDec returns [EObject current=null]
 				}
 				otherlv_10=RULE_ID
 				{
-					newLeafNode(otherlv_10, grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortDecCrossReference_10_0());
+					newLeafNode(otherlv_10, grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInCrossReference_10_0());
 				}
 			)
 		)
@@ -798,19 +798,20 @@ ruleComponentConnDec returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getComponentConnDecAccess().getNameIDTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getComponentConnDecAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
+				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComponentConnDecRule());
+						$current = createModelElementForParent(grammarAccess.getComponentConnDecRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"hu.bme.mit.DepModel.QualifiedName");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1317,11 +1318,11 @@ ruleErrorModelElement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getErrorModelElementAccess().getStateDecParserRuleCall_0());
+			newCompositeNode(grammarAccess.getErrorModelElementAccess().getStateParserRuleCall_0());
 		}
-		this_StateDec_0=ruleStateDec
+		this_State_0=ruleState
 		{
-			$current = $this_StateDec_0.current;
+			$current = $this_State_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -1333,63 +1334,18 @@ ruleErrorModelElement returns [EObject current=null]
 			$current = $this_TransitionDec_1.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getErrorModelElementAccess().getErrorPortDecParserRuleCall_2());
-		}
-		this_ErrorPortDec_2=ruleErrorPortDec
-		{
-			$current = $this_ErrorPortDec_2.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
-// Entry rule entryRuleErrorPortDec
-entryRuleErrorPortDec returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getErrorPortDecRule()); }
-	iv_ruleErrorPortDec=ruleErrorPortDec
-	{ $current=$iv_ruleErrorPortDec.current; }
+// Entry rule entryRuleState
+entryRuleState returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStateRule()); }
+	iv_ruleState=ruleState
+	{ $current=$iv_ruleState.current; }
 	EOF;
 
-// Rule ErrorPortDec
-ruleErrorPortDec returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getErrorPortDecAccess().getErrorPortInParserRuleCall_0());
-		}
-		this_ErrorPortIn_0=ruleErrorPortIn
-		{
-			$current = $this_ErrorPortIn_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getErrorPortDecAccess().getErrorPortOutParserRuleCall_1());
-		}
-		this_ErrorPortOut_1=ruleErrorPortOut
-		{
-			$current = $this_ErrorPortOut_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleErrorPortIn
-entryRuleErrorPortIn returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getErrorPortInRule()); }
-	iv_ruleErrorPortIn=ruleErrorPortIn
-	{ $current=$iv_ruleErrorPortIn.current; }
-	EOF;
-
-// Rule ErrorPortIn
-ruleErrorPortIn returns [EObject current=null]
+// Rule State
+ruleState returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1399,155 +1355,21 @@ ruleErrorPortIn returns [EObject current=null]
 	(
 		otherlv_0='error'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getErrorPortInAccess().getErrorKeyword_0());
-		}
-		otherlv_1='port'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getErrorPortInAccess().getPortKeyword_1());
-		}
-		otherlv_2='in'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getErrorPortInAccess().getInKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getErrorPortInAccess().getNameQualifiedNameParserRuleCall_3_0());
-				}
-				lv_name_3_0=ruleQualifiedName
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getErrorPortInRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_3_0,
-						"hu.bme.mit.DepModel.QualifiedName");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_4=':'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getErrorPortInAccess().getColonKeyword_4());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getErrorPortInRule());
-					}
-				}
-				otherlv_5=RULE_ID
-				{
-					newLeafNode(otherlv_5, grammarAccess.getErrorPortInAccess().getErrorPortInSuperTypePortTypeCrossReference_5_0());
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleErrorPortOut
-entryRuleErrorPortOut returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getErrorPortOutRule()); }
-	iv_ruleErrorPortOut=ruleErrorPortOut
-	{ $current=$iv_ruleErrorPortOut.current; }
-	EOF;
-
-// Rule ErrorPortOut
-ruleErrorPortOut returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='error'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getErrorPortOutAccess().getErrorKeyword_0());
-		}
-		otherlv_1='port'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getErrorPortOutAccess().getPortKeyword_1());
-		}
-		otherlv_2='out'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getErrorPortOutAccess().getOutKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getErrorPortOutAccess().getNameQualifiedNameParserRuleCall_3_0());
-				}
-				lv_name_3_0=ruleQualifiedName
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getErrorPortOutRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_3_0,
-						"hu.bme.mit.DepModel.QualifiedName");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_4=':'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getErrorPortOutAccess().getColonKeyword_4());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getErrorPortOutRule());
-					}
-				}
-				otherlv_5=RULE_ID
-				{
-					newLeafNode(otherlv_5, grammarAccess.getErrorPortOutAccess().getErrorPortOutSuperTypePortTypeCrossReference_5_0());
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleStateDec
-entryRuleStateDec returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getStateDecRule()); }
-	iv_ruleStateDec=ruleStateDec
-	{ $current=$iv_ruleStateDec.current; }
-	EOF;
-
-// Rule StateDec
-ruleStateDec returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='error'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getStateDecAccess().getErrorKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getStateAccess().getErrorKeyword_0());
 		}
 		otherlv_1='state'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getStateDecAccess().getStateKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getStateAccess().getStateKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStateDecAccess().getNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0());
 				}
 				lv_name_2_0=ruleQualifiedName
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getStateDecRule());
+						$current = createModelElementForParent(grammarAccess.getStateRule());
 					}
 					set(
 						$current,
@@ -1607,17 +1429,17 @@ ruleTransitionDec returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTransitionDecAccess().getFeaturesTransitionFeatureDecParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getTransitionDecAccess().getTransFeaturesTransitionFeatureDecParserRuleCall_3_0());
 				}
-				lv_Features_3_0=ruleTransitionFeatureDec
+				lv_transFeatures_3_0=ruleTransitionFeatureDec
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTransitionDecRule());
 					}
 					add(
 						$current,
-						"Features",
-						lv_Features_3_0,
+						"transFeatures",
+						lv_transFeatures_3_0,
 						"hu.bme.mit.DepModel.TransitionFeatureDec");
 					afterParserOrEnumRuleCall();
 				}
@@ -1656,20 +1478,20 @@ ruleTransitionFeatureDec returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTransitionFeatureDecAccess().getTriggerDecParserRuleCall_1());
+			newCompositeNode(grammarAccess.getTransitionFeatureDecAccess().getTriggerParserRuleCall_1());
 		}
-		this_TriggerDec_1=ruleTriggerDec
+		this_Trigger_1=ruleTrigger
 		{
-			$current = $this_TriggerDec_1.current;
+			$current = $this_Trigger_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTransitionFeatureDecAccess().getActionDecParserRuleCall_2());
+			newCompositeNode(grammarAccess.getTransitionFeatureDecAccess().getActionParserRuleCall_2());
 		}
-		this_ActionDec_2=ruleActionDec
+		this_Action_2=ruleAction
 		{
-			$current = $this_ActionDec_2.current;
+			$current = $this_Action_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -1681,7 +1503,7 @@ ruleTransitionFeatureDec returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getTransitionFeatureDecAccess().getOccurrenceDecAction_3_1(),
+						grammarAccess.getTransitionFeatureDecAccess().getOccurrenceAction_3_1(),
 						$current);
 				}
 			)
@@ -1725,7 +1547,7 @@ ruleTransitionState returns [EObject current=null]
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getTransitionStateAccess().getSourceStateStateDecCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getTransitionStateAccess().getSourceStateStateCrossReference_1_0());
 				}
 			)
 		)
@@ -1742,22 +1564,22 @@ ruleTransitionState returns [EObject current=null]
 				}
 				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getTransitionStateAccess().getTargetStateStateDecCrossReference_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getTransitionStateAccess().getTargetStateStateCrossReference_3_0());
 				}
 			)
 		)
 	)
 ;
 
-// Entry rule entryRuleTriggerDec
-entryRuleTriggerDec returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTriggerDecRule()); }
-	iv_ruleTriggerDec=ruleTriggerDec
-	{ $current=$iv_ruleTriggerDec.current; }
+// Entry rule entryRuleTrigger
+entryRuleTrigger returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTriggerRule()); }
+	iv_ruleTrigger=ruleTrigger
+	{ $current=$iv_ruleTrigger.current; }
 	EOF;
 
-// Rule TriggerDec
-ruleTriggerDec returns [EObject current=null]
+// Rule Trigger
+ruleTrigger returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1767,17 +1589,17 @@ ruleTriggerDec returns [EObject current=null]
 	(
 		otherlv_0='trigger'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getTriggerDecAccess().getTriggerKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getTriggerAccess().getTriggerKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTriggerDecAccess().getNameQualifiedNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getTriggerAccess().getNameQualifiedNameParserRuleCall_1_0());
 				}
 				lv_name_1_0=ruleQualifiedName
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTriggerDecRule());
+						$current = createModelElementForParent(grammarAccess.getTriggerRule());
 					}
 					set(
 						$current,
@@ -1790,50 +1612,50 @@ ruleTriggerDec returns [EObject current=null]
 		)
 		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getTriggerDecAccess().getColonKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getTriggerAccess().getColonKeyword_2());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTriggerDecRule());
+						$current = createModelElement(grammarAccess.getTriggerRule());
 					}
 				}
 				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getTriggerDecAccess().getPortInstancePortDecCrossReference_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getTriggerAccess().getPortInstancePortDecCrossReference_3_0());
 				}
 			)
 		)
 		otherlv_4='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getTriggerDecAccess().getFullStopKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getTriggerAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTriggerDecRule());
+						$current = createModelElement(grammarAccess.getTriggerRule());
 					}
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getTriggerDecAccess().getErrorModeErrorModesCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getTriggerAccess().getErrorModeErrorModesCrossReference_5_0());
 				}
 			)
 		)
 	)
 ;
 
-// Entry rule entryRuleActionDec
-entryRuleActionDec returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getActionDecRule()); }
-	iv_ruleActionDec=ruleActionDec
-	{ $current=$iv_ruleActionDec.current; }
+// Entry rule entryRuleAction
+entryRuleAction returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getActionRule()); }
+	iv_ruleAction=ruleAction
+	{ $current=$iv_ruleAction.current; }
 	EOF;
 
-// Rule ActionDec
-ruleActionDec returns [EObject current=null]
+// Rule Action
+ruleAction returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1843,17 +1665,17 @@ ruleActionDec returns [EObject current=null]
 	(
 		otherlv_0='action'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getActionDecAccess().getActionKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getActionAccess().getActionKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getActionDecAccess().getNameQualifiedNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getActionAccess().getNameQualifiedNameParserRuleCall_1_0());
 				}
 				lv_name_1_0=ruleQualifiedName
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getActionDecRule());
+						$current = createModelElementForParent(grammarAccess.getActionRule());
 					}
 					set(
 						$current,
@@ -1866,35 +1688,35 @@ ruleActionDec returns [EObject current=null]
 		)
 		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getActionDecAccess().getColonKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getActionAccess().getColonKeyword_2());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getActionDecRule());
+						$current = createModelElement(grammarAccess.getActionRule());
 					}
 				}
 				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getActionDecAccess().getPortInstancePortDecCrossReference_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getActionAccess().getPortInstancePortDecCrossReference_3_0());
 				}
 			)
 		)
 		otherlv_4='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getActionDecAccess().getFullStopKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getActionAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getActionDecRule());
+						$current = createModelElement(grammarAccess.getActionRule());
 					}
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getActionDecAccess().getErrorModeErrorModesCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getActionAccess().getErrorModeErrorModesCrossReference_5_0());
 				}
 			)
 		)

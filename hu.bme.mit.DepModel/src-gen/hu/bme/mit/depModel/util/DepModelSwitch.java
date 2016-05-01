@@ -233,37 +233,11 @@ public class DepModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DepModelPackage.ERROR_PORT_DEC:
+      case DepModelPackage.STATE:
       {
-        ErrorPortDec errorPortDec = (ErrorPortDec)theEObject;
-        T result = caseErrorPortDec(errorPortDec);
-        if (result == null) result = caseErrorModelElement(errorPortDec);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DepModelPackage.ERROR_PORT_IN:
-      {
-        ErrorPortIn errorPortIn = (ErrorPortIn)theEObject;
-        T result = caseErrorPortIn(errorPortIn);
-        if (result == null) result = caseErrorPortDec(errorPortIn);
-        if (result == null) result = caseErrorModelElement(errorPortIn);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DepModelPackage.ERROR_PORT_OUT:
-      {
-        ErrorPortOut errorPortOut = (ErrorPortOut)theEObject;
-        T result = caseErrorPortOut(errorPortOut);
-        if (result == null) result = caseErrorPortDec(errorPortOut);
-        if (result == null) result = caseErrorModelElement(errorPortOut);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DepModelPackage.STATE_DEC:
-      {
-        StateDec stateDec = (StateDec)theEObject;
-        T result = caseStateDec(stateDec);
-        if (result == null) result = caseErrorModelElement(stateDec);
+        State state = (State)theEObject;
+        T result = caseState(state);
+        if (result == null) result = caseErrorModelElement(state);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -290,27 +264,27 @@ public class DepModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DepModelPackage.TRIGGER_DEC:
+      case DepModelPackage.TRIGGER:
       {
-        TriggerDec triggerDec = (TriggerDec)theEObject;
-        T result = caseTriggerDec(triggerDec);
-        if (result == null) result = caseTransitionFeatureDec(triggerDec);
+        Trigger trigger = (Trigger)theEObject;
+        T result = caseTrigger(trigger);
+        if (result == null) result = caseTransitionFeatureDec(trigger);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DepModelPackage.ACTION_DEC:
+      case DepModelPackage.ACTION:
       {
-        ActionDec actionDec = (ActionDec)theEObject;
-        T result = caseActionDec(actionDec);
-        if (result == null) result = caseTransitionFeatureDec(actionDec);
+        Action action = (Action)theEObject;
+        T result = caseAction(action);
+        if (result == null) result = caseTransitionFeatureDec(action);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DepModelPackage.OCCURRENCE_DEC:
+      case DepModelPackage.OCCURRENCE:
       {
-        OccurrenceDec occurrenceDec = (OccurrenceDec)theEObject;
-        T result = caseOccurrenceDec(occurrenceDec);
-        if (result == null) result = caseTransitionFeatureDec(occurrenceDec);
+        Occurrence occurrence = (Occurrence)theEObject;
+        T result = caseOccurrence(occurrence);
+        if (result == null) result = caseTransitionFeatureDec(occurrence);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -639,65 +613,17 @@ public class DepModelSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Error Port Dec</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>State</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Error Port Dec</em>'.
+   * @return the result of interpreting the object as an instance of '<em>State</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseErrorPortDec(ErrorPortDec object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Error Port In</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Error Port In</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseErrorPortIn(ErrorPortIn object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Error Port Out</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Error Port Out</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseErrorPortOut(ErrorPortOut object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>State Dec</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>State Dec</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStateDec(StateDec object)
+  public T caseState(State object)
   {
     return null;
   }
@@ -751,49 +677,49 @@ public class DepModelSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Trigger Dec</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Trigger</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Trigger Dec</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Trigger</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTriggerDec(TriggerDec object)
+  public T caseTrigger(Trigger object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Action Dec</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action Dec</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Action</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseActionDec(ActionDec object)
+  public T caseAction(Action object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Occurrence Dec</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Occurrence</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Occurrence Dec</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Occurrence</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOccurrenceDec(OccurrenceDec object)
+  public T caseOccurrence(Occurrence object)
   {
     return null;
   }

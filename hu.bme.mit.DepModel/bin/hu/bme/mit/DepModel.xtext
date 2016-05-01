@@ -21,11 +21,11 @@ ErrorModes:
 
 	//Component Model ********************************************************************
 ComponentModelDec:
-	SystemConnDec | SystemDec ;
+	SystemConnDec | SystemDec;
 
 SystemConnDec:
-	'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec]
-	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
+	'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut]
+	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortIn];
 
 SystemDec:
 	'system' 'declaration' name=QualifiedName '{'
@@ -33,8 +33,7 @@ SystemDec:
 	'}';
 
 SysFeaturesDec:
-	SystemPortDec | ComponentConnDec | ComponentType | ComponentImpl  ;
-	//ComponentType;
+	SystemPortDec | ComponentConnDec | ComponentType | ComponentImpl;
 
 SystemPortDec:
 	SystemPortIn | SystemPortOut;
@@ -46,7 +45,7 @@ SystemPortOut:
 	'system' 'port' 'out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[PortOut];
 
 ComponentConnDec:
-	'component' 'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut]
+	'component' 'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut]
 	'to' targetComp=[ComponentImpl] '.' targetPort=[PortIn];
 
 ComponentImpl:
@@ -61,8 +60,7 @@ ComponentFeaturesDec:
 	PortDec | ErrorModelDec;
 
 PortDec:
-	PortIn | PortOut
-;
+	PortIn | PortOut;
 
 PortIn:
 	'port' 'instance' 'in' name=QualifiedName ':' PortInSuperType=[PortType];
@@ -70,46 +68,33 @@ PortIn:
 PortOut:
 	'port' 'instance' 'out' name=QualifiedName ':' PortOutSuperType=[PortType];
 
-
-//Error Model *********************************
+	//Error Model *********************************
 ErrorModelDec:
 	'error' 'model' name=QualifiedName '{'
 	(emodelElements+=ErrorModelElement)*
 	'}';
 
 ErrorModelElement:
-	StateDec | TransitionDec; //| ErrorPortDec;
+	State | TransitionDec;
 
-//ErrorPortDec:
-//	ErrorPortIn | ErrorPortOut
-//;
-//
-//ErrorPortIn:
-//	'error' 'port' 'in' name=QualifiedName ':' ErrorPortInSuperType=[PortType]
-//;
-//
-//ErrorPortOut:
-//	'error' 'port' 'out' name=QualifiedName ':' ErrorPortOutSuperType=[PortType]
-//;
-
-StateDec:
+State:
 	'error' 'state' name=QualifiedName;
 
 TransitionDec:
 	'transition' name=QualifiedName '{'
-	(Features+=TransitionFeatureDec)*
+	(transFeatures+=TransitionFeatureDec)*
 	'}';
 
 TransitionFeatureDec:
-	TransitionState | TriggerDec | ActionDec | "occurrence" {OccurrenceDec} DOUBLE;
+	TransitionState | Trigger | Action | "occurrence" {Occurrence} DOUBLE;
 
 TransitionState:
-	'states' sourceState=[StateDec] '->' targetState=[StateDec];
+	'states' sourceState=[State] '->' targetState=[State];
 
-TriggerDec:
+Trigger:
 	'trigger' name=QualifiedName ':' portInstance=[PortDec] '.' errorMode=[ErrorModes];
 
-ActionDec:
+Action:
 	'action' name=QualifiedName ':' portInstance=[PortDec] '.' errorMode=[ErrorModes];
 
 DOUBLE:

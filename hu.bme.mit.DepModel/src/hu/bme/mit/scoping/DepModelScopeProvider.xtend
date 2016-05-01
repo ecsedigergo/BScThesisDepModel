@@ -3,7 +3,7 @@
  */
 package hu.bme.mit.scoping
 
-import hu.bme.mit.depModel.ActionDec
+import hu.bme.mit.depModel.Action
 import hu.bme.mit.depModel.ComponentConnDec
 import hu.bme.mit.depModel.ComponentImpl
 import hu.bme.mit.depModel.ComponentType
@@ -13,12 +13,15 @@ import hu.bme.mit.depModel.PortIn
 import hu.bme.mit.depModel.PortOut
 import hu.bme.mit.depModel.SystemPortIn
 import hu.bme.mit.depModel.SystemPortOut
-import hu.bme.mit.depModel.TriggerDec
+import hu.bme.mit.depModel.Trigger
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
+import hu.bme.mit.depModel.SystemConnDec
+import hu.bme.mit.depModel.SystemDec
+import hu.bme.mit.depModel.SystemPortDec
 
 /**
  * This class contains custom scoping description.
@@ -29,9 +32,9 @@ import org.eclipse.xtext.scoping.Scopes
 class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 	override getScope(EObject context, EReference reference) {
 
-		if (context instanceof TriggerDec) {
-			val trigger = context as TriggerDec
-			if (reference == DepModelPackage.Literals.TRIGGER_DEC__PORT_INSTANCE) {
+		if (context instanceof Trigger) {
+			val trigger = context as Trigger
+			if (reference == DepModelPackage.Literals.TRIGGER__PORT_INSTANCE) {
 				val compT = EcoreUtil2.getContainerOfType(trigger, ComponentType)
 				if(compT == null) return IScope.NULLSCOPE
 				val portI = EcoreUtil2.getAllContentsOfType(compT, PortIn)
@@ -40,7 +43,7 @@ class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 				return Scopes.scopeFor(portI)
 			}
 
-			if (reference == DepModelPackage.Literals.TRIGGER_DEC__ERROR_MODE) {
+			if (reference == DepModelPackage.Literals.TRIGGER__ERROR_MODE) {
 				val portInImpl = EcoreUtil2.getContainerOfType(trigger.portInstance, PortIn)
 				if(portInImpl == null) return IScope.NULLSCOPE
 				val modes = EcoreUtil2.getAllContentsOfType(portInImpl.portInSuperType, ErrorModes)
@@ -50,9 +53,9 @@ class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 
 			}
 		}
-		if (context instanceof ActionDec) {
-			val action = context as ActionDec
-			if (reference == DepModelPackage.Literals.ACTION_DEC__PORT_INSTANCE) {
+		if (context instanceof Action) {
+			val action = context as Action
+			if (reference == DepModelPackage.Literals.ACTION__PORT_INSTANCE) {
 				val compT = EcoreUtil2.getContainerOfType(action, ComponentType)
 				if(compT == null) return IScope.NULLSCOPE
 				val portI = EcoreUtil2.getAllContentsOfType(compT, PortOut)
@@ -60,7 +63,7 @@ class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 
 				return Scopes.scopeFor(portI)
 			}
-			if (reference == DepModelPackage.Literals.ACTION_DEC__ERROR_MODE) {
+			if (reference == DepModelPackage.Literals.ACTION__ERROR_MODE) {
 				val portOutImpl = EcoreUtil2.getContainerOfType(action.portInstance, PortOut)
 				if(portOutImpl == null) return IScope.NULLSCOPE
 				val modes = EcoreUtil2.getAllContentsOfType(portOutImpl.portOutSuperType, ErrorModes)
@@ -118,6 +121,31 @@ class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 			}
 		}
 
+		if (context instanceof SystemConnDec) {
+			val conn = context as SystemConnDec
+			if (reference == DepModelPackage.Literals.SYSTEM_CONN_DEC__SOURCE_PORT) {
+				val systemD = EcoreUtil2.getContainerOfType(conn.sourceSystem, SystemDec)
+				if(systemD == null) return IScope.NULLSCOPE
+				val ports = EcoreUtil2.getAllContentsOfType(systemD, SystemPortOut)
+				if(ports == null) return IScope.NULLSCOPE
+
+				return Scopes.scopeFor(ports)
+
+			}
+		}
+
+		if (context instanceof SystemConnDec) {
+			val conn = context as SystemConnDec
+			if (reference == DepModelPackage.Literals.SYSTEM_CONN_DEC__TARGET_PORT) {
+				val systemD = EcoreUtil2.getContainerOfType(conn.targetSystem, SystemDec)
+				if(systemD == null) return IScope.NULLSCOPE
+				val ports = EcoreUtil2.getAllContentsOfType(systemD, SystemPortIn)
+				if(ports == null) return IScope.NULLSCOPE
+
+				return Scopes.scopeFor(ports)
+
+			}
+		}
 		return super.getScope(context, reference);
 	}
 }

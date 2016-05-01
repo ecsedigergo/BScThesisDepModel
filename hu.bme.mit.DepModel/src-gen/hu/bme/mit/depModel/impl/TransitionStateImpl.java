@@ -4,7 +4,7 @@
 package hu.bme.mit.depModel.impl;
 
 import hu.bme.mit.depModel.DepModelPackage;
-import hu.bme.mit.depModel.StateDec;
+import hu.bme.mit.depModel.State;
 import hu.bme.mit.depModel.TransitionState;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,7 +38,7 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
    * @generated
    * @ordered
    */
-  protected StateDec sourceState;
+  protected State sourceState;
 
   /**
    * The cached value of the '{@link #getTargetState() <em>Target State</em>}' reference.
@@ -48,7 +48,7 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
    * @generated
    * @ordered
    */
-  protected StateDec targetState;
+  protected State targetState;
 
   /**
    * <!-- begin-user-doc -->
@@ -76,12 +76,12 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateDec getSourceState()
+  public State getSourceState()
   {
     if (sourceState != null && sourceState.eIsProxy())
     {
       InternalEObject oldSourceState = (InternalEObject)sourceState;
-      sourceState = (StateDec)eResolveProxy(oldSourceState);
+      sourceState = (State)eResolveProxy(oldSourceState);
       if (sourceState != oldSourceState)
       {
         if (eNotificationRequired())
@@ -96,7 +96,7 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateDec basicGetSourceState()
+  public State basicGetSourceState()
   {
     return sourceState;
   }
@@ -106,9 +106,9 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSourceState(StateDec newSourceState)
+  public void setSourceState(State newSourceState)
   {
-    StateDec oldSourceState = sourceState;
+    State oldSourceState = sourceState;
     sourceState = newSourceState;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.TRANSITION_STATE__SOURCE_STATE, oldSourceState, sourceState));
@@ -119,12 +119,12 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateDec getTargetState()
+  public State getTargetState()
   {
     if (targetState != null && targetState.eIsProxy())
     {
       InternalEObject oldTargetState = (InternalEObject)targetState;
-      targetState = (StateDec)eResolveProxy(oldTargetState);
+      targetState = (State)eResolveProxy(oldTargetState);
       if (targetState != oldTargetState)
       {
         if (eNotificationRequired())
@@ -139,7 +139,7 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateDec basicGetTargetState()
+  public State basicGetTargetState()
   {
     return targetState;
   }
@@ -149,9 +149,9 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTargetState(StateDec newTargetState)
+  public void setTargetState(State newTargetState)
   {
-    StateDec oldTargetState = targetState;
+    State oldTargetState = targetState;
     targetState = newTargetState;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.TRANSITION_STATE__TARGET_STATE, oldTargetState, targetState));
@@ -188,10 +188,10 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
     switch (featureID)
     {
       case DepModelPackage.TRANSITION_STATE__SOURCE_STATE:
-        setSourceState((StateDec)newValue);
+        setSourceState((State)newValue);
         return;
       case DepModelPackage.TRANSITION_STATE__TARGET_STATE:
-        setTargetState((StateDec)newValue);
+        setTargetState((State)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -208,10 +208,10 @@ public class TransitionStateImpl extends TransitionFeatureDecImpl implements Tra
     switch (featureID)
     {
       case DepModelPackage.TRANSITION_STATE__SOURCE_STATE:
-        setSourceState((StateDec)null);
+        setSourceState((State)null);
         return;
       case DepModelPackage.TRANSITION_STATE__TARGET_STATE:
-        setTargetState((StateDec)null);
+        setTargetState((State)null);
         return;
     }
     super.eUnset(featureID);

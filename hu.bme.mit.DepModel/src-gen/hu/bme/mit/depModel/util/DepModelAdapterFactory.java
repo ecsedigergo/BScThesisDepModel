@@ -176,24 +176,9 @@ public class DepModelAdapterFactory extends AdapterFactoryImpl
         return createErrorModelElementAdapter();
       }
       @Override
-      public Adapter caseErrorPortDec(ErrorPortDec object)
+      public Adapter caseState(State object)
       {
-        return createErrorPortDecAdapter();
-      }
-      @Override
-      public Adapter caseErrorPortIn(ErrorPortIn object)
-      {
-        return createErrorPortInAdapter();
-      }
-      @Override
-      public Adapter caseErrorPortOut(ErrorPortOut object)
-      {
-        return createErrorPortOutAdapter();
-      }
-      @Override
-      public Adapter caseStateDec(StateDec object)
-      {
-        return createStateDecAdapter();
+        return createStateAdapter();
       }
       @Override
       public Adapter caseTransitionDec(TransitionDec object)
@@ -211,19 +196,19 @@ public class DepModelAdapterFactory extends AdapterFactoryImpl
         return createTransitionStateAdapter();
       }
       @Override
-      public Adapter caseTriggerDec(TriggerDec object)
+      public Adapter caseTrigger(Trigger object)
       {
-        return createTriggerDecAdapter();
+        return createTriggerAdapter();
       }
       @Override
-      public Adapter caseActionDec(ActionDec object)
+      public Adapter caseAction(Action object)
       {
-        return createActionDecAdapter();
+        return createActionAdapter();
       }
       @Override
-      public Adapter caseOccurrenceDec(OccurrenceDec object)
+      public Adapter caseOccurrence(Occurrence object)
       {
-        return createOccurrenceDecAdapter();
+        return createOccurrenceAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -548,61 +533,16 @@ public class DepModelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.ErrorPortDec <em>Error Port Dec</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.State <em>State</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.depModel.ErrorPortDec
+   * @see hu.bme.mit.depModel.State
    * @generated
    */
-  public Adapter createErrorPortDecAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.ErrorPortIn <em>Error Port In</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.depModel.ErrorPortIn
-   * @generated
-   */
-  public Adapter createErrorPortInAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.ErrorPortOut <em>Error Port Out</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.depModel.ErrorPortOut
-   * @generated
-   */
-  public Adapter createErrorPortOutAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.StateDec <em>State Dec</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see hu.bme.mit.depModel.StateDec
-   * @generated
-   */
-  public Adapter createStateDecAdapter()
+  public Adapter createStateAdapter()
   {
     return null;
   }
@@ -653,46 +593,46 @@ public class DepModelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.TriggerDec <em>Trigger Dec</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.Trigger <em>Trigger</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.depModel.TriggerDec
+   * @see hu.bme.mit.depModel.Trigger
    * @generated
    */
-  public Adapter createTriggerDecAdapter()
+  public Adapter createTriggerAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.ActionDec <em>Action Dec</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.Action <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.depModel.ActionDec
+   * @see hu.bme.mit.depModel.Action
    * @generated
    */
-  public Adapter createActionDecAdapter()
+  public Adapter createActionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.OccurrenceDec <em>Occurrence Dec</em>}'.
+   * Creates a new adapter for an object of class '{@link hu.bme.mit.depModel.Occurrence <em>Occurrence</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see hu.bme.mit.depModel.OccurrenceDec
+   * @see hu.bme.mit.depModel.Occurrence
    * @generated
    */
-  public Adapter createOccurrenceDecAdapter()
+  public Adapter createOccurrenceAdapter()
   {
     return null;
   }

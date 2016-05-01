@@ -4,7 +4,7 @@
 package hu.bme.mit.depModel.impl;
 
 import hu.bme.mit.depModel.AbstractElement;
-import hu.bme.mit.depModel.ActionDec;
+import hu.bme.mit.depModel.Action;
 import hu.bme.mit.depModel.ComponentConnDec;
 import hu.bme.mit.depModel.ComponentFeaturesDec;
 import hu.bme.mit.depModel.ComponentImpl;
@@ -16,15 +16,12 @@ import hu.bme.mit.depModel.DepModelPackage;
 import hu.bme.mit.depModel.ErrorModelDec;
 import hu.bme.mit.depModel.ErrorModelElement;
 import hu.bme.mit.depModel.ErrorModes;
-import hu.bme.mit.depModel.ErrorPortDec;
-import hu.bme.mit.depModel.ErrorPortIn;
-import hu.bme.mit.depModel.ErrorPortOut;
-import hu.bme.mit.depModel.OccurrenceDec;
+import hu.bme.mit.depModel.Occurrence;
 import hu.bme.mit.depModel.PortDec;
 import hu.bme.mit.depModel.PortIn;
 import hu.bme.mit.depModel.PortOut;
 import hu.bme.mit.depModel.PortType;
-import hu.bme.mit.depModel.StateDec;
+import hu.bme.mit.depModel.State;
 import hu.bme.mit.depModel.SysFeaturesDec;
 import hu.bme.mit.depModel.SystemConnDec;
 import hu.bme.mit.depModel.SystemDec;
@@ -34,7 +31,7 @@ import hu.bme.mit.depModel.SystemPortOut;
 import hu.bme.mit.depModel.TransitionDec;
 import hu.bme.mit.depModel.TransitionFeatureDec;
 import hu.bme.mit.depModel.TransitionState;
-import hu.bme.mit.depModel.TriggerDec;
+import hu.bme.mit.depModel.Trigger;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -196,28 +193,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass errorPortDecEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass errorPortInEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass errorPortOutEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass stateDecEClass = null;
+  private EClass stateEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -245,21 +221,21 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass triggerDecEClass = null;
+  private EClass triggerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actionDecEClass = null;
+  private EClass actionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass occurrenceDecEClass = null;
+  private EClass occurrenceEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -779,59 +755,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getErrorPortDec()
+  public EClass getState()
   {
-    return errorPortDecEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getErrorPortIn()
-  {
-    return errorPortInEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getErrorPortIn_ErrorPortInSuperType()
-  {
-    return (EReference)errorPortInEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getErrorPortOut()
-  {
-    return errorPortOutEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getErrorPortOut_ErrorPortOutSuperType()
-  {
-    return (EReference)errorPortOutEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getStateDec()
-  {
-    return stateDecEClass;
+    return stateEClass;
   }
 
   /**
@@ -849,7 +775,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransitionDec_Features()
+  public EReference getTransitionDec_TransFeatures()
   {
     return (EReference)transitionDecEClass.getEStructuralFeatures().get(0);
   }
@@ -899,9 +825,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTriggerDec()
+  public EClass getTrigger()
   {
-    return triggerDecEClass;
+    return triggerEClass;
   }
 
   /**
@@ -909,9 +835,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTriggerDec_Name()
+  public EAttribute getTrigger_Name()
   {
-    return (EAttribute)triggerDecEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)triggerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -919,9 +845,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTriggerDec_PortInstance()
+  public EReference getTrigger_PortInstance()
   {
-    return (EReference)triggerDecEClass.getEStructuralFeatures().get(1);
+    return (EReference)triggerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -929,9 +855,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTriggerDec_ErrorMode()
+  public EReference getTrigger_ErrorMode()
   {
-    return (EReference)triggerDecEClass.getEStructuralFeatures().get(2);
+    return (EReference)triggerEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -939,9 +865,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getActionDec()
+  public EClass getAction()
   {
-    return actionDecEClass;
+    return actionEClass;
   }
 
   /**
@@ -949,9 +875,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionDec_Name()
+  public EAttribute getAction_Name()
   {
-    return (EAttribute)actionDecEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -959,9 +885,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getActionDec_PortInstance()
+  public EReference getAction_PortInstance()
   {
-    return (EReference)actionDecEClass.getEStructuralFeatures().get(1);
+    return (EReference)actionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -969,9 +895,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getActionDec_ErrorMode()
+  public EReference getAction_ErrorMode()
   {
-    return (EReference)actionDecEClass.getEStructuralFeatures().get(2);
+    return (EReference)actionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -979,9 +905,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOccurrenceDec()
+  public EClass getOccurrence()
   {
-    return occurrenceDecEClass;
+    return occurrenceEClass;
   }
 
   /**
@@ -1079,18 +1005,10 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     errorModelElementEClass = createEClass(ERROR_MODEL_ELEMENT);
     createEAttribute(errorModelElementEClass, ERROR_MODEL_ELEMENT__NAME);
 
-    errorPortDecEClass = createEClass(ERROR_PORT_DEC);
-
-    errorPortInEClass = createEClass(ERROR_PORT_IN);
-    createEReference(errorPortInEClass, ERROR_PORT_IN__ERROR_PORT_IN_SUPER_TYPE);
-
-    errorPortOutEClass = createEClass(ERROR_PORT_OUT);
-    createEReference(errorPortOutEClass, ERROR_PORT_OUT__ERROR_PORT_OUT_SUPER_TYPE);
-
-    stateDecEClass = createEClass(STATE_DEC);
+    stateEClass = createEClass(STATE);
 
     transitionDecEClass = createEClass(TRANSITION_DEC);
-    createEReference(transitionDecEClass, TRANSITION_DEC__FEATURES);
+    createEReference(transitionDecEClass, TRANSITION_DEC__TRANS_FEATURES);
 
     transitionFeatureDecEClass = createEClass(TRANSITION_FEATURE_DEC);
 
@@ -1098,17 +1016,17 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     createEReference(transitionStateEClass, TRANSITION_STATE__SOURCE_STATE);
     createEReference(transitionStateEClass, TRANSITION_STATE__TARGET_STATE);
 
-    triggerDecEClass = createEClass(TRIGGER_DEC);
-    createEAttribute(triggerDecEClass, TRIGGER_DEC__NAME);
-    createEReference(triggerDecEClass, TRIGGER_DEC__PORT_INSTANCE);
-    createEReference(triggerDecEClass, TRIGGER_DEC__ERROR_MODE);
+    triggerEClass = createEClass(TRIGGER);
+    createEAttribute(triggerEClass, TRIGGER__NAME);
+    createEReference(triggerEClass, TRIGGER__PORT_INSTANCE);
+    createEReference(triggerEClass, TRIGGER__ERROR_MODE);
 
-    actionDecEClass = createEClass(ACTION_DEC);
-    createEAttribute(actionDecEClass, ACTION_DEC__NAME);
-    createEReference(actionDecEClass, ACTION_DEC__PORT_INSTANCE);
-    createEReference(actionDecEClass, ACTION_DEC__ERROR_MODE);
+    actionEClass = createEClass(ACTION);
+    createEAttribute(actionEClass, ACTION__NAME);
+    createEReference(actionEClass, ACTION__PORT_INSTANCE);
+    createEReference(actionEClass, ACTION__ERROR_MODE);
 
-    occurrenceDecEClass = createEClass(OCCURRENCE_DEC);
+    occurrenceEClass = createEClass(OCCURRENCE);
   }
 
   /**
@@ -1154,15 +1072,12 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     portInEClass.getESuperTypes().add(this.getPortDec());
     portOutEClass.getESuperTypes().add(this.getPortDec());
     errorModelDecEClass.getESuperTypes().add(this.getComponentFeaturesDec());
-    errorPortDecEClass.getESuperTypes().add(this.getErrorModelElement());
-    errorPortInEClass.getESuperTypes().add(this.getErrorPortDec());
-    errorPortOutEClass.getESuperTypes().add(this.getErrorPortDec());
-    stateDecEClass.getESuperTypes().add(this.getErrorModelElement());
+    stateEClass.getESuperTypes().add(this.getErrorModelElement());
     transitionDecEClass.getESuperTypes().add(this.getErrorModelElement());
     transitionStateEClass.getESuperTypes().add(this.getTransitionFeatureDec());
-    triggerDecEClass.getESuperTypes().add(this.getTransitionFeatureDec());
-    actionDecEClass.getESuperTypes().add(this.getTransitionFeatureDec());
-    occurrenceDecEClass.getESuperTypes().add(this.getTransitionFeatureDec());
+    triggerEClass.getESuperTypes().add(this.getTransitionFeatureDec());
+    actionEClass.getESuperTypes().add(this.getTransitionFeatureDec());
+    occurrenceEClass.getESuperTypes().add(this.getTransitionFeatureDec());
 
     // Initialize classes and features; add operations and parameters
     initEClass(depModelEClass, DepModel.class, "DepModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1181,9 +1096,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
 
     initEClass(systemConnDecEClass, SystemConnDec.class, "SystemConnDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSystemConnDec_SourceSystem(), this.getSystemDec(), null, "sourceSystem", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSystemConnDec_SourcePort(), this.getSystemPortDec(), null, "sourcePort", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSystemConnDec_SourcePort(), this.getSystemPortOut(), null, "sourcePort", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystemConnDec_TargetSystem(), this.getSystemDec(), null, "targetSystem", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSystemConnDec_TargetPort(), this.getSystemPortDec(), null, "targetPort", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSystemConnDec_TargetPort(), this.getSystemPortIn(), null, "targetPort", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(systemDecEClass, SystemDec.class, "SystemDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSystemDec_SysFeatures(), this.getSysFeaturesDec(), null, "sysFeatures", null, 0, -1, SystemDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1230,36 +1145,28 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     initEClass(errorModelElementEClass, ErrorModelElement.class, "ErrorModelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getErrorModelElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ErrorModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(errorPortDecEClass, ErrorPortDec.class, "ErrorPortDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(errorPortInEClass, ErrorPortIn.class, "ErrorPortIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getErrorPortIn_ErrorPortInSuperType(), this.getPortType(), null, "ErrorPortInSuperType", null, 0, 1, ErrorPortIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(errorPortOutEClass, ErrorPortOut.class, "ErrorPortOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getErrorPortOut_ErrorPortOutSuperType(), this.getPortType(), null, "ErrorPortOutSuperType", null, 0, 1, ErrorPortOut.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(stateDecEClass, StateDec.class, "StateDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(transitionDecEClass, TransitionDec.class, "TransitionDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTransitionDec_Features(), this.getTransitionFeatureDec(), null, "Features", null, 0, -1, TransitionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransitionDec_TransFeatures(), this.getTransitionFeatureDec(), null, "transFeatures", null, 0, -1, TransitionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(transitionFeatureDecEClass, TransitionFeatureDec.class, "TransitionFeatureDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(transitionStateEClass, TransitionState.class, "TransitionState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTransitionState_SourceState(), this.getStateDec(), null, "sourceState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTransitionState_TargetState(), this.getStateDec(), null, "targetState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransitionState_SourceState(), this.getState(), null, "sourceState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransitionState_TargetState(), this.getState(), null, "targetState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(triggerDecEClass, TriggerDec.class, "TriggerDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTriggerDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, TriggerDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTriggerDec_PortInstance(), this.getPortDec(), null, "portInstance", null, 0, 1, TriggerDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTriggerDec_ErrorMode(), this.getErrorModes(), null, "errorMode", null, 0, 1, TriggerDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTrigger_Name(), ecorePackage.getEString(), "name", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTrigger_PortInstance(), this.getPortDec(), null, "portInstance", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTrigger_ErrorMode(), this.getErrorModes(), null, "errorMode", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(actionDecEClass, ActionDec.class, "ActionDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActionDec_Name(), ecorePackage.getEString(), "name", null, 0, 1, ActionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActionDec_PortInstance(), this.getPortDec(), null, "portInstance", null, 0, 1, ActionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActionDec_ErrorMode(), this.getErrorModes(), null, "errorMode", null, 0, 1, ActionDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAction_PortInstance(), this.getPortDec(), null, "portInstance", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAction_ErrorMode(), this.getErrorModes(), null, "errorMode", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(occurrenceDecEClass, OccurrenceDec.class, "OccurrenceDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(occurrenceEClass, Occurrence.class, "Occurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

@@ -6,7 +6,8 @@ package hu.bme.mit.depModel.impl;
 import hu.bme.mit.depModel.DepModelPackage;
 import hu.bme.mit.depModel.SystemConnDec;
 import hu.bme.mit.depModel.SystemDec;
-import hu.bme.mit.depModel.SystemPortDec;
+import hu.bme.mit.depModel.SystemPortIn;
+import hu.bme.mit.depModel.SystemPortOut;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -51,7 +52,7 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
    * @generated
    * @ordered
    */
-  protected SystemPortDec sourcePort;
+  protected SystemPortOut sourcePort;
 
   /**
    * The cached value of the '{@link #getTargetSystem() <em>Target System</em>}' reference.
@@ -71,7 +72,7 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
    * @generated
    * @ordered
    */
-  protected SystemPortDec targetPort;
+  protected SystemPortIn targetPort;
 
   /**
    * <!-- begin-user-doc -->
@@ -142,12 +143,12 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
    * <!-- end-user-doc -->
    * @generated
    */
-  public SystemPortDec getSourcePort()
+  public SystemPortOut getSourcePort()
   {
     if (sourcePort != null && sourcePort.eIsProxy())
     {
       InternalEObject oldSourcePort = (InternalEObject)sourcePort;
-      sourcePort = (SystemPortDec)eResolveProxy(oldSourcePort);
+      sourcePort = (SystemPortOut)eResolveProxy(oldSourcePort);
       if (sourcePort != oldSourcePort)
       {
         if (eNotificationRequired())
@@ -162,7 +163,7 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
    * <!-- end-user-doc -->
    * @generated
    */
-  public SystemPortDec basicGetSourcePort()
+  public SystemPortOut basicGetSourcePort()
   {
     return sourcePort;
   }
@@ -172,9 +173,9 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSourcePort(SystemPortDec newSourcePort)
+  public void setSourcePort(SystemPortOut newSourcePort)
   {
-    SystemPortDec oldSourcePort = sourcePort;
+    SystemPortOut oldSourcePort = sourcePort;
     sourcePort = newSourcePort;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.SYSTEM_CONN_DEC__SOURCE_PORT, oldSourcePort, sourcePort));
@@ -228,12 +229,12 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
    * <!-- end-user-doc -->
    * @generated
    */
-  public SystemPortDec getTargetPort()
+  public SystemPortIn getTargetPort()
   {
     if (targetPort != null && targetPort.eIsProxy())
     {
       InternalEObject oldTargetPort = (InternalEObject)targetPort;
-      targetPort = (SystemPortDec)eResolveProxy(oldTargetPort);
+      targetPort = (SystemPortIn)eResolveProxy(oldTargetPort);
       if (targetPort != oldTargetPort)
       {
         if (eNotificationRequired())
@@ -248,7 +249,7 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
    * <!-- end-user-doc -->
    * @generated
    */
-  public SystemPortDec basicGetTargetPort()
+  public SystemPortIn basicGetTargetPort()
   {
     return targetPort;
   }
@@ -258,9 +259,9 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTargetPort(SystemPortDec newTargetPort)
+  public void setTargetPort(SystemPortIn newTargetPort)
   {
-    SystemPortDec oldTargetPort = targetPort;
+    SystemPortIn oldTargetPort = targetPort;
     targetPort = newTargetPort;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.SYSTEM_CONN_DEC__TARGET_PORT, oldTargetPort, targetPort));
@@ -306,13 +307,13 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
         setSourceSystem((SystemDec)newValue);
         return;
       case DepModelPackage.SYSTEM_CONN_DEC__SOURCE_PORT:
-        setSourcePort((SystemPortDec)newValue);
+        setSourcePort((SystemPortOut)newValue);
         return;
       case DepModelPackage.SYSTEM_CONN_DEC__TARGET_SYSTEM:
         setTargetSystem((SystemDec)newValue);
         return;
       case DepModelPackage.SYSTEM_CONN_DEC__TARGET_PORT:
-        setTargetPort((SystemPortDec)newValue);
+        setTargetPort((SystemPortIn)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -332,13 +333,13 @@ public class SystemConnDecImpl extends ComponentModelDecImpl implements SystemCo
         setSourceSystem((SystemDec)null);
         return;
       case DepModelPackage.SYSTEM_CONN_DEC__SOURCE_PORT:
-        setSourcePort((SystemPortDec)null);
+        setSourcePort((SystemPortOut)null);
         return;
       case DepModelPackage.SYSTEM_CONN_DEC__TARGET_SYSTEM:
         setTargetSystem((SystemDec)null);
         return;
       case DepModelPackage.SYSTEM_CONN_DEC__TARGET_PORT:
-        setTargetPort((SystemPortDec)null);
+        setTargetPort((SystemPortIn)null);
         return;
     }
     super.eUnset(featureID);

@@ -188,24 +188,24 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSourceSystemSystemDecIDTerminalRuleCall_4_0_1 = (RuleCall)cSourceSystemSystemDecCrossReference_4_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cSourcePortAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cSourcePortSystemPortDecCrossReference_6_0 = (CrossReference)cSourcePortAssignment_6.eContents().get(0);
-		private final RuleCall cSourcePortSystemPortDecIDTerminalRuleCall_6_0_1 = (RuleCall)cSourcePortSystemPortDecCrossReference_6_0.eContents().get(1);
+		private final CrossReference cSourcePortSystemPortOutCrossReference_6_0 = (CrossReference)cSourcePortAssignment_6.eContents().get(0);
+		private final RuleCall cSourcePortSystemPortOutIDTerminalRuleCall_6_0_1 = (RuleCall)cSourcePortSystemPortOutCrossReference_6_0.eContents().get(1);
 		private final Keyword cToKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cTargetSystemAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final CrossReference cTargetSystemSystemDecCrossReference_8_0 = (CrossReference)cTargetSystemAssignment_8.eContents().get(0);
 		private final RuleCall cTargetSystemSystemDecIDTerminalRuleCall_8_0_1 = (RuleCall)cTargetSystemSystemDecCrossReference_8_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cTargetPortAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final CrossReference cTargetPortSystemPortDecCrossReference_10_0 = (CrossReference)cTargetPortAssignment_10.eContents().get(0);
-		private final RuleCall cTargetPortSystemPortDecIDTerminalRuleCall_10_0_1 = (RuleCall)cTargetPortSystemPortDecCrossReference_10_0.eContents().get(1);
+		private final CrossReference cTargetPortSystemPortInCrossReference_10_0 = (CrossReference)cTargetPortAssignment_10.eContents().get(0);
+		private final RuleCall cTargetPortSystemPortInIDTerminalRuleCall_10_0_1 = (RuleCall)cTargetPortSystemPortInCrossReference_10_0.eContents().get(1);
 		
 		//SystemConnDec:
-		//	'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec] 'to'
-		//	targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
+		//	'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut] 'to'
+		//	targetSystem=[SystemDec] '.' targetPort=[SystemPortIn];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec] 'to'
-		//targetSystem=[SystemDec] '.' targetPort=[SystemPortDec]
+		//'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut] 'to'
+		//targetSystem=[SystemDec] '.' targetPort=[SystemPortIn]
 		public Group getGroup() { return cGroup; }
 		
 		//'system'
@@ -235,14 +235,14 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_5() { return cFullStopKeyword_5; }
 		
-		//sourcePort=[SystemPortDec]
+		//sourcePort=[SystemPortOut]
 		public Assignment getSourcePortAssignment_6() { return cSourcePortAssignment_6; }
 		
-		//[SystemPortDec]
-		public CrossReference getSourcePortSystemPortDecCrossReference_6_0() { return cSourcePortSystemPortDecCrossReference_6_0; }
+		//[SystemPortOut]
+		public CrossReference getSourcePortSystemPortOutCrossReference_6_0() { return cSourcePortSystemPortOutCrossReference_6_0; }
 		
 		//ID
-		public RuleCall getSourcePortSystemPortDecIDTerminalRuleCall_6_0_1() { return cSourcePortSystemPortDecIDTerminalRuleCall_6_0_1; }
+		public RuleCall getSourcePortSystemPortOutIDTerminalRuleCall_6_0_1() { return cSourcePortSystemPortOutIDTerminalRuleCall_6_0_1; }
 		
 		//'to'
 		public Keyword getToKeyword_7() { return cToKeyword_7; }
@@ -259,14 +259,14 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_9() { return cFullStopKeyword_9; }
 		
-		//targetPort=[SystemPortDec]
+		//targetPort=[SystemPortIn]
 		public Assignment getTargetPortAssignment_10() { return cTargetPortAssignment_10; }
 		
-		//[SystemPortDec]
-		public CrossReference getTargetPortSystemPortDecCrossReference_10_0() { return cTargetPortSystemPortDecCrossReference_10_0; }
+		//[SystemPortIn]
+		public CrossReference getTargetPortSystemPortInCrossReference_10_0() { return cTargetPortSystemPortInCrossReference_10_0; }
 		
 		//ID
-		public RuleCall getTargetPortSystemPortDecIDTerminalRuleCall_10_0_1() { return cTargetPortSystemPortDecIDTerminalRuleCall_10_0_1; }
+		public RuleCall getTargetPortSystemPortInIDTerminalRuleCall_10_0_1() { return cTargetPortSystemPortInIDTerminalRuleCall_10_0_1; }
 	}
 	public class SystemDecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.SystemDec");
@@ -344,8 +344,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSystemPortInParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSystemPortOutParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		////ComponentType;
-		// SystemPortDec:
+		//SystemPortDec:
 		//	SystemPortIn | SystemPortOut;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -490,7 +489,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cComponentKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cConnectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cFromKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cSourceCompAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cSourceCompComponentImplCrossReference_4_0 = (CrossReference)cSourceCompAssignment_4.eContents().get(0);
@@ -509,11 +508,11 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTargetPortPortInIDTerminalRuleCall_10_0_1 = (RuleCall)cTargetPortPortInCrossReference_10_0.eContents().get(1);
 		
 		//ComponentConnDec:
-		//	'component' 'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
+		//	'component' 'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
 		//	targetComp=[ComponentImpl] '.' targetPort=[PortIn];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'component' 'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
+		//'component' 'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
 		//targetComp=[ComponentImpl] '.' targetPort=[PortIn]
 		public Group getGroup() { return cGroup; }
 		
@@ -523,11 +522,11 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'connection'
 		public Keyword getConnectionKeyword_1() { return cConnectionKeyword_1; }
 		
-		//name=ID
+		//name=QualifiedName
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 		
 		//'from'
 		public Keyword getFromKeyword_3() { return cFromKeyword_3; }
@@ -842,148 +841,31 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	public class ErrorModelElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.ErrorModelElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cStateDecParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cStateParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cTransitionDecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cErrorPortDecParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ErrorModelElement:
-		//	StateDec | TransitionDec | ErrorPortDec;
+		//	State | TransitionDec;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//StateDec | TransitionDec | ErrorPortDec
+		//State | TransitionDec
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//StateDec
-		public RuleCall getStateDecParserRuleCall_0() { return cStateDecParserRuleCall_0; }
+		//State
+		public RuleCall getStateParserRuleCall_0() { return cStateParserRuleCall_0; }
 		
 		//TransitionDec
 		public RuleCall getTransitionDecParserRuleCall_1() { return cTransitionDecParserRuleCall_1; }
-		
-		//ErrorPortDec
-		public RuleCall getErrorPortDecParserRuleCall_2() { return cErrorPortDecParserRuleCall_2; }
 	}
-	public class ErrorPortDecElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.ErrorPortDec");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cErrorPortInParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cErrorPortOutParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//ErrorPortDec:
-		//	ErrorPortIn | ErrorPortOut;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//ErrorPortIn | ErrorPortOut
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//ErrorPortIn
-		public RuleCall getErrorPortInParserRuleCall_0() { return cErrorPortInParserRuleCall_0; }
-		
-		//ErrorPortOut
-		public RuleCall getErrorPortOutParserRuleCall_1() { return cErrorPortOutParserRuleCall_1; }
-	}
-	public class ErrorPortInElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.ErrorPortIn");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cErrorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cPortKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cInKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameQualifiedNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cErrorPortInSuperTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cErrorPortInSuperTypePortTypeCrossReference_5_0 = (CrossReference)cErrorPortInSuperTypeAssignment_5.eContents().get(0);
-		private final RuleCall cErrorPortInSuperTypePortTypeIDTerminalRuleCall_5_0_1 = (RuleCall)cErrorPortInSuperTypePortTypeCrossReference_5_0.eContents().get(1);
-		
-		//ErrorPortIn:
-		//	'error' 'port' 'in' name=QualifiedName ':' ErrorPortInSuperType=[PortType];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'error' 'port' 'in' name=QualifiedName ':' ErrorPortInSuperType=[PortType]
-		public Group getGroup() { return cGroup; }
-		
-		//'error'
-		public Keyword getErrorKeyword_0() { return cErrorKeyword_0; }
-		
-		//'port'
-		public Keyword getPortKeyword_1() { return cPortKeyword_1; }
-		
-		//'in'
-		public Keyword getInKeyword_2() { return cInKeyword_2; }
-		
-		//name=QualifiedName
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-		
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_3_0() { return cNameQualifiedNameParserRuleCall_3_0; }
-		
-		//':'
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
-		
-		//ErrorPortInSuperType=[PortType]
-		public Assignment getErrorPortInSuperTypeAssignment_5() { return cErrorPortInSuperTypeAssignment_5; }
-		
-		//[PortType]
-		public CrossReference getErrorPortInSuperTypePortTypeCrossReference_5_0() { return cErrorPortInSuperTypePortTypeCrossReference_5_0; }
-		
-		//ID
-		public RuleCall getErrorPortInSuperTypePortTypeIDTerminalRuleCall_5_0_1() { return cErrorPortInSuperTypePortTypeIDTerminalRuleCall_5_0_1; }
-	}
-	public class ErrorPortOutElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.ErrorPortOut");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cErrorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cPortKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cOutKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameQualifiedNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cErrorPortOutSuperTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cErrorPortOutSuperTypePortTypeCrossReference_5_0 = (CrossReference)cErrorPortOutSuperTypeAssignment_5.eContents().get(0);
-		private final RuleCall cErrorPortOutSuperTypePortTypeIDTerminalRuleCall_5_0_1 = (RuleCall)cErrorPortOutSuperTypePortTypeCrossReference_5_0.eContents().get(1);
-		
-		//ErrorPortOut:
-		//	'error' 'port' 'out' name=QualifiedName ':' ErrorPortOutSuperType=[PortType];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'error' 'port' 'out' name=QualifiedName ':' ErrorPortOutSuperType=[PortType]
-		public Group getGroup() { return cGroup; }
-		
-		//'error'
-		public Keyword getErrorKeyword_0() { return cErrorKeyword_0; }
-		
-		//'port'
-		public Keyword getPortKeyword_1() { return cPortKeyword_1; }
-		
-		//'out'
-		public Keyword getOutKeyword_2() { return cOutKeyword_2; }
-		
-		//name=QualifiedName
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-		
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_3_0() { return cNameQualifiedNameParserRuleCall_3_0; }
-		
-		//':'
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
-		
-		//ErrorPortOutSuperType=[PortType]
-		public Assignment getErrorPortOutSuperTypeAssignment_5() { return cErrorPortOutSuperTypeAssignment_5; }
-		
-		//[PortType]
-		public CrossReference getErrorPortOutSuperTypePortTypeCrossReference_5_0() { return cErrorPortOutSuperTypePortTypeCrossReference_5_0; }
-		
-		//ID
-		public RuleCall getErrorPortOutSuperTypePortTypeIDTerminalRuleCall_5_0_1() { return cErrorPortOutSuperTypePortTypeIDTerminalRuleCall_5_0_1; }
-	}
-	public class StateDecElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.StateDec");
+	public class StateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.State");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cErrorKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cStateKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
-		//StateDec:
+		//State:
 		//	'error' 'state' name=QualifiedName;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1009,15 +891,15 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFeaturesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFeaturesTransitionFeatureDecParserRuleCall_3_0 = (RuleCall)cFeaturesAssignment_3.eContents().get(0);
+		private final Assignment cTransFeaturesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTransFeaturesTransitionFeatureDecParserRuleCall_3_0 = (RuleCall)cTransFeaturesAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TransitionDec:
-		//	'transition' name=QualifiedName '{' Features+=TransitionFeatureDec* '}';
+		//	'transition' name=QualifiedName '{' transFeatures+=TransitionFeatureDec* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'transition' name=QualifiedName '{' Features+=TransitionFeatureDec* '}'
+		//'transition' name=QualifiedName '{' transFeatures+=TransitionFeatureDec* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'transition'
@@ -1032,11 +914,11 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//Features+=TransitionFeatureDec*
-		public Assignment getFeaturesAssignment_3() { return cFeaturesAssignment_3; }
+		//transFeatures+=TransitionFeatureDec*
+		public Assignment getTransFeaturesAssignment_3() { return cTransFeaturesAssignment_3; }
 		
 		//TransitionFeatureDec
-		public RuleCall getFeaturesTransitionFeatureDecParserRuleCall_3_0() { return cFeaturesTransitionFeatureDecParserRuleCall_3_0; }
+		public RuleCall getTransFeaturesTransitionFeatureDecParserRuleCall_3_0() { return cTransFeaturesTransitionFeatureDecParserRuleCall_3_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -1045,37 +927,37 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.TransitionFeatureDec");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cTransitionStateParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTriggerDecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cActionDecParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cTriggerParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cActionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Keyword cOccurrenceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Action cOccurrenceDecAction_3_1 = (Action)cGroup_3.eContents().get(1);
+		private final Action cOccurrenceAction_3_1 = (Action)cGroup_3.eContents().get(1);
 		private final RuleCall cDOUBLEParserRuleCall_3_2 = (RuleCall)cGroup_3.eContents().get(2);
 		
 		//TransitionFeatureDec:
-		//	TransitionState | TriggerDec | ActionDec | "occurrence" {OccurrenceDec} DOUBLE;
+		//	TransitionState | Trigger | Action | "occurrence" {Occurrence} DOUBLE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//TransitionState | TriggerDec | ActionDec | "occurrence" {OccurrenceDec} DOUBLE
+		//TransitionState | Trigger | Action | "occurrence" {Occurrence} DOUBLE
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//TransitionState
 		public RuleCall getTransitionStateParserRuleCall_0() { return cTransitionStateParserRuleCall_0; }
 		
-		//TriggerDec
-		public RuleCall getTriggerDecParserRuleCall_1() { return cTriggerDecParserRuleCall_1; }
+		//Trigger
+		public RuleCall getTriggerParserRuleCall_1() { return cTriggerParserRuleCall_1; }
 		
-		//ActionDec
-		public RuleCall getActionDecParserRuleCall_2() { return cActionDecParserRuleCall_2; }
+		//Action
+		public RuleCall getActionParserRuleCall_2() { return cActionParserRuleCall_2; }
 		
-		//"occurrence" {OccurrenceDec} DOUBLE
+		//"occurrence" {Occurrence} DOUBLE
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//"occurrence"
 		public Keyword getOccurrenceKeyword_3_0() { return cOccurrenceKeyword_3_0; }
 		
-		//{OccurrenceDec}
-		public Action getOccurrenceDecAction_3_1() { return cOccurrenceDecAction_3_1; }
+		//{Occurrence}
+		public Action getOccurrenceAction_3_1() { return cOccurrenceAction_3_1; }
 		
 		//DOUBLE
 		public RuleCall getDOUBLEParserRuleCall_3_2() { return cDOUBLEParserRuleCall_3_2; }
@@ -1085,46 +967,46 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStatesKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSourceStateAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cSourceStateStateDecCrossReference_1_0 = (CrossReference)cSourceStateAssignment_1.eContents().get(0);
-		private final RuleCall cSourceStateStateDecIDTerminalRuleCall_1_0_1 = (RuleCall)cSourceStateStateDecCrossReference_1_0.eContents().get(1);
+		private final CrossReference cSourceStateStateCrossReference_1_0 = (CrossReference)cSourceStateAssignment_1.eContents().get(0);
+		private final RuleCall cSourceStateStateIDTerminalRuleCall_1_0_1 = (RuleCall)cSourceStateStateCrossReference_1_0.eContents().get(1);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTargetStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTargetStateStateDecCrossReference_3_0 = (CrossReference)cTargetStateAssignment_3.eContents().get(0);
-		private final RuleCall cTargetStateStateDecIDTerminalRuleCall_3_0_1 = (RuleCall)cTargetStateStateDecCrossReference_3_0.eContents().get(1);
+		private final CrossReference cTargetStateStateCrossReference_3_0 = (CrossReference)cTargetStateAssignment_3.eContents().get(0);
+		private final RuleCall cTargetStateStateIDTerminalRuleCall_3_0_1 = (RuleCall)cTargetStateStateCrossReference_3_0.eContents().get(1);
 		
 		//TransitionState:
-		//	'states' sourceState=[StateDec] '->' targetState=[StateDec];
+		//	'states' sourceState=[State] '->' targetState=[State];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'states' sourceState=[StateDec] '->' targetState=[StateDec]
+		//'states' sourceState=[State] '->' targetState=[State]
 		public Group getGroup() { return cGroup; }
 		
 		//'states'
 		public Keyword getStatesKeyword_0() { return cStatesKeyword_0; }
 		
-		//sourceState=[StateDec]
+		//sourceState=[State]
 		public Assignment getSourceStateAssignment_1() { return cSourceStateAssignment_1; }
 		
-		//[StateDec]
-		public CrossReference getSourceStateStateDecCrossReference_1_0() { return cSourceStateStateDecCrossReference_1_0; }
+		//[State]
+		public CrossReference getSourceStateStateCrossReference_1_0() { return cSourceStateStateCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getSourceStateStateDecIDTerminalRuleCall_1_0_1() { return cSourceStateStateDecIDTerminalRuleCall_1_0_1; }
+		public RuleCall getSourceStateStateIDTerminalRuleCall_1_0_1() { return cSourceStateStateIDTerminalRuleCall_1_0_1; }
 		
 		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
 		
-		//targetState=[StateDec]
+		//targetState=[State]
 		public Assignment getTargetStateAssignment_3() { return cTargetStateAssignment_3; }
 		
-		//[StateDec]
-		public CrossReference getTargetStateStateDecCrossReference_3_0() { return cTargetStateStateDecCrossReference_3_0; }
+		//[State]
+		public CrossReference getTargetStateStateCrossReference_3_0() { return cTargetStateStateCrossReference_3_0; }
 		
 		//ID
-		public RuleCall getTargetStateStateDecIDTerminalRuleCall_3_0_1() { return cTargetStateStateDecIDTerminalRuleCall_3_0_1; }
+		public RuleCall getTargetStateStateIDTerminalRuleCall_3_0_1() { return cTargetStateStateIDTerminalRuleCall_3_0_1; }
 	}
-	public class TriggerDecElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.TriggerDec");
+	public class TriggerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.Trigger");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTriggerKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1138,7 +1020,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cErrorModeErrorModesCrossReference_5_0 = (CrossReference)cErrorModeAssignment_5.eContents().get(0);
 		private final RuleCall cErrorModeErrorModesIDTerminalRuleCall_5_0_1 = (RuleCall)cErrorModeErrorModesCrossReference_5_0.eContents().get(1);
 		
-		//TriggerDec:
+		//Trigger:
 		//	'trigger' name=QualifiedName ':' portInstance=[PortDec] '.' errorMode=[ErrorModes];
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1178,8 +1060,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getErrorModeErrorModesIDTerminalRuleCall_5_0_1() { return cErrorModeErrorModesIDTerminalRuleCall_5_0_1; }
 	}
-	public class ActionDecElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.ActionDec");
+	public class ActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.Action");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1193,7 +1075,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cErrorModeErrorModesCrossReference_5_0 = (CrossReference)cErrorModeAssignment_5.eContents().get(0);
 		private final RuleCall cErrorModeErrorModesIDTerminalRuleCall_5_0_1 = (RuleCall)cErrorModeErrorModesCrossReference_5_0.eContents().get(1);
 		
-		//ActionDec:
+		//Action:
 		//	'action' name=QualifiedName ':' portInstance=[PortDec] '.' errorMode=[ErrorModes];
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1279,15 +1161,12 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	private final PortOutElements pPortOut;
 	private final ErrorModelDecElements pErrorModelDec;
 	private final ErrorModelElementElements pErrorModelElement;
-	private final ErrorPortDecElements pErrorPortDec;
-	private final ErrorPortInElements pErrorPortIn;
-	private final ErrorPortOutElements pErrorPortOut;
-	private final StateDecElements pStateDec;
+	private final StateElements pState;
 	private final TransitionDecElements pTransitionDec;
 	private final TransitionFeatureDecElements pTransitionFeatureDec;
 	private final TransitionStateElements pTransitionState;
-	private final TriggerDecElements pTriggerDec;
-	private final ActionDecElements pActionDec;
+	private final TriggerElements pTrigger;
+	private final ActionElements pAction;
 	private final DOUBLEElements pDOUBLE;
 	
 	private final Grammar grammar;
@@ -1320,15 +1199,12 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPortOut = new PortOutElements();
 		this.pErrorModelDec = new ErrorModelDecElements();
 		this.pErrorModelElement = new ErrorModelElementElements();
-		this.pErrorPortDec = new ErrorPortDecElements();
-		this.pErrorPortIn = new ErrorPortInElements();
-		this.pErrorPortOut = new ErrorPortOutElements();
-		this.pStateDec = new StateDecElements();
+		this.pState = new StateElements();
 		this.pTransitionDec = new TransitionDecElements();
 		this.pTransitionFeatureDec = new TransitionFeatureDecElements();
 		this.pTransitionState = new TransitionStateElements();
-		this.pTriggerDec = new TriggerDecElements();
-		this.pActionDec = new ActionDecElements();
+		this.pTrigger = new TriggerElements();
+		this.pAction = new ActionElements();
 		this.pDOUBLE = new DOUBLEElements();
 	}
 	
@@ -1421,8 +1297,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SystemConnDec:
-	//	'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortDec] 'to'
-	//	targetSystem=[SystemDec] '.' targetPort=[SystemPortDec];
+	//	'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut] 'to'
+	//	targetSystem=[SystemDec] '.' targetPort=[SystemPortIn];
 	public SystemConnDecElements getSystemConnDecAccess() {
 		return pSystemConnDec;
 	}
@@ -1451,8 +1327,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		return getSysFeaturesDecAccess().getRule();
 	}
 	
-	////ComponentType;
-	// SystemPortDec:
+	//SystemPortDec:
 	//	SystemPortIn | SystemPortOut;
 	public SystemPortDecElements getSystemPortDecAccess() {
 		return pSystemPortDec;
@@ -1483,7 +1358,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ComponentConnDec:
-	//	'component' 'connection' name=ID 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
+	//	'component' 'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
 	//	targetComp=[ComponentImpl] '.' targetPort=[PortIn];
 	public ComponentConnDecElements getComponentConnDecAccess() {
 		return pComponentConnDec;
@@ -1565,7 +1440,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ErrorModelElement:
-	//	StateDec | TransitionDec | ErrorPortDec;
+	//	State | TransitionDec;
 	public ErrorModelElementElements getErrorModelElementAccess() {
 		return pErrorModelElement;
 	}
@@ -1574,48 +1449,18 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		return getErrorModelElementAccess().getRule();
 	}
 	
-	//ErrorPortDec:
-	//	ErrorPortIn | ErrorPortOut;
-	public ErrorPortDecElements getErrorPortDecAccess() {
-		return pErrorPortDec;
-	}
-	
-	public ParserRule getErrorPortDecRule() {
-		return getErrorPortDecAccess().getRule();
-	}
-	
-	//ErrorPortIn:
-	//	'error' 'port' 'in' name=QualifiedName ':' ErrorPortInSuperType=[PortType];
-	public ErrorPortInElements getErrorPortInAccess() {
-		return pErrorPortIn;
-	}
-	
-	public ParserRule getErrorPortInRule() {
-		return getErrorPortInAccess().getRule();
-	}
-	
-	//ErrorPortOut:
-	//	'error' 'port' 'out' name=QualifiedName ':' ErrorPortOutSuperType=[PortType];
-	public ErrorPortOutElements getErrorPortOutAccess() {
-		return pErrorPortOut;
-	}
-	
-	public ParserRule getErrorPortOutRule() {
-		return getErrorPortOutAccess().getRule();
-	}
-	
-	//StateDec:
+	//State:
 	//	'error' 'state' name=QualifiedName;
-	public StateDecElements getStateDecAccess() {
-		return pStateDec;
+	public StateElements getStateAccess() {
+		return pState;
 	}
 	
-	public ParserRule getStateDecRule() {
-		return getStateDecAccess().getRule();
+	public ParserRule getStateRule() {
+		return getStateAccess().getRule();
 	}
 	
 	//TransitionDec:
-	//	'transition' name=QualifiedName '{' Features+=TransitionFeatureDec* '}';
+	//	'transition' name=QualifiedName '{' transFeatures+=TransitionFeatureDec* '}';
 	public TransitionDecElements getTransitionDecAccess() {
 		return pTransitionDec;
 	}
@@ -1625,7 +1470,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TransitionFeatureDec:
-	//	TransitionState | TriggerDec | ActionDec | "occurrence" {OccurrenceDec} DOUBLE;
+	//	TransitionState | Trigger | Action | "occurrence" {Occurrence} DOUBLE;
 	public TransitionFeatureDecElements getTransitionFeatureDecAccess() {
 		return pTransitionFeatureDec;
 	}
@@ -1635,7 +1480,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TransitionState:
-	//	'states' sourceState=[StateDec] '->' targetState=[StateDec];
+	//	'states' sourceState=[State] '->' targetState=[State];
 	public TransitionStateElements getTransitionStateAccess() {
 		return pTransitionState;
 	}
@@ -1644,24 +1489,24 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransitionStateAccess().getRule();
 	}
 	
-	//TriggerDec:
+	//Trigger:
 	//	'trigger' name=QualifiedName ':' portInstance=[PortDec] '.' errorMode=[ErrorModes];
-	public TriggerDecElements getTriggerDecAccess() {
-		return pTriggerDec;
+	public TriggerElements getTriggerAccess() {
+		return pTrigger;
 	}
 	
-	public ParserRule getTriggerDecRule() {
-		return getTriggerDecAccess().getRule();
+	public ParserRule getTriggerRule() {
+		return getTriggerAccess().getRule();
 	}
 	
-	//ActionDec:
+	//Action:
 	//	'action' name=QualifiedName ':' portInstance=[PortDec] '.' errorMode=[ErrorModes];
-	public ActionDecElements getActionDecAccess() {
-		return pActionDec;
+	public ActionElements getActionAccess() {
+		return pAction;
 	}
 	
-	public ParserRule getActionDecRule() {
-		return getActionDecAccess().getRule();
+	public ParserRule getActionRule() {
+		return getActionAccess().getRule();
 	}
 	
 	//DOUBLE:

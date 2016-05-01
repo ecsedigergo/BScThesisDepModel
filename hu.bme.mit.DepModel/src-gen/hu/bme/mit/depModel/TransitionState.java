@@ -32,12 +32,12 @@ public interface TransitionState extends TransitionFeatureDec
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source State</em>' reference.
-   * @see #setSourceState(StateDec)
+   * @see #setSourceState(State)
    * @see hu.bme.mit.depModel.DepModelPackage#getTransitionState_SourceState()
    * @model
    * @generated
    */
-  StateDec getSourceState();
+  State getSourceState();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.depModel.TransitionState#getSourceState <em>Source State</em>}' reference.
@@ -47,7 +47,7 @@ public interface TransitionState extends TransitionFeatureDec
    * @see #getSourceState()
    * @generated
    */
-  void setSourceState(StateDec value);
+  void setSourceState(State value);
 
   /**
    * Returns the value of the '<em><b>Target State</b></em>' reference.
@@ -58,12 +58,12 @@ public interface TransitionState extends TransitionFeatureDec
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target State</em>' reference.
-   * @see #setTargetState(StateDec)
+   * @see #setTargetState(State)
    * @see hu.bme.mit.depModel.DepModelPackage#getTransitionState_TargetState()
    * @model
    * @generated
    */
-  StateDec getTargetState();
+  State getTargetState();
 
   /**
    * Sets the value of the '{@link hu.bme.mit.depModel.TransitionState#getTargetState <em>Target State</em>}' reference.
@@ -73,6 +73,6 @@ public interface TransitionState extends TransitionFeatureDec
    * @see #getTargetState()
    * @generated
    */
-  void setTargetState(StateDec value);
+  void setTargetState(State value);
 
 } // TransitionState

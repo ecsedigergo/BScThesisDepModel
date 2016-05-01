@@ -85,16 +85,13 @@ public class DepModelFactoryImpl extends EFactoryImpl implements DepModelFactory
       case DepModelPackage.PORT_OUT: return createPortOut();
       case DepModelPackage.ERROR_MODEL_DEC: return createErrorModelDec();
       case DepModelPackage.ERROR_MODEL_ELEMENT: return createErrorModelElement();
-      case DepModelPackage.ERROR_PORT_DEC: return createErrorPortDec();
-      case DepModelPackage.ERROR_PORT_IN: return createErrorPortIn();
-      case DepModelPackage.ERROR_PORT_OUT: return createErrorPortOut();
-      case DepModelPackage.STATE_DEC: return createStateDec();
+      case DepModelPackage.STATE: return createState();
       case DepModelPackage.TRANSITION_DEC: return createTransitionDec();
       case DepModelPackage.TRANSITION_FEATURE_DEC: return createTransitionFeatureDec();
       case DepModelPackage.TRANSITION_STATE: return createTransitionState();
-      case DepModelPackage.TRIGGER_DEC: return createTriggerDec();
-      case DepModelPackage.ACTION_DEC: return createActionDec();
-      case DepModelPackage.OCCURRENCE_DEC: return createOccurrenceDec();
+      case DepModelPackage.TRIGGER: return createTrigger();
+      case DepModelPackage.ACTION: return createAction();
+      case DepModelPackage.OCCURRENCE: return createOccurrence();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -325,43 +322,10 @@ public class DepModelFactoryImpl extends EFactoryImpl implements DepModelFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ErrorPortDec createErrorPortDec()
+  public State createState()
   {
-    ErrorPortDecImpl errorPortDec = new ErrorPortDecImpl();
-    return errorPortDec;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ErrorPortIn createErrorPortIn()
-  {
-    ErrorPortInImpl errorPortIn = new ErrorPortInImpl();
-    return errorPortIn;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ErrorPortOut createErrorPortOut()
-  {
-    ErrorPortOutImpl errorPortOut = new ErrorPortOutImpl();
-    return errorPortOut;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StateDec createStateDec()
-  {
-    StateDecImpl stateDec = new StateDecImpl();
-    return stateDec;
+    StateImpl state = new StateImpl();
+    return state;
   }
 
   /**
@@ -402,10 +366,10 @@ public class DepModelFactoryImpl extends EFactoryImpl implements DepModelFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TriggerDec createTriggerDec()
+  public Trigger createTrigger()
   {
-    TriggerDecImpl triggerDec = new TriggerDecImpl();
-    return triggerDec;
+    TriggerImpl trigger = new TriggerImpl();
+    return trigger;
   }
 
   /**
@@ -413,10 +377,10 @@ public class DepModelFactoryImpl extends EFactoryImpl implements DepModelFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActionDec createActionDec()
+  public Action createAction()
   {
-    ActionDecImpl actionDec = new ActionDecImpl();
-    return actionDec;
+    ActionImpl action = new ActionImpl();
+    return action;
   }
 
   /**
@@ -424,10 +388,10 @@ public class DepModelFactoryImpl extends EFactoryImpl implements DepModelFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OccurrenceDec createOccurrenceDec()
+  public Occurrence createOccurrence()
   {
-    OccurrenceDecImpl occurrenceDec = new OccurrenceDecImpl();
-    return occurrenceDec;
+    OccurrenceImpl occurrence = new OccurrenceImpl();
+    return occurrence;
   }
 
   /**
