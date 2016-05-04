@@ -78,7 +78,7 @@ ErrorModelElement:
 	State | TransitionDec;
 
 State:
-	'error' 'state' name=QualifiedName;
+	('initial')? 'error' 'state' name=QualifiedName;
 
 TransitionDec:
 	'transition' name=QualifiedName '{'

@@ -1353,20 +1353,26 @@ ruleState returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='error'
+		(
+			otherlv_0='initial'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getStateAccess().getInitialKeyword_0());
+			}
+		)?
+		otherlv_1='error'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getStateAccess().getErrorKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getStateAccess().getErrorKeyword_1());
 		}
-		otherlv_1='state'
+		otherlv_2='state'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getStateAccess().getStateKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getStateAccess().getStateKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_3_0());
 				}
-				lv_name_2_0=ruleQualifiedName
+				lv_name_3_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStateRule());
@@ -1374,7 +1380,7 @@ ruleState returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_3_0,
 						"hu.bme.mit.DepModel.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}

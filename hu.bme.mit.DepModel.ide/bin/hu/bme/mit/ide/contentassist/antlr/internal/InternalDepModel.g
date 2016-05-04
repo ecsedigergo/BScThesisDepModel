@@ -3281,9 +3281,9 @@ rule__State__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getStateAccess().getErrorKeyword_0()); }
-	'error'
-	{ after(grammarAccess.getStateAccess().getErrorKeyword_0()); }
+	{ before(grammarAccess.getStateAccess().getInitialKeyword_0()); }
+	('initial')?
+	{ after(grammarAccess.getStateAccess().getInitialKeyword_0()); }
 )
 ;
 finally {
@@ -3308,9 +3308,9 @@ rule__State__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getStateAccess().getStateKeyword_1()); }
-	'state'
-	{ after(grammarAccess.getStateAccess().getStateKeyword_1()); }
+	{ before(grammarAccess.getStateAccess().getErrorKeyword_1()); }
+	'error'
+	{ after(grammarAccess.getStateAccess().getErrorKeyword_1()); }
 )
 ;
 finally {
@@ -3323,6 +3323,7 @@ rule__State__Group__2
 	}
 :
 	rule__State__Group__2__Impl
+	rule__State__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -3334,9 +3335,35 @@ rule__State__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getStateAccess().getNameAssignment_2()); }
-	(rule__State__NameAssignment_2)
-	{ after(grammarAccess.getStateAccess().getNameAssignment_2()); }
+	{ before(grammarAccess.getStateAccess().getStateKeyword_2()); }
+	'state'
+	{ after(grammarAccess.getStateAccess().getStateKeyword_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__State__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__State__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__State__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getStateAccess().getNameAssignment_3()); }
+	(rule__State__NameAssignment_3)
+	{ after(grammarAccess.getStateAccess().getNameAssignment_3()); }
 )
 ;
 finally {
@@ -4613,15 +4640,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__State__NameAssignment_2
+rule__State__NameAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0()); }
+		{ before(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_3_0()); }
 		ruleQualifiedName
-		{ after(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0()); }
+		{ after(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_3_0()); }
 	)
 ;
 finally {

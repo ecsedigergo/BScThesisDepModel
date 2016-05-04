@@ -21,12 +21,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDepModelParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'port'", "'type'", "'{'", "'}'", "'error'", "'mode'", "'system'", "'connection'", "'from'", "'to'", "'declaration'", "'in'", "'out'", "'component'", "'implementation'", "':'", "'instance'", "'model'", "'state'", "'transition'", "'occurrence'", "'states'", "'->'", "'trigger'", "'action'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'port'", "'type'", "'{'", "'}'", "'error'", "'mode'", "'system'", "'connection'", "'from'", "'to'", "'declaration'", "'in'", "'out'", "'component'", "'implementation'", "':'", "'instance'", "'model'", "'initial'", "'state'", "'transition'", "'occurrence'", "'states'", "'->'", "'trigger'", "'action'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
+    public static final int T__37=37;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -3220,7 +3221,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==16||LA12_0==31) ) {
+                if ( (LA12_0==16||LA12_0==30||LA12_0==32) ) {
                     alt12=1;
                 }
 
@@ -3346,10 +3347,10 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==16) ) {
+            if ( (LA13_0==16||LA13_0==30) ) {
                 alt13=1;
             }
-            else if ( (LA13_0==31) ) {
+            else if ( (LA13_0==32) ) {
                 alt13=2;
             }
             else {
@@ -3454,44 +3455,66 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // InternalDepModel.g:1348:1: ruleState returns [EObject current=null] : (otherlv_0= 'error' otherlv_1= 'state' ( (lv_name_2_0= ruleQualifiedName ) ) ) ;
+    // InternalDepModel.g:1348:1: ruleState returns [EObject current=null] : ( (otherlv_0= 'initial' )? otherlv_1= 'error' otherlv_2= 'state' ( (lv_name_3_0= ruleQualifiedName ) ) ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        AntlrDatatypeRuleToken lv_name_2_0 = null;
+        Token otherlv_2=null;
+        AntlrDatatypeRuleToken lv_name_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDepModel.g:1354:2: ( (otherlv_0= 'error' otherlv_1= 'state' ( (lv_name_2_0= ruleQualifiedName ) ) ) )
-            // InternalDepModel.g:1355:2: (otherlv_0= 'error' otherlv_1= 'state' ( (lv_name_2_0= ruleQualifiedName ) ) )
+            // InternalDepModel.g:1354:2: ( ( (otherlv_0= 'initial' )? otherlv_1= 'error' otherlv_2= 'state' ( (lv_name_3_0= ruleQualifiedName ) ) ) )
+            // InternalDepModel.g:1355:2: ( (otherlv_0= 'initial' )? otherlv_1= 'error' otherlv_2= 'state' ( (lv_name_3_0= ruleQualifiedName ) ) )
             {
-            // InternalDepModel.g:1355:2: (otherlv_0= 'error' otherlv_1= 'state' ( (lv_name_2_0= ruleQualifiedName ) ) )
-            // InternalDepModel.g:1356:3: otherlv_0= 'error' otherlv_1= 'state' ( (lv_name_2_0= ruleQualifiedName ) )
+            // InternalDepModel.g:1355:2: ( (otherlv_0= 'initial' )? otherlv_1= 'error' otherlv_2= 'state' ( (lv_name_3_0= ruleQualifiedName ) ) )
+            // InternalDepModel.g:1356:3: (otherlv_0= 'initial' )? otherlv_1= 'error' otherlv_2= 'state' ( (lv_name_3_0= ruleQualifiedName ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_25); 
+            // InternalDepModel.g:1356:3: (otherlv_0= 'initial' )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            			newLeafNode(otherlv_0, grammarAccess.getStateAccess().getErrorKeyword_0());
+            if ( (LA14_0==30) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalDepModel.g:1357:4: otherlv_0= 'initial'
+                    {
+                    otherlv_0=(Token)match(input,30,FOLLOW_25); 
+
+                    				newLeafNode(otherlv_0, grammarAccess.getStateAccess().getInitialKeyword_0());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            otherlv_1=(Token)match(input,16,FOLLOW_26); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getStateAccess().getErrorKeyword_1());
             		
-            otherlv_1=(Token)match(input,30,FOLLOW_5); 
+            otherlv_2=(Token)match(input,31,FOLLOW_5); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getStateAccess().getStateKeyword_1());
+            			newLeafNode(otherlv_2, grammarAccess.getStateAccess().getStateKeyword_2());
             		
-            // InternalDepModel.g:1364:3: ( (lv_name_2_0= ruleQualifiedName ) )
-            // InternalDepModel.g:1365:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:1370:3: ( (lv_name_3_0= ruleQualifiedName ) )
+            // InternalDepModel.g:1371:4: (lv_name_3_0= ruleQualifiedName )
             {
-            // InternalDepModel.g:1365:4: (lv_name_2_0= ruleQualifiedName )
-            // InternalDepModel.g:1366:5: lv_name_2_0= ruleQualifiedName
+            // InternalDepModel.g:1371:4: (lv_name_3_0= ruleQualifiedName )
+            // InternalDepModel.g:1372:5: lv_name_3_0= ruleQualifiedName
             {
 
-            					newCompositeNode(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_3_0());
             				
             pushFollow(FOLLOW_2);
-            lv_name_2_0=ruleQualifiedName();
+            lv_name_3_0=ruleQualifiedName();
 
             state._fsp--;
 
@@ -3502,7 +3525,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_3_0,
             						"hu.bme.mit.DepModel.QualifiedName");
             					afterParserOrEnumRuleCall();
             				
@@ -3535,7 +3558,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransitionDec"
-    // InternalDepModel.g:1387:1: entryRuleTransitionDec returns [EObject current=null] : iv_ruleTransitionDec= ruleTransitionDec EOF ;
+    // InternalDepModel.g:1393:1: entryRuleTransitionDec returns [EObject current=null] : iv_ruleTransitionDec= ruleTransitionDec EOF ;
     public final EObject entryRuleTransitionDec() throws RecognitionException {
         EObject current = null;
 
@@ -3543,8 +3566,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:1387:54: (iv_ruleTransitionDec= ruleTransitionDec EOF )
-            // InternalDepModel.g:1388:2: iv_ruleTransitionDec= ruleTransitionDec EOF
+            // InternalDepModel.g:1393:54: (iv_ruleTransitionDec= ruleTransitionDec EOF )
+            // InternalDepModel.g:1394:2: iv_ruleTransitionDec= ruleTransitionDec EOF
             {
              newCompositeNode(grammarAccess.getTransitionDecRule()); 
             pushFollow(FOLLOW_1);
@@ -3571,7 +3594,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransitionDec"
-    // InternalDepModel.g:1394:1: ruleTransitionDec returns [EObject current=null] : (otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}' ) ;
+    // InternalDepModel.g:1400:1: ruleTransitionDec returns [EObject current=null] : (otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}' ) ;
     public final EObject ruleTransitionDec() throws RecognitionException {
         EObject current = null;
 
@@ -3587,21 +3610,21 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:1400:2: ( (otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}' ) )
-            // InternalDepModel.g:1401:2: (otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}' )
+            // InternalDepModel.g:1406:2: ( (otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}' ) )
+            // InternalDepModel.g:1407:2: (otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}' )
             {
-            // InternalDepModel.g:1401:2: (otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}' )
-            // InternalDepModel.g:1402:3: otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}'
+            // InternalDepModel.g:1407:2: (otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}' )
+            // InternalDepModel.g:1408:3: otherlv_0= 'transition' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= '{' ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_5); 
+            otherlv_0=(Token)match(input,32,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTransitionDecAccess().getTransitionKeyword_0());
             		
-            // InternalDepModel.g:1406:3: ( (lv_name_1_0= ruleQualifiedName ) )
-            // InternalDepModel.g:1407:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalDepModel.g:1412:3: ( (lv_name_1_0= ruleQualifiedName ) )
+            // InternalDepModel.g:1413:4: (lv_name_1_0= ruleQualifiedName )
             {
-            // InternalDepModel.g:1407:4: (lv_name_1_0= ruleQualifiedName )
-            // InternalDepModel.g:1408:5: lv_name_1_0= ruleQualifiedName
+            // InternalDepModel.g:1413:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalDepModel.g:1414:5: lv_name_1_0= ruleQualifiedName
             {
 
             					newCompositeNode(grammarAccess.getTransitionDecAccess().getNameQualifiedNameParserRuleCall_1_0());
@@ -3628,32 +3651,32 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,14,FOLLOW_26); 
+            otherlv_2=(Token)match(input,14,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getTransitionDecAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalDepModel.g:1429:3: ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )*
-            loop14:
+            // InternalDepModel.g:1435:3: ( (lv_transFeatures_3_0= ruleTransitionFeatureDec ) )*
+            loop15:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( ((LA14_0>=32 && LA14_0<=33)||(LA14_0>=35 && LA14_0<=36)) ) {
-                    alt14=1;
+                if ( ((LA15_0>=33 && LA15_0<=34)||(LA15_0>=36 && LA15_0<=37)) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt15) {
             	case 1 :
-            	    // InternalDepModel.g:1430:4: (lv_transFeatures_3_0= ruleTransitionFeatureDec )
+            	    // InternalDepModel.g:1436:4: (lv_transFeatures_3_0= ruleTransitionFeatureDec )
             	    {
-            	    // InternalDepModel.g:1430:4: (lv_transFeatures_3_0= ruleTransitionFeatureDec )
-            	    // InternalDepModel.g:1431:5: lv_transFeatures_3_0= ruleTransitionFeatureDec
+            	    // InternalDepModel.g:1436:4: (lv_transFeatures_3_0= ruleTransitionFeatureDec )
+            	    // InternalDepModel.g:1437:5: lv_transFeatures_3_0= ruleTransitionFeatureDec
             	    {
 
             	    					newCompositeNode(grammarAccess.getTransitionDecAccess().getTransFeaturesTransitionFeatureDecParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_26);
+            	    pushFollow(FOLLOW_27);
             	    lv_transFeatures_3_0=ruleTransitionFeatureDec();
 
             	    state._fsp--;
@@ -3677,7 +3700,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop15;
                 }
             } while (true);
 
@@ -3708,7 +3731,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransitionFeatureDec"
-    // InternalDepModel.g:1456:1: entryRuleTransitionFeatureDec returns [EObject current=null] : iv_ruleTransitionFeatureDec= ruleTransitionFeatureDec EOF ;
+    // InternalDepModel.g:1462:1: entryRuleTransitionFeatureDec returns [EObject current=null] : iv_ruleTransitionFeatureDec= ruleTransitionFeatureDec EOF ;
     public final EObject entryRuleTransitionFeatureDec() throws RecognitionException {
         EObject current = null;
 
@@ -3716,8 +3739,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:1456:61: (iv_ruleTransitionFeatureDec= ruleTransitionFeatureDec EOF )
-            // InternalDepModel.g:1457:2: iv_ruleTransitionFeatureDec= ruleTransitionFeatureDec EOF
+            // InternalDepModel.g:1462:61: (iv_ruleTransitionFeatureDec= ruleTransitionFeatureDec EOF )
+            // InternalDepModel.g:1463:2: iv_ruleTransitionFeatureDec= ruleTransitionFeatureDec EOF
             {
              newCompositeNode(grammarAccess.getTransitionFeatureDecRule()); 
             pushFollow(FOLLOW_1);
@@ -3744,7 +3767,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransitionFeatureDec"
-    // InternalDepModel.g:1463:1: ruleTransitionFeatureDec returns [EObject current=null] : (this_TransitionState_0= ruleTransitionState | this_Trigger_1= ruleTrigger | this_Action_2= ruleAction | (otherlv_3= 'occurrence' () ruleDOUBLE ) ) ;
+    // InternalDepModel.g:1469:1: ruleTransitionFeatureDec returns [EObject current=null] : (this_TransitionState_0= ruleTransitionState | this_Trigger_1= ruleTrigger | this_Action_2= ruleAction | (otherlv_3= 'occurrence' () ruleDOUBLE ) ) ;
     public final EObject ruleTransitionFeatureDec() throws RecognitionException {
         EObject current = null;
 
@@ -3760,42 +3783,42 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:1469:2: ( (this_TransitionState_0= ruleTransitionState | this_Trigger_1= ruleTrigger | this_Action_2= ruleAction | (otherlv_3= 'occurrence' () ruleDOUBLE ) ) )
-            // InternalDepModel.g:1470:2: (this_TransitionState_0= ruleTransitionState | this_Trigger_1= ruleTrigger | this_Action_2= ruleAction | (otherlv_3= 'occurrence' () ruleDOUBLE ) )
+            // InternalDepModel.g:1475:2: ( (this_TransitionState_0= ruleTransitionState | this_Trigger_1= ruleTrigger | this_Action_2= ruleAction | (otherlv_3= 'occurrence' () ruleDOUBLE ) ) )
+            // InternalDepModel.g:1476:2: (this_TransitionState_0= ruleTransitionState | this_Trigger_1= ruleTrigger | this_Action_2= ruleAction | (otherlv_3= 'occurrence' () ruleDOUBLE ) )
             {
-            // InternalDepModel.g:1470:2: (this_TransitionState_0= ruleTransitionState | this_Trigger_1= ruleTrigger | this_Action_2= ruleAction | (otherlv_3= 'occurrence' () ruleDOUBLE ) )
-            int alt15=4;
+            // InternalDepModel.g:1476:2: (this_TransitionState_0= ruleTransitionState | this_Trigger_1= ruleTrigger | this_Action_2= ruleAction | (otherlv_3= 'occurrence' () ruleDOUBLE ) )
+            int alt16=4;
             switch ( input.LA(1) ) {
-            case 33:
+            case 34:
                 {
-                alt15=1;
-                }
-                break;
-            case 35:
-                {
-                alt15=2;
+                alt16=1;
                 }
                 break;
             case 36:
                 {
-                alt15=3;
+                alt16=2;
                 }
                 break;
-            case 32:
+            case 37:
                 {
-                alt15=4;
+                alt16=3;
+                }
+                break;
+            case 33:
+                {
+                alt16=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // InternalDepModel.g:1471:3: this_TransitionState_0= ruleTransitionState
+                    // InternalDepModel.g:1477:3: this_TransitionState_0= ruleTransitionState
                     {
 
                     			newCompositeNode(grammarAccess.getTransitionFeatureDecAccess().getTransitionStateParserRuleCall_0());
@@ -3813,7 +3836,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDepModel.g:1480:3: this_Trigger_1= ruleTrigger
+                    // InternalDepModel.g:1486:3: this_Trigger_1= ruleTrigger
                     {
 
                     			newCompositeNode(grammarAccess.getTransitionFeatureDecAccess().getTriggerParserRuleCall_1());
@@ -3831,7 +3854,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDepModel.g:1489:3: this_Action_2= ruleAction
+                    // InternalDepModel.g:1495:3: this_Action_2= ruleAction
                     {
 
                     			newCompositeNode(grammarAccess.getTransitionFeatureDecAccess().getActionParserRuleCall_2());
@@ -3849,17 +3872,17 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDepModel.g:1498:3: (otherlv_3= 'occurrence' () ruleDOUBLE )
+                    // InternalDepModel.g:1504:3: (otherlv_3= 'occurrence' () ruleDOUBLE )
                     {
-                    // InternalDepModel.g:1498:3: (otherlv_3= 'occurrence' () ruleDOUBLE )
-                    // InternalDepModel.g:1499:4: otherlv_3= 'occurrence' () ruleDOUBLE
+                    // InternalDepModel.g:1504:3: (otherlv_3= 'occurrence' () ruleDOUBLE )
+                    // InternalDepModel.g:1505:4: otherlv_3= 'occurrence' () ruleDOUBLE
                     {
-                    otherlv_3=(Token)match(input,32,FOLLOW_27); 
+                    otherlv_3=(Token)match(input,33,FOLLOW_28); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getTransitionFeatureDecAccess().getOccurrenceKeyword_3_0());
                     			
-                    // InternalDepModel.g:1503:4: ()
-                    // InternalDepModel.g:1504:5: 
+                    // InternalDepModel.g:1509:4: ()
+                    // InternalDepModel.g:1510:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3909,7 +3932,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransitionState"
-    // InternalDepModel.g:1522:1: entryRuleTransitionState returns [EObject current=null] : iv_ruleTransitionState= ruleTransitionState EOF ;
+    // InternalDepModel.g:1528:1: entryRuleTransitionState returns [EObject current=null] : iv_ruleTransitionState= ruleTransitionState EOF ;
     public final EObject entryRuleTransitionState() throws RecognitionException {
         EObject current = null;
 
@@ -3917,8 +3940,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:1522:56: (iv_ruleTransitionState= ruleTransitionState EOF )
-            // InternalDepModel.g:1523:2: iv_ruleTransitionState= ruleTransitionState EOF
+            // InternalDepModel.g:1528:56: (iv_ruleTransitionState= ruleTransitionState EOF )
+            // InternalDepModel.g:1529:2: iv_ruleTransitionState= ruleTransitionState EOF
             {
              newCompositeNode(grammarAccess.getTransitionStateRule()); 
             pushFollow(FOLLOW_1);
@@ -3945,7 +3968,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransitionState"
-    // InternalDepModel.g:1529:1: ruleTransitionState returns [EObject current=null] : (otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) ) ) ;
+    // InternalDepModel.g:1535:1: ruleTransitionState returns [EObject current=null] : (otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleTransitionState() throws RecognitionException {
         EObject current = null;
 
@@ -3958,28 +3981,28 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:1535:2: ( (otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) ) ) )
-            // InternalDepModel.g:1536:2: (otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) ) )
+            // InternalDepModel.g:1541:2: ( (otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalDepModel.g:1542:2: (otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalDepModel.g:1536:2: (otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) ) )
-            // InternalDepModel.g:1537:3: otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) )
+            // InternalDepModel.g:1542:2: (otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) ) )
+            // InternalDepModel.g:1543:3: otherlv_0= 'states' ( (otherlv_1= RULE_ID ) ) otherlv_2= '->' ( (otherlv_3= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,33,FOLLOW_5); 
+            otherlv_0=(Token)match(input,34,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTransitionStateAccess().getStatesKeyword_0());
             		
-            // InternalDepModel.g:1541:3: ( (otherlv_1= RULE_ID ) )
-            // InternalDepModel.g:1542:4: (otherlv_1= RULE_ID )
+            // InternalDepModel.g:1547:3: ( (otherlv_1= RULE_ID ) )
+            // InternalDepModel.g:1548:4: (otherlv_1= RULE_ID )
             {
-            // InternalDepModel.g:1542:4: (otherlv_1= RULE_ID )
-            // InternalDepModel.g:1543:5: otherlv_1= RULE_ID
+            // InternalDepModel.g:1548:4: (otherlv_1= RULE_ID )
+            // InternalDepModel.g:1549:5: otherlv_1= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getTransitionStateRule());
             					}
             				
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_28); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_29); 
 
             					newLeafNode(otherlv_1, grammarAccess.getTransitionStateAccess().getSourceStateStateCrossReference_1_0());
             				
@@ -3989,15 +4012,15 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,34,FOLLOW_5); 
+            otherlv_2=(Token)match(input,35,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getTransitionStateAccess().getHyphenMinusGreaterThanSignKeyword_2());
             		
-            // InternalDepModel.g:1558:3: ( (otherlv_3= RULE_ID ) )
-            // InternalDepModel.g:1559:4: (otherlv_3= RULE_ID )
+            // InternalDepModel.g:1564:3: ( (otherlv_3= RULE_ID ) )
+            // InternalDepModel.g:1565:4: (otherlv_3= RULE_ID )
             {
-            // InternalDepModel.g:1559:4: (otherlv_3= RULE_ID )
-            // InternalDepModel.g:1560:5: otherlv_3= RULE_ID
+            // InternalDepModel.g:1565:4: (otherlv_3= RULE_ID )
+            // InternalDepModel.g:1566:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
@@ -4037,7 +4060,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTrigger"
-    // InternalDepModel.g:1575:1: entryRuleTrigger returns [EObject current=null] : iv_ruleTrigger= ruleTrigger EOF ;
+    // InternalDepModel.g:1581:1: entryRuleTrigger returns [EObject current=null] : iv_ruleTrigger= ruleTrigger EOF ;
     public final EObject entryRuleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -4045,8 +4068,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:1575:48: (iv_ruleTrigger= ruleTrigger EOF )
-            // InternalDepModel.g:1576:2: iv_ruleTrigger= ruleTrigger EOF
+            // InternalDepModel.g:1581:48: (iv_ruleTrigger= ruleTrigger EOF )
+            // InternalDepModel.g:1582:2: iv_ruleTrigger= ruleTrigger EOF
             {
              newCompositeNode(grammarAccess.getTriggerRule()); 
             pushFollow(FOLLOW_1);
@@ -4073,7 +4096,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrigger"
-    // InternalDepModel.g:1582:1: ruleTrigger returns [EObject current=null] : (otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) ) ;
+    // InternalDepModel.g:1588:1: ruleTrigger returns [EObject current=null] : (otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) ) ;
     public final EObject ruleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -4089,21 +4112,21 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:1588:2: ( (otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) ) )
-            // InternalDepModel.g:1589:2: (otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) )
+            // InternalDepModel.g:1594:2: ( (otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) ) )
+            // InternalDepModel.g:1595:2: (otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) )
             {
-            // InternalDepModel.g:1589:2: (otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) )
-            // InternalDepModel.g:1590:3: otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) )
+            // InternalDepModel.g:1595:2: (otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) )
+            // InternalDepModel.g:1596:3: otherlv_0= 'trigger' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,35,FOLLOW_5); 
+            otherlv_0=(Token)match(input,36,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTriggerAccess().getTriggerKeyword_0());
             		
-            // InternalDepModel.g:1594:3: ( (lv_name_1_0= ruleQualifiedName ) )
-            // InternalDepModel.g:1595:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalDepModel.g:1600:3: ( (lv_name_1_0= ruleQualifiedName ) )
+            // InternalDepModel.g:1601:4: (lv_name_1_0= ruleQualifiedName )
             {
-            // InternalDepModel.g:1595:4: (lv_name_1_0= ruleQualifiedName )
-            // InternalDepModel.g:1596:5: lv_name_1_0= ruleQualifiedName
+            // InternalDepModel.g:1601:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalDepModel.g:1602:5: lv_name_1_0= ruleQualifiedName
             {
 
             					newCompositeNode(grammarAccess.getTriggerAccess().getNameQualifiedNameParserRuleCall_1_0());
@@ -4134,11 +4157,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getTriggerAccess().getColonKeyword_2());
             		
-            // InternalDepModel.g:1617:3: ( (otherlv_3= RULE_ID ) )
-            // InternalDepModel.g:1618:4: (otherlv_3= RULE_ID )
+            // InternalDepModel.g:1623:3: ( (otherlv_3= RULE_ID ) )
+            // InternalDepModel.g:1624:4: (otherlv_3= RULE_ID )
             {
-            // InternalDepModel.g:1618:4: (otherlv_3= RULE_ID )
-            // InternalDepModel.g:1619:5: otherlv_3= RULE_ID
+            // InternalDepModel.g:1624:4: (otherlv_3= RULE_ID )
+            // InternalDepModel.g:1625:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
@@ -4159,11 +4182,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getTriggerAccess().getFullStopKeyword_4());
             		
-            // InternalDepModel.g:1634:3: ( (otherlv_5= RULE_ID ) )
-            // InternalDepModel.g:1635:4: (otherlv_5= RULE_ID )
+            // InternalDepModel.g:1640:3: ( (otherlv_5= RULE_ID ) )
+            // InternalDepModel.g:1641:4: (otherlv_5= RULE_ID )
             {
-            // InternalDepModel.g:1635:4: (otherlv_5= RULE_ID )
-            // InternalDepModel.g:1636:5: otherlv_5= RULE_ID
+            // InternalDepModel.g:1641:4: (otherlv_5= RULE_ID )
+            // InternalDepModel.g:1642:5: otherlv_5= RULE_ID
             {
 
             					if (current==null) {
@@ -4203,7 +4226,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAction"
-    // InternalDepModel.g:1651:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
+    // InternalDepModel.g:1657:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
     public final EObject entryRuleAction() throws RecognitionException {
         EObject current = null;
 
@@ -4211,8 +4234,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:1651:47: (iv_ruleAction= ruleAction EOF )
-            // InternalDepModel.g:1652:2: iv_ruleAction= ruleAction EOF
+            // InternalDepModel.g:1657:47: (iv_ruleAction= ruleAction EOF )
+            // InternalDepModel.g:1658:2: iv_ruleAction= ruleAction EOF
             {
              newCompositeNode(grammarAccess.getActionRule()); 
             pushFollow(FOLLOW_1);
@@ -4239,7 +4262,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAction"
-    // InternalDepModel.g:1658:1: ruleAction returns [EObject current=null] : (otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) ) ;
+    // InternalDepModel.g:1664:1: ruleAction returns [EObject current=null] : (otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) ) ;
     public final EObject ruleAction() throws RecognitionException {
         EObject current = null;
 
@@ -4255,21 +4278,21 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:1664:2: ( (otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) ) )
-            // InternalDepModel.g:1665:2: (otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) )
+            // InternalDepModel.g:1670:2: ( (otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) ) )
+            // InternalDepModel.g:1671:2: (otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) )
             {
-            // InternalDepModel.g:1665:2: (otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) )
-            // InternalDepModel.g:1666:3: otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) )
+            // InternalDepModel.g:1671:2: (otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) )
+            // InternalDepModel.g:1672:3: otherlv_0= 'action' ( (lv_name_1_0= ruleQualifiedName ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_5); 
+            otherlv_0=(Token)match(input,37,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActionAccess().getActionKeyword_0());
             		
-            // InternalDepModel.g:1670:3: ( (lv_name_1_0= ruleQualifiedName ) )
-            // InternalDepModel.g:1671:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalDepModel.g:1676:3: ( (lv_name_1_0= ruleQualifiedName ) )
+            // InternalDepModel.g:1677:4: (lv_name_1_0= ruleQualifiedName )
             {
-            // InternalDepModel.g:1671:4: (lv_name_1_0= ruleQualifiedName )
-            // InternalDepModel.g:1672:5: lv_name_1_0= ruleQualifiedName
+            // InternalDepModel.g:1677:4: (lv_name_1_0= ruleQualifiedName )
+            // InternalDepModel.g:1678:5: lv_name_1_0= ruleQualifiedName
             {
 
             					newCompositeNode(grammarAccess.getActionAccess().getNameQualifiedNameParserRuleCall_1_0());
@@ -4300,11 +4323,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getActionAccess().getColonKeyword_2());
             		
-            // InternalDepModel.g:1693:3: ( (otherlv_3= RULE_ID ) )
-            // InternalDepModel.g:1694:4: (otherlv_3= RULE_ID )
+            // InternalDepModel.g:1699:3: ( (otherlv_3= RULE_ID ) )
+            // InternalDepModel.g:1700:4: (otherlv_3= RULE_ID )
             {
-            // InternalDepModel.g:1694:4: (otherlv_3= RULE_ID )
-            // InternalDepModel.g:1695:5: otherlv_3= RULE_ID
+            // InternalDepModel.g:1700:4: (otherlv_3= RULE_ID )
+            // InternalDepModel.g:1701:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
@@ -4325,11 +4348,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getActionAccess().getFullStopKeyword_4());
             		
-            // InternalDepModel.g:1710:3: ( (otherlv_5= RULE_ID ) )
-            // InternalDepModel.g:1711:4: (otherlv_5= RULE_ID )
+            // InternalDepModel.g:1716:3: ( (otherlv_5= RULE_ID ) )
+            // InternalDepModel.g:1717:4: (otherlv_5= RULE_ID )
             {
-            // InternalDepModel.g:1711:4: (otherlv_5= RULE_ID )
-            // InternalDepModel.g:1712:5: otherlv_5= RULE_ID
+            // InternalDepModel.g:1717:4: (otherlv_5= RULE_ID )
+            // InternalDepModel.g:1718:5: otherlv_5= RULE_ID
             {
 
             					if (current==null) {
@@ -4369,7 +4392,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDOUBLE"
-    // InternalDepModel.g:1727:1: entryRuleDOUBLE returns [String current=null] : iv_ruleDOUBLE= ruleDOUBLE EOF ;
+    // InternalDepModel.g:1733:1: entryRuleDOUBLE returns [String current=null] : iv_ruleDOUBLE= ruleDOUBLE EOF ;
     public final String entryRuleDOUBLE() throws RecognitionException {
         String current = null;
 
@@ -4377,8 +4400,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:1727:46: (iv_ruleDOUBLE= ruleDOUBLE EOF )
-            // InternalDepModel.g:1728:2: iv_ruleDOUBLE= ruleDOUBLE EOF
+            // InternalDepModel.g:1733:46: (iv_ruleDOUBLE= ruleDOUBLE EOF )
+            // InternalDepModel.g:1734:2: iv_ruleDOUBLE= ruleDOUBLE EOF
             {
              newCompositeNode(grammarAccess.getDOUBLERule()); 
             pushFollow(FOLLOW_1);
@@ -4405,7 +4428,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDOUBLE"
-    // InternalDepModel.g:1734:1: ruleDOUBLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
+    // InternalDepModel.g:1740:1: ruleDOUBLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleDOUBLE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4417,11 +4440,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:1740:2: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
-            // InternalDepModel.g:1741:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // InternalDepModel.g:1746:2: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
+            // InternalDepModel.g:1747:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
             {
-            // InternalDepModel.g:1741:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
-            // InternalDepModel.g:1742:3: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
+            // InternalDepModel.g:1747:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // InternalDepModel.g:1748:3: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_12); 
 
@@ -4430,7 +4453,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(this_INT_0, grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_0());
             		
-            kw=(Token)match(input,11,FOLLOW_27); 
+            kw=(Token)match(input,11,FOLLOW_28); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getDOUBLEAccess().getFullStopKeyword_1());
@@ -4491,10 +4514,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000019000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000080018000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000001B00008000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000140018000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000003600008000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000800000000L});
 
 }

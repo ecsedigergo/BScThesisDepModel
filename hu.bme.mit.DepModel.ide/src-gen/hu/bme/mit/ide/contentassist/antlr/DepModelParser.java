@@ -96,7 +96,7 @@ public class DepModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPortOutAccess().getPortOutSuperTypeAssignment_5(), "rule__PortOut__PortOutSuperTypeAssignment_5");
 					put(grammarAccess.getErrorModelDecAccess().getNameAssignment_2(), "rule__ErrorModelDec__NameAssignment_2");
 					put(grammarAccess.getErrorModelDecAccess().getEmodelElementsAssignment_4(), "rule__ErrorModelDec__EmodelElementsAssignment_4");
-					put(grammarAccess.getStateAccess().getNameAssignment_2(), "rule__State__NameAssignment_2");
+					put(grammarAccess.getStateAccess().getNameAssignment_3(), "rule__State__NameAssignment_3");
 					put(grammarAccess.getTransitionDecAccess().getNameAssignment_1(), "rule__TransitionDec__NameAssignment_1");
 					put(grammarAccess.getTransitionDecAccess().getTransFeaturesAssignment_3(), "rule__TransitionDec__TransFeaturesAssignment_3");
 					put(grammarAccess.getTransitionStateAccess().getSourceStateAssignment_1(), "rule__TransitionState__SourceStateAssignment_1");

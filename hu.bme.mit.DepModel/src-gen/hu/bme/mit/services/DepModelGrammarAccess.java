@@ -860,29 +860,33 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	public class StateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.State");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cErrorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cStateKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cInitialKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cErrorKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cStateKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameQualifiedNameParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//State:
-		//	'error' 'state' name=QualifiedName;
+		//	'initial'? 'error' 'state' name=QualifiedName;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'error' 'state' name=QualifiedName
+		//'initial'? 'error' 'state' name=QualifiedName
 		public Group getGroup() { return cGroup; }
 		
+		//'initial'?
+		public Keyword getInitialKeyword_0() { return cInitialKeyword_0; }
+		
 		//'error'
-		public Keyword getErrorKeyword_0() { return cErrorKeyword_0; }
+		public Keyword getErrorKeyword_1() { return cErrorKeyword_1; }
 		
 		//'state'
-		public Keyword getStateKeyword_1() { return cStateKeyword_1; }
+		public Keyword getStateKeyword_2() { return cStateKeyword_2; }
 		
 		//name=QualifiedName
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
+		public RuleCall getNameQualifiedNameParserRuleCall_3_0() { return cNameQualifiedNameParserRuleCall_3_0; }
 	}
 	public class TransitionDecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.TransitionDec");
@@ -1450,7 +1454,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//State:
-	//	'error' 'state' name=QualifiedName;
+	//	'initial'? 'error' 'state' name=QualifiedName;
 	public StateElements getStateAccess() {
 		return pState;
 	}

@@ -318,7 +318,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.ERROR_MODEL_ELEMENT__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_3_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
