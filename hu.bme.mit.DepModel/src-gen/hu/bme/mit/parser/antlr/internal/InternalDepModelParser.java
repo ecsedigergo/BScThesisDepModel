@@ -155,7 +155,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==12||LA1_0==18) ) {
+                if ( (LA1_0==12||LA1_0==18||LA1_0==25) ) {
                     alt1=1;
                 }
 
@@ -374,7 +374,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractElement"
-    // InternalDepModel.g:147:1: ruleAbstractElement returns [EObject current=null] : (this_ComponentModelDec_0= ruleComponentModelDec | this_PortType_1= rulePortType ) ;
+    // InternalDepModel.g:147:1: ruleAbstractElement returns [EObject current=null] : (this_ComponentModelDec_0= ruleComponentModelDec | this_PortType_1= rulePortType | this_ComponentType_2= ruleComponentType ) ;
     public final EObject ruleAbstractElement() throws RecognitionException {
         EObject current = null;
 
@@ -382,30 +382,41 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
         EObject this_PortType_1 = null;
 
+        EObject this_ComponentType_2 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalDepModel.g:153:2: ( (this_ComponentModelDec_0= ruleComponentModelDec | this_PortType_1= rulePortType ) )
-            // InternalDepModel.g:154:2: (this_ComponentModelDec_0= ruleComponentModelDec | this_PortType_1= rulePortType )
+            // InternalDepModel.g:153:2: ( (this_ComponentModelDec_0= ruleComponentModelDec | this_PortType_1= rulePortType | this_ComponentType_2= ruleComponentType ) )
+            // InternalDepModel.g:154:2: (this_ComponentModelDec_0= ruleComponentModelDec | this_PortType_1= rulePortType | this_ComponentType_2= ruleComponentType )
             {
-            // InternalDepModel.g:154:2: (this_ComponentModelDec_0= ruleComponentModelDec | this_PortType_1= rulePortType )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==18) ) {
+            // InternalDepModel.g:154:2: (this_ComponentModelDec_0= ruleComponentModelDec | this_PortType_1= rulePortType | this_ComponentType_2= ruleComponentType )
+            int alt3=3;
+            switch ( input.LA(1) ) {
+            case 18:
+                {
                 alt3=1;
-            }
-            else if ( (LA3_0==12) ) {
+                }
+                break;
+            case 12:
+                {
                 alt3=2;
-            }
-            else {
+                }
+                break;
+            case 25:
+                {
+                alt3=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
+
             switch (alt3) {
                 case 1 :
                     // InternalDepModel.g:155:3: this_ComponentModelDec_0= ruleComponentModelDec
@@ -443,6 +454,24 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 3 :
+                    // InternalDepModel.g:173:3: this_ComponentType_2= ruleComponentType
+                    {
+
+                    			newCompositeNode(grammarAccess.getAbstractElementAccess().getComponentTypeParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_ComponentType_2=ruleComponentType();
+
+                    state._fsp--;
+
+
+                    			current = this_ComponentType_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
 
             }
 
@@ -466,7 +495,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePortType"
-    // InternalDepModel.g:176:1: entryRulePortType returns [EObject current=null] : iv_rulePortType= rulePortType EOF ;
+    // InternalDepModel.g:185:1: entryRulePortType returns [EObject current=null] : iv_rulePortType= rulePortType EOF ;
     public final EObject entryRulePortType() throws RecognitionException {
         EObject current = null;
 
@@ -474,8 +503,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:176:49: (iv_rulePortType= rulePortType EOF )
-            // InternalDepModel.g:177:2: iv_rulePortType= rulePortType EOF
+            // InternalDepModel.g:185:49: (iv_rulePortType= rulePortType EOF )
+            // InternalDepModel.g:186:2: iv_rulePortType= rulePortType EOF
             {
              newCompositeNode(grammarAccess.getPortTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -502,7 +531,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePortType"
-    // InternalDepModel.g:183:1: rulePortType returns [EObject current=null] : (otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}' ) ;
+    // InternalDepModel.g:192:1: rulePortType returns [EObject current=null] : (otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}' ) ;
     public final EObject rulePortType() throws RecognitionException {
         EObject current = null;
 
@@ -519,11 +548,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:189:2: ( (otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}' ) )
-            // InternalDepModel.g:190:2: (otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}' )
+            // InternalDepModel.g:198:2: ( (otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}' ) )
+            // InternalDepModel.g:199:2: (otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}' )
             {
-            // InternalDepModel.g:190:2: (otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}' )
-            // InternalDepModel.g:191:3: otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}'
+            // InternalDepModel.g:199:2: (otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}' )
+            // InternalDepModel.g:200:3: otherlv_0= 'port' otherlv_1= 'type' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_eModes_4_0= ruleErrorModes ) )* otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,12,FOLLOW_6); 
 
@@ -533,11 +562,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getPortTypeAccess().getTypeKeyword_1());
             		
-            // InternalDepModel.g:199:3: ( (lv_name_2_0= ruleQualifiedName ) )
-            // InternalDepModel.g:200:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:208:3: ( (lv_name_2_0= ruleQualifiedName ) )
+            // InternalDepModel.g:209:4: (lv_name_2_0= ruleQualifiedName )
             {
-            // InternalDepModel.g:200:4: (lv_name_2_0= ruleQualifiedName )
-            // InternalDepModel.g:201:5: lv_name_2_0= ruleQualifiedName
+            // InternalDepModel.g:209:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:210:5: lv_name_2_0= ruleQualifiedName
             {
 
             					newCompositeNode(grammarAccess.getPortTypeAccess().getNameQualifiedNameParserRuleCall_2_0());
@@ -568,7 +597,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getPortTypeAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalDepModel.g:222:3: ( (lv_eModes_4_0= ruleErrorModes ) )*
+            // InternalDepModel.g:231:3: ( (lv_eModes_4_0= ruleErrorModes ) )*
             loop4:
             do {
                 int alt4=2;
@@ -581,10 +610,10 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalDepModel.g:223:4: (lv_eModes_4_0= ruleErrorModes )
+            	    // InternalDepModel.g:232:4: (lv_eModes_4_0= ruleErrorModes )
             	    {
-            	    // InternalDepModel.g:223:4: (lv_eModes_4_0= ruleErrorModes )
-            	    // InternalDepModel.g:224:5: lv_eModes_4_0= ruleErrorModes
+            	    // InternalDepModel.g:232:4: (lv_eModes_4_0= ruleErrorModes )
+            	    // InternalDepModel.g:233:5: lv_eModes_4_0= ruleErrorModes
             	    {
 
             	    					newCompositeNode(grammarAccess.getPortTypeAccess().getEModesErrorModesParserRuleCall_4_0());
@@ -644,7 +673,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleErrorModes"
-    // InternalDepModel.g:249:1: entryRuleErrorModes returns [EObject current=null] : iv_ruleErrorModes= ruleErrorModes EOF ;
+    // InternalDepModel.g:258:1: entryRuleErrorModes returns [EObject current=null] : iv_ruleErrorModes= ruleErrorModes EOF ;
     public final EObject entryRuleErrorModes() throws RecognitionException {
         EObject current = null;
 
@@ -652,8 +681,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:249:51: (iv_ruleErrorModes= ruleErrorModes EOF )
-            // InternalDepModel.g:250:2: iv_ruleErrorModes= ruleErrorModes EOF
+            // InternalDepModel.g:258:51: (iv_ruleErrorModes= ruleErrorModes EOF )
+            // InternalDepModel.g:259:2: iv_ruleErrorModes= ruleErrorModes EOF
             {
              newCompositeNode(grammarAccess.getErrorModesRule()); 
             pushFollow(FOLLOW_1);
@@ -680,7 +709,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleErrorModes"
-    // InternalDepModel.g:256:1: ruleErrorModes returns [EObject current=null] : (otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) ) ) ;
+    // InternalDepModel.g:265:1: ruleErrorModes returns [EObject current=null] : (otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) ) ) ;
     public final EObject ruleErrorModes() throws RecognitionException {
         EObject current = null;
 
@@ -693,11 +722,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:262:2: ( (otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) ) ) )
-            // InternalDepModel.g:263:2: (otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) ) )
+            // InternalDepModel.g:271:2: ( (otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) ) ) )
+            // InternalDepModel.g:272:2: (otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) ) )
             {
-            // InternalDepModel.g:263:2: (otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) ) )
-            // InternalDepModel.g:264:3: otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) )
+            // InternalDepModel.g:272:2: (otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) ) )
+            // InternalDepModel.g:273:3: otherlv_0= 'error' otherlv_1= 'mode' ( (lv_name_2_0= ruleQualifiedName ) )
             {
             otherlv_0=(Token)match(input,16,FOLLOW_9); 
 
@@ -707,11 +736,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getErrorModesAccess().getModeKeyword_1());
             		
-            // InternalDepModel.g:272:3: ( (lv_name_2_0= ruleQualifiedName ) )
-            // InternalDepModel.g:273:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:281:3: ( (lv_name_2_0= ruleQualifiedName ) )
+            // InternalDepModel.g:282:4: (lv_name_2_0= ruleQualifiedName )
             {
-            // InternalDepModel.g:273:4: (lv_name_2_0= ruleQualifiedName )
-            // InternalDepModel.g:274:5: lv_name_2_0= ruleQualifiedName
+            // InternalDepModel.g:282:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:283:5: lv_name_2_0= ruleQualifiedName
             {
 
             					newCompositeNode(grammarAccess.getErrorModesAccess().getNameQualifiedNameParserRuleCall_2_0());
@@ -761,7 +790,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComponentModelDec"
-    // InternalDepModel.g:295:1: entryRuleComponentModelDec returns [EObject current=null] : iv_ruleComponentModelDec= ruleComponentModelDec EOF ;
+    // InternalDepModel.g:304:1: entryRuleComponentModelDec returns [EObject current=null] : iv_ruleComponentModelDec= ruleComponentModelDec EOF ;
     public final EObject entryRuleComponentModelDec() throws RecognitionException {
         EObject current = null;
 
@@ -769,8 +798,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:295:58: (iv_ruleComponentModelDec= ruleComponentModelDec EOF )
-            // InternalDepModel.g:296:2: iv_ruleComponentModelDec= ruleComponentModelDec EOF
+            // InternalDepModel.g:304:58: (iv_ruleComponentModelDec= ruleComponentModelDec EOF )
+            // InternalDepModel.g:305:2: iv_ruleComponentModelDec= ruleComponentModelDec EOF
             {
              newCompositeNode(grammarAccess.getComponentModelDecRule()); 
             pushFollow(FOLLOW_1);
@@ -797,7 +826,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComponentModelDec"
-    // InternalDepModel.g:302:1: ruleComponentModelDec returns [EObject current=null] : (this_SystemConnDec_0= ruleSystemConnDec | this_SystemDec_1= ruleSystemDec ) ;
+    // InternalDepModel.g:311:1: ruleComponentModelDec returns [EObject current=null] : (this_SystemConnDec_0= ruleSystemConnDec | this_SystemDec_1= ruleSystemDec ) ;
     public final EObject ruleComponentModelDec() throws RecognitionException {
         EObject current = null;
 
@@ -810,10 +839,10 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:308:2: ( (this_SystemConnDec_0= ruleSystemConnDec | this_SystemDec_1= ruleSystemDec ) )
-            // InternalDepModel.g:309:2: (this_SystemConnDec_0= ruleSystemConnDec | this_SystemDec_1= ruleSystemDec )
+            // InternalDepModel.g:317:2: ( (this_SystemConnDec_0= ruleSystemConnDec | this_SystemDec_1= ruleSystemDec ) )
+            // InternalDepModel.g:318:2: (this_SystemConnDec_0= ruleSystemConnDec | this_SystemDec_1= ruleSystemDec )
             {
-            // InternalDepModel.g:309:2: (this_SystemConnDec_0= ruleSystemConnDec | this_SystemDec_1= ruleSystemDec )
+            // InternalDepModel.g:318:2: (this_SystemConnDec_0= ruleSystemConnDec | this_SystemDec_1= ruleSystemDec )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -841,7 +870,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalDepModel.g:310:3: this_SystemConnDec_0= ruleSystemConnDec
+                    // InternalDepModel.g:319:3: this_SystemConnDec_0= ruleSystemConnDec
                     {
 
                     			newCompositeNode(grammarAccess.getComponentModelDecAccess().getSystemConnDecParserRuleCall_0());
@@ -859,7 +888,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDepModel.g:319:3: this_SystemDec_1= ruleSystemDec
+                    // InternalDepModel.g:328:3: this_SystemDec_1= ruleSystemDec
                     {
 
                     			newCompositeNode(grammarAccess.getComponentModelDecAccess().getSystemDecParserRuleCall_1());
@@ -899,7 +928,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSystemConnDec"
-    // InternalDepModel.g:331:1: entryRuleSystemConnDec returns [EObject current=null] : iv_ruleSystemConnDec= ruleSystemConnDec EOF ;
+    // InternalDepModel.g:340:1: entryRuleSystemConnDec returns [EObject current=null] : iv_ruleSystemConnDec= ruleSystemConnDec EOF ;
     public final EObject entryRuleSystemConnDec() throws RecognitionException {
         EObject current = null;
 
@@ -907,8 +936,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:331:54: (iv_ruleSystemConnDec= ruleSystemConnDec EOF )
-            // InternalDepModel.g:332:2: iv_ruleSystemConnDec= ruleSystemConnDec EOF
+            // InternalDepModel.g:340:54: (iv_ruleSystemConnDec= ruleSystemConnDec EOF )
+            // InternalDepModel.g:341:2: iv_ruleSystemConnDec= ruleSystemConnDec EOF
             {
              newCompositeNode(grammarAccess.getSystemConnDecRule()); 
             pushFollow(FOLLOW_1);
@@ -935,7 +964,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSystemConnDec"
-    // InternalDepModel.g:338:1: ruleSystemConnDec returns [EObject current=null] : (otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) ) ;
+    // InternalDepModel.g:347:1: ruleSystemConnDec returns [EObject current=null] : (otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) ) ;
     public final EObject ruleSystemConnDec() throws RecognitionException {
         EObject current = null;
 
@@ -956,11 +985,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:344:2: ( (otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) ) )
-            // InternalDepModel.g:345:2: (otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) )
+            // InternalDepModel.g:353:2: ( (otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) ) )
+            // InternalDepModel.g:354:2: (otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) )
             {
-            // InternalDepModel.g:345:2: (otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) )
-            // InternalDepModel.g:346:3: otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) )
+            // InternalDepModel.g:354:2: (otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) ) )
+            // InternalDepModel.g:355:3: otherlv_0= 'system' otherlv_1= 'connection' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= '.' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'to' ( (otherlv_8= RULE_ID ) ) otherlv_9= '.' ( (otherlv_10= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,18,FOLLOW_10); 
 
@@ -970,11 +999,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSystemConnDecAccess().getConnectionKeyword_1());
             		
-            // InternalDepModel.g:354:3: ( (lv_name_2_0= ruleQualifiedName ) )
-            // InternalDepModel.g:355:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:363:3: ( (lv_name_2_0= ruleQualifiedName ) )
+            // InternalDepModel.g:364:4: (lv_name_2_0= ruleQualifiedName )
             {
-            // InternalDepModel.g:355:4: (lv_name_2_0= ruleQualifiedName )
-            // InternalDepModel.g:356:5: lv_name_2_0= ruleQualifiedName
+            // InternalDepModel.g:364:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:365:5: lv_name_2_0= ruleQualifiedName
             {
 
             					newCompositeNode(grammarAccess.getSystemConnDecAccess().getNameQualifiedNameParserRuleCall_2_0());
@@ -1005,11 +1034,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getSystemConnDecAccess().getFromKeyword_3());
             		
-            // InternalDepModel.g:377:3: ( (otherlv_4= RULE_ID ) )
-            // InternalDepModel.g:378:4: (otherlv_4= RULE_ID )
+            // InternalDepModel.g:386:3: ( (otherlv_4= RULE_ID ) )
+            // InternalDepModel.g:387:4: (otherlv_4= RULE_ID )
             {
-            // InternalDepModel.g:378:4: (otherlv_4= RULE_ID )
-            // InternalDepModel.g:379:5: otherlv_4= RULE_ID
+            // InternalDepModel.g:387:4: (otherlv_4= RULE_ID )
+            // InternalDepModel.g:388:5: otherlv_4= RULE_ID
             {
 
             					if (current==null) {
@@ -1030,11 +1059,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getSystemConnDecAccess().getFullStopKeyword_5());
             		
-            // InternalDepModel.g:394:3: ( (otherlv_6= RULE_ID ) )
-            // InternalDepModel.g:395:4: (otherlv_6= RULE_ID )
+            // InternalDepModel.g:403:3: ( (otherlv_6= RULE_ID ) )
+            // InternalDepModel.g:404:4: (otherlv_6= RULE_ID )
             {
-            // InternalDepModel.g:395:4: (otherlv_6= RULE_ID )
-            // InternalDepModel.g:396:5: otherlv_6= RULE_ID
+            // InternalDepModel.g:404:4: (otherlv_6= RULE_ID )
+            // InternalDepModel.g:405:5: otherlv_6= RULE_ID
             {
 
             					if (current==null) {
@@ -1055,11 +1084,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getSystemConnDecAccess().getToKeyword_7());
             		
-            // InternalDepModel.g:411:3: ( (otherlv_8= RULE_ID ) )
-            // InternalDepModel.g:412:4: (otherlv_8= RULE_ID )
+            // InternalDepModel.g:420:3: ( (otherlv_8= RULE_ID ) )
+            // InternalDepModel.g:421:4: (otherlv_8= RULE_ID )
             {
-            // InternalDepModel.g:412:4: (otherlv_8= RULE_ID )
-            // InternalDepModel.g:413:5: otherlv_8= RULE_ID
+            // InternalDepModel.g:421:4: (otherlv_8= RULE_ID )
+            // InternalDepModel.g:422:5: otherlv_8= RULE_ID
             {
 
             					if (current==null) {
@@ -1080,11 +1109,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getSystemConnDecAccess().getFullStopKeyword_9());
             		
-            // InternalDepModel.g:428:3: ( (otherlv_10= RULE_ID ) )
-            // InternalDepModel.g:429:4: (otherlv_10= RULE_ID )
+            // InternalDepModel.g:437:3: ( (otherlv_10= RULE_ID ) )
+            // InternalDepModel.g:438:4: (otherlv_10= RULE_ID )
             {
-            // InternalDepModel.g:429:4: (otherlv_10= RULE_ID )
-            // InternalDepModel.g:430:5: otherlv_10= RULE_ID
+            // InternalDepModel.g:438:4: (otherlv_10= RULE_ID )
+            // InternalDepModel.g:439:5: otherlv_10= RULE_ID
             {
 
             					if (current==null) {
@@ -1124,7 +1153,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSystemDec"
-    // InternalDepModel.g:445:1: entryRuleSystemDec returns [EObject current=null] : iv_ruleSystemDec= ruleSystemDec EOF ;
+    // InternalDepModel.g:454:1: entryRuleSystemDec returns [EObject current=null] : iv_ruleSystemDec= ruleSystemDec EOF ;
     public final EObject entryRuleSystemDec() throws RecognitionException {
         EObject current = null;
 
@@ -1132,8 +1161,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:445:50: (iv_ruleSystemDec= ruleSystemDec EOF )
-            // InternalDepModel.g:446:2: iv_ruleSystemDec= ruleSystemDec EOF
+            // InternalDepModel.g:454:50: (iv_ruleSystemDec= ruleSystemDec EOF )
+            // InternalDepModel.g:455:2: iv_ruleSystemDec= ruleSystemDec EOF
             {
              newCompositeNode(grammarAccess.getSystemDecRule()); 
             pushFollow(FOLLOW_1);
@@ -1160,7 +1189,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSystemDec"
-    // InternalDepModel.g:452:1: ruleSystemDec returns [EObject current=null] : (otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}' ) ;
+    // InternalDepModel.g:461:1: ruleSystemDec returns [EObject current=null] : (otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}' ) ;
     public final EObject ruleSystemDec() throws RecognitionException {
         EObject current = null;
 
@@ -1177,11 +1206,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDepModel.g:458:2: ( (otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}' ) )
-            // InternalDepModel.g:459:2: (otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}' )
+            // InternalDepModel.g:467:2: ( (otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}' ) )
+            // InternalDepModel.g:468:2: (otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}' )
             {
-            // InternalDepModel.g:459:2: (otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}' )
-            // InternalDepModel.g:460:3: otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}'
+            // InternalDepModel.g:468:2: (otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}' )
+            // InternalDepModel.g:469:3: otherlv_0= 'system' otherlv_1= 'declaration' ( (lv_name_2_0= ruleQualifiedName ) ) otherlv_3= '{' ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )* otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,18,FOLLOW_14); 
 
@@ -1191,11 +1220,11 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSystemDecAccess().getDeclarationKeyword_1());
             		
-            // InternalDepModel.g:468:3: ( (lv_name_2_0= ruleQualifiedName ) )
-            // InternalDepModel.g:469:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:477:3: ( (lv_name_2_0= ruleQualifiedName ) )
+            // InternalDepModel.g:478:4: (lv_name_2_0= ruleQualifiedName )
             {
-            // InternalDepModel.g:469:4: (lv_name_2_0= ruleQualifiedName )
-            // InternalDepModel.g:470:5: lv_name_2_0= ruleQualifiedName
+            // InternalDepModel.g:478:4: (lv_name_2_0= ruleQualifiedName )
+            // InternalDepModel.g:479:5: lv_name_2_0= ruleQualifiedName
             {
 
             					newCompositeNode(grammarAccess.getSystemDecAccess().getNameQualifiedNameParserRuleCall_2_0());
@@ -1226,7 +1255,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getSystemDecAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalDepModel.g:491:3: ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )*
+            // InternalDepModel.g:500:3: ( (lv_sysFeatures_4_0= ruleSysFeaturesDec ) )*
             loop6:
             do {
                 int alt6=2;
@@ -1239,10 +1268,10 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalDepModel.g:492:4: (lv_sysFeatures_4_0= ruleSysFeaturesDec )
+            	    // InternalDepModel.g:501:4: (lv_sysFeatures_4_0= ruleSysFeaturesDec )
             	    {
-            	    // InternalDepModel.g:492:4: (lv_sysFeatures_4_0= ruleSysFeaturesDec )
-            	    // InternalDepModel.g:493:5: lv_sysFeatures_4_0= ruleSysFeaturesDec
+            	    // InternalDepModel.g:501:4: (lv_sysFeatures_4_0= ruleSysFeaturesDec )
+            	    // InternalDepModel.g:502:5: lv_sysFeatures_4_0= ruleSysFeaturesDec
             	    {
 
             	    					newCompositeNode(grammarAccess.getSystemDecAccess().getSysFeaturesSysFeaturesDecParserRuleCall_4_0());
@@ -1302,7 +1331,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSysFeaturesDec"
-    // InternalDepModel.g:518:1: entryRuleSysFeaturesDec returns [EObject current=null] : iv_ruleSysFeaturesDec= ruleSysFeaturesDec EOF ;
+    // InternalDepModel.g:527:1: entryRuleSysFeaturesDec returns [EObject current=null] : iv_ruleSysFeaturesDec= ruleSysFeaturesDec EOF ;
     public final EObject entryRuleSysFeaturesDec() throws RecognitionException {
         EObject current = null;
 
@@ -1310,8 +1339,8 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDepModel.g:518:55: (iv_ruleSysFeaturesDec= ruleSysFeaturesDec EOF )
-            // InternalDepModel.g:519:2: iv_ruleSysFeaturesDec= ruleSysFeaturesDec EOF
+            // InternalDepModel.g:527:55: (iv_ruleSysFeaturesDec= ruleSysFeaturesDec EOF )
+            // InternalDepModel.g:528:2: iv_ruleSysFeaturesDec= ruleSysFeaturesDec EOF
             {
              newCompositeNode(grammarAccess.getSysFeaturesDecRule()); 
             pushFollow(FOLLOW_1);
@@ -1338,7 +1367,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSysFeaturesDec"
-    // InternalDepModel.g:525:1: ruleSysFeaturesDec returns [EObject current=null] : (this_SystemPortDec_0= ruleSystemPortDec | this_ComponentConnDec_1= ruleComponentConnDec | this_ComponentType_2= ruleComponentType | this_ComponentImpl_3= ruleComponentImpl ) ;
+    // InternalDepModel.g:534:1: ruleSysFeaturesDec returns [EObject current=null] : (this_SystemPortDec_0= ruleSystemPortDec | this_ComponentConnDec_1= ruleComponentConnDec | this_ComponentImpl_2= ruleComponentImpl ) ;
     public final EObject ruleSysFeaturesDec() throws RecognitionException {
         EObject current = null;
 
@@ -1346,49 +1375,38 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
         EObject this_ComponentConnDec_1 = null;
 
-        EObject this_ComponentType_2 = null;
-
-        EObject this_ComponentImpl_3 = null;
+        EObject this_ComponentImpl_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDepModel.g:531:2: ( (this_SystemPortDec_0= ruleSystemPortDec | this_ComponentConnDec_1= ruleComponentConnDec | this_ComponentType_2= ruleComponentType | this_ComponentImpl_3= ruleComponentImpl ) )
-            // InternalDepModel.g:532:2: (this_SystemPortDec_0= ruleSystemPortDec | this_ComponentConnDec_1= ruleComponentConnDec | this_ComponentType_2= ruleComponentType | this_ComponentImpl_3= ruleComponentImpl )
+            // InternalDepModel.g:540:2: ( (this_SystemPortDec_0= ruleSystemPortDec | this_ComponentConnDec_1= ruleComponentConnDec | this_ComponentImpl_2= ruleComponentImpl ) )
+            // InternalDepModel.g:541:2: (this_SystemPortDec_0= ruleSystemPortDec | this_ComponentConnDec_1= ruleComponentConnDec | this_ComponentImpl_2= ruleComponentImpl )
             {
-            // InternalDepModel.g:532:2: (this_SystemPortDec_0= ruleSystemPortDec | this_ComponentConnDec_1= ruleComponentConnDec | this_ComponentType_2= ruleComponentType | this_ComponentImpl_3= ruleComponentImpl )
-            int alt7=4;
+            // InternalDepModel.g:541:2: (this_SystemPortDec_0= ruleSystemPortDec | this_ComponentConnDec_1= ruleComponentConnDec | this_ComponentImpl_2= ruleComponentImpl )
+            int alt7=3;
             int LA7_0 = input.LA(1);
 
             if ( (LA7_0==18) ) {
                 alt7=1;
             }
             else if ( (LA7_0==25) ) {
-                switch ( input.LA(2) ) {
-                case 26:
-                    {
-                    alt7=4;
-                    }
-                    break;
-                case 13:
-                    {
+                int LA7_2 = input.LA(2);
+
+                if ( (LA7_2==26) ) {
                     alt7=3;
-                    }
-                    break;
-                case 19:
-                    {
+                }
+                else if ( (LA7_2==19) ) {
                     alt7=2;
-                    }
-                    break;
-                default:
+                }
+                else {
                     NoViableAltException nvae =
                         new NoViableAltException("", 7, 2, input);
 
                     throw nvae;
                 }
-
             }
             else {
                 NoViableAltException nvae =
@@ -1398,7 +1416,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalDepModel.g:533:3: this_SystemPortDec_0= ruleSystemPortDec
+                    // InternalDepModel.g:542:3: this_SystemPortDec_0= ruleSystemPortDec
                     {
 
                     			newCompositeNode(grammarAccess.getSysFeaturesDecAccess().getSystemPortDecParserRuleCall_0());
@@ -1416,7 +1434,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDepModel.g:542:3: this_ComponentConnDec_1= ruleComponentConnDec
+                    // InternalDepModel.g:551:3: this_ComponentConnDec_1= ruleComponentConnDec
                     {
 
                     			newCompositeNode(grammarAccess.getSysFeaturesDecAccess().getComponentConnDecParserRuleCall_1());
@@ -1434,36 +1452,18 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDepModel.g:551:3: this_ComponentType_2= ruleComponentType
+                    // InternalDepModel.g:560:3: this_ComponentImpl_2= ruleComponentImpl
                     {
 
-                    			newCompositeNode(grammarAccess.getSysFeaturesDecAccess().getComponentTypeParserRuleCall_2());
+                    			newCompositeNode(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_2());
                     		
                     pushFollow(FOLLOW_2);
-                    this_ComponentType_2=ruleComponentType();
+                    this_ComponentImpl_2=ruleComponentImpl();
 
                     state._fsp--;
 
 
-                    			current = this_ComponentType_2;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 4 :
-                    // InternalDepModel.g:560:3: this_ComponentImpl_3= ruleComponentImpl
-                    {
-
-                    			newCompositeNode(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_3());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_ComponentImpl_3=ruleComponentImpl();
-
-                    state._fsp--;
-
-
-                    			current = this_ComponentImpl_3;
+                    			current = this_ComponentImpl_2;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -4493,7 +4493,7 @@ public class InternalDepModelParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000041002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000002041002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});

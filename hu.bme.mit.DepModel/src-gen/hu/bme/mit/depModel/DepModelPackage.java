@@ -573,7 +573,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_TYPE__NAME = SYS_FEATURES_DEC__NAME;
+  int COMPONENT_TYPE__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Component Features</b></em>' containment reference list.
@@ -582,7 +582,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_TYPE__COMPONENT_FEATURES = SYS_FEATURES_DEC_FEATURE_COUNT + 0;
+  int COMPONENT_TYPE__COMPONENT_FEATURES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Component Type</em>' class.
@@ -591,7 +591,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_TYPE_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 1;
+  int COMPONENT_TYPE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ComponentFeaturesDecImpl <em>Component Features Dec</em>}' class.

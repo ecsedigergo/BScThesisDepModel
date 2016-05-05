@@ -145,7 +145,7 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==12||LA1_0==18) ) {
+                if ( (LA1_0==12||LA1_0==18||LA1_0==25) ) {
                     alt1=1;
                 }
 
@@ -2270,28 +2270,37 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AbstractElement__Alternatives"
-    // InternalDepModel.g:752:1: rule__AbstractElement__Alternatives : ( ( ruleComponentModelDec ) | ( rulePortType ) );
+    // InternalDepModel.g:752:1: rule__AbstractElement__Alternatives : ( ( ruleComponentModelDec ) | ( rulePortType ) | ( ruleComponentType ) );
     public final void rule__AbstractElement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:756:1: ( ( ruleComponentModelDec ) | ( rulePortType ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==18) ) {
+            // InternalDepModel.g:756:1: ( ( ruleComponentModelDec ) | ( rulePortType ) | ( ruleComponentType ) )
+            int alt2=3;
+            switch ( input.LA(1) ) {
+            case 18:
+                {
                 alt2=1;
-            }
-            else if ( (LA2_0==12) ) {
+                }
+                break;
+            case 12:
+                {
                 alt2=2;
-            }
-            else {
+                }
+                break;
+            case 25:
+                {
+                alt2=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
+
             switch (alt2) {
                 case 1 :
                     // InternalDepModel.g:757:2: ( ruleComponentModelDec )
@@ -2331,6 +2340,25 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
                     }
                     break;
+                case 3 :
+                    // InternalDepModel.g:769:2: ( ruleComponentType )
+                    {
+                    // InternalDepModel.g:769:2: ( ruleComponentType )
+                    // InternalDepModel.g:770:3: ruleComponentType
+                    {
+                     before(grammarAccess.getAbstractElementAccess().getComponentTypeParserRuleCall_2()); 
+                    pushFollow(FOLLOW_2);
+                    ruleComponentType();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getAbstractElementAccess().getComponentTypeParserRuleCall_2()); 
+
+                    }
+
+
+                    }
+                    break;
 
             }
         }
@@ -2349,13 +2377,13 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentModelDec__Alternatives"
-    // InternalDepModel.g:773:1: rule__ComponentModelDec__Alternatives : ( ( ruleSystemConnDec ) | ( ruleSystemDec ) );
+    // InternalDepModel.g:779:1: rule__ComponentModelDec__Alternatives : ( ( ruleSystemConnDec ) | ( ruleSystemDec ) );
     public final void rule__ComponentModelDec__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:777:1: ( ( ruleSystemConnDec ) | ( ruleSystemDec ) )
+            // InternalDepModel.g:783:1: ( ( ruleSystemConnDec ) | ( ruleSystemDec ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -2383,10 +2411,10 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             }
             switch (alt3) {
                 case 1 :
-                    // InternalDepModel.g:778:2: ( ruleSystemConnDec )
+                    // InternalDepModel.g:784:2: ( ruleSystemConnDec )
                     {
-                    // InternalDepModel.g:778:2: ( ruleSystemConnDec )
-                    // InternalDepModel.g:779:3: ruleSystemConnDec
+                    // InternalDepModel.g:784:2: ( ruleSystemConnDec )
+                    // InternalDepModel.g:785:3: ruleSystemConnDec
                     {
                      before(grammarAccess.getComponentModelDecAccess().getSystemConnDecParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -2402,10 +2430,10 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalDepModel.g:784:2: ( ruleSystemDec )
+                    // InternalDepModel.g:790:2: ( ruleSystemDec )
                     {
-                    // InternalDepModel.g:784:2: ( ruleSystemDec )
-                    // InternalDepModel.g:785:3: ruleSystemDec
+                    // InternalDepModel.g:790:2: ( ruleSystemDec )
+                    // InternalDepModel.g:791:3: ruleSystemDec
                     {
                      before(grammarAccess.getComponentModelDecAccess().getSystemDecParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2438,43 +2466,34 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SysFeaturesDec__Alternatives"
-    // InternalDepModel.g:794:1: rule__SysFeaturesDec__Alternatives : ( ( ruleSystemPortDec ) | ( ruleComponentConnDec ) | ( ruleComponentType ) | ( ruleComponentImpl ) );
+    // InternalDepModel.g:800:1: rule__SysFeaturesDec__Alternatives : ( ( ruleSystemPortDec ) | ( ruleComponentConnDec ) | ( ruleComponentImpl ) );
     public final void rule__SysFeaturesDec__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:798:1: ( ( ruleSystemPortDec ) | ( ruleComponentConnDec ) | ( ruleComponentType ) | ( ruleComponentImpl ) )
-            int alt4=4;
+            // InternalDepModel.g:804:1: ( ( ruleSystemPortDec ) | ( ruleComponentConnDec ) | ( ruleComponentImpl ) )
+            int alt4=3;
             int LA4_0 = input.LA(1);
 
             if ( (LA4_0==18) ) {
                 alt4=1;
             }
             else if ( (LA4_0==25) ) {
-                switch ( input.LA(2) ) {
-                case 13:
-                    {
+                int LA4_2 = input.LA(2);
+
+                if ( (LA4_2==26) ) {
                     alt4=3;
-                    }
-                    break;
-                case 26:
-                    {
-                    alt4=4;
-                    }
-                    break;
-                case 19:
-                    {
+                }
+                else if ( (LA4_2==19) ) {
                     alt4=2;
-                    }
-                    break;
-                default:
+                }
+                else {
                     NoViableAltException nvae =
                         new NoViableAltException("", 4, 2, input);
 
                     throw nvae;
                 }
-
             }
             else {
                 NoViableAltException nvae =
@@ -2484,10 +2503,10 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             }
             switch (alt4) {
                 case 1 :
-                    // InternalDepModel.g:799:2: ( ruleSystemPortDec )
+                    // InternalDepModel.g:805:2: ( ruleSystemPortDec )
                     {
-                    // InternalDepModel.g:799:2: ( ruleSystemPortDec )
-                    // InternalDepModel.g:800:3: ruleSystemPortDec
+                    // InternalDepModel.g:805:2: ( ruleSystemPortDec )
+                    // InternalDepModel.g:806:3: ruleSystemPortDec
                     {
                      before(grammarAccess.getSysFeaturesDecAccess().getSystemPortDecParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -2503,10 +2522,10 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalDepModel.g:805:2: ( ruleComponentConnDec )
+                    // InternalDepModel.g:811:2: ( ruleComponentConnDec )
                     {
-                    // InternalDepModel.g:805:2: ( ruleComponentConnDec )
-                    // InternalDepModel.g:806:3: ruleComponentConnDec
+                    // InternalDepModel.g:811:2: ( ruleComponentConnDec )
+                    // InternalDepModel.g:812:3: ruleComponentConnDec
                     {
                      before(grammarAccess.getSysFeaturesDecAccess().getComponentConnDecParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2522,37 +2541,18 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalDepModel.g:811:2: ( ruleComponentType )
-                    {
-                    // InternalDepModel.g:811:2: ( ruleComponentType )
-                    // InternalDepModel.g:812:3: ruleComponentType
-                    {
-                     before(grammarAccess.getSysFeaturesDecAccess().getComponentTypeParserRuleCall_2()); 
-                    pushFollow(FOLLOW_2);
-                    ruleComponentType();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getSysFeaturesDecAccess().getComponentTypeParserRuleCall_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
                     // InternalDepModel.g:817:2: ( ruleComponentImpl )
                     {
                     // InternalDepModel.g:817:2: ( ruleComponentImpl )
                     // InternalDepModel.g:818:3: ruleComponentImpl
                     {
-                     before(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_3()); 
+                     before(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
                     ruleComponentImpl();
 
                     state._fsp--;
 
-                     after(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_3()); 
+                     after(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_2()); 
 
                     }
 
@@ -14151,7 +14151,7 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000041002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000002041002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});

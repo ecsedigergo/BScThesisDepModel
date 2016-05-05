@@ -71,12 +71,13 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cComponentModelDecParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cPortTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cComponentTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractElement:
-		//	ComponentModelDec | PortType;
+		//	ComponentModelDec | PortType | ComponentType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ComponentModelDec | PortType
+		//ComponentModelDec | PortType | ComponentType
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ComponentModelDec
@@ -84,6 +85,9 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PortType
 		public RuleCall getPortTypeParserRuleCall_1() { return cPortTypeParserRuleCall_1; }
+		
+		//ComponentType
+		public RuleCall getComponentTypeParserRuleCall_2() { return cComponentTypeParserRuleCall_2; }
 	}
 	public class PortTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.PortType");
@@ -316,14 +320,13 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSystemPortDecParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cComponentConnDecParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cComponentTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cComponentImplParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cComponentImplParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//SysFeaturesDec:
-		//	SystemPortDec | ComponentConnDec | ComponentType | ComponentImpl;
+		//	SystemPortDec | ComponentConnDec | ComponentImpl;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//SystemPortDec | ComponentConnDec | ComponentType | ComponentImpl
+		//SystemPortDec | ComponentConnDec | ComponentImpl
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//SystemPortDec
@@ -332,11 +335,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		//ComponentConnDec
 		public RuleCall getComponentConnDecParserRuleCall_1() { return cComponentConnDecParserRuleCall_1; }
 		
-		//ComponentType
-		public RuleCall getComponentTypeParserRuleCall_2() { return cComponentTypeParserRuleCall_2; }
-		
 		//ComponentImpl
-		public RuleCall getComponentImplParserRuleCall_3() { return cComponentImplParserRuleCall_3; }
+		public RuleCall getComponentImplParserRuleCall_2() { return cComponentImplParserRuleCall_2; }
 	}
 	public class SystemPortDecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.SystemPortDec");
@@ -344,7 +344,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSystemPortInParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSystemPortOutParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//SystemPortDec:
+		////| ComponentType ;
+		// SystemPortDec:
 		//	SystemPortIn | SystemPortOut;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1260,7 +1261,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AbstractElement:
-	//	ComponentModelDec | PortType;
+	//	ComponentModelDec | PortType | ComponentType;
 	public AbstractElementElements getAbstractElementAccess() {
 		return pAbstractElement;
 	}
@@ -1322,7 +1323,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SysFeaturesDec:
-	//	SystemPortDec | ComponentConnDec | ComponentType | ComponentImpl;
+	//	SystemPortDec | ComponentConnDec | ComponentImpl;
 	public SysFeaturesDecElements getSysFeaturesDecAccess() {
 		return pSysFeaturesDec;
 	}
@@ -1331,7 +1332,8 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		return getSysFeaturesDecAccess().getRule();
 	}
 	
-	//SystemPortDec:
+	////| ComponentType ;
+	// SystemPortDec:
 	//	SystemPortIn | SystemPortOut;
 	public SystemPortDecElements getSystemPortDecAccess() {
 		return pSystemPortDec;

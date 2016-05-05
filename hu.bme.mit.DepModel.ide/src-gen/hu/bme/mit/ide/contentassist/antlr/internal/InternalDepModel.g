@@ -765,6 +765,12 @@ rule__AbstractElement__Alternatives
 		rulePortType
 		{ after(grammarAccess.getAbstractElementAccess().getPortTypeParserRuleCall_1()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getAbstractElementAccess().getComponentTypeParserRuleCall_2()); }
+		ruleComponentType
+		{ after(grammarAccess.getAbstractElementAccess().getComponentTypeParserRuleCall_2()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -809,15 +815,9 @@ rule__SysFeaturesDec__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getSysFeaturesDecAccess().getComponentTypeParserRuleCall_2()); }
-		ruleComponentType
-		{ after(grammarAccess.getSysFeaturesDecAccess().getComponentTypeParserRuleCall_2()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_3()); }
+		{ before(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_2()); }
 		ruleComponentImpl
-		{ after(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_3()); }
+		{ after(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_2()); }
 	)
 ;
 finally {

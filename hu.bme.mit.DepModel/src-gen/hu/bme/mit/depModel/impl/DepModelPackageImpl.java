@@ -1067,7 +1067,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     systemPortOutEClass.getESuperTypes().add(this.getSystemPortDec());
     componentConnDecEClass.getESuperTypes().add(this.getSysFeaturesDec());
     componentImplEClass.getESuperTypes().add(this.getSysFeaturesDec());
-    componentTypeEClass.getESuperTypes().add(this.getSysFeaturesDec());
+    componentTypeEClass.getESuperTypes().add(this.getAbstractElement());
     portDecEClass.getESuperTypes().add(this.getComponentFeaturesDec());
     portInEClass.getESuperTypes().add(this.getPortDec());
     portOutEClass.getESuperTypes().add(this.getPortDec());

@@ -169,6 +169,15 @@ ruleAbstractElement returns [EObject current=null]
 			$current = $this_PortType_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getAbstractElementAccess().getComponentTypeParserRuleCall_2());
+		}
+		this_ComponentType_2=ruleComponentType
+		{
+			$current = $this_ComponentType_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -549,20 +558,11 @@ ruleSysFeaturesDec returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getSysFeaturesDecAccess().getComponentTypeParserRuleCall_2());
+			newCompositeNode(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_2());
 		}
-		this_ComponentType_2=ruleComponentType
+		this_ComponentImpl_2=ruleComponentImpl
 		{
-			$current = $this_ComponentType_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getSysFeaturesDecAccess().getComponentImplParserRuleCall_3());
-		}
-		this_ComponentImpl_3=ruleComponentImpl
-		{
-			$current = $this_ComponentImpl_3.current;
+			$current = $this_ComponentImpl_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)

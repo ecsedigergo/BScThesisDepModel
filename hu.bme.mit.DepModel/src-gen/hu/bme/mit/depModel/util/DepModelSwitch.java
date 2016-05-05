@@ -181,7 +181,7 @@ public class DepModelSwitch<T> extends Switch<T>
       {
         ComponentType componentType = (ComponentType)theEObject;
         T result = caseComponentType(componentType);
-        if (result == null) result = caseSysFeaturesDec(componentType);
+        if (result == null) result = caseAbstractElement(componentType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

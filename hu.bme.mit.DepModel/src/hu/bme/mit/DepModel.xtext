@@ -9,7 +9,7 @@ QualifiedName:
 	ID ('.' ID)*;
 
 AbstractElement:
-	ComponentModelDec | PortType;
+	ComponentModelDec | PortType | ComponentType;
 
 PortType:
 	'port' 'type' name=QualifiedName '{'
@@ -33,7 +33,7 @@ SystemDec:
 	'}';
 
 SysFeaturesDec:
-	SystemPortDec | ComponentConnDec | ComponentType | ComponentImpl;
+	SystemPortDec | ComponentConnDec | ComponentImpl; //| ComponentType ;
 
 SystemPortDec:
 	SystemPortIn | SystemPortOut;

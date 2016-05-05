@@ -11,6 +11,8 @@ import hu.bme.mit.depModel.DepModelPackage
 import hu.bme.mit.depModel.ErrorModes
 import hu.bme.mit.depModel.PortIn
 import hu.bme.mit.depModel.PortOut
+import hu.bme.mit.depModel.SystemConnDec
+import hu.bme.mit.depModel.SystemDec
 import hu.bme.mit.depModel.SystemPortIn
 import hu.bme.mit.depModel.SystemPortOut
 import hu.bme.mit.depModel.Trigger
@@ -19,9 +21,6 @@ import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
-import hu.bme.mit.depModel.SystemConnDec
-import hu.bme.mit.depModel.SystemDec
-import hu.bme.mit.depModel.SystemPortDec
 
 /**
  * This class contains custom scoping description.

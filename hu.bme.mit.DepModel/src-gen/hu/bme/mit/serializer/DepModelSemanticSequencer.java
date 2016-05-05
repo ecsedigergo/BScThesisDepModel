@@ -191,7 +191,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     SysFeaturesDec returns ComponentType
+	 *     AbstractElement returns ComponentType
 	 *     ComponentType returns ComponentType
 	 *
 	 * Constraint:

@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ComponentTypeImpl extends SysFeaturesDecImpl implements ComponentType
+public class ComponentTypeImpl extends AbstractElementImpl implements ComponentType
 {
   /**
    * The cached value of the '{@link #getComponentFeatures() <em>Component Features</em>}' containment reference list.

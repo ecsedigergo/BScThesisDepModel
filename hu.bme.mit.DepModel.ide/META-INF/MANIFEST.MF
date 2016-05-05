@@ -5,7 +5,7 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: hu.bme.mit.DepModel.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: hu.bme.mit.DepModel,
+Require-Bundle: hu.bme.mit.DepModel;bundle-version="1.0.0",
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
