@@ -33,7 +33,7 @@ SystemDec:
 	'}';
 
 SysFeaturesDec:
-	SystemPortDec | ComponentConnDec | ComponentImpl; //| ComponentType ;
+	SystemPortDec | ComponentConnDec | ComponentImpl;
 
 SystemPortDec:
 	SystemPortIn | SystemPortOut;

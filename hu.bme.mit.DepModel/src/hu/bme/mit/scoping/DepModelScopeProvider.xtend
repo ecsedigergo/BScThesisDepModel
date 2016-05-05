@@ -148,16 +148,4 @@ class DepModelScopeProvider extends AbstractDepModelScopeProvider {
 		return super.getScope(context, reference);
 	}
 }
-/*
- * 			if (reference == ComponentModelPackage.Literals.COMP_CONN_DEC__SOURCE_PORT) {
- * 				val compI = EcoreUtil2.getContainerOfType(conn.sourceComp, ComponentImpl)
- * 				if(compI == null) return IScope.NULLSCOPE
 
- * 				val compT = compI.superType
- * 				val ports = EcoreUtil2.getAllContentsOfType(compT, OutPort)
- * 				if (ports == null) {
- * 					return IScope.NULLSCOPE
- * 				} else {
- * 					return Scopes.scopeFor(ports)
- * 				}
- }*/

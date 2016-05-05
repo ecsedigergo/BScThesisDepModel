@@ -344,8 +344,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSystemPortInParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSystemPortOutParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		////| ComponentType ;
-		// SystemPortDec:
+		//SystemPortDec:
 		//	SystemPortIn | SystemPortOut;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1332,8 +1331,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		return getSysFeaturesDecAccess().getRule();
 	}
 	
-	////| ComponentType ;
-	// SystemPortDec:
+	//SystemPortDec:
 	//	SystemPortIn | SystemPortOut;
 	public SystemPortDecElements getSystemPortDecAccess() {
 		return pSystemPortDec;
