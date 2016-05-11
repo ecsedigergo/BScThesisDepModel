@@ -920,22 +920,13 @@ public interface DepModelPackage extends EPackage
   int TRIGGER = 24;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRIGGER__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Port Instance</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRIGGER__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
+  int TRIGGER__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Error Mode</b></em>' reference.
@@ -944,7 +935,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRIGGER__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
+  int TRIGGER__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Trigger</em>' class.
@@ -953,7 +944,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRIGGER_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 3;
+  int TRIGGER_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ActionImpl <em>Action</em>}' class.
@@ -966,22 +957,13 @@ public interface DepModelPackage extends EPackage
   int ACTION = 25;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION__NAME = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Port Instance</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
+  int ACTION__PORT_INSTANCE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Error Mode</b></em>' reference.
@@ -990,7 +972,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
+  int ACTION__ERROR_MODE = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Action</em>' class.
@@ -999,7 +981,7 @@ public interface DepModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 3;
+  int ACTION_FEATURE_COUNT = TRANSITION_FEATURE_DEC_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.OccurrenceImpl <em>Occurrence</em>}' class.
@@ -1580,17 +1562,6 @@ public interface DepModelPackage extends EPackage
   EClass getTrigger();
 
   /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.Trigger#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.depModel.Trigger#getName()
-   * @see #getTrigger()
-   * @generated
-   */
-  EAttribute getTrigger_Name();
-
-  /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.Trigger#getPortInstance <em>Port Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1621,17 +1592,6 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EClass getAction();
-
-  /**
-   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.Action#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see hu.bme.mit.depModel.Action#getName()
-   * @see #getAction()
-   * @generated
-   */
-  EAttribute getAction_Name();
 
   /**
    * Returns the meta object for the reference '{@link hu.bme.mit.depModel.Action#getPortInstance <em>Port Instance</em>}'.
@@ -2163,14 +2123,6 @@ public interface DepModelPackage extends EPackage
     EClass TRIGGER = eINSTANCE.getTrigger();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TRIGGER__NAME = eINSTANCE.getTrigger_Name();
-
-    /**
      * The meta object literal for the '<em><b>Port Instance</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2195,14 +2147,6 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EClass ACTION = eINSTANCE.getAction();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
 
     /**
      * The meta object literal for the '<em><b>Port Instance</b></em>' reference feature.

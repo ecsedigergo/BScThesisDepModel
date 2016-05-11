@@ -13,7 +13,7 @@ AbstractElement:
 
 PortType:
 	'port' 'type' name=QualifiedName '{'
-	(eModes+=ErrorModes)*
+	(eModes+=ErrorModes)+
 	'}';
 
 ErrorModes:
@@ -24,11 +24,11 @@ ComponentModelDec:
 	SystemConnDec | SystemDec;
 
 SystemConnDec:
-	'system' 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut]
+	 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut]
 	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortIn];
 
 SystemDec:
-	'system' 'declaration' name=QualifiedName '{'
+	'system'  name=QualifiedName '{'
 	(sysFeatures+=SysFeaturesDec)*
 	'}';
 
@@ -45,11 +45,11 @@ SystemPortOut:
 	'system' 'port' 'out' name=QualifiedName 'from' outComp=[ComponentImpl] '.' outPort=[PortOut];
 
 ComponentConnDec:
-	'component' 'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut]
+	 'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut]
 	'to' targetComp=[ComponentImpl] '.' targetPort=[PortIn];
 
 ComponentImpl:
-	'component' 'implementation' name=QualifiedName ':' superType=[ComponentType];
+	'component'  name=QualifiedName ':' superType=[ComponentType];
 
 ComponentType:
 	'component' 'type' name=QualifiedName '{'
@@ -63,10 +63,10 @@ PortDec:
 	PortIn | PortOut;
 
 PortIn:
-	'port' 'instance' 'in' name=QualifiedName ':' PortInSuperType=[PortType];
+	'port'  'in' name=QualifiedName ':' PortInSuperType=[PortType];
 
 PortOut:
-	'port' 'instance' 'out' name=QualifiedName ':' PortOutSuperType=[PortType];
+	'port'  'out' name=QualifiedName ':' PortOutSuperType=[PortType];
 
 	//Error Model *********************************
 ErrorModelDec:
@@ -78,7 +78,7 @@ ErrorModelElement:
 	State | TransitionDec;
 
 State:
-	('initial')? 'error' 'state' name=QualifiedName;
+	('initial')?  'state' name=QualifiedName;
 
 TransitionDec:
 	'transition' name=QualifiedName '{'
@@ -92,10 +92,10 @@ TransitionState:
 	'states' sourceState=[State] '->' targetState=[State];
 
 Trigger:
-	'trigger' name=QualifiedName ':' portInstance=[PortDec] '.' errorMode=[ErrorModes];
+	'trigger'  portInstance=[PortIn] '.' errorMode=[ErrorModes];
 
 Action:
-	'action' name=QualifiedName ':' portInstance=[PortDec] '.' errorMode=[ErrorModes];
+	'action' portInstance=[PortOut] '.' errorMode=[ErrorModes];
 
 DOUBLE:
 	INT '.' INT;

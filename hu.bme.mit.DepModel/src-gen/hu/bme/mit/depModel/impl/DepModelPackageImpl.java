@@ -835,19 +835,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTrigger_Name()
-  {
-    return (EAttribute)triggerEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getTrigger_PortInstance()
   {
-    return (EReference)triggerEClass.getEStructuralFeatures().get(1);
+    return (EReference)triggerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -857,7 +847,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    */
   public EReference getTrigger_ErrorMode()
   {
-    return (EReference)triggerEClass.getEStructuralFeatures().get(2);
+    return (EReference)triggerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -875,19 +865,9 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAction_Name()
-  {
-    return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getAction_PortInstance()
   {
-    return (EReference)actionEClass.getEStructuralFeatures().get(1);
+    return (EReference)actionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -897,7 +877,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    */
   public EReference getAction_ErrorMode()
   {
-    return (EReference)actionEClass.getEStructuralFeatures().get(2);
+    return (EReference)actionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1017,12 +997,10 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     createEReference(transitionStateEClass, TRANSITION_STATE__TARGET_STATE);
 
     triggerEClass = createEClass(TRIGGER);
-    createEAttribute(triggerEClass, TRIGGER__NAME);
     createEReference(triggerEClass, TRIGGER__PORT_INSTANCE);
     createEReference(triggerEClass, TRIGGER__ERROR_MODE);
 
     actionEClass = createEClass(ACTION);
-    createEAttribute(actionEClass, ACTION__NAME);
     createEReference(actionEClass, ACTION__PORT_INSTANCE);
     createEReference(actionEClass, ACTION__ERROR_MODE);
 
@@ -1157,13 +1135,11 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     initEReference(getTransitionState_TargetState(), this.getState(), null, "targetState", null, 0, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTrigger_Name(), ecorePackage.getEString(), "name", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTrigger_PortInstance(), this.getPortDec(), null, "portInstance", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTrigger_PortInstance(), this.getPortIn(), null, "portInstance", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTrigger_ErrorMode(), this.getErrorModes(), null, "errorMode", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAction_PortInstance(), this.getPortDec(), null, "portInstance", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAction_PortInstance(), this.getPortOut(), null, "portInstance", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_ErrorMode(), this.getErrorModes(), null, "errorMode", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(occurrenceEClass, Occurrence.class, "Occurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

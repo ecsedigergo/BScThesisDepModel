@@ -79,13 +79,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" eType="#//State"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Trigger" eSuperTypes="#//TransitionFeatureDec">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" eType="#//PortDec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" eType="#//PortIn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="errorMode" eType="#//ErrorModes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//TransitionFeatureDec">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" eType="#//PortDec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portInstance" eType="#//PortOut"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="errorMode" eType="#//ErrorModes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Occurrence" eSuperTypes="#//TransitionFeatureDec"/>

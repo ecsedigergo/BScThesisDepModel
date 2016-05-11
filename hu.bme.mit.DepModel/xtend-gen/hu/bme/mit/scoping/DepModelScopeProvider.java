@@ -10,7 +10,6 @@ import hu.bme.mit.depModel.ComponentImpl;
 import hu.bme.mit.depModel.ComponentType;
 import hu.bme.mit.depModel.DepModelPackage;
 import hu.bme.mit.depModel.ErrorModes;
-import hu.bme.mit.depModel.PortDec;
 import hu.bme.mit.depModel.PortIn;
 import hu.bme.mit.depModel.PortOut;
 import hu.bme.mit.depModel.PortType;
@@ -55,7 +54,7 @@ public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
       }
       boolean _equals_3 = Objects.equal(reference, DepModelPackage.Literals.TRIGGER__ERROR_MODE);
       if (_equals_3) {
-        PortDec _portInstance = trigger.getPortInstance();
+        PortIn _portInstance = trigger.getPortInstance();
         final PortIn portInImpl = EcoreUtil2.<PortIn>getContainerOfType(_portInstance, PortIn.class);
         boolean _equals_4 = Objects.equal(portInImpl, null);
         if (_equals_4) {
@@ -88,7 +87,7 @@ public class DepModelScopeProvider extends AbstractDepModelScopeProvider {
       }
       boolean _equals_9 = Objects.equal(reference, DepModelPackage.Literals.ACTION__ERROR_MODE);
       if (_equals_9) {
-        PortDec _portInstance_1 = action.getPortInstance();
+        PortOut _portInstance_1 = action.getPortInstance();
         final PortOut portOutImpl = EcoreUtil2.<PortOut>getContainerOfType(_portInstance_1, PortOut.class);
         boolean _equals_10 = Objects.equal(portOutImpl, null);
         if (_equals_10) {

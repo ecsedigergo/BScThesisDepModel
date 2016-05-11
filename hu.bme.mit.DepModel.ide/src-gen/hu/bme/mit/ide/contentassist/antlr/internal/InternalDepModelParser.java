@@ -22,13 +22,12 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDepModelParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'port'", "'type'", "'{'", "'}'", "'error'", "'mode'", "'system'", "'connection'", "'from'", "'to'", "'declaration'", "'in'", "'out'", "'component'", "'implementation'", "':'", "'instance'", "'model'", "'initial'", "'state'", "'transition'", "'occurrence'", "'states'", "'->'", "'trigger'", "'action'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.'", "'port'", "'type'", "'{'", "'}'", "'error'", "'mode'", "'connection'", "'from'", "'to'", "'system'", "'in'", "'out'", "'component'", "':'", "'model'", "'initial'", "'state'", "'transition'", "'occurrence'", "'states'", "'->'", "'trigger'", "'action'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
@@ -37,9 +36,7 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     public static final int T__12=12;
     public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -145,7 +142,7 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==12||LA1_0==18||LA1_0==25) ) {
+                if ( (LA1_0==12||LA1_0==18||LA1_0==21||LA1_0==24) ) {
                     alt1=1;
                 }
 
@@ -2280,6 +2277,7 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             int alt2=3;
             switch ( input.LA(1) ) {
             case 18:
+            case 21:
                 {
                 alt2=1;
                 }
@@ -2289,7 +2287,7 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
                 alt2=2;
                 }
                 break;
-            case 25:
+            case 24:
                 {
                 alt2=3;
                 }
@@ -2388,20 +2386,10 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             int LA3_0 = input.LA(1);
 
             if ( (LA3_0==18) ) {
-                int LA3_1 = input.LA(2);
-
-                if ( (LA3_1==22) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_1==19) ) {
-                    alt3=1;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 3, 1, input);
-
-                    throw nvae;
-                }
+                alt3=1;
+            }
+            else if ( (LA3_0==21) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
@@ -2474,33 +2462,29 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         try {
             // InternalDepModel.g:804:1: ( ( ruleSystemPortDec ) | ( ruleComponentConnDec ) | ( ruleComponentImpl ) )
             int alt4=3;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==18) ) {
+            switch ( input.LA(1) ) {
+            case 21:
+                {
                 alt4=1;
-            }
-            else if ( (LA4_0==25) ) {
-                int LA4_2 = input.LA(2);
-
-                if ( (LA4_2==26) ) {
-                    alt4=3;
                 }
-                else if ( (LA4_2==19) ) {
-                    alt4=2;
+                break;
+            case 18:
+                {
+                alt4=2;
                 }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 4, 2, input);
-
-                    throw nvae;
+                break;
+            case 24:
+                {
+                alt4=3;
                 }
-            }
-            else {
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
+
             switch (alt4) {
                 case 1 :
                     // InternalDepModel.g:805:2: ( ruleSystemPortDec )
@@ -2587,16 +2571,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==18) ) {
+            if ( (LA5_0==21) ) {
                 int LA5_1 = input.LA(2);
 
                 if ( (LA5_1==12) ) {
                     int LA5_2 = input.LA(3);
 
-                    if ( (LA5_2==24) ) {
+                    if ( (LA5_2==23) ) {
                         alt5=2;
                     }
-                    else if ( (LA5_2==23) ) {
+                    else if ( (LA5_2==22) ) {
                         alt5=1;
                     }
                     else {
@@ -2768,21 +2752,11 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             if ( (LA7_0==12) ) {
                 int LA7_1 = input.LA(2);
 
-                if ( (LA7_1==28) ) {
-                    int LA7_2 = input.LA(3);
-
-                    if ( (LA7_2==23) ) {
-                        alt7=1;
-                    }
-                    else if ( (LA7_2==24) ) {
-                        alt7=2;
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 7, 2, input);
-
-                        throw nvae;
-                    }
+                if ( (LA7_1==23) ) {
+                    alt7=2;
+                }
+                else if ( (LA7_1==22) ) {
+                    alt7=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -2864,10 +2838,10 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==16||LA8_0==30) ) {
+            if ( ((LA8_0>=27 && LA8_0<=28)) ) {
                 alt8=1;
             }
-            else if ( (LA8_0==32) ) {
+            else if ( (LA8_0==29) ) {
                 alt8=2;
             }
             else {
@@ -2942,22 +2916,22 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             // InternalDepModel.g:915:1: ( ( ruleTransitionState ) | ( ruleTrigger ) | ( ruleAction ) | ( ( rule__TransitionFeatureDec__Group_3__0 ) ) )
             int alt9=4;
             switch ( input.LA(1) ) {
-            case 34:
+            case 31:
                 {
                 alt9=1;
                 }
                 break;
-            case 36:
+            case 33:
                 {
                 alt9=2;
                 }
                 break;
-            case 37:
+            case 34:
                 {
                 alt9=3;
                 }
                 break;
-            case 33:
+            case 30:
                 {
                 alt9=4;
                 }
@@ -3707,7 +3681,7 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             // InternalDepModel.g:1164:1: ( rule__PortType__Group__4__Impl rule__PortType__Group__5 )
             // InternalDepModel.g:1165:2: rule__PortType__Group__4__Impl rule__PortType__Group__5
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__PortType__Group__4__Impl();
 
             state._fsp--;
@@ -3736,20 +3710,42 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortType__Group__4__Impl"
-    // InternalDepModel.g:1172:1: rule__PortType__Group__4__Impl : ( ( rule__PortType__EModesAssignment_4 )* ) ;
+    // InternalDepModel.g:1172:1: rule__PortType__Group__4__Impl : ( ( ( rule__PortType__EModesAssignment_4 ) ) ( ( rule__PortType__EModesAssignment_4 )* ) ) ;
     public final void rule__PortType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1176:1: ( ( ( rule__PortType__EModesAssignment_4 )* ) )
-            // InternalDepModel.g:1177:1: ( ( rule__PortType__EModesAssignment_4 )* )
+            // InternalDepModel.g:1176:1: ( ( ( ( rule__PortType__EModesAssignment_4 ) ) ( ( rule__PortType__EModesAssignment_4 )* ) ) )
+            // InternalDepModel.g:1177:1: ( ( ( rule__PortType__EModesAssignment_4 ) ) ( ( rule__PortType__EModesAssignment_4 )* ) )
             {
-            // InternalDepModel.g:1177:1: ( ( rule__PortType__EModesAssignment_4 )* )
-            // InternalDepModel.g:1178:2: ( rule__PortType__EModesAssignment_4 )*
+            // InternalDepModel.g:1177:1: ( ( ( rule__PortType__EModesAssignment_4 ) ) ( ( rule__PortType__EModesAssignment_4 )* ) )
+            // InternalDepModel.g:1178:2: ( ( rule__PortType__EModesAssignment_4 ) ) ( ( rule__PortType__EModesAssignment_4 )* )
+            {
+            // InternalDepModel.g:1178:2: ( ( rule__PortType__EModesAssignment_4 ) )
+            // InternalDepModel.g:1179:3: ( rule__PortType__EModesAssignment_4 )
             {
              before(grammarAccess.getPortTypeAccess().getEModesAssignment_4()); 
-            // InternalDepModel.g:1179:2: ( rule__PortType__EModesAssignment_4 )*
+            // InternalDepModel.g:1180:3: ( rule__PortType__EModesAssignment_4 )
+            // InternalDepModel.g:1180:4: rule__PortType__EModesAssignment_4
+            {
+            pushFollow(FOLLOW_11);
+            rule__PortType__EModesAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPortTypeAccess().getEModesAssignment_4()); 
+
+            }
+
+            // InternalDepModel.g:1183:2: ( ( rule__PortType__EModesAssignment_4 )* )
+            // InternalDepModel.g:1184:3: ( rule__PortType__EModesAssignment_4 )*
+            {
+             before(grammarAccess.getPortTypeAccess().getEModesAssignment_4()); 
+            // InternalDepModel.g:1185:3: ( rule__PortType__EModesAssignment_4 )*
             loop11:
             do {
                 int alt11=2;
@@ -3762,9 +3758,9 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalDepModel.g:1179:3: rule__PortType__EModesAssignment_4
+            	    // InternalDepModel.g:1185:4: rule__PortType__EModesAssignment_4
             	    {
-            	    pushFollow(FOLLOW_10);
+            	    pushFollow(FOLLOW_11);
             	    rule__PortType__EModesAssignment_4();
 
             	    state._fsp--;
@@ -3779,6 +3775,9 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
             } while (true);
 
              after(grammarAccess.getPortTypeAccess().getEModesAssignment_4()); 
+
+            }
+
 
             }
 
@@ -3801,14 +3800,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortType__Group__5"
-    // InternalDepModel.g:1187:1: rule__PortType__Group__5 : rule__PortType__Group__5__Impl ;
+    // InternalDepModel.g:1194:1: rule__PortType__Group__5 : rule__PortType__Group__5__Impl ;
     public final void rule__PortType__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1191:1: ( rule__PortType__Group__5__Impl )
-            // InternalDepModel.g:1192:2: rule__PortType__Group__5__Impl
+            // InternalDepModel.g:1198:1: ( rule__PortType__Group__5__Impl )
+            // InternalDepModel.g:1199:2: rule__PortType__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PortType__Group__5__Impl();
@@ -3834,17 +3833,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortType__Group__5__Impl"
-    // InternalDepModel.g:1198:1: rule__PortType__Group__5__Impl : ( '}' ) ;
+    // InternalDepModel.g:1205:1: rule__PortType__Group__5__Impl : ( '}' ) ;
     public final void rule__PortType__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1202:1: ( ( '}' ) )
-            // InternalDepModel.g:1203:1: ( '}' )
+            // InternalDepModel.g:1209:1: ( ( '}' ) )
+            // InternalDepModel.g:1210:1: ( '}' )
             {
-            // InternalDepModel.g:1203:1: ( '}' )
-            // InternalDepModel.g:1204:2: '}'
+            // InternalDepModel.g:1210:1: ( '}' )
+            // InternalDepModel.g:1211:2: '}'
             {
              before(grammarAccess.getPortTypeAccess().getRightCurlyBracketKeyword_5()); 
             match(input,15,FOLLOW_2); 
@@ -3871,16 +3870,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModes__Group__0"
-    // InternalDepModel.g:1214:1: rule__ErrorModes__Group__0 : rule__ErrorModes__Group__0__Impl rule__ErrorModes__Group__1 ;
+    // InternalDepModel.g:1221:1: rule__ErrorModes__Group__0 : rule__ErrorModes__Group__0__Impl rule__ErrorModes__Group__1 ;
     public final void rule__ErrorModes__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1218:1: ( rule__ErrorModes__Group__0__Impl rule__ErrorModes__Group__1 )
-            // InternalDepModel.g:1219:2: rule__ErrorModes__Group__0__Impl rule__ErrorModes__Group__1
+            // InternalDepModel.g:1225:1: ( rule__ErrorModes__Group__0__Impl rule__ErrorModes__Group__1 )
+            // InternalDepModel.g:1226:2: rule__ErrorModes__Group__0__Impl rule__ErrorModes__Group__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__ErrorModes__Group__0__Impl();
 
             state._fsp--;
@@ -3909,17 +3908,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModes__Group__0__Impl"
-    // InternalDepModel.g:1226:1: rule__ErrorModes__Group__0__Impl : ( 'error' ) ;
+    // InternalDepModel.g:1233:1: rule__ErrorModes__Group__0__Impl : ( 'error' ) ;
     public final void rule__ErrorModes__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1230:1: ( ( 'error' ) )
-            // InternalDepModel.g:1231:1: ( 'error' )
+            // InternalDepModel.g:1237:1: ( ( 'error' ) )
+            // InternalDepModel.g:1238:1: ( 'error' )
             {
-            // InternalDepModel.g:1231:1: ( 'error' )
-            // InternalDepModel.g:1232:2: 'error'
+            // InternalDepModel.g:1238:1: ( 'error' )
+            // InternalDepModel.g:1239:2: 'error'
             {
              before(grammarAccess.getErrorModesAccess().getErrorKeyword_0()); 
             match(input,16,FOLLOW_2); 
@@ -3946,14 +3945,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModes__Group__1"
-    // InternalDepModel.g:1241:1: rule__ErrorModes__Group__1 : rule__ErrorModes__Group__1__Impl rule__ErrorModes__Group__2 ;
+    // InternalDepModel.g:1248:1: rule__ErrorModes__Group__1 : rule__ErrorModes__Group__1__Impl rule__ErrorModes__Group__2 ;
     public final void rule__ErrorModes__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1245:1: ( rule__ErrorModes__Group__1__Impl rule__ErrorModes__Group__2 )
-            // InternalDepModel.g:1246:2: rule__ErrorModes__Group__1__Impl rule__ErrorModes__Group__2
+            // InternalDepModel.g:1252:1: ( rule__ErrorModes__Group__1__Impl rule__ErrorModes__Group__2 )
+            // InternalDepModel.g:1253:2: rule__ErrorModes__Group__1__Impl rule__ErrorModes__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__ErrorModes__Group__1__Impl();
@@ -3984,17 +3983,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModes__Group__1__Impl"
-    // InternalDepModel.g:1253:1: rule__ErrorModes__Group__1__Impl : ( 'mode' ) ;
+    // InternalDepModel.g:1260:1: rule__ErrorModes__Group__1__Impl : ( 'mode' ) ;
     public final void rule__ErrorModes__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1257:1: ( ( 'mode' ) )
-            // InternalDepModel.g:1258:1: ( 'mode' )
+            // InternalDepModel.g:1264:1: ( ( 'mode' ) )
+            // InternalDepModel.g:1265:1: ( 'mode' )
             {
-            // InternalDepModel.g:1258:1: ( 'mode' )
-            // InternalDepModel.g:1259:2: 'mode'
+            // InternalDepModel.g:1265:1: ( 'mode' )
+            // InternalDepModel.g:1266:2: 'mode'
             {
              before(grammarAccess.getErrorModesAccess().getModeKeyword_1()); 
             match(input,17,FOLLOW_2); 
@@ -4021,14 +4020,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModes__Group__2"
-    // InternalDepModel.g:1268:1: rule__ErrorModes__Group__2 : rule__ErrorModes__Group__2__Impl ;
+    // InternalDepModel.g:1275:1: rule__ErrorModes__Group__2 : rule__ErrorModes__Group__2__Impl ;
     public final void rule__ErrorModes__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1272:1: ( rule__ErrorModes__Group__2__Impl )
-            // InternalDepModel.g:1273:2: rule__ErrorModes__Group__2__Impl
+            // InternalDepModel.g:1279:1: ( rule__ErrorModes__Group__2__Impl )
+            // InternalDepModel.g:1280:2: rule__ErrorModes__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ErrorModes__Group__2__Impl();
@@ -4054,21 +4053,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModes__Group__2__Impl"
-    // InternalDepModel.g:1279:1: rule__ErrorModes__Group__2__Impl : ( ( rule__ErrorModes__NameAssignment_2 ) ) ;
+    // InternalDepModel.g:1286:1: rule__ErrorModes__Group__2__Impl : ( ( rule__ErrorModes__NameAssignment_2 ) ) ;
     public final void rule__ErrorModes__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1283:1: ( ( ( rule__ErrorModes__NameAssignment_2 ) ) )
-            // InternalDepModel.g:1284:1: ( ( rule__ErrorModes__NameAssignment_2 ) )
+            // InternalDepModel.g:1290:1: ( ( ( rule__ErrorModes__NameAssignment_2 ) ) )
+            // InternalDepModel.g:1291:1: ( ( rule__ErrorModes__NameAssignment_2 ) )
             {
-            // InternalDepModel.g:1284:1: ( ( rule__ErrorModes__NameAssignment_2 ) )
-            // InternalDepModel.g:1285:2: ( rule__ErrorModes__NameAssignment_2 )
+            // InternalDepModel.g:1291:1: ( ( rule__ErrorModes__NameAssignment_2 ) )
+            // InternalDepModel.g:1292:2: ( rule__ErrorModes__NameAssignment_2 )
             {
              before(grammarAccess.getErrorModesAccess().getNameAssignment_2()); 
-            // InternalDepModel.g:1286:2: ( rule__ErrorModes__NameAssignment_2 )
-            // InternalDepModel.g:1286:3: rule__ErrorModes__NameAssignment_2
+            // InternalDepModel.g:1293:2: ( rule__ErrorModes__NameAssignment_2 )
+            // InternalDepModel.g:1293:3: rule__ErrorModes__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ErrorModes__NameAssignment_2();
@@ -4101,16 +4100,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__0"
-    // InternalDepModel.g:1295:1: rule__SystemConnDec__Group__0 : rule__SystemConnDec__Group__0__Impl rule__SystemConnDec__Group__1 ;
+    // InternalDepModel.g:1302:1: rule__SystemConnDec__Group__0 : rule__SystemConnDec__Group__0__Impl rule__SystemConnDec__Group__1 ;
     public final void rule__SystemConnDec__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1299:1: ( rule__SystemConnDec__Group__0__Impl rule__SystemConnDec__Group__1 )
-            // InternalDepModel.g:1300:2: rule__SystemConnDec__Group__0__Impl rule__SystemConnDec__Group__1
+            // InternalDepModel.g:1306:1: ( rule__SystemConnDec__Group__0__Impl rule__SystemConnDec__Group__1 )
+            // InternalDepModel.g:1307:2: rule__SystemConnDec__Group__0__Impl rule__SystemConnDec__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_6);
             rule__SystemConnDec__Group__0__Impl();
 
             state._fsp--;
@@ -4139,21 +4138,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__0__Impl"
-    // InternalDepModel.g:1307:1: rule__SystemConnDec__Group__0__Impl : ( 'system' ) ;
+    // InternalDepModel.g:1314:1: rule__SystemConnDec__Group__0__Impl : ( 'connection' ) ;
     public final void rule__SystemConnDec__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1311:1: ( ( 'system' ) )
-            // InternalDepModel.g:1312:1: ( 'system' )
+            // InternalDepModel.g:1318:1: ( ( 'connection' ) )
+            // InternalDepModel.g:1319:1: ( 'connection' )
             {
-            // InternalDepModel.g:1312:1: ( 'system' )
-            // InternalDepModel.g:1313:2: 'system'
+            // InternalDepModel.g:1319:1: ( 'connection' )
+            // InternalDepModel.g:1320:2: 'connection'
             {
-             before(grammarAccess.getSystemConnDecAccess().getSystemKeyword_0()); 
+             before(grammarAccess.getSystemConnDecAccess().getConnectionKeyword_0()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getSystemKeyword_0()); 
+             after(grammarAccess.getSystemConnDecAccess().getConnectionKeyword_0()); 
 
             }
 
@@ -4176,16 +4175,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__1"
-    // InternalDepModel.g:1322:1: rule__SystemConnDec__Group__1 : rule__SystemConnDec__Group__1__Impl rule__SystemConnDec__Group__2 ;
+    // InternalDepModel.g:1329:1: rule__SystemConnDec__Group__1 : rule__SystemConnDec__Group__1__Impl rule__SystemConnDec__Group__2 ;
     public final void rule__SystemConnDec__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1326:1: ( rule__SystemConnDec__Group__1__Impl rule__SystemConnDec__Group__2 )
-            // InternalDepModel.g:1327:2: rule__SystemConnDec__Group__1__Impl rule__SystemConnDec__Group__2
+            // InternalDepModel.g:1333:1: ( rule__SystemConnDec__Group__1__Impl rule__SystemConnDec__Group__2 )
+            // InternalDepModel.g:1334:2: rule__SystemConnDec__Group__1__Impl rule__SystemConnDec__Group__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_13);
             rule__SystemConnDec__Group__1__Impl();
 
             state._fsp--;
@@ -4214,21 +4213,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__1__Impl"
-    // InternalDepModel.g:1334:1: rule__SystemConnDec__Group__1__Impl : ( 'connection' ) ;
+    // InternalDepModel.g:1341:1: rule__SystemConnDec__Group__1__Impl : ( ( rule__SystemConnDec__NameAssignment_1 ) ) ;
     public final void rule__SystemConnDec__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1338:1: ( ( 'connection' ) )
-            // InternalDepModel.g:1339:1: ( 'connection' )
+            // InternalDepModel.g:1345:1: ( ( ( rule__SystemConnDec__NameAssignment_1 ) ) )
+            // InternalDepModel.g:1346:1: ( ( rule__SystemConnDec__NameAssignment_1 ) )
             {
-            // InternalDepModel.g:1339:1: ( 'connection' )
-            // InternalDepModel.g:1340:2: 'connection'
+            // InternalDepModel.g:1346:1: ( ( rule__SystemConnDec__NameAssignment_1 ) )
+            // InternalDepModel.g:1347:2: ( rule__SystemConnDec__NameAssignment_1 )
             {
-             before(grammarAccess.getSystemConnDecAccess().getConnectionKeyword_1()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getConnectionKeyword_1()); 
+             before(grammarAccess.getSystemConnDecAccess().getNameAssignment_1()); 
+            // InternalDepModel.g:1348:2: ( rule__SystemConnDec__NameAssignment_1 )
+            // InternalDepModel.g:1348:3: rule__SystemConnDec__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__SystemConnDec__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSystemConnDecAccess().getNameAssignment_1()); 
 
             }
 
@@ -4251,16 +4260,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__2"
-    // InternalDepModel.g:1349:1: rule__SystemConnDec__Group__2 : rule__SystemConnDec__Group__2__Impl rule__SystemConnDec__Group__3 ;
+    // InternalDepModel.g:1356:1: rule__SystemConnDec__Group__2 : rule__SystemConnDec__Group__2__Impl rule__SystemConnDec__Group__3 ;
     public final void rule__SystemConnDec__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1353:1: ( rule__SystemConnDec__Group__2__Impl rule__SystemConnDec__Group__3 )
-            // InternalDepModel.g:1354:2: rule__SystemConnDec__Group__2__Impl rule__SystemConnDec__Group__3
+            // InternalDepModel.g:1360:1: ( rule__SystemConnDec__Group__2__Impl rule__SystemConnDec__Group__3 )
+            // InternalDepModel.g:1361:2: rule__SystemConnDec__Group__2__Impl rule__SystemConnDec__Group__3
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_6);
             rule__SystemConnDec__Group__2__Impl();
 
             state._fsp--;
@@ -4289,31 +4298,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__2__Impl"
-    // InternalDepModel.g:1361:1: rule__SystemConnDec__Group__2__Impl : ( ( rule__SystemConnDec__NameAssignment_2 ) ) ;
+    // InternalDepModel.g:1368:1: rule__SystemConnDec__Group__2__Impl : ( 'from' ) ;
     public final void rule__SystemConnDec__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1365:1: ( ( ( rule__SystemConnDec__NameAssignment_2 ) ) )
-            // InternalDepModel.g:1366:1: ( ( rule__SystemConnDec__NameAssignment_2 ) )
+            // InternalDepModel.g:1372:1: ( ( 'from' ) )
+            // InternalDepModel.g:1373:1: ( 'from' )
             {
-            // InternalDepModel.g:1366:1: ( ( rule__SystemConnDec__NameAssignment_2 ) )
-            // InternalDepModel.g:1367:2: ( rule__SystemConnDec__NameAssignment_2 )
+            // InternalDepModel.g:1373:1: ( 'from' )
+            // InternalDepModel.g:1374:2: 'from'
             {
-             before(grammarAccess.getSystemConnDecAccess().getNameAssignment_2()); 
-            // InternalDepModel.g:1368:2: ( rule__SystemConnDec__NameAssignment_2 )
-            // InternalDepModel.g:1368:3: rule__SystemConnDec__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemConnDec__NameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSystemConnDecAccess().getNameAssignment_2()); 
+             before(grammarAccess.getSystemConnDecAccess().getFromKeyword_2()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getSystemConnDecAccess().getFromKeyword_2()); 
 
             }
 
@@ -4336,16 +4335,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__3"
-    // InternalDepModel.g:1376:1: rule__SystemConnDec__Group__3 : rule__SystemConnDec__Group__3__Impl rule__SystemConnDec__Group__4 ;
+    // InternalDepModel.g:1383:1: rule__SystemConnDec__Group__3 : rule__SystemConnDec__Group__3__Impl rule__SystemConnDec__Group__4 ;
     public final void rule__SystemConnDec__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1380:1: ( rule__SystemConnDec__Group__3__Impl rule__SystemConnDec__Group__4 )
-            // InternalDepModel.g:1381:2: rule__SystemConnDec__Group__3__Impl rule__SystemConnDec__Group__4
+            // InternalDepModel.g:1387:1: ( rule__SystemConnDec__Group__3__Impl rule__SystemConnDec__Group__4 )
+            // InternalDepModel.g:1388:2: rule__SystemConnDec__Group__3__Impl rule__SystemConnDec__Group__4
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_4);
             rule__SystemConnDec__Group__3__Impl();
 
             state._fsp--;
@@ -4374,21 +4373,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__3__Impl"
-    // InternalDepModel.g:1388:1: rule__SystemConnDec__Group__3__Impl : ( 'from' ) ;
+    // InternalDepModel.g:1395:1: rule__SystemConnDec__Group__3__Impl : ( ( rule__SystemConnDec__SourceSystemAssignment_3 ) ) ;
     public final void rule__SystemConnDec__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1392:1: ( ( 'from' ) )
-            // InternalDepModel.g:1393:1: ( 'from' )
+            // InternalDepModel.g:1399:1: ( ( ( rule__SystemConnDec__SourceSystemAssignment_3 ) ) )
+            // InternalDepModel.g:1400:1: ( ( rule__SystemConnDec__SourceSystemAssignment_3 ) )
             {
-            // InternalDepModel.g:1393:1: ( 'from' )
-            // InternalDepModel.g:1394:2: 'from'
+            // InternalDepModel.g:1400:1: ( ( rule__SystemConnDec__SourceSystemAssignment_3 ) )
+            // InternalDepModel.g:1401:2: ( rule__SystemConnDec__SourceSystemAssignment_3 )
             {
-             before(grammarAccess.getSystemConnDecAccess().getFromKeyword_3()); 
-            match(input,20,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getFromKeyword_3()); 
+             before(grammarAccess.getSystemConnDecAccess().getSourceSystemAssignment_3()); 
+            // InternalDepModel.g:1402:2: ( rule__SystemConnDec__SourceSystemAssignment_3 )
+            // InternalDepModel.g:1402:3: rule__SystemConnDec__SourceSystemAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__SystemConnDec__SourceSystemAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSystemConnDecAccess().getSourceSystemAssignment_3()); 
 
             }
 
@@ -4411,16 +4420,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__4"
-    // InternalDepModel.g:1403:1: rule__SystemConnDec__Group__4 : rule__SystemConnDec__Group__4__Impl rule__SystemConnDec__Group__5 ;
+    // InternalDepModel.g:1410:1: rule__SystemConnDec__Group__4 : rule__SystemConnDec__Group__4__Impl rule__SystemConnDec__Group__5 ;
     public final void rule__SystemConnDec__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1407:1: ( rule__SystemConnDec__Group__4__Impl rule__SystemConnDec__Group__5 )
-            // InternalDepModel.g:1408:2: rule__SystemConnDec__Group__4__Impl rule__SystemConnDec__Group__5
+            // InternalDepModel.g:1414:1: ( rule__SystemConnDec__Group__4__Impl rule__SystemConnDec__Group__5 )
+            // InternalDepModel.g:1415:2: rule__SystemConnDec__Group__4__Impl rule__SystemConnDec__Group__5
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_6);
             rule__SystemConnDec__Group__4__Impl();
 
             state._fsp--;
@@ -4449,31 +4458,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__4__Impl"
-    // InternalDepModel.g:1415:1: rule__SystemConnDec__Group__4__Impl : ( ( rule__SystemConnDec__SourceSystemAssignment_4 ) ) ;
+    // InternalDepModel.g:1422:1: rule__SystemConnDec__Group__4__Impl : ( '.' ) ;
     public final void rule__SystemConnDec__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1419:1: ( ( ( rule__SystemConnDec__SourceSystemAssignment_4 ) ) )
-            // InternalDepModel.g:1420:1: ( ( rule__SystemConnDec__SourceSystemAssignment_4 ) )
+            // InternalDepModel.g:1426:1: ( ( '.' ) )
+            // InternalDepModel.g:1427:1: ( '.' )
             {
-            // InternalDepModel.g:1420:1: ( ( rule__SystemConnDec__SourceSystemAssignment_4 ) )
-            // InternalDepModel.g:1421:2: ( rule__SystemConnDec__SourceSystemAssignment_4 )
+            // InternalDepModel.g:1427:1: ( '.' )
+            // InternalDepModel.g:1428:2: '.'
             {
-             before(grammarAccess.getSystemConnDecAccess().getSourceSystemAssignment_4()); 
-            // InternalDepModel.g:1422:2: ( rule__SystemConnDec__SourceSystemAssignment_4 )
-            // InternalDepModel.g:1422:3: rule__SystemConnDec__SourceSystemAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemConnDec__SourceSystemAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSystemConnDecAccess().getSourceSystemAssignment_4()); 
+             before(grammarAccess.getSystemConnDecAccess().getFullStopKeyword_4()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getSystemConnDecAccess().getFullStopKeyword_4()); 
 
             }
 
@@ -4496,16 +4495,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__5"
-    // InternalDepModel.g:1430:1: rule__SystemConnDec__Group__5 : rule__SystemConnDec__Group__5__Impl rule__SystemConnDec__Group__6 ;
+    // InternalDepModel.g:1437:1: rule__SystemConnDec__Group__5 : rule__SystemConnDec__Group__5__Impl rule__SystemConnDec__Group__6 ;
     public final void rule__SystemConnDec__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1434:1: ( rule__SystemConnDec__Group__5__Impl rule__SystemConnDec__Group__6 )
-            // InternalDepModel.g:1435:2: rule__SystemConnDec__Group__5__Impl rule__SystemConnDec__Group__6
+            // InternalDepModel.g:1441:1: ( rule__SystemConnDec__Group__5__Impl rule__SystemConnDec__Group__6 )
+            // InternalDepModel.g:1442:2: rule__SystemConnDec__Group__5__Impl rule__SystemConnDec__Group__6
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_14);
             rule__SystemConnDec__Group__5__Impl();
 
             state._fsp--;
@@ -4534,21 +4533,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__5__Impl"
-    // InternalDepModel.g:1442:1: rule__SystemConnDec__Group__5__Impl : ( '.' ) ;
+    // InternalDepModel.g:1449:1: rule__SystemConnDec__Group__5__Impl : ( ( rule__SystemConnDec__SourcePortAssignment_5 ) ) ;
     public final void rule__SystemConnDec__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1446:1: ( ( '.' ) )
-            // InternalDepModel.g:1447:1: ( '.' )
+            // InternalDepModel.g:1453:1: ( ( ( rule__SystemConnDec__SourcePortAssignment_5 ) ) )
+            // InternalDepModel.g:1454:1: ( ( rule__SystemConnDec__SourcePortAssignment_5 ) )
             {
-            // InternalDepModel.g:1447:1: ( '.' )
-            // InternalDepModel.g:1448:2: '.'
+            // InternalDepModel.g:1454:1: ( ( rule__SystemConnDec__SourcePortAssignment_5 ) )
+            // InternalDepModel.g:1455:2: ( rule__SystemConnDec__SourcePortAssignment_5 )
             {
-             before(grammarAccess.getSystemConnDecAccess().getFullStopKeyword_5()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getFullStopKeyword_5()); 
+             before(grammarAccess.getSystemConnDecAccess().getSourcePortAssignment_5()); 
+            // InternalDepModel.g:1456:2: ( rule__SystemConnDec__SourcePortAssignment_5 )
+            // InternalDepModel.g:1456:3: rule__SystemConnDec__SourcePortAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__SystemConnDec__SourcePortAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSystemConnDecAccess().getSourcePortAssignment_5()); 
 
             }
 
@@ -4571,16 +4580,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__6"
-    // InternalDepModel.g:1457:1: rule__SystemConnDec__Group__6 : rule__SystemConnDec__Group__6__Impl rule__SystemConnDec__Group__7 ;
+    // InternalDepModel.g:1464:1: rule__SystemConnDec__Group__6 : rule__SystemConnDec__Group__6__Impl rule__SystemConnDec__Group__7 ;
     public final void rule__SystemConnDec__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1461:1: ( rule__SystemConnDec__Group__6__Impl rule__SystemConnDec__Group__7 )
-            // InternalDepModel.g:1462:2: rule__SystemConnDec__Group__6__Impl rule__SystemConnDec__Group__7
+            // InternalDepModel.g:1468:1: ( rule__SystemConnDec__Group__6__Impl rule__SystemConnDec__Group__7 )
+            // InternalDepModel.g:1469:2: rule__SystemConnDec__Group__6__Impl rule__SystemConnDec__Group__7
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_6);
             rule__SystemConnDec__Group__6__Impl();
 
             state._fsp--;
@@ -4609,31 +4618,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__6__Impl"
-    // InternalDepModel.g:1469:1: rule__SystemConnDec__Group__6__Impl : ( ( rule__SystemConnDec__SourcePortAssignment_6 ) ) ;
+    // InternalDepModel.g:1476:1: rule__SystemConnDec__Group__6__Impl : ( 'to' ) ;
     public final void rule__SystemConnDec__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1473:1: ( ( ( rule__SystemConnDec__SourcePortAssignment_6 ) ) )
-            // InternalDepModel.g:1474:1: ( ( rule__SystemConnDec__SourcePortAssignment_6 ) )
+            // InternalDepModel.g:1480:1: ( ( 'to' ) )
+            // InternalDepModel.g:1481:1: ( 'to' )
             {
-            // InternalDepModel.g:1474:1: ( ( rule__SystemConnDec__SourcePortAssignment_6 ) )
-            // InternalDepModel.g:1475:2: ( rule__SystemConnDec__SourcePortAssignment_6 )
+            // InternalDepModel.g:1481:1: ( 'to' )
+            // InternalDepModel.g:1482:2: 'to'
             {
-             before(grammarAccess.getSystemConnDecAccess().getSourcePortAssignment_6()); 
-            // InternalDepModel.g:1476:2: ( rule__SystemConnDec__SourcePortAssignment_6 )
-            // InternalDepModel.g:1476:3: rule__SystemConnDec__SourcePortAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemConnDec__SourcePortAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSystemConnDecAccess().getSourcePortAssignment_6()); 
+             before(grammarAccess.getSystemConnDecAccess().getToKeyword_6()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getSystemConnDecAccess().getToKeyword_6()); 
 
             }
 
@@ -4656,16 +4655,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__7"
-    // InternalDepModel.g:1484:1: rule__SystemConnDec__Group__7 : rule__SystemConnDec__Group__7__Impl rule__SystemConnDec__Group__8 ;
+    // InternalDepModel.g:1491:1: rule__SystemConnDec__Group__7 : rule__SystemConnDec__Group__7__Impl rule__SystemConnDec__Group__8 ;
     public final void rule__SystemConnDec__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1488:1: ( rule__SystemConnDec__Group__7__Impl rule__SystemConnDec__Group__8 )
-            // InternalDepModel.g:1489:2: rule__SystemConnDec__Group__7__Impl rule__SystemConnDec__Group__8
+            // InternalDepModel.g:1495:1: ( rule__SystemConnDec__Group__7__Impl rule__SystemConnDec__Group__8 )
+            // InternalDepModel.g:1496:2: rule__SystemConnDec__Group__7__Impl rule__SystemConnDec__Group__8
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_4);
             rule__SystemConnDec__Group__7__Impl();
 
             state._fsp--;
@@ -4694,21 +4693,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__7__Impl"
-    // InternalDepModel.g:1496:1: rule__SystemConnDec__Group__7__Impl : ( 'to' ) ;
+    // InternalDepModel.g:1503:1: rule__SystemConnDec__Group__7__Impl : ( ( rule__SystemConnDec__TargetSystemAssignment_7 ) ) ;
     public final void rule__SystemConnDec__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1500:1: ( ( 'to' ) )
-            // InternalDepModel.g:1501:1: ( 'to' )
+            // InternalDepModel.g:1507:1: ( ( ( rule__SystemConnDec__TargetSystemAssignment_7 ) ) )
+            // InternalDepModel.g:1508:1: ( ( rule__SystemConnDec__TargetSystemAssignment_7 ) )
             {
-            // InternalDepModel.g:1501:1: ( 'to' )
-            // InternalDepModel.g:1502:2: 'to'
+            // InternalDepModel.g:1508:1: ( ( rule__SystemConnDec__TargetSystemAssignment_7 ) )
+            // InternalDepModel.g:1509:2: ( rule__SystemConnDec__TargetSystemAssignment_7 )
             {
-             before(grammarAccess.getSystemConnDecAccess().getToKeyword_7()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getToKeyword_7()); 
+             before(grammarAccess.getSystemConnDecAccess().getTargetSystemAssignment_7()); 
+            // InternalDepModel.g:1510:2: ( rule__SystemConnDec__TargetSystemAssignment_7 )
+            // InternalDepModel.g:1510:3: rule__SystemConnDec__TargetSystemAssignment_7
+            {
+            pushFollow(FOLLOW_2);
+            rule__SystemConnDec__TargetSystemAssignment_7();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSystemConnDecAccess().getTargetSystemAssignment_7()); 
 
             }
 
@@ -4731,16 +4740,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__8"
-    // InternalDepModel.g:1511:1: rule__SystemConnDec__Group__8 : rule__SystemConnDec__Group__8__Impl rule__SystemConnDec__Group__9 ;
+    // InternalDepModel.g:1518:1: rule__SystemConnDec__Group__8 : rule__SystemConnDec__Group__8__Impl rule__SystemConnDec__Group__9 ;
     public final void rule__SystemConnDec__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1515:1: ( rule__SystemConnDec__Group__8__Impl rule__SystemConnDec__Group__9 )
-            // InternalDepModel.g:1516:2: rule__SystemConnDec__Group__8__Impl rule__SystemConnDec__Group__9
+            // InternalDepModel.g:1522:1: ( rule__SystemConnDec__Group__8__Impl rule__SystemConnDec__Group__9 )
+            // InternalDepModel.g:1523:2: rule__SystemConnDec__Group__8__Impl rule__SystemConnDec__Group__9
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_6);
             rule__SystemConnDec__Group__8__Impl();
 
             state._fsp--;
@@ -4769,31 +4778,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__8__Impl"
-    // InternalDepModel.g:1523:1: rule__SystemConnDec__Group__8__Impl : ( ( rule__SystemConnDec__TargetSystemAssignment_8 ) ) ;
+    // InternalDepModel.g:1530:1: rule__SystemConnDec__Group__8__Impl : ( '.' ) ;
     public final void rule__SystemConnDec__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1527:1: ( ( ( rule__SystemConnDec__TargetSystemAssignment_8 ) ) )
-            // InternalDepModel.g:1528:1: ( ( rule__SystemConnDec__TargetSystemAssignment_8 ) )
+            // InternalDepModel.g:1534:1: ( ( '.' ) )
+            // InternalDepModel.g:1535:1: ( '.' )
             {
-            // InternalDepModel.g:1528:1: ( ( rule__SystemConnDec__TargetSystemAssignment_8 ) )
-            // InternalDepModel.g:1529:2: ( rule__SystemConnDec__TargetSystemAssignment_8 )
+            // InternalDepModel.g:1535:1: ( '.' )
+            // InternalDepModel.g:1536:2: '.'
             {
-             before(grammarAccess.getSystemConnDecAccess().getTargetSystemAssignment_8()); 
-            // InternalDepModel.g:1530:2: ( rule__SystemConnDec__TargetSystemAssignment_8 )
-            // InternalDepModel.g:1530:3: rule__SystemConnDec__TargetSystemAssignment_8
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemConnDec__TargetSystemAssignment_8();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSystemConnDecAccess().getTargetSystemAssignment_8()); 
+             before(grammarAccess.getSystemConnDecAccess().getFullStopKeyword_8()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getSystemConnDecAccess().getFullStopKeyword_8()); 
 
             }
 
@@ -4816,22 +4815,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__9"
-    // InternalDepModel.g:1538:1: rule__SystemConnDec__Group__9 : rule__SystemConnDec__Group__9__Impl rule__SystemConnDec__Group__10 ;
+    // InternalDepModel.g:1545:1: rule__SystemConnDec__Group__9 : rule__SystemConnDec__Group__9__Impl ;
     public final void rule__SystemConnDec__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1542:1: ( rule__SystemConnDec__Group__9__Impl rule__SystemConnDec__Group__10 )
-            // InternalDepModel.g:1543:2: rule__SystemConnDec__Group__9__Impl rule__SystemConnDec__Group__10
+            // InternalDepModel.g:1549:1: ( rule__SystemConnDec__Group__9__Impl )
+            // InternalDepModel.g:1550:2: rule__SystemConnDec__Group__9__Impl
             {
-            pushFollow(FOLLOW_6);
-            rule__SystemConnDec__Group__9__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__SystemConnDec__Group__10();
+            rule__SystemConnDec__Group__9__Impl();
 
             state._fsp--;
 
@@ -4854,21 +4848,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemConnDec__Group__9__Impl"
-    // InternalDepModel.g:1550:1: rule__SystemConnDec__Group__9__Impl : ( '.' ) ;
+    // InternalDepModel.g:1556:1: rule__SystemConnDec__Group__9__Impl : ( ( rule__SystemConnDec__TargetPortAssignment_9 ) ) ;
     public final void rule__SystemConnDec__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1554:1: ( ( '.' ) )
-            // InternalDepModel.g:1555:1: ( '.' )
+            // InternalDepModel.g:1560:1: ( ( ( rule__SystemConnDec__TargetPortAssignment_9 ) ) )
+            // InternalDepModel.g:1561:1: ( ( rule__SystemConnDec__TargetPortAssignment_9 ) )
             {
-            // InternalDepModel.g:1555:1: ( '.' )
-            // InternalDepModel.g:1556:2: '.'
+            // InternalDepModel.g:1561:1: ( ( rule__SystemConnDec__TargetPortAssignment_9 ) )
+            // InternalDepModel.g:1562:2: ( rule__SystemConnDec__TargetPortAssignment_9 )
             {
-             before(grammarAccess.getSystemConnDecAccess().getFullStopKeyword_9()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getFullStopKeyword_9()); 
+             before(grammarAccess.getSystemConnDecAccess().getTargetPortAssignment_9()); 
+            // InternalDepModel.g:1563:2: ( rule__SystemConnDec__TargetPortAssignment_9 )
+            // InternalDepModel.g:1563:3: rule__SystemConnDec__TargetPortAssignment_9
+            {
+            pushFollow(FOLLOW_2);
+            rule__SystemConnDec__TargetPortAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSystemConnDecAccess().getTargetPortAssignment_9()); 
 
             }
 
@@ -4890,97 +4894,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__SystemConnDec__Group__9__Impl"
 
 
-    // $ANTLR start "rule__SystemConnDec__Group__10"
-    // InternalDepModel.g:1565:1: rule__SystemConnDec__Group__10 : rule__SystemConnDec__Group__10__Impl ;
-    public final void rule__SystemConnDec__Group__10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:1569:1: ( rule__SystemConnDec__Group__10__Impl )
-            // InternalDepModel.g:1570:2: rule__SystemConnDec__Group__10__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemConnDec__Group__10__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemConnDec__Group__10"
-
-
-    // $ANTLR start "rule__SystemConnDec__Group__10__Impl"
-    // InternalDepModel.g:1576:1: rule__SystemConnDec__Group__10__Impl : ( ( rule__SystemConnDec__TargetPortAssignment_10 ) ) ;
-    public final void rule__SystemConnDec__Group__10__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:1580:1: ( ( ( rule__SystemConnDec__TargetPortAssignment_10 ) ) )
-            // InternalDepModel.g:1581:1: ( ( rule__SystemConnDec__TargetPortAssignment_10 ) )
-            {
-            // InternalDepModel.g:1581:1: ( ( rule__SystemConnDec__TargetPortAssignment_10 ) )
-            // InternalDepModel.g:1582:2: ( rule__SystemConnDec__TargetPortAssignment_10 )
-            {
-             before(grammarAccess.getSystemConnDecAccess().getTargetPortAssignment_10()); 
-            // InternalDepModel.g:1583:2: ( rule__SystemConnDec__TargetPortAssignment_10 )
-            // InternalDepModel.g:1583:3: rule__SystemConnDec__TargetPortAssignment_10
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemConnDec__TargetPortAssignment_10();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSystemConnDecAccess().getTargetPortAssignment_10()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemConnDec__Group__10__Impl"
-
-
     // $ANTLR start "rule__SystemDec__Group__0"
-    // InternalDepModel.g:1592:1: rule__SystemDec__Group__0 : rule__SystemDec__Group__0__Impl rule__SystemDec__Group__1 ;
+    // InternalDepModel.g:1572:1: rule__SystemDec__Group__0 : rule__SystemDec__Group__0__Impl rule__SystemDec__Group__1 ;
     public final void rule__SystemDec__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1596:1: ( rule__SystemDec__Group__0__Impl rule__SystemDec__Group__1 )
-            // InternalDepModel.g:1597:2: rule__SystemDec__Group__0__Impl rule__SystemDec__Group__1
+            // InternalDepModel.g:1576:1: ( rule__SystemDec__Group__0__Impl rule__SystemDec__Group__1 )
+            // InternalDepModel.g:1577:2: rule__SystemDec__Group__0__Impl rule__SystemDec__Group__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_6);
             rule__SystemDec__Group__0__Impl();
 
             state._fsp--;
@@ -5009,20 +4933,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__0__Impl"
-    // InternalDepModel.g:1604:1: rule__SystemDec__Group__0__Impl : ( 'system' ) ;
+    // InternalDepModel.g:1584:1: rule__SystemDec__Group__0__Impl : ( 'system' ) ;
     public final void rule__SystemDec__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1608:1: ( ( 'system' ) )
-            // InternalDepModel.g:1609:1: ( 'system' )
+            // InternalDepModel.g:1588:1: ( ( 'system' ) )
+            // InternalDepModel.g:1589:1: ( 'system' )
             {
-            // InternalDepModel.g:1609:1: ( 'system' )
-            // InternalDepModel.g:1610:2: 'system'
+            // InternalDepModel.g:1589:1: ( 'system' )
+            // InternalDepModel.g:1590:2: 'system'
             {
              before(grammarAccess.getSystemDecAccess().getSystemKeyword_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getSystemDecAccess().getSystemKeyword_0()); 
 
             }
@@ -5046,16 +4970,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__1"
-    // InternalDepModel.g:1619:1: rule__SystemDec__Group__1 : rule__SystemDec__Group__1__Impl rule__SystemDec__Group__2 ;
+    // InternalDepModel.g:1599:1: rule__SystemDec__Group__1 : rule__SystemDec__Group__1__Impl rule__SystemDec__Group__2 ;
     public final void rule__SystemDec__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1623:1: ( rule__SystemDec__Group__1__Impl rule__SystemDec__Group__2 )
-            // InternalDepModel.g:1624:2: rule__SystemDec__Group__1__Impl rule__SystemDec__Group__2
+            // InternalDepModel.g:1603:1: ( rule__SystemDec__Group__1__Impl rule__SystemDec__Group__2 )
+            // InternalDepModel.g:1604:2: rule__SystemDec__Group__1__Impl rule__SystemDec__Group__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_8);
             rule__SystemDec__Group__1__Impl();
 
             state._fsp--;
@@ -5084,21 +5008,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__1__Impl"
-    // InternalDepModel.g:1631:1: rule__SystemDec__Group__1__Impl : ( 'declaration' ) ;
+    // InternalDepModel.g:1611:1: rule__SystemDec__Group__1__Impl : ( ( rule__SystemDec__NameAssignment_1 ) ) ;
     public final void rule__SystemDec__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1635:1: ( ( 'declaration' ) )
-            // InternalDepModel.g:1636:1: ( 'declaration' )
+            // InternalDepModel.g:1615:1: ( ( ( rule__SystemDec__NameAssignment_1 ) ) )
+            // InternalDepModel.g:1616:1: ( ( rule__SystemDec__NameAssignment_1 ) )
             {
-            // InternalDepModel.g:1636:1: ( 'declaration' )
-            // InternalDepModel.g:1637:2: 'declaration'
+            // InternalDepModel.g:1616:1: ( ( rule__SystemDec__NameAssignment_1 ) )
+            // InternalDepModel.g:1617:2: ( rule__SystemDec__NameAssignment_1 )
             {
-             before(grammarAccess.getSystemDecAccess().getDeclarationKeyword_1()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getSystemDecAccess().getDeclarationKeyword_1()); 
+             before(grammarAccess.getSystemDecAccess().getNameAssignment_1()); 
+            // InternalDepModel.g:1618:2: ( rule__SystemDec__NameAssignment_1 )
+            // InternalDepModel.g:1618:3: rule__SystemDec__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__SystemDec__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSystemDecAccess().getNameAssignment_1()); 
 
             }
 
@@ -5121,16 +5055,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__2"
-    // InternalDepModel.g:1646:1: rule__SystemDec__Group__2 : rule__SystemDec__Group__2__Impl rule__SystemDec__Group__3 ;
+    // InternalDepModel.g:1626:1: rule__SystemDec__Group__2 : rule__SystemDec__Group__2__Impl rule__SystemDec__Group__3 ;
     public final void rule__SystemDec__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1650:1: ( rule__SystemDec__Group__2__Impl rule__SystemDec__Group__3 )
-            // InternalDepModel.g:1651:2: rule__SystemDec__Group__2__Impl rule__SystemDec__Group__3
+            // InternalDepModel.g:1630:1: ( rule__SystemDec__Group__2__Impl rule__SystemDec__Group__3 )
+            // InternalDepModel.g:1631:2: rule__SystemDec__Group__2__Impl rule__SystemDec__Group__3
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_15);
             rule__SystemDec__Group__2__Impl();
 
             state._fsp--;
@@ -5159,31 +5093,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__2__Impl"
-    // InternalDepModel.g:1658:1: rule__SystemDec__Group__2__Impl : ( ( rule__SystemDec__NameAssignment_2 ) ) ;
+    // InternalDepModel.g:1638:1: rule__SystemDec__Group__2__Impl : ( '{' ) ;
     public final void rule__SystemDec__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1662:1: ( ( ( rule__SystemDec__NameAssignment_2 ) ) )
-            // InternalDepModel.g:1663:1: ( ( rule__SystemDec__NameAssignment_2 ) )
+            // InternalDepModel.g:1642:1: ( ( '{' ) )
+            // InternalDepModel.g:1643:1: ( '{' )
             {
-            // InternalDepModel.g:1663:1: ( ( rule__SystemDec__NameAssignment_2 ) )
-            // InternalDepModel.g:1664:2: ( rule__SystemDec__NameAssignment_2 )
+            // InternalDepModel.g:1643:1: ( '{' )
+            // InternalDepModel.g:1644:2: '{'
             {
-             before(grammarAccess.getSystemDecAccess().getNameAssignment_2()); 
-            // InternalDepModel.g:1665:2: ( rule__SystemDec__NameAssignment_2 )
-            // InternalDepModel.g:1665:3: rule__SystemDec__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemDec__NameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSystemDecAccess().getNameAssignment_2()); 
+             before(grammarAccess.getSystemDecAccess().getLeftCurlyBracketKeyword_2()); 
+            match(input,14,FOLLOW_2); 
+             after(grammarAccess.getSystemDecAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -5206,16 +5130,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__3"
-    // InternalDepModel.g:1673:1: rule__SystemDec__Group__3 : rule__SystemDec__Group__3__Impl rule__SystemDec__Group__4 ;
+    // InternalDepModel.g:1653:1: rule__SystemDec__Group__3 : rule__SystemDec__Group__3__Impl rule__SystemDec__Group__4 ;
     public final void rule__SystemDec__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1677:1: ( rule__SystemDec__Group__3__Impl rule__SystemDec__Group__4 )
-            // InternalDepModel.g:1678:2: rule__SystemDec__Group__3__Impl rule__SystemDec__Group__4
+            // InternalDepModel.g:1657:1: ( rule__SystemDec__Group__3__Impl rule__SystemDec__Group__4 )
+            // InternalDepModel.g:1658:2: rule__SystemDec__Group__3__Impl rule__SystemDec__Group__4
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_15);
             rule__SystemDec__Group__3__Impl();
 
             state._fsp--;
@@ -5244,21 +5168,49 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__3__Impl"
-    // InternalDepModel.g:1685:1: rule__SystemDec__Group__3__Impl : ( '{' ) ;
+    // InternalDepModel.g:1665:1: rule__SystemDec__Group__3__Impl : ( ( rule__SystemDec__SysFeaturesAssignment_3 )* ) ;
     public final void rule__SystemDec__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1689:1: ( ( '{' ) )
-            // InternalDepModel.g:1690:1: ( '{' )
+            // InternalDepModel.g:1669:1: ( ( ( rule__SystemDec__SysFeaturesAssignment_3 )* ) )
+            // InternalDepModel.g:1670:1: ( ( rule__SystemDec__SysFeaturesAssignment_3 )* )
             {
-            // InternalDepModel.g:1690:1: ( '{' )
-            // InternalDepModel.g:1691:2: '{'
+            // InternalDepModel.g:1670:1: ( ( rule__SystemDec__SysFeaturesAssignment_3 )* )
+            // InternalDepModel.g:1671:2: ( rule__SystemDec__SysFeaturesAssignment_3 )*
             {
-             before(grammarAccess.getSystemDecAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,14,FOLLOW_2); 
-             after(grammarAccess.getSystemDecAccess().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getSystemDecAccess().getSysFeaturesAssignment_3()); 
+            // InternalDepModel.g:1672:2: ( rule__SystemDec__SysFeaturesAssignment_3 )*
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
+
+                if ( (LA12_0==18||LA12_0==21||LA12_0==24) ) {
+                    alt12=1;
+                }
+
+
+                switch (alt12) {
+            	case 1 :
+            	    // InternalDepModel.g:1672:3: rule__SystemDec__SysFeaturesAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_16);
+            	    rule__SystemDec__SysFeaturesAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop12;
+                }
+            } while (true);
+
+             after(grammarAccess.getSystemDecAccess().getSysFeaturesAssignment_3()); 
 
             }
 
@@ -5281,22 +5233,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__4"
-    // InternalDepModel.g:1700:1: rule__SystemDec__Group__4 : rule__SystemDec__Group__4__Impl rule__SystemDec__Group__5 ;
+    // InternalDepModel.g:1680:1: rule__SystemDec__Group__4 : rule__SystemDec__Group__4__Impl ;
     public final void rule__SystemDec__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1704:1: ( rule__SystemDec__Group__4__Impl rule__SystemDec__Group__5 )
-            // InternalDepModel.g:1705:2: rule__SystemDec__Group__4__Impl rule__SystemDec__Group__5
+            // InternalDepModel.g:1684:1: ( rule__SystemDec__Group__4__Impl )
+            // InternalDepModel.g:1685:2: rule__SystemDec__Group__4__Impl
             {
-            pushFollow(FOLLOW_16);
-            rule__SystemDec__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__SystemDec__Group__5();
+            rule__SystemDec__Group__4__Impl();
 
             state._fsp--;
 
@@ -5319,49 +5266,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemDec__Group__4__Impl"
-    // InternalDepModel.g:1712:1: rule__SystemDec__Group__4__Impl : ( ( rule__SystemDec__SysFeaturesAssignment_4 )* ) ;
+    // InternalDepModel.g:1691:1: rule__SystemDec__Group__4__Impl : ( '}' ) ;
     public final void rule__SystemDec__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1716:1: ( ( ( rule__SystemDec__SysFeaturesAssignment_4 )* ) )
-            // InternalDepModel.g:1717:1: ( ( rule__SystemDec__SysFeaturesAssignment_4 )* )
+            // InternalDepModel.g:1695:1: ( ( '}' ) )
+            // InternalDepModel.g:1696:1: ( '}' )
             {
-            // InternalDepModel.g:1717:1: ( ( rule__SystemDec__SysFeaturesAssignment_4 )* )
-            // InternalDepModel.g:1718:2: ( rule__SystemDec__SysFeaturesAssignment_4 )*
+            // InternalDepModel.g:1696:1: ( '}' )
+            // InternalDepModel.g:1697:2: '}'
             {
-             before(grammarAccess.getSystemDecAccess().getSysFeaturesAssignment_4()); 
-            // InternalDepModel.g:1719:2: ( rule__SystemDec__SysFeaturesAssignment_4 )*
-            loop12:
-            do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
-
-                if ( (LA12_0==18||LA12_0==25) ) {
-                    alt12=1;
-                }
-
-
-                switch (alt12) {
-            	case 1 :
-            	    // InternalDepModel.g:1719:3: rule__SystemDec__SysFeaturesAssignment_4
-            	    {
-            	    pushFollow(FOLLOW_17);
-            	    rule__SystemDec__SysFeaturesAssignment_4();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop12;
-                }
-            } while (true);
-
-             after(grammarAccess.getSystemDecAccess().getSysFeaturesAssignment_4()); 
+             before(grammarAccess.getSystemDecAccess().getRightCurlyBracketKeyword_4()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getSystemDecAccess().getRightCurlyBracketKeyword_4()); 
 
             }
 
@@ -5383,87 +5302,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__SystemDec__Group__4__Impl"
 
 
-    // $ANTLR start "rule__SystemDec__Group__5"
-    // InternalDepModel.g:1727:1: rule__SystemDec__Group__5 : rule__SystemDec__Group__5__Impl ;
-    public final void rule__SystemDec__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:1731:1: ( rule__SystemDec__Group__5__Impl )
-            // InternalDepModel.g:1732:2: rule__SystemDec__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__SystemDec__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemDec__Group__5"
-
-
-    // $ANTLR start "rule__SystemDec__Group__5__Impl"
-    // InternalDepModel.g:1738:1: rule__SystemDec__Group__5__Impl : ( '}' ) ;
-    public final void rule__SystemDec__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:1742:1: ( ( '}' ) )
-            // InternalDepModel.g:1743:1: ( '}' )
-            {
-            // InternalDepModel.g:1743:1: ( '}' )
-            // InternalDepModel.g:1744:2: '}'
-            {
-             before(grammarAccess.getSystemDecAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getSystemDecAccess().getRightCurlyBracketKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SystemDec__Group__5__Impl"
-
-
     // $ANTLR start "rule__SystemPortIn__Group__0"
-    // InternalDepModel.g:1754:1: rule__SystemPortIn__Group__0 : rule__SystemPortIn__Group__0__Impl rule__SystemPortIn__Group__1 ;
+    // InternalDepModel.g:1707:1: rule__SystemPortIn__Group__0 : rule__SystemPortIn__Group__0__Impl rule__SystemPortIn__Group__1 ;
     public final void rule__SystemPortIn__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1758:1: ( rule__SystemPortIn__Group__0__Impl rule__SystemPortIn__Group__1 )
-            // InternalDepModel.g:1759:2: rule__SystemPortIn__Group__0__Impl rule__SystemPortIn__Group__1
+            // InternalDepModel.g:1711:1: ( rule__SystemPortIn__Group__0__Impl rule__SystemPortIn__Group__1 )
+            // InternalDepModel.g:1712:2: rule__SystemPortIn__Group__0__Impl rule__SystemPortIn__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__SystemPortIn__Group__0__Impl();
 
             state._fsp--;
@@ -5492,20 +5341,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__0__Impl"
-    // InternalDepModel.g:1766:1: rule__SystemPortIn__Group__0__Impl : ( 'system' ) ;
+    // InternalDepModel.g:1719:1: rule__SystemPortIn__Group__0__Impl : ( 'system' ) ;
     public final void rule__SystemPortIn__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1770:1: ( ( 'system' ) )
-            // InternalDepModel.g:1771:1: ( 'system' )
+            // InternalDepModel.g:1723:1: ( ( 'system' ) )
+            // InternalDepModel.g:1724:1: ( 'system' )
             {
-            // InternalDepModel.g:1771:1: ( 'system' )
-            // InternalDepModel.g:1772:2: 'system'
+            // InternalDepModel.g:1724:1: ( 'system' )
+            // InternalDepModel.g:1725:2: 'system'
             {
              before(grammarAccess.getSystemPortInAccess().getSystemKeyword_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getSystemPortInAccess().getSystemKeyword_0()); 
 
             }
@@ -5529,16 +5378,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__1"
-    // InternalDepModel.g:1781:1: rule__SystemPortIn__Group__1 : rule__SystemPortIn__Group__1__Impl rule__SystemPortIn__Group__2 ;
+    // InternalDepModel.g:1734:1: rule__SystemPortIn__Group__1 : rule__SystemPortIn__Group__1__Impl rule__SystemPortIn__Group__2 ;
     public final void rule__SystemPortIn__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1785:1: ( rule__SystemPortIn__Group__1__Impl rule__SystemPortIn__Group__2 )
-            // InternalDepModel.g:1786:2: rule__SystemPortIn__Group__1__Impl rule__SystemPortIn__Group__2
+            // InternalDepModel.g:1738:1: ( rule__SystemPortIn__Group__1__Impl rule__SystemPortIn__Group__2 )
+            // InternalDepModel.g:1739:2: rule__SystemPortIn__Group__1__Impl rule__SystemPortIn__Group__2
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__SystemPortIn__Group__1__Impl();
 
             state._fsp--;
@@ -5567,17 +5416,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__1__Impl"
-    // InternalDepModel.g:1793:1: rule__SystemPortIn__Group__1__Impl : ( 'port' ) ;
+    // InternalDepModel.g:1746:1: rule__SystemPortIn__Group__1__Impl : ( 'port' ) ;
     public final void rule__SystemPortIn__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1797:1: ( ( 'port' ) )
-            // InternalDepModel.g:1798:1: ( 'port' )
+            // InternalDepModel.g:1750:1: ( ( 'port' ) )
+            // InternalDepModel.g:1751:1: ( 'port' )
             {
-            // InternalDepModel.g:1798:1: ( 'port' )
-            // InternalDepModel.g:1799:2: 'port'
+            // InternalDepModel.g:1751:1: ( 'port' )
+            // InternalDepModel.g:1752:2: 'port'
             {
              before(grammarAccess.getSystemPortInAccess().getPortKeyword_1()); 
             match(input,12,FOLLOW_2); 
@@ -5604,14 +5453,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__2"
-    // InternalDepModel.g:1808:1: rule__SystemPortIn__Group__2 : rule__SystemPortIn__Group__2__Impl rule__SystemPortIn__Group__3 ;
+    // InternalDepModel.g:1761:1: rule__SystemPortIn__Group__2 : rule__SystemPortIn__Group__2__Impl rule__SystemPortIn__Group__3 ;
     public final void rule__SystemPortIn__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1812:1: ( rule__SystemPortIn__Group__2__Impl rule__SystemPortIn__Group__3 )
-            // InternalDepModel.g:1813:2: rule__SystemPortIn__Group__2__Impl rule__SystemPortIn__Group__3
+            // InternalDepModel.g:1765:1: ( rule__SystemPortIn__Group__2__Impl rule__SystemPortIn__Group__3 )
+            // InternalDepModel.g:1766:2: rule__SystemPortIn__Group__2__Impl rule__SystemPortIn__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__SystemPortIn__Group__2__Impl();
@@ -5642,20 +5491,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__2__Impl"
-    // InternalDepModel.g:1820:1: rule__SystemPortIn__Group__2__Impl : ( 'in' ) ;
+    // InternalDepModel.g:1773:1: rule__SystemPortIn__Group__2__Impl : ( 'in' ) ;
     public final void rule__SystemPortIn__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1824:1: ( ( 'in' ) )
-            // InternalDepModel.g:1825:1: ( 'in' )
+            // InternalDepModel.g:1777:1: ( ( 'in' ) )
+            // InternalDepModel.g:1778:1: ( 'in' )
             {
-            // InternalDepModel.g:1825:1: ( 'in' )
-            // InternalDepModel.g:1826:2: 'in'
+            // InternalDepModel.g:1778:1: ( 'in' )
+            // InternalDepModel.g:1779:2: 'in'
             {
              before(grammarAccess.getSystemPortInAccess().getInKeyword_2()); 
-            match(input,23,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getSystemPortInAccess().getInKeyword_2()); 
 
             }
@@ -5679,14 +5528,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__3"
-    // InternalDepModel.g:1835:1: rule__SystemPortIn__Group__3 : rule__SystemPortIn__Group__3__Impl rule__SystemPortIn__Group__4 ;
+    // InternalDepModel.g:1788:1: rule__SystemPortIn__Group__3 : rule__SystemPortIn__Group__3__Impl rule__SystemPortIn__Group__4 ;
     public final void rule__SystemPortIn__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1839:1: ( rule__SystemPortIn__Group__3__Impl rule__SystemPortIn__Group__4 )
-            // InternalDepModel.g:1840:2: rule__SystemPortIn__Group__3__Impl rule__SystemPortIn__Group__4
+            // InternalDepModel.g:1792:1: ( rule__SystemPortIn__Group__3__Impl rule__SystemPortIn__Group__4 )
+            // InternalDepModel.g:1793:2: rule__SystemPortIn__Group__3__Impl rule__SystemPortIn__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__SystemPortIn__Group__3__Impl();
@@ -5717,21 +5566,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__3__Impl"
-    // InternalDepModel.g:1847:1: rule__SystemPortIn__Group__3__Impl : ( ( rule__SystemPortIn__NameAssignment_3 ) ) ;
+    // InternalDepModel.g:1800:1: rule__SystemPortIn__Group__3__Impl : ( ( rule__SystemPortIn__NameAssignment_3 ) ) ;
     public final void rule__SystemPortIn__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1851:1: ( ( ( rule__SystemPortIn__NameAssignment_3 ) ) )
-            // InternalDepModel.g:1852:1: ( ( rule__SystemPortIn__NameAssignment_3 ) )
+            // InternalDepModel.g:1804:1: ( ( ( rule__SystemPortIn__NameAssignment_3 ) ) )
+            // InternalDepModel.g:1805:1: ( ( rule__SystemPortIn__NameAssignment_3 ) )
             {
-            // InternalDepModel.g:1852:1: ( ( rule__SystemPortIn__NameAssignment_3 ) )
-            // InternalDepModel.g:1853:2: ( rule__SystemPortIn__NameAssignment_3 )
+            // InternalDepModel.g:1805:1: ( ( rule__SystemPortIn__NameAssignment_3 ) )
+            // InternalDepModel.g:1806:2: ( rule__SystemPortIn__NameAssignment_3 )
             {
              before(grammarAccess.getSystemPortInAccess().getNameAssignment_3()); 
-            // InternalDepModel.g:1854:2: ( rule__SystemPortIn__NameAssignment_3 )
-            // InternalDepModel.g:1854:3: rule__SystemPortIn__NameAssignment_3
+            // InternalDepModel.g:1807:2: ( rule__SystemPortIn__NameAssignment_3 )
+            // InternalDepModel.g:1807:3: rule__SystemPortIn__NameAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SystemPortIn__NameAssignment_3();
@@ -5764,14 +5613,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__4"
-    // InternalDepModel.g:1862:1: rule__SystemPortIn__Group__4 : rule__SystemPortIn__Group__4__Impl rule__SystemPortIn__Group__5 ;
+    // InternalDepModel.g:1815:1: rule__SystemPortIn__Group__4 : rule__SystemPortIn__Group__4__Impl rule__SystemPortIn__Group__5 ;
     public final void rule__SystemPortIn__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1866:1: ( rule__SystemPortIn__Group__4__Impl rule__SystemPortIn__Group__5 )
-            // InternalDepModel.g:1867:2: rule__SystemPortIn__Group__4__Impl rule__SystemPortIn__Group__5
+            // InternalDepModel.g:1819:1: ( rule__SystemPortIn__Group__4__Impl rule__SystemPortIn__Group__5 )
+            // InternalDepModel.g:1820:2: rule__SystemPortIn__Group__4__Impl rule__SystemPortIn__Group__5
             {
             pushFollow(FOLLOW_6);
             rule__SystemPortIn__Group__4__Impl();
@@ -5802,20 +5651,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__4__Impl"
-    // InternalDepModel.g:1874:1: rule__SystemPortIn__Group__4__Impl : ( 'to' ) ;
+    // InternalDepModel.g:1827:1: rule__SystemPortIn__Group__4__Impl : ( 'to' ) ;
     public final void rule__SystemPortIn__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1878:1: ( ( 'to' ) )
-            // InternalDepModel.g:1879:1: ( 'to' )
+            // InternalDepModel.g:1831:1: ( ( 'to' ) )
+            // InternalDepModel.g:1832:1: ( 'to' )
             {
-            // InternalDepModel.g:1879:1: ( 'to' )
-            // InternalDepModel.g:1880:2: 'to'
+            // InternalDepModel.g:1832:1: ( 'to' )
+            // InternalDepModel.g:1833:2: 'to'
             {
              before(grammarAccess.getSystemPortInAccess().getToKeyword_4()); 
-            match(input,21,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getSystemPortInAccess().getToKeyword_4()); 
 
             }
@@ -5839,14 +5688,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__5"
-    // InternalDepModel.g:1889:1: rule__SystemPortIn__Group__5 : rule__SystemPortIn__Group__5__Impl rule__SystemPortIn__Group__6 ;
+    // InternalDepModel.g:1842:1: rule__SystemPortIn__Group__5 : rule__SystemPortIn__Group__5__Impl rule__SystemPortIn__Group__6 ;
     public final void rule__SystemPortIn__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1893:1: ( rule__SystemPortIn__Group__5__Impl rule__SystemPortIn__Group__6 )
-            // InternalDepModel.g:1894:2: rule__SystemPortIn__Group__5__Impl rule__SystemPortIn__Group__6
+            // InternalDepModel.g:1846:1: ( rule__SystemPortIn__Group__5__Impl rule__SystemPortIn__Group__6 )
+            // InternalDepModel.g:1847:2: rule__SystemPortIn__Group__5__Impl rule__SystemPortIn__Group__6
             {
             pushFollow(FOLLOW_4);
             rule__SystemPortIn__Group__5__Impl();
@@ -5877,21 +5726,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__5__Impl"
-    // InternalDepModel.g:1901:1: rule__SystemPortIn__Group__5__Impl : ( ( rule__SystemPortIn__InCompAssignment_5 ) ) ;
+    // InternalDepModel.g:1854:1: rule__SystemPortIn__Group__5__Impl : ( ( rule__SystemPortIn__InCompAssignment_5 ) ) ;
     public final void rule__SystemPortIn__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1905:1: ( ( ( rule__SystemPortIn__InCompAssignment_5 ) ) )
-            // InternalDepModel.g:1906:1: ( ( rule__SystemPortIn__InCompAssignment_5 ) )
+            // InternalDepModel.g:1858:1: ( ( ( rule__SystemPortIn__InCompAssignment_5 ) ) )
+            // InternalDepModel.g:1859:1: ( ( rule__SystemPortIn__InCompAssignment_5 ) )
             {
-            // InternalDepModel.g:1906:1: ( ( rule__SystemPortIn__InCompAssignment_5 ) )
-            // InternalDepModel.g:1907:2: ( rule__SystemPortIn__InCompAssignment_5 )
+            // InternalDepModel.g:1859:1: ( ( rule__SystemPortIn__InCompAssignment_5 ) )
+            // InternalDepModel.g:1860:2: ( rule__SystemPortIn__InCompAssignment_5 )
             {
              before(grammarAccess.getSystemPortInAccess().getInCompAssignment_5()); 
-            // InternalDepModel.g:1908:2: ( rule__SystemPortIn__InCompAssignment_5 )
-            // InternalDepModel.g:1908:3: rule__SystemPortIn__InCompAssignment_5
+            // InternalDepModel.g:1861:2: ( rule__SystemPortIn__InCompAssignment_5 )
+            // InternalDepModel.g:1861:3: rule__SystemPortIn__InCompAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__SystemPortIn__InCompAssignment_5();
@@ -5924,14 +5773,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__6"
-    // InternalDepModel.g:1916:1: rule__SystemPortIn__Group__6 : rule__SystemPortIn__Group__6__Impl rule__SystemPortIn__Group__7 ;
+    // InternalDepModel.g:1869:1: rule__SystemPortIn__Group__6 : rule__SystemPortIn__Group__6__Impl rule__SystemPortIn__Group__7 ;
     public final void rule__SystemPortIn__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1920:1: ( rule__SystemPortIn__Group__6__Impl rule__SystemPortIn__Group__7 )
-            // InternalDepModel.g:1921:2: rule__SystemPortIn__Group__6__Impl rule__SystemPortIn__Group__7
+            // InternalDepModel.g:1873:1: ( rule__SystemPortIn__Group__6__Impl rule__SystemPortIn__Group__7 )
+            // InternalDepModel.g:1874:2: rule__SystemPortIn__Group__6__Impl rule__SystemPortIn__Group__7
             {
             pushFollow(FOLLOW_6);
             rule__SystemPortIn__Group__6__Impl();
@@ -5962,17 +5811,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__6__Impl"
-    // InternalDepModel.g:1928:1: rule__SystemPortIn__Group__6__Impl : ( '.' ) ;
+    // InternalDepModel.g:1881:1: rule__SystemPortIn__Group__6__Impl : ( '.' ) ;
     public final void rule__SystemPortIn__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1932:1: ( ( '.' ) )
-            // InternalDepModel.g:1933:1: ( '.' )
+            // InternalDepModel.g:1885:1: ( ( '.' ) )
+            // InternalDepModel.g:1886:1: ( '.' )
             {
-            // InternalDepModel.g:1933:1: ( '.' )
-            // InternalDepModel.g:1934:2: '.'
+            // InternalDepModel.g:1886:1: ( '.' )
+            // InternalDepModel.g:1887:2: '.'
             {
              before(grammarAccess.getSystemPortInAccess().getFullStopKeyword_6()); 
             match(input,11,FOLLOW_2); 
@@ -5999,14 +5848,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__7"
-    // InternalDepModel.g:1943:1: rule__SystemPortIn__Group__7 : rule__SystemPortIn__Group__7__Impl ;
+    // InternalDepModel.g:1896:1: rule__SystemPortIn__Group__7 : rule__SystemPortIn__Group__7__Impl ;
     public final void rule__SystemPortIn__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1947:1: ( rule__SystemPortIn__Group__7__Impl )
-            // InternalDepModel.g:1948:2: rule__SystemPortIn__Group__7__Impl
+            // InternalDepModel.g:1900:1: ( rule__SystemPortIn__Group__7__Impl )
+            // InternalDepModel.g:1901:2: rule__SystemPortIn__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SystemPortIn__Group__7__Impl();
@@ -6032,21 +5881,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__Group__7__Impl"
-    // InternalDepModel.g:1954:1: rule__SystemPortIn__Group__7__Impl : ( ( rule__SystemPortIn__InPortAssignment_7 ) ) ;
+    // InternalDepModel.g:1907:1: rule__SystemPortIn__Group__7__Impl : ( ( rule__SystemPortIn__InPortAssignment_7 ) ) ;
     public final void rule__SystemPortIn__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1958:1: ( ( ( rule__SystemPortIn__InPortAssignment_7 ) ) )
-            // InternalDepModel.g:1959:1: ( ( rule__SystemPortIn__InPortAssignment_7 ) )
+            // InternalDepModel.g:1911:1: ( ( ( rule__SystemPortIn__InPortAssignment_7 ) ) )
+            // InternalDepModel.g:1912:1: ( ( rule__SystemPortIn__InPortAssignment_7 ) )
             {
-            // InternalDepModel.g:1959:1: ( ( rule__SystemPortIn__InPortAssignment_7 ) )
-            // InternalDepModel.g:1960:2: ( rule__SystemPortIn__InPortAssignment_7 )
+            // InternalDepModel.g:1912:1: ( ( rule__SystemPortIn__InPortAssignment_7 ) )
+            // InternalDepModel.g:1913:2: ( rule__SystemPortIn__InPortAssignment_7 )
             {
              before(grammarAccess.getSystemPortInAccess().getInPortAssignment_7()); 
-            // InternalDepModel.g:1961:2: ( rule__SystemPortIn__InPortAssignment_7 )
-            // InternalDepModel.g:1961:3: rule__SystemPortIn__InPortAssignment_7
+            // InternalDepModel.g:1914:2: ( rule__SystemPortIn__InPortAssignment_7 )
+            // InternalDepModel.g:1914:3: rule__SystemPortIn__InPortAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__SystemPortIn__InPortAssignment_7();
@@ -6079,16 +5928,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__0"
-    // InternalDepModel.g:1970:1: rule__SystemPortOut__Group__0 : rule__SystemPortOut__Group__0__Impl rule__SystemPortOut__Group__1 ;
+    // InternalDepModel.g:1923:1: rule__SystemPortOut__Group__0 : rule__SystemPortOut__Group__0__Impl rule__SystemPortOut__Group__1 ;
     public final void rule__SystemPortOut__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1974:1: ( rule__SystemPortOut__Group__0__Impl rule__SystemPortOut__Group__1 )
-            // InternalDepModel.g:1975:2: rule__SystemPortOut__Group__0__Impl rule__SystemPortOut__Group__1
+            // InternalDepModel.g:1927:1: ( rule__SystemPortOut__Group__0__Impl rule__SystemPortOut__Group__1 )
+            // InternalDepModel.g:1928:2: rule__SystemPortOut__Group__0__Impl rule__SystemPortOut__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__SystemPortOut__Group__0__Impl();
 
             state._fsp--;
@@ -6117,20 +5966,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__0__Impl"
-    // InternalDepModel.g:1982:1: rule__SystemPortOut__Group__0__Impl : ( 'system' ) ;
+    // InternalDepModel.g:1935:1: rule__SystemPortOut__Group__0__Impl : ( 'system' ) ;
     public final void rule__SystemPortOut__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:1986:1: ( ( 'system' ) )
-            // InternalDepModel.g:1987:1: ( 'system' )
+            // InternalDepModel.g:1939:1: ( ( 'system' ) )
+            // InternalDepModel.g:1940:1: ( 'system' )
             {
-            // InternalDepModel.g:1987:1: ( 'system' )
-            // InternalDepModel.g:1988:2: 'system'
+            // InternalDepModel.g:1940:1: ( 'system' )
+            // InternalDepModel.g:1941:2: 'system'
             {
              before(grammarAccess.getSystemPortOutAccess().getSystemKeyword_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getSystemPortOutAccess().getSystemKeyword_0()); 
 
             }
@@ -6154,16 +6003,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__1"
-    // InternalDepModel.g:1997:1: rule__SystemPortOut__Group__1 : rule__SystemPortOut__Group__1__Impl rule__SystemPortOut__Group__2 ;
+    // InternalDepModel.g:1950:1: rule__SystemPortOut__Group__1 : rule__SystemPortOut__Group__1__Impl rule__SystemPortOut__Group__2 ;
     public final void rule__SystemPortOut__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2001:1: ( rule__SystemPortOut__Group__1__Impl rule__SystemPortOut__Group__2 )
-            // InternalDepModel.g:2002:2: rule__SystemPortOut__Group__1__Impl rule__SystemPortOut__Group__2
+            // InternalDepModel.g:1954:1: ( rule__SystemPortOut__Group__1__Impl rule__SystemPortOut__Group__2 )
+            // InternalDepModel.g:1955:2: rule__SystemPortOut__Group__1__Impl rule__SystemPortOut__Group__2
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__SystemPortOut__Group__1__Impl();
 
             state._fsp--;
@@ -6192,17 +6041,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__1__Impl"
-    // InternalDepModel.g:2009:1: rule__SystemPortOut__Group__1__Impl : ( 'port' ) ;
+    // InternalDepModel.g:1962:1: rule__SystemPortOut__Group__1__Impl : ( 'port' ) ;
     public final void rule__SystemPortOut__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2013:1: ( ( 'port' ) )
-            // InternalDepModel.g:2014:1: ( 'port' )
+            // InternalDepModel.g:1966:1: ( ( 'port' ) )
+            // InternalDepModel.g:1967:1: ( 'port' )
             {
-            // InternalDepModel.g:2014:1: ( 'port' )
-            // InternalDepModel.g:2015:2: 'port'
+            // InternalDepModel.g:1967:1: ( 'port' )
+            // InternalDepModel.g:1968:2: 'port'
             {
              before(grammarAccess.getSystemPortOutAccess().getPortKeyword_1()); 
             match(input,12,FOLLOW_2); 
@@ -6229,14 +6078,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__2"
-    // InternalDepModel.g:2024:1: rule__SystemPortOut__Group__2 : rule__SystemPortOut__Group__2__Impl rule__SystemPortOut__Group__3 ;
+    // InternalDepModel.g:1977:1: rule__SystemPortOut__Group__2 : rule__SystemPortOut__Group__2__Impl rule__SystemPortOut__Group__3 ;
     public final void rule__SystemPortOut__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2028:1: ( rule__SystemPortOut__Group__2__Impl rule__SystemPortOut__Group__3 )
-            // InternalDepModel.g:2029:2: rule__SystemPortOut__Group__2__Impl rule__SystemPortOut__Group__3
+            // InternalDepModel.g:1981:1: ( rule__SystemPortOut__Group__2__Impl rule__SystemPortOut__Group__3 )
+            // InternalDepModel.g:1982:2: rule__SystemPortOut__Group__2__Impl rule__SystemPortOut__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__SystemPortOut__Group__2__Impl();
@@ -6267,20 +6116,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__2__Impl"
-    // InternalDepModel.g:2036:1: rule__SystemPortOut__Group__2__Impl : ( 'out' ) ;
+    // InternalDepModel.g:1989:1: rule__SystemPortOut__Group__2__Impl : ( 'out' ) ;
     public final void rule__SystemPortOut__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2040:1: ( ( 'out' ) )
-            // InternalDepModel.g:2041:1: ( 'out' )
+            // InternalDepModel.g:1993:1: ( ( 'out' ) )
+            // InternalDepModel.g:1994:1: ( 'out' )
             {
-            // InternalDepModel.g:2041:1: ( 'out' )
-            // InternalDepModel.g:2042:2: 'out'
+            // InternalDepModel.g:1994:1: ( 'out' )
+            // InternalDepModel.g:1995:2: 'out'
             {
              before(grammarAccess.getSystemPortOutAccess().getOutKeyword_2()); 
-            match(input,24,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getSystemPortOutAccess().getOutKeyword_2()); 
 
             }
@@ -6304,14 +6153,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__3"
-    // InternalDepModel.g:2051:1: rule__SystemPortOut__Group__3 : rule__SystemPortOut__Group__3__Impl rule__SystemPortOut__Group__4 ;
+    // InternalDepModel.g:2004:1: rule__SystemPortOut__Group__3 : rule__SystemPortOut__Group__3__Impl rule__SystemPortOut__Group__4 ;
     public final void rule__SystemPortOut__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2055:1: ( rule__SystemPortOut__Group__3__Impl rule__SystemPortOut__Group__4 )
-            // InternalDepModel.g:2056:2: rule__SystemPortOut__Group__3__Impl rule__SystemPortOut__Group__4
+            // InternalDepModel.g:2008:1: ( rule__SystemPortOut__Group__3__Impl rule__SystemPortOut__Group__4 )
+            // InternalDepModel.g:2009:2: rule__SystemPortOut__Group__3__Impl rule__SystemPortOut__Group__4
             {
             pushFollow(FOLLOW_13);
             rule__SystemPortOut__Group__3__Impl();
@@ -6342,21 +6191,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__3__Impl"
-    // InternalDepModel.g:2063:1: rule__SystemPortOut__Group__3__Impl : ( ( rule__SystemPortOut__NameAssignment_3 ) ) ;
+    // InternalDepModel.g:2016:1: rule__SystemPortOut__Group__3__Impl : ( ( rule__SystemPortOut__NameAssignment_3 ) ) ;
     public final void rule__SystemPortOut__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2067:1: ( ( ( rule__SystemPortOut__NameAssignment_3 ) ) )
-            // InternalDepModel.g:2068:1: ( ( rule__SystemPortOut__NameAssignment_3 ) )
+            // InternalDepModel.g:2020:1: ( ( ( rule__SystemPortOut__NameAssignment_3 ) ) )
+            // InternalDepModel.g:2021:1: ( ( rule__SystemPortOut__NameAssignment_3 ) )
             {
-            // InternalDepModel.g:2068:1: ( ( rule__SystemPortOut__NameAssignment_3 ) )
-            // InternalDepModel.g:2069:2: ( rule__SystemPortOut__NameAssignment_3 )
+            // InternalDepModel.g:2021:1: ( ( rule__SystemPortOut__NameAssignment_3 ) )
+            // InternalDepModel.g:2022:2: ( rule__SystemPortOut__NameAssignment_3 )
             {
              before(grammarAccess.getSystemPortOutAccess().getNameAssignment_3()); 
-            // InternalDepModel.g:2070:2: ( rule__SystemPortOut__NameAssignment_3 )
-            // InternalDepModel.g:2070:3: rule__SystemPortOut__NameAssignment_3
+            // InternalDepModel.g:2023:2: ( rule__SystemPortOut__NameAssignment_3 )
+            // InternalDepModel.g:2023:3: rule__SystemPortOut__NameAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SystemPortOut__NameAssignment_3();
@@ -6389,14 +6238,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__4"
-    // InternalDepModel.g:2078:1: rule__SystemPortOut__Group__4 : rule__SystemPortOut__Group__4__Impl rule__SystemPortOut__Group__5 ;
+    // InternalDepModel.g:2031:1: rule__SystemPortOut__Group__4 : rule__SystemPortOut__Group__4__Impl rule__SystemPortOut__Group__5 ;
     public final void rule__SystemPortOut__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2082:1: ( rule__SystemPortOut__Group__4__Impl rule__SystemPortOut__Group__5 )
-            // InternalDepModel.g:2083:2: rule__SystemPortOut__Group__4__Impl rule__SystemPortOut__Group__5
+            // InternalDepModel.g:2035:1: ( rule__SystemPortOut__Group__4__Impl rule__SystemPortOut__Group__5 )
+            // InternalDepModel.g:2036:2: rule__SystemPortOut__Group__4__Impl rule__SystemPortOut__Group__5
             {
             pushFollow(FOLLOW_6);
             rule__SystemPortOut__Group__4__Impl();
@@ -6427,20 +6276,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__4__Impl"
-    // InternalDepModel.g:2090:1: rule__SystemPortOut__Group__4__Impl : ( 'from' ) ;
+    // InternalDepModel.g:2043:1: rule__SystemPortOut__Group__4__Impl : ( 'from' ) ;
     public final void rule__SystemPortOut__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2094:1: ( ( 'from' ) )
-            // InternalDepModel.g:2095:1: ( 'from' )
+            // InternalDepModel.g:2047:1: ( ( 'from' ) )
+            // InternalDepModel.g:2048:1: ( 'from' )
             {
-            // InternalDepModel.g:2095:1: ( 'from' )
-            // InternalDepModel.g:2096:2: 'from'
+            // InternalDepModel.g:2048:1: ( 'from' )
+            // InternalDepModel.g:2049:2: 'from'
             {
              before(grammarAccess.getSystemPortOutAccess().getFromKeyword_4()); 
-            match(input,20,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getSystemPortOutAccess().getFromKeyword_4()); 
 
             }
@@ -6464,14 +6313,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__5"
-    // InternalDepModel.g:2105:1: rule__SystemPortOut__Group__5 : rule__SystemPortOut__Group__5__Impl rule__SystemPortOut__Group__6 ;
+    // InternalDepModel.g:2058:1: rule__SystemPortOut__Group__5 : rule__SystemPortOut__Group__5__Impl rule__SystemPortOut__Group__6 ;
     public final void rule__SystemPortOut__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2109:1: ( rule__SystemPortOut__Group__5__Impl rule__SystemPortOut__Group__6 )
-            // InternalDepModel.g:2110:2: rule__SystemPortOut__Group__5__Impl rule__SystemPortOut__Group__6
+            // InternalDepModel.g:2062:1: ( rule__SystemPortOut__Group__5__Impl rule__SystemPortOut__Group__6 )
+            // InternalDepModel.g:2063:2: rule__SystemPortOut__Group__5__Impl rule__SystemPortOut__Group__6
             {
             pushFollow(FOLLOW_4);
             rule__SystemPortOut__Group__5__Impl();
@@ -6502,21 +6351,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__5__Impl"
-    // InternalDepModel.g:2117:1: rule__SystemPortOut__Group__5__Impl : ( ( rule__SystemPortOut__OutCompAssignment_5 ) ) ;
+    // InternalDepModel.g:2070:1: rule__SystemPortOut__Group__5__Impl : ( ( rule__SystemPortOut__OutCompAssignment_5 ) ) ;
     public final void rule__SystemPortOut__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2121:1: ( ( ( rule__SystemPortOut__OutCompAssignment_5 ) ) )
-            // InternalDepModel.g:2122:1: ( ( rule__SystemPortOut__OutCompAssignment_5 ) )
+            // InternalDepModel.g:2074:1: ( ( ( rule__SystemPortOut__OutCompAssignment_5 ) ) )
+            // InternalDepModel.g:2075:1: ( ( rule__SystemPortOut__OutCompAssignment_5 ) )
             {
-            // InternalDepModel.g:2122:1: ( ( rule__SystemPortOut__OutCompAssignment_5 ) )
-            // InternalDepModel.g:2123:2: ( rule__SystemPortOut__OutCompAssignment_5 )
+            // InternalDepModel.g:2075:1: ( ( rule__SystemPortOut__OutCompAssignment_5 ) )
+            // InternalDepModel.g:2076:2: ( rule__SystemPortOut__OutCompAssignment_5 )
             {
              before(grammarAccess.getSystemPortOutAccess().getOutCompAssignment_5()); 
-            // InternalDepModel.g:2124:2: ( rule__SystemPortOut__OutCompAssignment_5 )
-            // InternalDepModel.g:2124:3: rule__SystemPortOut__OutCompAssignment_5
+            // InternalDepModel.g:2077:2: ( rule__SystemPortOut__OutCompAssignment_5 )
+            // InternalDepModel.g:2077:3: rule__SystemPortOut__OutCompAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__SystemPortOut__OutCompAssignment_5();
@@ -6549,14 +6398,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__6"
-    // InternalDepModel.g:2132:1: rule__SystemPortOut__Group__6 : rule__SystemPortOut__Group__6__Impl rule__SystemPortOut__Group__7 ;
+    // InternalDepModel.g:2085:1: rule__SystemPortOut__Group__6 : rule__SystemPortOut__Group__6__Impl rule__SystemPortOut__Group__7 ;
     public final void rule__SystemPortOut__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2136:1: ( rule__SystemPortOut__Group__6__Impl rule__SystemPortOut__Group__7 )
-            // InternalDepModel.g:2137:2: rule__SystemPortOut__Group__6__Impl rule__SystemPortOut__Group__7
+            // InternalDepModel.g:2089:1: ( rule__SystemPortOut__Group__6__Impl rule__SystemPortOut__Group__7 )
+            // InternalDepModel.g:2090:2: rule__SystemPortOut__Group__6__Impl rule__SystemPortOut__Group__7
             {
             pushFollow(FOLLOW_6);
             rule__SystemPortOut__Group__6__Impl();
@@ -6587,17 +6436,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__6__Impl"
-    // InternalDepModel.g:2144:1: rule__SystemPortOut__Group__6__Impl : ( '.' ) ;
+    // InternalDepModel.g:2097:1: rule__SystemPortOut__Group__6__Impl : ( '.' ) ;
     public final void rule__SystemPortOut__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2148:1: ( ( '.' ) )
-            // InternalDepModel.g:2149:1: ( '.' )
+            // InternalDepModel.g:2101:1: ( ( '.' ) )
+            // InternalDepModel.g:2102:1: ( '.' )
             {
-            // InternalDepModel.g:2149:1: ( '.' )
-            // InternalDepModel.g:2150:2: '.'
+            // InternalDepModel.g:2102:1: ( '.' )
+            // InternalDepModel.g:2103:2: '.'
             {
              before(grammarAccess.getSystemPortOutAccess().getFullStopKeyword_6()); 
             match(input,11,FOLLOW_2); 
@@ -6624,14 +6473,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__7"
-    // InternalDepModel.g:2159:1: rule__SystemPortOut__Group__7 : rule__SystemPortOut__Group__7__Impl ;
+    // InternalDepModel.g:2112:1: rule__SystemPortOut__Group__7 : rule__SystemPortOut__Group__7__Impl ;
     public final void rule__SystemPortOut__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2163:1: ( rule__SystemPortOut__Group__7__Impl )
-            // InternalDepModel.g:2164:2: rule__SystemPortOut__Group__7__Impl
+            // InternalDepModel.g:2116:1: ( rule__SystemPortOut__Group__7__Impl )
+            // InternalDepModel.g:2117:2: rule__SystemPortOut__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SystemPortOut__Group__7__Impl();
@@ -6657,21 +6506,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__Group__7__Impl"
-    // InternalDepModel.g:2170:1: rule__SystemPortOut__Group__7__Impl : ( ( rule__SystemPortOut__OutPortAssignment_7 ) ) ;
+    // InternalDepModel.g:2123:1: rule__SystemPortOut__Group__7__Impl : ( ( rule__SystemPortOut__OutPortAssignment_7 ) ) ;
     public final void rule__SystemPortOut__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2174:1: ( ( ( rule__SystemPortOut__OutPortAssignment_7 ) ) )
-            // InternalDepModel.g:2175:1: ( ( rule__SystemPortOut__OutPortAssignment_7 ) )
+            // InternalDepModel.g:2127:1: ( ( ( rule__SystemPortOut__OutPortAssignment_7 ) ) )
+            // InternalDepModel.g:2128:1: ( ( rule__SystemPortOut__OutPortAssignment_7 ) )
             {
-            // InternalDepModel.g:2175:1: ( ( rule__SystemPortOut__OutPortAssignment_7 ) )
-            // InternalDepModel.g:2176:2: ( rule__SystemPortOut__OutPortAssignment_7 )
+            // InternalDepModel.g:2128:1: ( ( rule__SystemPortOut__OutPortAssignment_7 ) )
+            // InternalDepModel.g:2129:2: ( rule__SystemPortOut__OutPortAssignment_7 )
             {
              before(grammarAccess.getSystemPortOutAccess().getOutPortAssignment_7()); 
-            // InternalDepModel.g:2177:2: ( rule__SystemPortOut__OutPortAssignment_7 )
-            // InternalDepModel.g:2177:3: rule__SystemPortOut__OutPortAssignment_7
+            // InternalDepModel.g:2130:2: ( rule__SystemPortOut__OutPortAssignment_7 )
+            // InternalDepModel.g:2130:3: rule__SystemPortOut__OutPortAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__SystemPortOut__OutPortAssignment_7();
@@ -6704,16 +6553,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__0"
-    // InternalDepModel.g:2186:1: rule__ComponentConnDec__Group__0 : rule__ComponentConnDec__Group__0__Impl rule__ComponentConnDec__Group__1 ;
+    // InternalDepModel.g:2139:1: rule__ComponentConnDec__Group__0 : rule__ComponentConnDec__Group__0__Impl rule__ComponentConnDec__Group__1 ;
     public final void rule__ComponentConnDec__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2190:1: ( rule__ComponentConnDec__Group__0__Impl rule__ComponentConnDec__Group__1 )
-            // InternalDepModel.g:2191:2: rule__ComponentConnDec__Group__0__Impl rule__ComponentConnDec__Group__1
+            // InternalDepModel.g:2143:1: ( rule__ComponentConnDec__Group__0__Impl rule__ComponentConnDec__Group__1 )
+            // InternalDepModel.g:2144:2: rule__ComponentConnDec__Group__0__Impl rule__ComponentConnDec__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_6);
             rule__ComponentConnDec__Group__0__Impl();
 
             state._fsp--;
@@ -6742,21 +6591,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__0__Impl"
-    // InternalDepModel.g:2198:1: rule__ComponentConnDec__Group__0__Impl : ( 'component' ) ;
+    // InternalDepModel.g:2151:1: rule__ComponentConnDec__Group__0__Impl : ( 'connection' ) ;
     public final void rule__ComponentConnDec__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2202:1: ( ( 'component' ) )
-            // InternalDepModel.g:2203:1: ( 'component' )
+            // InternalDepModel.g:2155:1: ( ( 'connection' ) )
+            // InternalDepModel.g:2156:1: ( 'connection' )
             {
-            // InternalDepModel.g:2203:1: ( 'component' )
-            // InternalDepModel.g:2204:2: 'component'
+            // InternalDepModel.g:2156:1: ( 'connection' )
+            // InternalDepModel.g:2157:2: 'connection'
             {
-             before(grammarAccess.getComponentConnDecAccess().getComponentKeyword_0()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getComponentKeyword_0()); 
+             before(grammarAccess.getComponentConnDecAccess().getConnectionKeyword_0()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getComponentConnDecAccess().getConnectionKeyword_0()); 
 
             }
 
@@ -6779,16 +6628,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__1"
-    // InternalDepModel.g:2213:1: rule__ComponentConnDec__Group__1 : rule__ComponentConnDec__Group__1__Impl rule__ComponentConnDec__Group__2 ;
+    // InternalDepModel.g:2166:1: rule__ComponentConnDec__Group__1 : rule__ComponentConnDec__Group__1__Impl rule__ComponentConnDec__Group__2 ;
     public final void rule__ComponentConnDec__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2217:1: ( rule__ComponentConnDec__Group__1__Impl rule__ComponentConnDec__Group__2 )
-            // InternalDepModel.g:2218:2: rule__ComponentConnDec__Group__1__Impl rule__ComponentConnDec__Group__2
+            // InternalDepModel.g:2170:1: ( rule__ComponentConnDec__Group__1__Impl rule__ComponentConnDec__Group__2 )
+            // InternalDepModel.g:2171:2: rule__ComponentConnDec__Group__1__Impl rule__ComponentConnDec__Group__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_13);
             rule__ComponentConnDec__Group__1__Impl();
 
             state._fsp--;
@@ -6817,21 +6666,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__1__Impl"
-    // InternalDepModel.g:2225:1: rule__ComponentConnDec__Group__1__Impl : ( 'connection' ) ;
+    // InternalDepModel.g:2178:1: rule__ComponentConnDec__Group__1__Impl : ( ( rule__ComponentConnDec__NameAssignment_1 ) ) ;
     public final void rule__ComponentConnDec__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2229:1: ( ( 'connection' ) )
-            // InternalDepModel.g:2230:1: ( 'connection' )
+            // InternalDepModel.g:2182:1: ( ( ( rule__ComponentConnDec__NameAssignment_1 ) ) )
+            // InternalDepModel.g:2183:1: ( ( rule__ComponentConnDec__NameAssignment_1 ) )
             {
-            // InternalDepModel.g:2230:1: ( 'connection' )
-            // InternalDepModel.g:2231:2: 'connection'
+            // InternalDepModel.g:2183:1: ( ( rule__ComponentConnDec__NameAssignment_1 ) )
+            // InternalDepModel.g:2184:2: ( rule__ComponentConnDec__NameAssignment_1 )
             {
-             before(grammarAccess.getComponentConnDecAccess().getConnectionKeyword_1()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getConnectionKeyword_1()); 
+             before(grammarAccess.getComponentConnDecAccess().getNameAssignment_1()); 
+            // InternalDepModel.g:2185:2: ( rule__ComponentConnDec__NameAssignment_1 )
+            // InternalDepModel.g:2185:3: rule__ComponentConnDec__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComponentConnDec__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComponentConnDecAccess().getNameAssignment_1()); 
 
             }
 
@@ -6854,16 +6713,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__2"
-    // InternalDepModel.g:2240:1: rule__ComponentConnDec__Group__2 : rule__ComponentConnDec__Group__2__Impl rule__ComponentConnDec__Group__3 ;
+    // InternalDepModel.g:2193:1: rule__ComponentConnDec__Group__2 : rule__ComponentConnDec__Group__2__Impl rule__ComponentConnDec__Group__3 ;
     public final void rule__ComponentConnDec__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2244:1: ( rule__ComponentConnDec__Group__2__Impl rule__ComponentConnDec__Group__3 )
-            // InternalDepModel.g:2245:2: rule__ComponentConnDec__Group__2__Impl rule__ComponentConnDec__Group__3
+            // InternalDepModel.g:2197:1: ( rule__ComponentConnDec__Group__2__Impl rule__ComponentConnDec__Group__3 )
+            // InternalDepModel.g:2198:2: rule__ComponentConnDec__Group__2__Impl rule__ComponentConnDec__Group__3
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_6);
             rule__ComponentConnDec__Group__2__Impl();
 
             state._fsp--;
@@ -6892,31 +6751,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__2__Impl"
-    // InternalDepModel.g:2252:1: rule__ComponentConnDec__Group__2__Impl : ( ( rule__ComponentConnDec__NameAssignment_2 ) ) ;
+    // InternalDepModel.g:2205:1: rule__ComponentConnDec__Group__2__Impl : ( 'from' ) ;
     public final void rule__ComponentConnDec__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2256:1: ( ( ( rule__ComponentConnDec__NameAssignment_2 ) ) )
-            // InternalDepModel.g:2257:1: ( ( rule__ComponentConnDec__NameAssignment_2 ) )
+            // InternalDepModel.g:2209:1: ( ( 'from' ) )
+            // InternalDepModel.g:2210:1: ( 'from' )
             {
-            // InternalDepModel.g:2257:1: ( ( rule__ComponentConnDec__NameAssignment_2 ) )
-            // InternalDepModel.g:2258:2: ( rule__ComponentConnDec__NameAssignment_2 )
+            // InternalDepModel.g:2210:1: ( 'from' )
+            // InternalDepModel.g:2211:2: 'from'
             {
-             before(grammarAccess.getComponentConnDecAccess().getNameAssignment_2()); 
-            // InternalDepModel.g:2259:2: ( rule__ComponentConnDec__NameAssignment_2 )
-            // InternalDepModel.g:2259:3: rule__ComponentConnDec__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentConnDec__NameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComponentConnDecAccess().getNameAssignment_2()); 
+             before(grammarAccess.getComponentConnDecAccess().getFromKeyword_2()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getComponentConnDecAccess().getFromKeyword_2()); 
 
             }
 
@@ -6939,16 +6788,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__3"
-    // InternalDepModel.g:2267:1: rule__ComponentConnDec__Group__3 : rule__ComponentConnDec__Group__3__Impl rule__ComponentConnDec__Group__4 ;
+    // InternalDepModel.g:2220:1: rule__ComponentConnDec__Group__3 : rule__ComponentConnDec__Group__3__Impl rule__ComponentConnDec__Group__4 ;
     public final void rule__ComponentConnDec__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2271:1: ( rule__ComponentConnDec__Group__3__Impl rule__ComponentConnDec__Group__4 )
-            // InternalDepModel.g:2272:2: rule__ComponentConnDec__Group__3__Impl rule__ComponentConnDec__Group__4
+            // InternalDepModel.g:2224:1: ( rule__ComponentConnDec__Group__3__Impl rule__ComponentConnDec__Group__4 )
+            // InternalDepModel.g:2225:2: rule__ComponentConnDec__Group__3__Impl rule__ComponentConnDec__Group__4
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_4);
             rule__ComponentConnDec__Group__3__Impl();
 
             state._fsp--;
@@ -6977,21 +6826,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__3__Impl"
-    // InternalDepModel.g:2279:1: rule__ComponentConnDec__Group__3__Impl : ( 'from' ) ;
+    // InternalDepModel.g:2232:1: rule__ComponentConnDec__Group__3__Impl : ( ( rule__ComponentConnDec__SourceCompAssignment_3 ) ) ;
     public final void rule__ComponentConnDec__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2283:1: ( ( 'from' ) )
-            // InternalDepModel.g:2284:1: ( 'from' )
+            // InternalDepModel.g:2236:1: ( ( ( rule__ComponentConnDec__SourceCompAssignment_3 ) ) )
+            // InternalDepModel.g:2237:1: ( ( rule__ComponentConnDec__SourceCompAssignment_3 ) )
             {
-            // InternalDepModel.g:2284:1: ( 'from' )
-            // InternalDepModel.g:2285:2: 'from'
+            // InternalDepModel.g:2237:1: ( ( rule__ComponentConnDec__SourceCompAssignment_3 ) )
+            // InternalDepModel.g:2238:2: ( rule__ComponentConnDec__SourceCompAssignment_3 )
             {
-             before(grammarAccess.getComponentConnDecAccess().getFromKeyword_3()); 
-            match(input,20,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getFromKeyword_3()); 
+             before(grammarAccess.getComponentConnDecAccess().getSourceCompAssignment_3()); 
+            // InternalDepModel.g:2239:2: ( rule__ComponentConnDec__SourceCompAssignment_3 )
+            // InternalDepModel.g:2239:3: rule__ComponentConnDec__SourceCompAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComponentConnDec__SourceCompAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComponentConnDecAccess().getSourceCompAssignment_3()); 
 
             }
 
@@ -7014,16 +6873,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__4"
-    // InternalDepModel.g:2294:1: rule__ComponentConnDec__Group__4 : rule__ComponentConnDec__Group__4__Impl rule__ComponentConnDec__Group__5 ;
+    // InternalDepModel.g:2247:1: rule__ComponentConnDec__Group__4 : rule__ComponentConnDec__Group__4__Impl rule__ComponentConnDec__Group__5 ;
     public final void rule__ComponentConnDec__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2298:1: ( rule__ComponentConnDec__Group__4__Impl rule__ComponentConnDec__Group__5 )
-            // InternalDepModel.g:2299:2: rule__ComponentConnDec__Group__4__Impl rule__ComponentConnDec__Group__5
+            // InternalDepModel.g:2251:1: ( rule__ComponentConnDec__Group__4__Impl rule__ComponentConnDec__Group__5 )
+            // InternalDepModel.g:2252:2: rule__ComponentConnDec__Group__4__Impl rule__ComponentConnDec__Group__5
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_6);
             rule__ComponentConnDec__Group__4__Impl();
 
             state._fsp--;
@@ -7052,31 +6911,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__4__Impl"
-    // InternalDepModel.g:2306:1: rule__ComponentConnDec__Group__4__Impl : ( ( rule__ComponentConnDec__SourceCompAssignment_4 ) ) ;
+    // InternalDepModel.g:2259:1: rule__ComponentConnDec__Group__4__Impl : ( '.' ) ;
     public final void rule__ComponentConnDec__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2310:1: ( ( ( rule__ComponentConnDec__SourceCompAssignment_4 ) ) )
-            // InternalDepModel.g:2311:1: ( ( rule__ComponentConnDec__SourceCompAssignment_4 ) )
+            // InternalDepModel.g:2263:1: ( ( '.' ) )
+            // InternalDepModel.g:2264:1: ( '.' )
             {
-            // InternalDepModel.g:2311:1: ( ( rule__ComponentConnDec__SourceCompAssignment_4 ) )
-            // InternalDepModel.g:2312:2: ( rule__ComponentConnDec__SourceCompAssignment_4 )
+            // InternalDepModel.g:2264:1: ( '.' )
+            // InternalDepModel.g:2265:2: '.'
             {
-             before(grammarAccess.getComponentConnDecAccess().getSourceCompAssignment_4()); 
-            // InternalDepModel.g:2313:2: ( rule__ComponentConnDec__SourceCompAssignment_4 )
-            // InternalDepModel.g:2313:3: rule__ComponentConnDec__SourceCompAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentConnDec__SourceCompAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComponentConnDecAccess().getSourceCompAssignment_4()); 
+             before(grammarAccess.getComponentConnDecAccess().getFullStopKeyword_4()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getComponentConnDecAccess().getFullStopKeyword_4()); 
 
             }
 
@@ -7099,16 +6948,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__5"
-    // InternalDepModel.g:2321:1: rule__ComponentConnDec__Group__5 : rule__ComponentConnDec__Group__5__Impl rule__ComponentConnDec__Group__6 ;
+    // InternalDepModel.g:2274:1: rule__ComponentConnDec__Group__5 : rule__ComponentConnDec__Group__5__Impl rule__ComponentConnDec__Group__6 ;
     public final void rule__ComponentConnDec__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2325:1: ( rule__ComponentConnDec__Group__5__Impl rule__ComponentConnDec__Group__6 )
-            // InternalDepModel.g:2326:2: rule__ComponentConnDec__Group__5__Impl rule__ComponentConnDec__Group__6
+            // InternalDepModel.g:2278:1: ( rule__ComponentConnDec__Group__5__Impl rule__ComponentConnDec__Group__6 )
+            // InternalDepModel.g:2279:2: rule__ComponentConnDec__Group__5__Impl rule__ComponentConnDec__Group__6
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_14);
             rule__ComponentConnDec__Group__5__Impl();
 
             state._fsp--;
@@ -7137,21 +6986,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__5__Impl"
-    // InternalDepModel.g:2333:1: rule__ComponentConnDec__Group__5__Impl : ( '.' ) ;
+    // InternalDepModel.g:2286:1: rule__ComponentConnDec__Group__5__Impl : ( ( rule__ComponentConnDec__SourcePortAssignment_5 ) ) ;
     public final void rule__ComponentConnDec__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2337:1: ( ( '.' ) )
-            // InternalDepModel.g:2338:1: ( '.' )
+            // InternalDepModel.g:2290:1: ( ( ( rule__ComponentConnDec__SourcePortAssignment_5 ) ) )
+            // InternalDepModel.g:2291:1: ( ( rule__ComponentConnDec__SourcePortAssignment_5 ) )
             {
-            // InternalDepModel.g:2338:1: ( '.' )
-            // InternalDepModel.g:2339:2: '.'
+            // InternalDepModel.g:2291:1: ( ( rule__ComponentConnDec__SourcePortAssignment_5 ) )
+            // InternalDepModel.g:2292:2: ( rule__ComponentConnDec__SourcePortAssignment_5 )
             {
-             before(grammarAccess.getComponentConnDecAccess().getFullStopKeyword_5()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getFullStopKeyword_5()); 
+             before(grammarAccess.getComponentConnDecAccess().getSourcePortAssignment_5()); 
+            // InternalDepModel.g:2293:2: ( rule__ComponentConnDec__SourcePortAssignment_5 )
+            // InternalDepModel.g:2293:3: rule__ComponentConnDec__SourcePortAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComponentConnDec__SourcePortAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComponentConnDecAccess().getSourcePortAssignment_5()); 
 
             }
 
@@ -7174,16 +7033,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__6"
-    // InternalDepModel.g:2348:1: rule__ComponentConnDec__Group__6 : rule__ComponentConnDec__Group__6__Impl rule__ComponentConnDec__Group__7 ;
+    // InternalDepModel.g:2301:1: rule__ComponentConnDec__Group__6 : rule__ComponentConnDec__Group__6__Impl rule__ComponentConnDec__Group__7 ;
     public final void rule__ComponentConnDec__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2352:1: ( rule__ComponentConnDec__Group__6__Impl rule__ComponentConnDec__Group__7 )
-            // InternalDepModel.g:2353:2: rule__ComponentConnDec__Group__6__Impl rule__ComponentConnDec__Group__7
+            // InternalDepModel.g:2305:1: ( rule__ComponentConnDec__Group__6__Impl rule__ComponentConnDec__Group__7 )
+            // InternalDepModel.g:2306:2: rule__ComponentConnDec__Group__6__Impl rule__ComponentConnDec__Group__7
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_6);
             rule__ComponentConnDec__Group__6__Impl();
 
             state._fsp--;
@@ -7212,31 +7071,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__6__Impl"
-    // InternalDepModel.g:2360:1: rule__ComponentConnDec__Group__6__Impl : ( ( rule__ComponentConnDec__SourcePortAssignment_6 ) ) ;
+    // InternalDepModel.g:2313:1: rule__ComponentConnDec__Group__6__Impl : ( 'to' ) ;
     public final void rule__ComponentConnDec__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2364:1: ( ( ( rule__ComponentConnDec__SourcePortAssignment_6 ) ) )
-            // InternalDepModel.g:2365:1: ( ( rule__ComponentConnDec__SourcePortAssignment_6 ) )
+            // InternalDepModel.g:2317:1: ( ( 'to' ) )
+            // InternalDepModel.g:2318:1: ( 'to' )
             {
-            // InternalDepModel.g:2365:1: ( ( rule__ComponentConnDec__SourcePortAssignment_6 ) )
-            // InternalDepModel.g:2366:2: ( rule__ComponentConnDec__SourcePortAssignment_6 )
+            // InternalDepModel.g:2318:1: ( 'to' )
+            // InternalDepModel.g:2319:2: 'to'
             {
-             before(grammarAccess.getComponentConnDecAccess().getSourcePortAssignment_6()); 
-            // InternalDepModel.g:2367:2: ( rule__ComponentConnDec__SourcePortAssignment_6 )
-            // InternalDepModel.g:2367:3: rule__ComponentConnDec__SourcePortAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentConnDec__SourcePortAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComponentConnDecAccess().getSourcePortAssignment_6()); 
+             before(grammarAccess.getComponentConnDecAccess().getToKeyword_6()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getComponentConnDecAccess().getToKeyword_6()); 
 
             }
 
@@ -7259,16 +7108,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__7"
-    // InternalDepModel.g:2375:1: rule__ComponentConnDec__Group__7 : rule__ComponentConnDec__Group__7__Impl rule__ComponentConnDec__Group__8 ;
+    // InternalDepModel.g:2328:1: rule__ComponentConnDec__Group__7 : rule__ComponentConnDec__Group__7__Impl rule__ComponentConnDec__Group__8 ;
     public final void rule__ComponentConnDec__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2379:1: ( rule__ComponentConnDec__Group__7__Impl rule__ComponentConnDec__Group__8 )
-            // InternalDepModel.g:2380:2: rule__ComponentConnDec__Group__7__Impl rule__ComponentConnDec__Group__8
+            // InternalDepModel.g:2332:1: ( rule__ComponentConnDec__Group__7__Impl rule__ComponentConnDec__Group__8 )
+            // InternalDepModel.g:2333:2: rule__ComponentConnDec__Group__7__Impl rule__ComponentConnDec__Group__8
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_4);
             rule__ComponentConnDec__Group__7__Impl();
 
             state._fsp--;
@@ -7297,21 +7146,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__7__Impl"
-    // InternalDepModel.g:2387:1: rule__ComponentConnDec__Group__7__Impl : ( 'to' ) ;
+    // InternalDepModel.g:2340:1: rule__ComponentConnDec__Group__7__Impl : ( ( rule__ComponentConnDec__TargetCompAssignment_7 ) ) ;
     public final void rule__ComponentConnDec__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2391:1: ( ( 'to' ) )
-            // InternalDepModel.g:2392:1: ( 'to' )
+            // InternalDepModel.g:2344:1: ( ( ( rule__ComponentConnDec__TargetCompAssignment_7 ) ) )
+            // InternalDepModel.g:2345:1: ( ( rule__ComponentConnDec__TargetCompAssignment_7 ) )
             {
-            // InternalDepModel.g:2392:1: ( 'to' )
-            // InternalDepModel.g:2393:2: 'to'
+            // InternalDepModel.g:2345:1: ( ( rule__ComponentConnDec__TargetCompAssignment_7 ) )
+            // InternalDepModel.g:2346:2: ( rule__ComponentConnDec__TargetCompAssignment_7 )
             {
-             before(grammarAccess.getComponentConnDecAccess().getToKeyword_7()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getToKeyword_7()); 
+             before(grammarAccess.getComponentConnDecAccess().getTargetCompAssignment_7()); 
+            // InternalDepModel.g:2347:2: ( rule__ComponentConnDec__TargetCompAssignment_7 )
+            // InternalDepModel.g:2347:3: rule__ComponentConnDec__TargetCompAssignment_7
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComponentConnDec__TargetCompAssignment_7();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComponentConnDecAccess().getTargetCompAssignment_7()); 
 
             }
 
@@ -7334,16 +7193,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__8"
-    // InternalDepModel.g:2402:1: rule__ComponentConnDec__Group__8 : rule__ComponentConnDec__Group__8__Impl rule__ComponentConnDec__Group__9 ;
+    // InternalDepModel.g:2355:1: rule__ComponentConnDec__Group__8 : rule__ComponentConnDec__Group__8__Impl rule__ComponentConnDec__Group__9 ;
     public final void rule__ComponentConnDec__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2406:1: ( rule__ComponentConnDec__Group__8__Impl rule__ComponentConnDec__Group__9 )
-            // InternalDepModel.g:2407:2: rule__ComponentConnDec__Group__8__Impl rule__ComponentConnDec__Group__9
+            // InternalDepModel.g:2359:1: ( rule__ComponentConnDec__Group__8__Impl rule__ComponentConnDec__Group__9 )
+            // InternalDepModel.g:2360:2: rule__ComponentConnDec__Group__8__Impl rule__ComponentConnDec__Group__9
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_6);
             rule__ComponentConnDec__Group__8__Impl();
 
             state._fsp--;
@@ -7372,31 +7231,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__8__Impl"
-    // InternalDepModel.g:2414:1: rule__ComponentConnDec__Group__8__Impl : ( ( rule__ComponentConnDec__TargetCompAssignment_8 ) ) ;
+    // InternalDepModel.g:2367:1: rule__ComponentConnDec__Group__8__Impl : ( '.' ) ;
     public final void rule__ComponentConnDec__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2418:1: ( ( ( rule__ComponentConnDec__TargetCompAssignment_8 ) ) )
-            // InternalDepModel.g:2419:1: ( ( rule__ComponentConnDec__TargetCompAssignment_8 ) )
+            // InternalDepModel.g:2371:1: ( ( '.' ) )
+            // InternalDepModel.g:2372:1: ( '.' )
             {
-            // InternalDepModel.g:2419:1: ( ( rule__ComponentConnDec__TargetCompAssignment_8 ) )
-            // InternalDepModel.g:2420:2: ( rule__ComponentConnDec__TargetCompAssignment_8 )
+            // InternalDepModel.g:2372:1: ( '.' )
+            // InternalDepModel.g:2373:2: '.'
             {
-             before(grammarAccess.getComponentConnDecAccess().getTargetCompAssignment_8()); 
-            // InternalDepModel.g:2421:2: ( rule__ComponentConnDec__TargetCompAssignment_8 )
-            // InternalDepModel.g:2421:3: rule__ComponentConnDec__TargetCompAssignment_8
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentConnDec__TargetCompAssignment_8();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComponentConnDecAccess().getTargetCompAssignment_8()); 
+             before(grammarAccess.getComponentConnDecAccess().getFullStopKeyword_8()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getComponentConnDecAccess().getFullStopKeyword_8()); 
 
             }
 
@@ -7419,22 +7268,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__9"
-    // InternalDepModel.g:2429:1: rule__ComponentConnDec__Group__9 : rule__ComponentConnDec__Group__9__Impl rule__ComponentConnDec__Group__10 ;
+    // InternalDepModel.g:2382:1: rule__ComponentConnDec__Group__9 : rule__ComponentConnDec__Group__9__Impl ;
     public final void rule__ComponentConnDec__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2433:1: ( rule__ComponentConnDec__Group__9__Impl rule__ComponentConnDec__Group__10 )
-            // InternalDepModel.g:2434:2: rule__ComponentConnDec__Group__9__Impl rule__ComponentConnDec__Group__10
+            // InternalDepModel.g:2386:1: ( rule__ComponentConnDec__Group__9__Impl )
+            // InternalDepModel.g:2387:2: rule__ComponentConnDec__Group__9__Impl
             {
-            pushFollow(FOLLOW_6);
-            rule__ComponentConnDec__Group__9__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__ComponentConnDec__Group__10();
+            rule__ComponentConnDec__Group__9__Impl();
 
             state._fsp--;
 
@@ -7457,21 +7301,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentConnDec__Group__9__Impl"
-    // InternalDepModel.g:2441:1: rule__ComponentConnDec__Group__9__Impl : ( '.' ) ;
+    // InternalDepModel.g:2393:1: rule__ComponentConnDec__Group__9__Impl : ( ( rule__ComponentConnDec__TargetPortAssignment_9 ) ) ;
     public final void rule__ComponentConnDec__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2445:1: ( ( '.' ) )
-            // InternalDepModel.g:2446:1: ( '.' )
+            // InternalDepModel.g:2397:1: ( ( ( rule__ComponentConnDec__TargetPortAssignment_9 ) ) )
+            // InternalDepModel.g:2398:1: ( ( rule__ComponentConnDec__TargetPortAssignment_9 ) )
             {
-            // InternalDepModel.g:2446:1: ( '.' )
-            // InternalDepModel.g:2447:2: '.'
+            // InternalDepModel.g:2398:1: ( ( rule__ComponentConnDec__TargetPortAssignment_9 ) )
+            // InternalDepModel.g:2399:2: ( rule__ComponentConnDec__TargetPortAssignment_9 )
             {
-             before(grammarAccess.getComponentConnDecAccess().getFullStopKeyword_9()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getFullStopKeyword_9()); 
+             before(grammarAccess.getComponentConnDecAccess().getTargetPortAssignment_9()); 
+            // InternalDepModel.g:2400:2: ( rule__ComponentConnDec__TargetPortAssignment_9 )
+            // InternalDepModel.g:2400:3: rule__ComponentConnDec__TargetPortAssignment_9
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComponentConnDec__TargetPortAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComponentConnDecAccess().getTargetPortAssignment_9()); 
 
             }
 
@@ -7493,97 +7347,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__ComponentConnDec__Group__9__Impl"
 
 
-    // $ANTLR start "rule__ComponentConnDec__Group__10"
-    // InternalDepModel.g:2456:1: rule__ComponentConnDec__Group__10 : rule__ComponentConnDec__Group__10__Impl ;
-    public final void rule__ComponentConnDec__Group__10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:2460:1: ( rule__ComponentConnDec__Group__10__Impl )
-            // InternalDepModel.g:2461:2: rule__ComponentConnDec__Group__10__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentConnDec__Group__10__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComponentConnDec__Group__10"
-
-
-    // $ANTLR start "rule__ComponentConnDec__Group__10__Impl"
-    // InternalDepModel.g:2467:1: rule__ComponentConnDec__Group__10__Impl : ( ( rule__ComponentConnDec__TargetPortAssignment_10 ) ) ;
-    public final void rule__ComponentConnDec__Group__10__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:2471:1: ( ( ( rule__ComponentConnDec__TargetPortAssignment_10 ) ) )
-            // InternalDepModel.g:2472:1: ( ( rule__ComponentConnDec__TargetPortAssignment_10 ) )
-            {
-            // InternalDepModel.g:2472:1: ( ( rule__ComponentConnDec__TargetPortAssignment_10 ) )
-            // InternalDepModel.g:2473:2: ( rule__ComponentConnDec__TargetPortAssignment_10 )
-            {
-             before(grammarAccess.getComponentConnDecAccess().getTargetPortAssignment_10()); 
-            // InternalDepModel.g:2474:2: ( rule__ComponentConnDec__TargetPortAssignment_10 )
-            // InternalDepModel.g:2474:3: rule__ComponentConnDec__TargetPortAssignment_10
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentConnDec__TargetPortAssignment_10();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComponentConnDecAccess().getTargetPortAssignment_10()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComponentConnDec__Group__10__Impl"
-
-
     // $ANTLR start "rule__ComponentImpl__Group__0"
-    // InternalDepModel.g:2483:1: rule__ComponentImpl__Group__0 : rule__ComponentImpl__Group__0__Impl rule__ComponentImpl__Group__1 ;
+    // InternalDepModel.g:2409:1: rule__ComponentImpl__Group__0 : rule__ComponentImpl__Group__0__Impl rule__ComponentImpl__Group__1 ;
     public final void rule__ComponentImpl__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2487:1: ( rule__ComponentImpl__Group__0__Impl rule__ComponentImpl__Group__1 )
-            // InternalDepModel.g:2488:2: rule__ComponentImpl__Group__0__Impl rule__ComponentImpl__Group__1
+            // InternalDepModel.g:2413:1: ( rule__ComponentImpl__Group__0__Impl rule__ComponentImpl__Group__1 )
+            // InternalDepModel.g:2414:2: rule__ComponentImpl__Group__0__Impl rule__ComponentImpl__Group__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_6);
             rule__ComponentImpl__Group__0__Impl();
 
             state._fsp--;
@@ -7612,20 +7386,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentImpl__Group__0__Impl"
-    // InternalDepModel.g:2495:1: rule__ComponentImpl__Group__0__Impl : ( 'component' ) ;
+    // InternalDepModel.g:2421:1: rule__ComponentImpl__Group__0__Impl : ( 'component' ) ;
     public final void rule__ComponentImpl__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2499:1: ( ( 'component' ) )
-            // InternalDepModel.g:2500:1: ( 'component' )
+            // InternalDepModel.g:2425:1: ( ( 'component' ) )
+            // InternalDepModel.g:2426:1: ( 'component' )
             {
-            // InternalDepModel.g:2500:1: ( 'component' )
-            // InternalDepModel.g:2501:2: 'component'
+            // InternalDepModel.g:2426:1: ( 'component' )
+            // InternalDepModel.g:2427:2: 'component'
             {
              before(grammarAccess.getComponentImplAccess().getComponentKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getComponentImplAccess().getComponentKeyword_0()); 
 
             }
@@ -7649,16 +7423,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentImpl__Group__1"
-    // InternalDepModel.g:2510:1: rule__ComponentImpl__Group__1 : rule__ComponentImpl__Group__1__Impl rule__ComponentImpl__Group__2 ;
+    // InternalDepModel.g:2436:1: rule__ComponentImpl__Group__1 : rule__ComponentImpl__Group__1__Impl rule__ComponentImpl__Group__2 ;
     public final void rule__ComponentImpl__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2514:1: ( rule__ComponentImpl__Group__1__Impl rule__ComponentImpl__Group__2 )
-            // InternalDepModel.g:2515:2: rule__ComponentImpl__Group__1__Impl rule__ComponentImpl__Group__2
+            // InternalDepModel.g:2440:1: ( rule__ComponentImpl__Group__1__Impl rule__ComponentImpl__Group__2 )
+            // InternalDepModel.g:2441:2: rule__ComponentImpl__Group__1__Impl rule__ComponentImpl__Group__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_20);
             rule__ComponentImpl__Group__1__Impl();
 
             state._fsp--;
@@ -7687,21 +7461,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentImpl__Group__1__Impl"
-    // InternalDepModel.g:2522:1: rule__ComponentImpl__Group__1__Impl : ( 'implementation' ) ;
+    // InternalDepModel.g:2448:1: rule__ComponentImpl__Group__1__Impl : ( ( rule__ComponentImpl__NameAssignment_1 ) ) ;
     public final void rule__ComponentImpl__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2526:1: ( ( 'implementation' ) )
-            // InternalDepModel.g:2527:1: ( 'implementation' )
+            // InternalDepModel.g:2452:1: ( ( ( rule__ComponentImpl__NameAssignment_1 ) ) )
+            // InternalDepModel.g:2453:1: ( ( rule__ComponentImpl__NameAssignment_1 ) )
             {
-            // InternalDepModel.g:2527:1: ( 'implementation' )
-            // InternalDepModel.g:2528:2: 'implementation'
+            // InternalDepModel.g:2453:1: ( ( rule__ComponentImpl__NameAssignment_1 ) )
+            // InternalDepModel.g:2454:2: ( rule__ComponentImpl__NameAssignment_1 )
             {
-             before(grammarAccess.getComponentImplAccess().getImplementationKeyword_1()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getComponentImplAccess().getImplementationKeyword_1()); 
+             before(grammarAccess.getComponentImplAccess().getNameAssignment_1()); 
+            // InternalDepModel.g:2455:2: ( rule__ComponentImpl__NameAssignment_1 )
+            // InternalDepModel.g:2455:3: rule__ComponentImpl__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComponentImpl__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComponentImplAccess().getNameAssignment_1()); 
 
             }
 
@@ -7724,16 +7508,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentImpl__Group__2"
-    // InternalDepModel.g:2537:1: rule__ComponentImpl__Group__2 : rule__ComponentImpl__Group__2__Impl rule__ComponentImpl__Group__3 ;
+    // InternalDepModel.g:2463:1: rule__ComponentImpl__Group__2 : rule__ComponentImpl__Group__2__Impl rule__ComponentImpl__Group__3 ;
     public final void rule__ComponentImpl__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2541:1: ( rule__ComponentImpl__Group__2__Impl rule__ComponentImpl__Group__3 )
-            // InternalDepModel.g:2542:2: rule__ComponentImpl__Group__2__Impl rule__ComponentImpl__Group__3
+            // InternalDepModel.g:2467:1: ( rule__ComponentImpl__Group__2__Impl rule__ComponentImpl__Group__3 )
+            // InternalDepModel.g:2468:2: rule__ComponentImpl__Group__2__Impl rule__ComponentImpl__Group__3
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_6);
             rule__ComponentImpl__Group__2__Impl();
 
             state._fsp--;
@@ -7762,31 +7546,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentImpl__Group__2__Impl"
-    // InternalDepModel.g:2549:1: rule__ComponentImpl__Group__2__Impl : ( ( rule__ComponentImpl__NameAssignment_2 ) ) ;
+    // InternalDepModel.g:2475:1: rule__ComponentImpl__Group__2__Impl : ( ':' ) ;
     public final void rule__ComponentImpl__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2553:1: ( ( ( rule__ComponentImpl__NameAssignment_2 ) ) )
-            // InternalDepModel.g:2554:1: ( ( rule__ComponentImpl__NameAssignment_2 ) )
+            // InternalDepModel.g:2479:1: ( ( ':' ) )
+            // InternalDepModel.g:2480:1: ( ':' )
             {
-            // InternalDepModel.g:2554:1: ( ( rule__ComponentImpl__NameAssignment_2 ) )
-            // InternalDepModel.g:2555:2: ( rule__ComponentImpl__NameAssignment_2 )
+            // InternalDepModel.g:2480:1: ( ':' )
+            // InternalDepModel.g:2481:2: ':'
             {
-             before(grammarAccess.getComponentImplAccess().getNameAssignment_2()); 
-            // InternalDepModel.g:2556:2: ( rule__ComponentImpl__NameAssignment_2 )
-            // InternalDepModel.g:2556:3: rule__ComponentImpl__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentImpl__NameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComponentImplAccess().getNameAssignment_2()); 
+             before(grammarAccess.getComponentImplAccess().getColonKeyword_2()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getComponentImplAccess().getColonKeyword_2()); 
 
             }
 
@@ -7809,22 +7583,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentImpl__Group__3"
-    // InternalDepModel.g:2564:1: rule__ComponentImpl__Group__3 : rule__ComponentImpl__Group__3__Impl rule__ComponentImpl__Group__4 ;
+    // InternalDepModel.g:2490:1: rule__ComponentImpl__Group__3 : rule__ComponentImpl__Group__3__Impl ;
     public final void rule__ComponentImpl__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2568:1: ( rule__ComponentImpl__Group__3__Impl rule__ComponentImpl__Group__4 )
-            // InternalDepModel.g:2569:2: rule__ComponentImpl__Group__3__Impl rule__ComponentImpl__Group__4
+            // InternalDepModel.g:2494:1: ( rule__ComponentImpl__Group__3__Impl )
+            // InternalDepModel.g:2495:2: rule__ComponentImpl__Group__3__Impl
             {
-            pushFollow(FOLLOW_6);
-            rule__ComponentImpl__Group__3__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__ComponentImpl__Group__4();
+            rule__ComponentImpl__Group__3__Impl();
 
             state._fsp--;
 
@@ -7847,21 +7616,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentImpl__Group__3__Impl"
-    // InternalDepModel.g:2576:1: rule__ComponentImpl__Group__3__Impl : ( ':' ) ;
+    // InternalDepModel.g:2501:1: rule__ComponentImpl__Group__3__Impl : ( ( rule__ComponentImpl__SuperTypeAssignment_3 ) ) ;
     public final void rule__ComponentImpl__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2580:1: ( ( ':' ) )
-            // InternalDepModel.g:2581:1: ( ':' )
+            // InternalDepModel.g:2505:1: ( ( ( rule__ComponentImpl__SuperTypeAssignment_3 ) ) )
+            // InternalDepModel.g:2506:1: ( ( rule__ComponentImpl__SuperTypeAssignment_3 ) )
             {
-            // InternalDepModel.g:2581:1: ( ':' )
-            // InternalDepModel.g:2582:2: ':'
+            // InternalDepModel.g:2506:1: ( ( rule__ComponentImpl__SuperTypeAssignment_3 ) )
+            // InternalDepModel.g:2507:2: ( rule__ComponentImpl__SuperTypeAssignment_3 )
             {
-             before(grammarAccess.getComponentImplAccess().getColonKeyword_3()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getComponentImplAccess().getColonKeyword_3()); 
+             before(grammarAccess.getComponentImplAccess().getSuperTypeAssignment_3()); 
+            // InternalDepModel.g:2508:2: ( rule__ComponentImpl__SuperTypeAssignment_3 )
+            // InternalDepModel.g:2508:3: rule__ComponentImpl__SuperTypeAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ComponentImpl__SuperTypeAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getComponentImplAccess().getSuperTypeAssignment_3()); 
 
             }
 
@@ -7883,95 +7662,15 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__ComponentImpl__Group__3__Impl"
 
 
-    // $ANTLR start "rule__ComponentImpl__Group__4"
-    // InternalDepModel.g:2591:1: rule__ComponentImpl__Group__4 : rule__ComponentImpl__Group__4__Impl ;
-    public final void rule__ComponentImpl__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:2595:1: ( rule__ComponentImpl__Group__4__Impl )
-            // InternalDepModel.g:2596:2: rule__ComponentImpl__Group__4__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentImpl__Group__4__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComponentImpl__Group__4"
-
-
-    // $ANTLR start "rule__ComponentImpl__Group__4__Impl"
-    // InternalDepModel.g:2602:1: rule__ComponentImpl__Group__4__Impl : ( ( rule__ComponentImpl__SuperTypeAssignment_4 ) ) ;
-    public final void rule__ComponentImpl__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:2606:1: ( ( ( rule__ComponentImpl__SuperTypeAssignment_4 ) ) )
-            // InternalDepModel.g:2607:1: ( ( rule__ComponentImpl__SuperTypeAssignment_4 ) )
-            {
-            // InternalDepModel.g:2607:1: ( ( rule__ComponentImpl__SuperTypeAssignment_4 ) )
-            // InternalDepModel.g:2608:2: ( rule__ComponentImpl__SuperTypeAssignment_4 )
-            {
-             before(grammarAccess.getComponentImplAccess().getSuperTypeAssignment_4()); 
-            // InternalDepModel.g:2609:2: ( rule__ComponentImpl__SuperTypeAssignment_4 )
-            // InternalDepModel.g:2609:3: rule__ComponentImpl__SuperTypeAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__ComponentImpl__SuperTypeAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getComponentImplAccess().getSuperTypeAssignment_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComponentImpl__Group__4__Impl"
-
-
     // $ANTLR start "rule__ComponentType__Group__0"
-    // InternalDepModel.g:2618:1: rule__ComponentType__Group__0 : rule__ComponentType__Group__0__Impl rule__ComponentType__Group__1 ;
+    // InternalDepModel.g:2517:1: rule__ComponentType__Group__0 : rule__ComponentType__Group__0__Impl rule__ComponentType__Group__1 ;
     public final void rule__ComponentType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2622:1: ( rule__ComponentType__Group__0__Impl rule__ComponentType__Group__1 )
-            // InternalDepModel.g:2623:2: rule__ComponentType__Group__0__Impl rule__ComponentType__Group__1
+            // InternalDepModel.g:2521:1: ( rule__ComponentType__Group__0__Impl rule__ComponentType__Group__1 )
+            // InternalDepModel.g:2522:2: rule__ComponentType__Group__0__Impl rule__ComponentType__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__ComponentType__Group__0__Impl();
@@ -8002,20 +7701,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__0__Impl"
-    // InternalDepModel.g:2630:1: rule__ComponentType__Group__0__Impl : ( 'component' ) ;
+    // InternalDepModel.g:2529:1: rule__ComponentType__Group__0__Impl : ( 'component' ) ;
     public final void rule__ComponentType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2634:1: ( ( 'component' ) )
-            // InternalDepModel.g:2635:1: ( 'component' )
+            // InternalDepModel.g:2533:1: ( ( 'component' ) )
+            // InternalDepModel.g:2534:1: ( 'component' )
             {
-            // InternalDepModel.g:2635:1: ( 'component' )
-            // InternalDepModel.g:2636:2: 'component'
+            // InternalDepModel.g:2534:1: ( 'component' )
+            // InternalDepModel.g:2535:2: 'component'
             {
              before(grammarAccess.getComponentTypeAccess().getComponentKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getComponentTypeAccess().getComponentKeyword_0()); 
 
             }
@@ -8039,14 +7738,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__1"
-    // InternalDepModel.g:2645:1: rule__ComponentType__Group__1 : rule__ComponentType__Group__1__Impl rule__ComponentType__Group__2 ;
+    // InternalDepModel.g:2544:1: rule__ComponentType__Group__1 : rule__ComponentType__Group__1__Impl rule__ComponentType__Group__2 ;
     public final void rule__ComponentType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2649:1: ( rule__ComponentType__Group__1__Impl rule__ComponentType__Group__2 )
-            // InternalDepModel.g:2650:2: rule__ComponentType__Group__1__Impl rule__ComponentType__Group__2
+            // InternalDepModel.g:2548:1: ( rule__ComponentType__Group__1__Impl rule__ComponentType__Group__2 )
+            // InternalDepModel.g:2549:2: rule__ComponentType__Group__1__Impl rule__ComponentType__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__ComponentType__Group__1__Impl();
@@ -8077,17 +7776,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__1__Impl"
-    // InternalDepModel.g:2657:1: rule__ComponentType__Group__1__Impl : ( 'type' ) ;
+    // InternalDepModel.g:2556:1: rule__ComponentType__Group__1__Impl : ( 'type' ) ;
     public final void rule__ComponentType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2661:1: ( ( 'type' ) )
-            // InternalDepModel.g:2662:1: ( 'type' )
+            // InternalDepModel.g:2560:1: ( ( 'type' ) )
+            // InternalDepModel.g:2561:1: ( 'type' )
             {
-            // InternalDepModel.g:2662:1: ( 'type' )
-            // InternalDepModel.g:2663:2: 'type'
+            // InternalDepModel.g:2561:1: ( 'type' )
+            // InternalDepModel.g:2562:2: 'type'
             {
              before(grammarAccess.getComponentTypeAccess().getTypeKeyword_1()); 
             match(input,13,FOLLOW_2); 
@@ -8114,14 +7813,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__2"
-    // InternalDepModel.g:2672:1: rule__ComponentType__Group__2 : rule__ComponentType__Group__2__Impl rule__ComponentType__Group__3 ;
+    // InternalDepModel.g:2571:1: rule__ComponentType__Group__2 : rule__ComponentType__Group__2__Impl rule__ComponentType__Group__3 ;
     public final void rule__ComponentType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2676:1: ( rule__ComponentType__Group__2__Impl rule__ComponentType__Group__3 )
-            // InternalDepModel.g:2677:2: rule__ComponentType__Group__2__Impl rule__ComponentType__Group__3
+            // InternalDepModel.g:2575:1: ( rule__ComponentType__Group__2__Impl rule__ComponentType__Group__3 )
+            // InternalDepModel.g:2576:2: rule__ComponentType__Group__2__Impl rule__ComponentType__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__ComponentType__Group__2__Impl();
@@ -8152,21 +7851,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__2__Impl"
-    // InternalDepModel.g:2684:1: rule__ComponentType__Group__2__Impl : ( ( rule__ComponentType__NameAssignment_2 ) ) ;
+    // InternalDepModel.g:2583:1: rule__ComponentType__Group__2__Impl : ( ( rule__ComponentType__NameAssignment_2 ) ) ;
     public final void rule__ComponentType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2688:1: ( ( ( rule__ComponentType__NameAssignment_2 ) ) )
-            // InternalDepModel.g:2689:1: ( ( rule__ComponentType__NameAssignment_2 ) )
+            // InternalDepModel.g:2587:1: ( ( ( rule__ComponentType__NameAssignment_2 ) ) )
+            // InternalDepModel.g:2588:1: ( ( rule__ComponentType__NameAssignment_2 ) )
             {
-            // InternalDepModel.g:2689:1: ( ( rule__ComponentType__NameAssignment_2 ) )
-            // InternalDepModel.g:2690:2: ( rule__ComponentType__NameAssignment_2 )
+            // InternalDepModel.g:2588:1: ( ( rule__ComponentType__NameAssignment_2 ) )
+            // InternalDepModel.g:2589:2: ( rule__ComponentType__NameAssignment_2 )
             {
              before(grammarAccess.getComponentTypeAccess().getNameAssignment_2()); 
-            // InternalDepModel.g:2691:2: ( rule__ComponentType__NameAssignment_2 )
-            // InternalDepModel.g:2691:3: rule__ComponentType__NameAssignment_2
+            // InternalDepModel.g:2590:2: ( rule__ComponentType__NameAssignment_2 )
+            // InternalDepModel.g:2590:3: rule__ComponentType__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ComponentType__NameAssignment_2();
@@ -8199,16 +7898,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__3"
-    // InternalDepModel.g:2699:1: rule__ComponentType__Group__3 : rule__ComponentType__Group__3__Impl rule__ComponentType__Group__4 ;
+    // InternalDepModel.g:2598:1: rule__ComponentType__Group__3 : rule__ComponentType__Group__3__Impl rule__ComponentType__Group__4 ;
     public final void rule__ComponentType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2703:1: ( rule__ComponentType__Group__3__Impl rule__ComponentType__Group__4 )
-            // InternalDepModel.g:2704:2: rule__ComponentType__Group__3__Impl rule__ComponentType__Group__4
+            // InternalDepModel.g:2602:1: ( rule__ComponentType__Group__3__Impl rule__ComponentType__Group__4 )
+            // InternalDepModel.g:2603:2: rule__ComponentType__Group__3__Impl rule__ComponentType__Group__4
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_21);
             rule__ComponentType__Group__3__Impl();
 
             state._fsp--;
@@ -8237,17 +7936,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__3__Impl"
-    // InternalDepModel.g:2711:1: rule__ComponentType__Group__3__Impl : ( '{' ) ;
+    // InternalDepModel.g:2610:1: rule__ComponentType__Group__3__Impl : ( '{' ) ;
     public final void rule__ComponentType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2715:1: ( ( '{' ) )
-            // InternalDepModel.g:2716:1: ( '{' )
+            // InternalDepModel.g:2614:1: ( ( '{' ) )
+            // InternalDepModel.g:2615:1: ( '{' )
             {
-            // InternalDepModel.g:2716:1: ( '{' )
-            // InternalDepModel.g:2717:2: '{'
+            // InternalDepModel.g:2615:1: ( '{' )
+            // InternalDepModel.g:2616:2: '{'
             {
              before(grammarAccess.getComponentTypeAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,14,FOLLOW_2); 
@@ -8274,16 +7973,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__4"
-    // InternalDepModel.g:2726:1: rule__ComponentType__Group__4 : rule__ComponentType__Group__4__Impl rule__ComponentType__Group__5 ;
+    // InternalDepModel.g:2625:1: rule__ComponentType__Group__4 : rule__ComponentType__Group__4__Impl rule__ComponentType__Group__5 ;
     public final void rule__ComponentType__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2730:1: ( rule__ComponentType__Group__4__Impl rule__ComponentType__Group__5 )
-            // InternalDepModel.g:2731:2: rule__ComponentType__Group__4__Impl rule__ComponentType__Group__5
+            // InternalDepModel.g:2629:1: ( rule__ComponentType__Group__4__Impl rule__ComponentType__Group__5 )
+            // InternalDepModel.g:2630:2: rule__ComponentType__Group__4__Impl rule__ComponentType__Group__5
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_21);
             rule__ComponentType__Group__4__Impl();
 
             state._fsp--;
@@ -8312,20 +8011,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__4__Impl"
-    // InternalDepModel.g:2738:1: rule__ComponentType__Group__4__Impl : ( ( rule__ComponentType__ComponentFeaturesAssignment_4 )* ) ;
+    // InternalDepModel.g:2637:1: rule__ComponentType__Group__4__Impl : ( ( rule__ComponentType__ComponentFeaturesAssignment_4 )* ) ;
     public final void rule__ComponentType__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2742:1: ( ( ( rule__ComponentType__ComponentFeaturesAssignment_4 )* ) )
-            // InternalDepModel.g:2743:1: ( ( rule__ComponentType__ComponentFeaturesAssignment_4 )* )
+            // InternalDepModel.g:2641:1: ( ( ( rule__ComponentType__ComponentFeaturesAssignment_4 )* ) )
+            // InternalDepModel.g:2642:1: ( ( rule__ComponentType__ComponentFeaturesAssignment_4 )* )
             {
-            // InternalDepModel.g:2743:1: ( ( rule__ComponentType__ComponentFeaturesAssignment_4 )* )
-            // InternalDepModel.g:2744:2: ( rule__ComponentType__ComponentFeaturesAssignment_4 )*
+            // InternalDepModel.g:2642:1: ( ( rule__ComponentType__ComponentFeaturesAssignment_4 )* )
+            // InternalDepModel.g:2643:2: ( rule__ComponentType__ComponentFeaturesAssignment_4 )*
             {
              before(grammarAccess.getComponentTypeAccess().getComponentFeaturesAssignment_4()); 
-            // InternalDepModel.g:2745:2: ( rule__ComponentType__ComponentFeaturesAssignment_4 )*
+            // InternalDepModel.g:2644:2: ( rule__ComponentType__ComponentFeaturesAssignment_4 )*
             loop13:
             do {
                 int alt13=2;
@@ -8338,9 +8037,9 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalDepModel.g:2745:3: rule__ComponentType__ComponentFeaturesAssignment_4
+            	    // InternalDepModel.g:2644:3: rule__ComponentType__ComponentFeaturesAssignment_4
             	    {
-            	    pushFollow(FOLLOW_24);
+            	    pushFollow(FOLLOW_22);
             	    rule__ComponentType__ComponentFeaturesAssignment_4();
 
             	    state._fsp--;
@@ -8377,14 +8076,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__5"
-    // InternalDepModel.g:2753:1: rule__ComponentType__Group__5 : rule__ComponentType__Group__5__Impl ;
+    // InternalDepModel.g:2652:1: rule__ComponentType__Group__5 : rule__ComponentType__Group__5__Impl ;
     public final void rule__ComponentType__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2757:1: ( rule__ComponentType__Group__5__Impl )
-            // InternalDepModel.g:2758:2: rule__ComponentType__Group__5__Impl
+            // InternalDepModel.g:2656:1: ( rule__ComponentType__Group__5__Impl )
+            // InternalDepModel.g:2657:2: rule__ComponentType__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComponentType__Group__5__Impl();
@@ -8410,17 +8109,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__Group__5__Impl"
-    // InternalDepModel.g:2764:1: rule__ComponentType__Group__5__Impl : ( '}' ) ;
+    // InternalDepModel.g:2663:1: rule__ComponentType__Group__5__Impl : ( '}' ) ;
     public final void rule__ComponentType__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2768:1: ( ( '}' ) )
-            // InternalDepModel.g:2769:1: ( '}' )
+            // InternalDepModel.g:2667:1: ( ( '}' ) )
+            // InternalDepModel.g:2668:1: ( '}' )
             {
-            // InternalDepModel.g:2769:1: ( '}' )
-            // InternalDepModel.g:2770:2: '}'
+            // InternalDepModel.g:2668:1: ( '}' )
+            // InternalDepModel.g:2669:2: '}'
             {
              before(grammarAccess.getComponentTypeAccess().getRightCurlyBracketKeyword_5()); 
             match(input,15,FOLLOW_2); 
@@ -8447,16 +8146,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__0"
-    // InternalDepModel.g:2780:1: rule__PortIn__Group__0 : rule__PortIn__Group__0__Impl rule__PortIn__Group__1 ;
+    // InternalDepModel.g:2679:1: rule__PortIn__Group__0 : rule__PortIn__Group__0__Impl rule__PortIn__Group__1 ;
     public final void rule__PortIn__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2784:1: ( rule__PortIn__Group__0__Impl rule__PortIn__Group__1 )
-            // InternalDepModel.g:2785:2: rule__PortIn__Group__0__Impl rule__PortIn__Group__1
+            // InternalDepModel.g:2683:1: ( rule__PortIn__Group__0__Impl rule__PortIn__Group__1 )
+            // InternalDepModel.g:2684:2: rule__PortIn__Group__0__Impl rule__PortIn__Group__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_18);
             rule__PortIn__Group__0__Impl();
 
             state._fsp--;
@@ -8485,17 +8184,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__0__Impl"
-    // InternalDepModel.g:2792:1: rule__PortIn__Group__0__Impl : ( 'port' ) ;
+    // InternalDepModel.g:2691:1: rule__PortIn__Group__0__Impl : ( 'port' ) ;
     public final void rule__PortIn__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2796:1: ( ( 'port' ) )
-            // InternalDepModel.g:2797:1: ( 'port' )
+            // InternalDepModel.g:2695:1: ( ( 'port' ) )
+            // InternalDepModel.g:2696:1: ( 'port' )
             {
-            // InternalDepModel.g:2797:1: ( 'port' )
-            // InternalDepModel.g:2798:2: 'port'
+            // InternalDepModel.g:2696:1: ( 'port' )
+            // InternalDepModel.g:2697:2: 'port'
             {
              before(grammarAccess.getPortInAccess().getPortKeyword_0()); 
             match(input,12,FOLLOW_2); 
@@ -8522,16 +8221,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__1"
-    // InternalDepModel.g:2807:1: rule__PortIn__Group__1 : rule__PortIn__Group__1__Impl rule__PortIn__Group__2 ;
+    // InternalDepModel.g:2706:1: rule__PortIn__Group__1 : rule__PortIn__Group__1__Impl rule__PortIn__Group__2 ;
     public final void rule__PortIn__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2811:1: ( rule__PortIn__Group__1__Impl rule__PortIn__Group__2 )
-            // InternalDepModel.g:2812:2: rule__PortIn__Group__1__Impl rule__PortIn__Group__2
+            // InternalDepModel.g:2710:1: ( rule__PortIn__Group__1__Impl rule__PortIn__Group__2 )
+            // InternalDepModel.g:2711:2: rule__PortIn__Group__1__Impl rule__PortIn__Group__2
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_6);
             rule__PortIn__Group__1__Impl();
 
             state._fsp--;
@@ -8560,21 +8259,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__1__Impl"
-    // InternalDepModel.g:2819:1: rule__PortIn__Group__1__Impl : ( 'instance' ) ;
+    // InternalDepModel.g:2718:1: rule__PortIn__Group__1__Impl : ( 'in' ) ;
     public final void rule__PortIn__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2823:1: ( ( 'instance' ) )
-            // InternalDepModel.g:2824:1: ( 'instance' )
+            // InternalDepModel.g:2722:1: ( ( 'in' ) )
+            // InternalDepModel.g:2723:1: ( 'in' )
             {
-            // InternalDepModel.g:2824:1: ( 'instance' )
-            // InternalDepModel.g:2825:2: 'instance'
+            // InternalDepModel.g:2723:1: ( 'in' )
+            // InternalDepModel.g:2724:2: 'in'
             {
-             before(grammarAccess.getPortInAccess().getInstanceKeyword_1()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getPortInAccess().getInstanceKeyword_1()); 
+             before(grammarAccess.getPortInAccess().getInKeyword_1()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getPortInAccess().getInKeyword_1()); 
 
             }
 
@@ -8597,16 +8296,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__2"
-    // InternalDepModel.g:2834:1: rule__PortIn__Group__2 : rule__PortIn__Group__2__Impl rule__PortIn__Group__3 ;
+    // InternalDepModel.g:2733:1: rule__PortIn__Group__2 : rule__PortIn__Group__2__Impl rule__PortIn__Group__3 ;
     public final void rule__PortIn__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2838:1: ( rule__PortIn__Group__2__Impl rule__PortIn__Group__3 )
-            // InternalDepModel.g:2839:2: rule__PortIn__Group__2__Impl rule__PortIn__Group__3
+            // InternalDepModel.g:2737:1: ( rule__PortIn__Group__2__Impl rule__PortIn__Group__3 )
+            // InternalDepModel.g:2738:2: rule__PortIn__Group__2__Impl rule__PortIn__Group__3
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_20);
             rule__PortIn__Group__2__Impl();
 
             state._fsp--;
@@ -8635,21 +8334,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__2__Impl"
-    // InternalDepModel.g:2846:1: rule__PortIn__Group__2__Impl : ( 'in' ) ;
+    // InternalDepModel.g:2745:1: rule__PortIn__Group__2__Impl : ( ( rule__PortIn__NameAssignment_2 ) ) ;
     public final void rule__PortIn__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2850:1: ( ( 'in' ) )
-            // InternalDepModel.g:2851:1: ( 'in' )
+            // InternalDepModel.g:2749:1: ( ( ( rule__PortIn__NameAssignment_2 ) ) )
+            // InternalDepModel.g:2750:1: ( ( rule__PortIn__NameAssignment_2 ) )
             {
-            // InternalDepModel.g:2851:1: ( 'in' )
-            // InternalDepModel.g:2852:2: 'in'
+            // InternalDepModel.g:2750:1: ( ( rule__PortIn__NameAssignment_2 ) )
+            // InternalDepModel.g:2751:2: ( rule__PortIn__NameAssignment_2 )
             {
-             before(grammarAccess.getPortInAccess().getInKeyword_2()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getPortInAccess().getInKeyword_2()); 
+             before(grammarAccess.getPortInAccess().getNameAssignment_2()); 
+            // InternalDepModel.g:2752:2: ( rule__PortIn__NameAssignment_2 )
+            // InternalDepModel.g:2752:3: rule__PortIn__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__PortIn__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPortInAccess().getNameAssignment_2()); 
 
             }
 
@@ -8672,16 +8381,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__3"
-    // InternalDepModel.g:2861:1: rule__PortIn__Group__3 : rule__PortIn__Group__3__Impl rule__PortIn__Group__4 ;
+    // InternalDepModel.g:2760:1: rule__PortIn__Group__3 : rule__PortIn__Group__3__Impl rule__PortIn__Group__4 ;
     public final void rule__PortIn__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2865:1: ( rule__PortIn__Group__3__Impl rule__PortIn__Group__4 )
-            // InternalDepModel.g:2866:2: rule__PortIn__Group__3__Impl rule__PortIn__Group__4
+            // InternalDepModel.g:2764:1: ( rule__PortIn__Group__3__Impl rule__PortIn__Group__4 )
+            // InternalDepModel.g:2765:2: rule__PortIn__Group__3__Impl rule__PortIn__Group__4
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_6);
             rule__PortIn__Group__3__Impl();
 
             state._fsp--;
@@ -8710,31 +8419,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__3__Impl"
-    // InternalDepModel.g:2873:1: rule__PortIn__Group__3__Impl : ( ( rule__PortIn__NameAssignment_3 ) ) ;
+    // InternalDepModel.g:2772:1: rule__PortIn__Group__3__Impl : ( ':' ) ;
     public final void rule__PortIn__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2877:1: ( ( ( rule__PortIn__NameAssignment_3 ) ) )
-            // InternalDepModel.g:2878:1: ( ( rule__PortIn__NameAssignment_3 ) )
+            // InternalDepModel.g:2776:1: ( ( ':' ) )
+            // InternalDepModel.g:2777:1: ( ':' )
             {
-            // InternalDepModel.g:2878:1: ( ( rule__PortIn__NameAssignment_3 ) )
-            // InternalDepModel.g:2879:2: ( rule__PortIn__NameAssignment_3 )
+            // InternalDepModel.g:2777:1: ( ':' )
+            // InternalDepModel.g:2778:2: ':'
             {
-             before(grammarAccess.getPortInAccess().getNameAssignment_3()); 
-            // InternalDepModel.g:2880:2: ( rule__PortIn__NameAssignment_3 )
-            // InternalDepModel.g:2880:3: rule__PortIn__NameAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__PortIn__NameAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPortInAccess().getNameAssignment_3()); 
+             before(grammarAccess.getPortInAccess().getColonKeyword_3()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getPortInAccess().getColonKeyword_3()); 
 
             }
 
@@ -8757,22 +8456,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__4"
-    // InternalDepModel.g:2888:1: rule__PortIn__Group__4 : rule__PortIn__Group__4__Impl rule__PortIn__Group__5 ;
+    // InternalDepModel.g:2787:1: rule__PortIn__Group__4 : rule__PortIn__Group__4__Impl ;
     public final void rule__PortIn__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2892:1: ( rule__PortIn__Group__4__Impl rule__PortIn__Group__5 )
-            // InternalDepModel.g:2893:2: rule__PortIn__Group__4__Impl rule__PortIn__Group__5
+            // InternalDepModel.g:2791:1: ( rule__PortIn__Group__4__Impl )
+            // InternalDepModel.g:2792:2: rule__PortIn__Group__4__Impl
             {
-            pushFollow(FOLLOW_6);
-            rule__PortIn__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__PortIn__Group__5();
+            rule__PortIn__Group__4__Impl();
 
             state._fsp--;
 
@@ -8795,21 +8489,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortIn__Group__4__Impl"
-    // InternalDepModel.g:2900:1: rule__PortIn__Group__4__Impl : ( ':' ) ;
+    // InternalDepModel.g:2798:1: rule__PortIn__Group__4__Impl : ( ( rule__PortIn__PortInSuperTypeAssignment_4 ) ) ;
     public final void rule__PortIn__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2904:1: ( ( ':' ) )
-            // InternalDepModel.g:2905:1: ( ':' )
+            // InternalDepModel.g:2802:1: ( ( ( rule__PortIn__PortInSuperTypeAssignment_4 ) ) )
+            // InternalDepModel.g:2803:1: ( ( rule__PortIn__PortInSuperTypeAssignment_4 ) )
             {
-            // InternalDepModel.g:2905:1: ( ':' )
-            // InternalDepModel.g:2906:2: ':'
+            // InternalDepModel.g:2803:1: ( ( rule__PortIn__PortInSuperTypeAssignment_4 ) )
+            // InternalDepModel.g:2804:2: ( rule__PortIn__PortInSuperTypeAssignment_4 )
             {
-             before(grammarAccess.getPortInAccess().getColonKeyword_4()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getPortInAccess().getColonKeyword_4()); 
+             before(grammarAccess.getPortInAccess().getPortInSuperTypeAssignment_4()); 
+            // InternalDepModel.g:2805:2: ( rule__PortIn__PortInSuperTypeAssignment_4 )
+            // InternalDepModel.g:2805:3: rule__PortIn__PortInSuperTypeAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__PortIn__PortInSuperTypeAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPortInAccess().getPortInSuperTypeAssignment_4()); 
 
             }
 
@@ -8831,97 +8535,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__PortIn__Group__4__Impl"
 
 
-    // $ANTLR start "rule__PortIn__Group__5"
-    // InternalDepModel.g:2915:1: rule__PortIn__Group__5 : rule__PortIn__Group__5__Impl ;
-    public final void rule__PortIn__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:2919:1: ( rule__PortIn__Group__5__Impl )
-            // InternalDepModel.g:2920:2: rule__PortIn__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__PortIn__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PortIn__Group__5"
-
-
-    // $ANTLR start "rule__PortIn__Group__5__Impl"
-    // InternalDepModel.g:2926:1: rule__PortIn__Group__5__Impl : ( ( rule__PortIn__PortInSuperTypeAssignment_5 ) ) ;
-    public final void rule__PortIn__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:2930:1: ( ( ( rule__PortIn__PortInSuperTypeAssignment_5 ) ) )
-            // InternalDepModel.g:2931:1: ( ( rule__PortIn__PortInSuperTypeAssignment_5 ) )
-            {
-            // InternalDepModel.g:2931:1: ( ( rule__PortIn__PortInSuperTypeAssignment_5 ) )
-            // InternalDepModel.g:2932:2: ( rule__PortIn__PortInSuperTypeAssignment_5 )
-            {
-             before(grammarAccess.getPortInAccess().getPortInSuperTypeAssignment_5()); 
-            // InternalDepModel.g:2933:2: ( rule__PortIn__PortInSuperTypeAssignment_5 )
-            // InternalDepModel.g:2933:3: rule__PortIn__PortInSuperTypeAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__PortIn__PortInSuperTypeAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPortInAccess().getPortInSuperTypeAssignment_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PortIn__Group__5__Impl"
-
-
     // $ANTLR start "rule__PortOut__Group__0"
-    // InternalDepModel.g:2942:1: rule__PortOut__Group__0 : rule__PortOut__Group__0__Impl rule__PortOut__Group__1 ;
+    // InternalDepModel.g:2814:1: rule__PortOut__Group__0 : rule__PortOut__Group__0__Impl rule__PortOut__Group__1 ;
     public final void rule__PortOut__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2946:1: ( rule__PortOut__Group__0__Impl rule__PortOut__Group__1 )
-            // InternalDepModel.g:2947:2: rule__PortOut__Group__0__Impl rule__PortOut__Group__1
+            // InternalDepModel.g:2818:1: ( rule__PortOut__Group__0__Impl rule__PortOut__Group__1 )
+            // InternalDepModel.g:2819:2: rule__PortOut__Group__0__Impl rule__PortOut__Group__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_19);
             rule__PortOut__Group__0__Impl();
 
             state._fsp--;
@@ -8950,17 +8574,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__0__Impl"
-    // InternalDepModel.g:2954:1: rule__PortOut__Group__0__Impl : ( 'port' ) ;
+    // InternalDepModel.g:2826:1: rule__PortOut__Group__0__Impl : ( 'port' ) ;
     public final void rule__PortOut__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2958:1: ( ( 'port' ) )
-            // InternalDepModel.g:2959:1: ( 'port' )
+            // InternalDepModel.g:2830:1: ( ( 'port' ) )
+            // InternalDepModel.g:2831:1: ( 'port' )
             {
-            // InternalDepModel.g:2959:1: ( 'port' )
-            // InternalDepModel.g:2960:2: 'port'
+            // InternalDepModel.g:2831:1: ( 'port' )
+            // InternalDepModel.g:2832:2: 'port'
             {
              before(grammarAccess.getPortOutAccess().getPortKeyword_0()); 
             match(input,12,FOLLOW_2); 
@@ -8987,16 +8611,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__1"
-    // InternalDepModel.g:2969:1: rule__PortOut__Group__1 : rule__PortOut__Group__1__Impl rule__PortOut__Group__2 ;
+    // InternalDepModel.g:2841:1: rule__PortOut__Group__1 : rule__PortOut__Group__1__Impl rule__PortOut__Group__2 ;
     public final void rule__PortOut__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2973:1: ( rule__PortOut__Group__1__Impl rule__PortOut__Group__2 )
-            // InternalDepModel.g:2974:2: rule__PortOut__Group__1__Impl rule__PortOut__Group__2
+            // InternalDepModel.g:2845:1: ( rule__PortOut__Group__1__Impl rule__PortOut__Group__2 )
+            // InternalDepModel.g:2846:2: rule__PortOut__Group__1__Impl rule__PortOut__Group__2
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_6);
             rule__PortOut__Group__1__Impl();
 
             state._fsp--;
@@ -9025,21 +8649,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__1__Impl"
-    // InternalDepModel.g:2981:1: rule__PortOut__Group__1__Impl : ( 'instance' ) ;
+    // InternalDepModel.g:2853:1: rule__PortOut__Group__1__Impl : ( 'out' ) ;
     public final void rule__PortOut__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:2985:1: ( ( 'instance' ) )
-            // InternalDepModel.g:2986:1: ( 'instance' )
+            // InternalDepModel.g:2857:1: ( ( 'out' ) )
+            // InternalDepModel.g:2858:1: ( 'out' )
             {
-            // InternalDepModel.g:2986:1: ( 'instance' )
-            // InternalDepModel.g:2987:2: 'instance'
+            // InternalDepModel.g:2858:1: ( 'out' )
+            // InternalDepModel.g:2859:2: 'out'
             {
-             before(grammarAccess.getPortOutAccess().getInstanceKeyword_1()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getPortOutAccess().getInstanceKeyword_1()); 
+             before(grammarAccess.getPortOutAccess().getOutKeyword_1()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getPortOutAccess().getOutKeyword_1()); 
 
             }
 
@@ -9062,16 +8686,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__2"
-    // InternalDepModel.g:2996:1: rule__PortOut__Group__2 : rule__PortOut__Group__2__Impl rule__PortOut__Group__3 ;
+    // InternalDepModel.g:2868:1: rule__PortOut__Group__2 : rule__PortOut__Group__2__Impl rule__PortOut__Group__3 ;
     public final void rule__PortOut__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3000:1: ( rule__PortOut__Group__2__Impl rule__PortOut__Group__3 )
-            // InternalDepModel.g:3001:2: rule__PortOut__Group__2__Impl rule__PortOut__Group__3
+            // InternalDepModel.g:2872:1: ( rule__PortOut__Group__2__Impl rule__PortOut__Group__3 )
+            // InternalDepModel.g:2873:2: rule__PortOut__Group__2__Impl rule__PortOut__Group__3
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_20);
             rule__PortOut__Group__2__Impl();
 
             state._fsp--;
@@ -9100,21 +8724,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__2__Impl"
-    // InternalDepModel.g:3008:1: rule__PortOut__Group__2__Impl : ( 'out' ) ;
+    // InternalDepModel.g:2880:1: rule__PortOut__Group__2__Impl : ( ( rule__PortOut__NameAssignment_2 ) ) ;
     public final void rule__PortOut__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3012:1: ( ( 'out' ) )
-            // InternalDepModel.g:3013:1: ( 'out' )
+            // InternalDepModel.g:2884:1: ( ( ( rule__PortOut__NameAssignment_2 ) ) )
+            // InternalDepModel.g:2885:1: ( ( rule__PortOut__NameAssignment_2 ) )
             {
-            // InternalDepModel.g:3013:1: ( 'out' )
-            // InternalDepModel.g:3014:2: 'out'
+            // InternalDepModel.g:2885:1: ( ( rule__PortOut__NameAssignment_2 ) )
+            // InternalDepModel.g:2886:2: ( rule__PortOut__NameAssignment_2 )
             {
-             before(grammarAccess.getPortOutAccess().getOutKeyword_2()); 
-            match(input,24,FOLLOW_2); 
-             after(grammarAccess.getPortOutAccess().getOutKeyword_2()); 
+             before(grammarAccess.getPortOutAccess().getNameAssignment_2()); 
+            // InternalDepModel.g:2887:2: ( rule__PortOut__NameAssignment_2 )
+            // InternalDepModel.g:2887:3: rule__PortOut__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__PortOut__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPortOutAccess().getNameAssignment_2()); 
 
             }
 
@@ -9137,16 +8771,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__3"
-    // InternalDepModel.g:3023:1: rule__PortOut__Group__3 : rule__PortOut__Group__3__Impl rule__PortOut__Group__4 ;
+    // InternalDepModel.g:2895:1: rule__PortOut__Group__3 : rule__PortOut__Group__3__Impl rule__PortOut__Group__4 ;
     public final void rule__PortOut__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3027:1: ( rule__PortOut__Group__3__Impl rule__PortOut__Group__4 )
-            // InternalDepModel.g:3028:2: rule__PortOut__Group__3__Impl rule__PortOut__Group__4
+            // InternalDepModel.g:2899:1: ( rule__PortOut__Group__3__Impl rule__PortOut__Group__4 )
+            // InternalDepModel.g:2900:2: rule__PortOut__Group__3__Impl rule__PortOut__Group__4
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_6);
             rule__PortOut__Group__3__Impl();
 
             state._fsp--;
@@ -9175,31 +8809,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__3__Impl"
-    // InternalDepModel.g:3035:1: rule__PortOut__Group__3__Impl : ( ( rule__PortOut__NameAssignment_3 ) ) ;
+    // InternalDepModel.g:2907:1: rule__PortOut__Group__3__Impl : ( ':' ) ;
     public final void rule__PortOut__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3039:1: ( ( ( rule__PortOut__NameAssignment_3 ) ) )
-            // InternalDepModel.g:3040:1: ( ( rule__PortOut__NameAssignment_3 ) )
+            // InternalDepModel.g:2911:1: ( ( ':' ) )
+            // InternalDepModel.g:2912:1: ( ':' )
             {
-            // InternalDepModel.g:3040:1: ( ( rule__PortOut__NameAssignment_3 ) )
-            // InternalDepModel.g:3041:2: ( rule__PortOut__NameAssignment_3 )
+            // InternalDepModel.g:2912:1: ( ':' )
+            // InternalDepModel.g:2913:2: ':'
             {
-             before(grammarAccess.getPortOutAccess().getNameAssignment_3()); 
-            // InternalDepModel.g:3042:2: ( rule__PortOut__NameAssignment_3 )
-            // InternalDepModel.g:3042:3: rule__PortOut__NameAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__PortOut__NameAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPortOutAccess().getNameAssignment_3()); 
+             before(grammarAccess.getPortOutAccess().getColonKeyword_3()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getPortOutAccess().getColonKeyword_3()); 
 
             }
 
@@ -9222,22 +8846,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__4"
-    // InternalDepModel.g:3050:1: rule__PortOut__Group__4 : rule__PortOut__Group__4__Impl rule__PortOut__Group__5 ;
+    // InternalDepModel.g:2922:1: rule__PortOut__Group__4 : rule__PortOut__Group__4__Impl ;
     public final void rule__PortOut__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3054:1: ( rule__PortOut__Group__4__Impl rule__PortOut__Group__5 )
-            // InternalDepModel.g:3055:2: rule__PortOut__Group__4__Impl rule__PortOut__Group__5
+            // InternalDepModel.g:2926:1: ( rule__PortOut__Group__4__Impl )
+            // InternalDepModel.g:2927:2: rule__PortOut__Group__4__Impl
             {
-            pushFollow(FOLLOW_6);
-            rule__PortOut__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__PortOut__Group__5();
+            rule__PortOut__Group__4__Impl();
 
             state._fsp--;
 
@@ -9260,21 +8879,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortOut__Group__4__Impl"
-    // InternalDepModel.g:3062:1: rule__PortOut__Group__4__Impl : ( ':' ) ;
+    // InternalDepModel.g:2933:1: rule__PortOut__Group__4__Impl : ( ( rule__PortOut__PortOutSuperTypeAssignment_4 ) ) ;
     public final void rule__PortOut__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3066:1: ( ( ':' ) )
-            // InternalDepModel.g:3067:1: ( ':' )
+            // InternalDepModel.g:2937:1: ( ( ( rule__PortOut__PortOutSuperTypeAssignment_4 ) ) )
+            // InternalDepModel.g:2938:1: ( ( rule__PortOut__PortOutSuperTypeAssignment_4 ) )
             {
-            // InternalDepModel.g:3067:1: ( ':' )
-            // InternalDepModel.g:3068:2: ':'
+            // InternalDepModel.g:2938:1: ( ( rule__PortOut__PortOutSuperTypeAssignment_4 ) )
+            // InternalDepModel.g:2939:2: ( rule__PortOut__PortOutSuperTypeAssignment_4 )
             {
-             before(grammarAccess.getPortOutAccess().getColonKeyword_4()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getPortOutAccess().getColonKeyword_4()); 
+             before(grammarAccess.getPortOutAccess().getPortOutSuperTypeAssignment_4()); 
+            // InternalDepModel.g:2940:2: ( rule__PortOut__PortOutSuperTypeAssignment_4 )
+            // InternalDepModel.g:2940:3: rule__PortOut__PortOutSuperTypeAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__PortOut__PortOutSuperTypeAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPortOutAccess().getPortOutSuperTypeAssignment_4()); 
 
             }
 
@@ -9296,97 +8925,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__PortOut__Group__4__Impl"
 
 
-    // $ANTLR start "rule__PortOut__Group__5"
-    // InternalDepModel.g:3077:1: rule__PortOut__Group__5 : rule__PortOut__Group__5__Impl ;
-    public final void rule__PortOut__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3081:1: ( rule__PortOut__Group__5__Impl )
-            // InternalDepModel.g:3082:2: rule__PortOut__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__PortOut__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PortOut__Group__5"
-
-
-    // $ANTLR start "rule__PortOut__Group__5__Impl"
-    // InternalDepModel.g:3088:1: rule__PortOut__Group__5__Impl : ( ( rule__PortOut__PortOutSuperTypeAssignment_5 ) ) ;
-    public final void rule__PortOut__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3092:1: ( ( ( rule__PortOut__PortOutSuperTypeAssignment_5 ) ) )
-            // InternalDepModel.g:3093:1: ( ( rule__PortOut__PortOutSuperTypeAssignment_5 ) )
-            {
-            // InternalDepModel.g:3093:1: ( ( rule__PortOut__PortOutSuperTypeAssignment_5 ) )
-            // InternalDepModel.g:3094:2: ( rule__PortOut__PortOutSuperTypeAssignment_5 )
-            {
-             before(grammarAccess.getPortOutAccess().getPortOutSuperTypeAssignment_5()); 
-            // InternalDepModel.g:3095:2: ( rule__PortOut__PortOutSuperTypeAssignment_5 )
-            // InternalDepModel.g:3095:3: rule__PortOut__PortOutSuperTypeAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__PortOut__PortOutSuperTypeAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPortOutAccess().getPortOutSuperTypeAssignment_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PortOut__Group__5__Impl"
-
-
     // $ANTLR start "rule__ErrorModelDec__Group__0"
-    // InternalDepModel.g:3104:1: rule__ErrorModelDec__Group__0 : rule__ErrorModelDec__Group__0__Impl rule__ErrorModelDec__Group__1 ;
+    // InternalDepModel.g:2949:1: rule__ErrorModelDec__Group__0 : rule__ErrorModelDec__Group__0__Impl rule__ErrorModelDec__Group__1 ;
     public final void rule__ErrorModelDec__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3108:1: ( rule__ErrorModelDec__Group__0__Impl rule__ErrorModelDec__Group__1 )
-            // InternalDepModel.g:3109:2: rule__ErrorModelDec__Group__0__Impl rule__ErrorModelDec__Group__1
+            // InternalDepModel.g:2953:1: ( rule__ErrorModelDec__Group__0__Impl rule__ErrorModelDec__Group__1 )
+            // InternalDepModel.g:2954:2: rule__ErrorModelDec__Group__0__Impl rule__ErrorModelDec__Group__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_23);
             rule__ErrorModelDec__Group__0__Impl();
 
             state._fsp--;
@@ -9415,17 +8964,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__0__Impl"
-    // InternalDepModel.g:3116:1: rule__ErrorModelDec__Group__0__Impl : ( 'error' ) ;
+    // InternalDepModel.g:2961:1: rule__ErrorModelDec__Group__0__Impl : ( 'error' ) ;
     public final void rule__ErrorModelDec__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3120:1: ( ( 'error' ) )
-            // InternalDepModel.g:3121:1: ( 'error' )
+            // InternalDepModel.g:2965:1: ( ( 'error' ) )
+            // InternalDepModel.g:2966:1: ( 'error' )
             {
-            // InternalDepModel.g:3121:1: ( 'error' )
-            // InternalDepModel.g:3122:2: 'error'
+            // InternalDepModel.g:2966:1: ( 'error' )
+            // InternalDepModel.g:2967:2: 'error'
             {
              before(grammarAccess.getErrorModelDecAccess().getErrorKeyword_0()); 
             match(input,16,FOLLOW_2); 
@@ -9452,14 +9001,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__1"
-    // InternalDepModel.g:3131:1: rule__ErrorModelDec__Group__1 : rule__ErrorModelDec__Group__1__Impl rule__ErrorModelDec__Group__2 ;
+    // InternalDepModel.g:2976:1: rule__ErrorModelDec__Group__1 : rule__ErrorModelDec__Group__1__Impl rule__ErrorModelDec__Group__2 ;
     public final void rule__ErrorModelDec__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3135:1: ( rule__ErrorModelDec__Group__1__Impl rule__ErrorModelDec__Group__2 )
-            // InternalDepModel.g:3136:2: rule__ErrorModelDec__Group__1__Impl rule__ErrorModelDec__Group__2
+            // InternalDepModel.g:2980:1: ( rule__ErrorModelDec__Group__1__Impl rule__ErrorModelDec__Group__2 )
+            // InternalDepModel.g:2981:2: rule__ErrorModelDec__Group__1__Impl rule__ErrorModelDec__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__ErrorModelDec__Group__1__Impl();
@@ -9490,20 +9039,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__1__Impl"
-    // InternalDepModel.g:3143:1: rule__ErrorModelDec__Group__1__Impl : ( 'model' ) ;
+    // InternalDepModel.g:2988:1: rule__ErrorModelDec__Group__1__Impl : ( 'model' ) ;
     public final void rule__ErrorModelDec__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3147:1: ( ( 'model' ) )
-            // InternalDepModel.g:3148:1: ( 'model' )
+            // InternalDepModel.g:2992:1: ( ( 'model' ) )
+            // InternalDepModel.g:2993:1: ( 'model' )
             {
-            // InternalDepModel.g:3148:1: ( 'model' )
-            // InternalDepModel.g:3149:2: 'model'
+            // InternalDepModel.g:2993:1: ( 'model' )
+            // InternalDepModel.g:2994:2: 'model'
             {
              before(grammarAccess.getErrorModelDecAccess().getModelKeyword_1()); 
-            match(input,29,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getErrorModelDecAccess().getModelKeyword_1()); 
 
             }
@@ -9527,14 +9076,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__2"
-    // InternalDepModel.g:3158:1: rule__ErrorModelDec__Group__2 : rule__ErrorModelDec__Group__2__Impl rule__ErrorModelDec__Group__3 ;
+    // InternalDepModel.g:3003:1: rule__ErrorModelDec__Group__2 : rule__ErrorModelDec__Group__2__Impl rule__ErrorModelDec__Group__3 ;
     public final void rule__ErrorModelDec__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3162:1: ( rule__ErrorModelDec__Group__2__Impl rule__ErrorModelDec__Group__3 )
-            // InternalDepModel.g:3163:2: rule__ErrorModelDec__Group__2__Impl rule__ErrorModelDec__Group__3
+            // InternalDepModel.g:3007:1: ( rule__ErrorModelDec__Group__2__Impl rule__ErrorModelDec__Group__3 )
+            // InternalDepModel.g:3008:2: rule__ErrorModelDec__Group__2__Impl rule__ErrorModelDec__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__ErrorModelDec__Group__2__Impl();
@@ -9565,21 +9114,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__2__Impl"
-    // InternalDepModel.g:3170:1: rule__ErrorModelDec__Group__2__Impl : ( ( rule__ErrorModelDec__NameAssignment_2 ) ) ;
+    // InternalDepModel.g:3015:1: rule__ErrorModelDec__Group__2__Impl : ( ( rule__ErrorModelDec__NameAssignment_2 ) ) ;
     public final void rule__ErrorModelDec__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3174:1: ( ( ( rule__ErrorModelDec__NameAssignment_2 ) ) )
-            // InternalDepModel.g:3175:1: ( ( rule__ErrorModelDec__NameAssignment_2 ) )
+            // InternalDepModel.g:3019:1: ( ( ( rule__ErrorModelDec__NameAssignment_2 ) ) )
+            // InternalDepModel.g:3020:1: ( ( rule__ErrorModelDec__NameAssignment_2 ) )
             {
-            // InternalDepModel.g:3175:1: ( ( rule__ErrorModelDec__NameAssignment_2 ) )
-            // InternalDepModel.g:3176:2: ( rule__ErrorModelDec__NameAssignment_2 )
+            // InternalDepModel.g:3020:1: ( ( rule__ErrorModelDec__NameAssignment_2 ) )
+            // InternalDepModel.g:3021:2: ( rule__ErrorModelDec__NameAssignment_2 )
             {
              before(grammarAccess.getErrorModelDecAccess().getNameAssignment_2()); 
-            // InternalDepModel.g:3177:2: ( rule__ErrorModelDec__NameAssignment_2 )
-            // InternalDepModel.g:3177:3: rule__ErrorModelDec__NameAssignment_2
+            // InternalDepModel.g:3022:2: ( rule__ErrorModelDec__NameAssignment_2 )
+            // InternalDepModel.g:3022:3: rule__ErrorModelDec__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ErrorModelDec__NameAssignment_2();
@@ -9612,16 +9161,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__3"
-    // InternalDepModel.g:3185:1: rule__ErrorModelDec__Group__3 : rule__ErrorModelDec__Group__3__Impl rule__ErrorModelDec__Group__4 ;
+    // InternalDepModel.g:3030:1: rule__ErrorModelDec__Group__3 : rule__ErrorModelDec__Group__3__Impl rule__ErrorModelDec__Group__4 ;
     public final void rule__ErrorModelDec__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3189:1: ( rule__ErrorModelDec__Group__3__Impl rule__ErrorModelDec__Group__4 )
-            // InternalDepModel.g:3190:2: rule__ErrorModelDec__Group__3__Impl rule__ErrorModelDec__Group__4
+            // InternalDepModel.g:3034:1: ( rule__ErrorModelDec__Group__3__Impl rule__ErrorModelDec__Group__4 )
+            // InternalDepModel.g:3035:2: rule__ErrorModelDec__Group__3__Impl rule__ErrorModelDec__Group__4
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_24);
             rule__ErrorModelDec__Group__3__Impl();
 
             state._fsp--;
@@ -9650,17 +9199,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__3__Impl"
-    // InternalDepModel.g:3197:1: rule__ErrorModelDec__Group__3__Impl : ( '{' ) ;
+    // InternalDepModel.g:3042:1: rule__ErrorModelDec__Group__3__Impl : ( '{' ) ;
     public final void rule__ErrorModelDec__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3201:1: ( ( '{' ) )
-            // InternalDepModel.g:3202:1: ( '{' )
+            // InternalDepModel.g:3046:1: ( ( '{' ) )
+            // InternalDepModel.g:3047:1: ( '{' )
             {
-            // InternalDepModel.g:3202:1: ( '{' )
-            // InternalDepModel.g:3203:2: '{'
+            // InternalDepModel.g:3047:1: ( '{' )
+            // InternalDepModel.g:3048:2: '{'
             {
              before(grammarAccess.getErrorModelDecAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,14,FOLLOW_2); 
@@ -9687,16 +9236,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__4"
-    // InternalDepModel.g:3212:1: rule__ErrorModelDec__Group__4 : rule__ErrorModelDec__Group__4__Impl rule__ErrorModelDec__Group__5 ;
+    // InternalDepModel.g:3057:1: rule__ErrorModelDec__Group__4 : rule__ErrorModelDec__Group__4__Impl rule__ErrorModelDec__Group__5 ;
     public final void rule__ErrorModelDec__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3216:1: ( rule__ErrorModelDec__Group__4__Impl rule__ErrorModelDec__Group__5 )
-            // InternalDepModel.g:3217:2: rule__ErrorModelDec__Group__4__Impl rule__ErrorModelDec__Group__5
+            // InternalDepModel.g:3061:1: ( rule__ErrorModelDec__Group__4__Impl rule__ErrorModelDec__Group__5 )
+            // InternalDepModel.g:3062:2: rule__ErrorModelDec__Group__4__Impl rule__ErrorModelDec__Group__5
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_24);
             rule__ErrorModelDec__Group__4__Impl();
 
             state._fsp--;
@@ -9725,35 +9274,35 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__4__Impl"
-    // InternalDepModel.g:3224:1: rule__ErrorModelDec__Group__4__Impl : ( ( rule__ErrorModelDec__EmodelElementsAssignment_4 )* ) ;
+    // InternalDepModel.g:3069:1: rule__ErrorModelDec__Group__4__Impl : ( ( rule__ErrorModelDec__EmodelElementsAssignment_4 )* ) ;
     public final void rule__ErrorModelDec__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3228:1: ( ( ( rule__ErrorModelDec__EmodelElementsAssignment_4 )* ) )
-            // InternalDepModel.g:3229:1: ( ( rule__ErrorModelDec__EmodelElementsAssignment_4 )* )
+            // InternalDepModel.g:3073:1: ( ( ( rule__ErrorModelDec__EmodelElementsAssignment_4 )* ) )
+            // InternalDepModel.g:3074:1: ( ( rule__ErrorModelDec__EmodelElementsAssignment_4 )* )
             {
-            // InternalDepModel.g:3229:1: ( ( rule__ErrorModelDec__EmodelElementsAssignment_4 )* )
-            // InternalDepModel.g:3230:2: ( rule__ErrorModelDec__EmodelElementsAssignment_4 )*
+            // InternalDepModel.g:3074:1: ( ( rule__ErrorModelDec__EmodelElementsAssignment_4 )* )
+            // InternalDepModel.g:3075:2: ( rule__ErrorModelDec__EmodelElementsAssignment_4 )*
             {
              before(grammarAccess.getErrorModelDecAccess().getEmodelElementsAssignment_4()); 
-            // InternalDepModel.g:3231:2: ( rule__ErrorModelDec__EmodelElementsAssignment_4 )*
+            // InternalDepModel.g:3076:2: ( rule__ErrorModelDec__EmodelElementsAssignment_4 )*
             loop14:
             do {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==16||LA14_0==30||LA14_0==32) ) {
+                if ( ((LA14_0>=27 && LA14_0<=29)) ) {
                     alt14=1;
                 }
 
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalDepModel.g:3231:3: rule__ErrorModelDec__EmodelElementsAssignment_4
+            	    // InternalDepModel.g:3076:3: rule__ErrorModelDec__EmodelElementsAssignment_4
             	    {
-            	    pushFollow(FOLLOW_28);
+            	    pushFollow(FOLLOW_25);
             	    rule__ErrorModelDec__EmodelElementsAssignment_4();
 
             	    state._fsp--;
@@ -9790,14 +9339,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__5"
-    // InternalDepModel.g:3239:1: rule__ErrorModelDec__Group__5 : rule__ErrorModelDec__Group__5__Impl ;
+    // InternalDepModel.g:3084:1: rule__ErrorModelDec__Group__5 : rule__ErrorModelDec__Group__5__Impl ;
     public final void rule__ErrorModelDec__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3243:1: ( rule__ErrorModelDec__Group__5__Impl )
-            // InternalDepModel.g:3244:2: rule__ErrorModelDec__Group__5__Impl
+            // InternalDepModel.g:3088:1: ( rule__ErrorModelDec__Group__5__Impl )
+            // InternalDepModel.g:3089:2: rule__ErrorModelDec__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ErrorModelDec__Group__5__Impl();
@@ -9823,17 +9372,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__Group__5__Impl"
-    // InternalDepModel.g:3250:1: rule__ErrorModelDec__Group__5__Impl : ( '}' ) ;
+    // InternalDepModel.g:3095:1: rule__ErrorModelDec__Group__5__Impl : ( '}' ) ;
     public final void rule__ErrorModelDec__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3254:1: ( ( '}' ) )
-            // InternalDepModel.g:3255:1: ( '}' )
+            // InternalDepModel.g:3099:1: ( ( '}' ) )
+            // InternalDepModel.g:3100:1: ( '}' )
             {
-            // InternalDepModel.g:3255:1: ( '}' )
-            // InternalDepModel.g:3256:2: '}'
+            // InternalDepModel.g:3100:1: ( '}' )
+            // InternalDepModel.g:3101:2: '}'
             {
              before(grammarAccess.getErrorModelDecAccess().getRightCurlyBracketKeyword_5()); 
             match(input,15,FOLLOW_2); 
@@ -9860,16 +9409,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__0"
-    // InternalDepModel.g:3266:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
+    // InternalDepModel.g:3111:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
     public final void rule__State__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3270:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
-            // InternalDepModel.g:3271:2: rule__State__Group__0__Impl rule__State__Group__1
+            // InternalDepModel.g:3115:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
+            // InternalDepModel.g:3116:2: rule__State__Group__0__Impl rule__State__Group__1
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_26);
             rule__State__Group__0__Impl();
 
             state._fsp--;
@@ -9898,31 +9447,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__0__Impl"
-    // InternalDepModel.g:3278:1: rule__State__Group__0__Impl : ( ( 'initial' )? ) ;
+    // InternalDepModel.g:3123:1: rule__State__Group__0__Impl : ( ( 'initial' )? ) ;
     public final void rule__State__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3282:1: ( ( ( 'initial' )? ) )
-            // InternalDepModel.g:3283:1: ( ( 'initial' )? )
+            // InternalDepModel.g:3127:1: ( ( ( 'initial' )? ) )
+            // InternalDepModel.g:3128:1: ( ( 'initial' )? )
             {
-            // InternalDepModel.g:3283:1: ( ( 'initial' )? )
-            // InternalDepModel.g:3284:2: ( 'initial' )?
+            // InternalDepModel.g:3128:1: ( ( 'initial' )? )
+            // InternalDepModel.g:3129:2: ( 'initial' )?
             {
              before(grammarAccess.getStateAccess().getInitialKeyword_0()); 
-            // InternalDepModel.g:3285:2: ( 'initial' )?
+            // InternalDepModel.g:3130:2: ( 'initial' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==30) ) {
+            if ( (LA15_0==27) ) {
                 alt15=1;
             }
             switch (alt15) {
                 case 1 :
-                    // InternalDepModel.g:3285:3: 'initial'
+                    // InternalDepModel.g:3130:3: 'initial'
                     {
-                    match(input,30,FOLLOW_2); 
+                    match(input,27,FOLLOW_2); 
 
                     }
                     break;
@@ -9952,16 +9501,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__1"
-    // InternalDepModel.g:3293:1: rule__State__Group__1 : rule__State__Group__1__Impl rule__State__Group__2 ;
+    // InternalDepModel.g:3138:1: rule__State__Group__1 : rule__State__Group__1__Impl rule__State__Group__2 ;
     public final void rule__State__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3297:1: ( rule__State__Group__1__Impl rule__State__Group__2 )
-            // InternalDepModel.g:3298:2: rule__State__Group__1__Impl rule__State__Group__2
+            // InternalDepModel.g:3142:1: ( rule__State__Group__1__Impl rule__State__Group__2 )
+            // InternalDepModel.g:3143:2: rule__State__Group__1__Impl rule__State__Group__2
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_6);
             rule__State__Group__1__Impl();
 
             state._fsp--;
@@ -9990,21 +9539,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__1__Impl"
-    // InternalDepModel.g:3305:1: rule__State__Group__1__Impl : ( 'error' ) ;
+    // InternalDepModel.g:3150:1: rule__State__Group__1__Impl : ( 'state' ) ;
     public final void rule__State__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3309:1: ( ( 'error' ) )
-            // InternalDepModel.g:3310:1: ( 'error' )
+            // InternalDepModel.g:3154:1: ( ( 'state' ) )
+            // InternalDepModel.g:3155:1: ( 'state' )
             {
-            // InternalDepModel.g:3310:1: ( 'error' )
-            // InternalDepModel.g:3311:2: 'error'
+            // InternalDepModel.g:3155:1: ( 'state' )
+            // InternalDepModel.g:3156:2: 'state'
             {
-             before(grammarAccess.getStateAccess().getErrorKeyword_1()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getStateAccess().getErrorKeyword_1()); 
+             before(grammarAccess.getStateAccess().getStateKeyword_1()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getStateAccess().getStateKeyword_1()); 
 
             }
 
@@ -10027,22 +9576,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__2"
-    // InternalDepModel.g:3320:1: rule__State__Group__2 : rule__State__Group__2__Impl rule__State__Group__3 ;
+    // InternalDepModel.g:3165:1: rule__State__Group__2 : rule__State__Group__2__Impl ;
     public final void rule__State__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3324:1: ( rule__State__Group__2__Impl rule__State__Group__3 )
-            // InternalDepModel.g:3325:2: rule__State__Group__2__Impl rule__State__Group__3
+            // InternalDepModel.g:3169:1: ( rule__State__Group__2__Impl )
+            // InternalDepModel.g:3170:2: rule__State__Group__2__Impl
             {
-            pushFollow(FOLLOW_6);
-            rule__State__Group__2__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__State__Group__3();
+            rule__State__Group__2__Impl();
 
             state._fsp--;
 
@@ -10065,21 +9609,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__State__Group__2__Impl"
-    // InternalDepModel.g:3332:1: rule__State__Group__2__Impl : ( 'state' ) ;
+    // InternalDepModel.g:3176:1: rule__State__Group__2__Impl : ( ( rule__State__NameAssignment_2 ) ) ;
     public final void rule__State__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3336:1: ( ( 'state' ) )
-            // InternalDepModel.g:3337:1: ( 'state' )
+            // InternalDepModel.g:3180:1: ( ( ( rule__State__NameAssignment_2 ) ) )
+            // InternalDepModel.g:3181:1: ( ( rule__State__NameAssignment_2 ) )
             {
-            // InternalDepModel.g:3337:1: ( 'state' )
-            // InternalDepModel.g:3338:2: 'state'
+            // InternalDepModel.g:3181:1: ( ( rule__State__NameAssignment_2 ) )
+            // InternalDepModel.g:3182:2: ( rule__State__NameAssignment_2 )
             {
-             before(grammarAccess.getStateAccess().getStateKeyword_2()); 
-            match(input,31,FOLLOW_2); 
-             after(grammarAccess.getStateAccess().getStateKeyword_2()); 
+             before(grammarAccess.getStateAccess().getNameAssignment_2()); 
+            // InternalDepModel.g:3183:2: ( rule__State__NameAssignment_2 )
+            // InternalDepModel.g:3183:3: rule__State__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__State__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStateAccess().getNameAssignment_2()); 
 
             }
 
@@ -10101,95 +9655,15 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__State__Group__2__Impl"
 
 
-    // $ANTLR start "rule__State__Group__3"
-    // InternalDepModel.g:3347:1: rule__State__Group__3 : rule__State__Group__3__Impl ;
-    public final void rule__State__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3351:1: ( rule__State__Group__3__Impl )
-            // InternalDepModel.g:3352:2: rule__State__Group__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__State__Group__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__State__Group__3"
-
-
-    // $ANTLR start "rule__State__Group__3__Impl"
-    // InternalDepModel.g:3358:1: rule__State__Group__3__Impl : ( ( rule__State__NameAssignment_3 ) ) ;
-    public final void rule__State__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3362:1: ( ( ( rule__State__NameAssignment_3 ) ) )
-            // InternalDepModel.g:3363:1: ( ( rule__State__NameAssignment_3 ) )
-            {
-            // InternalDepModel.g:3363:1: ( ( rule__State__NameAssignment_3 ) )
-            // InternalDepModel.g:3364:2: ( rule__State__NameAssignment_3 )
-            {
-             before(grammarAccess.getStateAccess().getNameAssignment_3()); 
-            // InternalDepModel.g:3365:2: ( rule__State__NameAssignment_3 )
-            // InternalDepModel.g:3365:3: rule__State__NameAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__State__NameAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getStateAccess().getNameAssignment_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__State__Group__3__Impl"
-
-
     // $ANTLR start "rule__TransitionDec__Group__0"
-    // InternalDepModel.g:3374:1: rule__TransitionDec__Group__0 : rule__TransitionDec__Group__0__Impl rule__TransitionDec__Group__1 ;
+    // InternalDepModel.g:3192:1: rule__TransitionDec__Group__0 : rule__TransitionDec__Group__0__Impl rule__TransitionDec__Group__1 ;
     public final void rule__TransitionDec__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3378:1: ( rule__TransitionDec__Group__0__Impl rule__TransitionDec__Group__1 )
-            // InternalDepModel.g:3379:2: rule__TransitionDec__Group__0__Impl rule__TransitionDec__Group__1
+            // InternalDepModel.g:3196:1: ( rule__TransitionDec__Group__0__Impl rule__TransitionDec__Group__1 )
+            // InternalDepModel.g:3197:2: rule__TransitionDec__Group__0__Impl rule__TransitionDec__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__TransitionDec__Group__0__Impl();
@@ -10220,20 +9694,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__0__Impl"
-    // InternalDepModel.g:3386:1: rule__TransitionDec__Group__0__Impl : ( 'transition' ) ;
+    // InternalDepModel.g:3204:1: rule__TransitionDec__Group__0__Impl : ( 'transition' ) ;
     public final void rule__TransitionDec__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3390:1: ( ( 'transition' ) )
-            // InternalDepModel.g:3391:1: ( 'transition' )
+            // InternalDepModel.g:3208:1: ( ( 'transition' ) )
+            // InternalDepModel.g:3209:1: ( 'transition' )
             {
-            // InternalDepModel.g:3391:1: ( 'transition' )
-            // InternalDepModel.g:3392:2: 'transition'
+            // InternalDepModel.g:3209:1: ( 'transition' )
+            // InternalDepModel.g:3210:2: 'transition'
             {
              before(grammarAccess.getTransitionDecAccess().getTransitionKeyword_0()); 
-            match(input,32,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getTransitionDecAccess().getTransitionKeyword_0()); 
 
             }
@@ -10257,14 +9731,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__1"
-    // InternalDepModel.g:3401:1: rule__TransitionDec__Group__1 : rule__TransitionDec__Group__1__Impl rule__TransitionDec__Group__2 ;
+    // InternalDepModel.g:3219:1: rule__TransitionDec__Group__1 : rule__TransitionDec__Group__1__Impl rule__TransitionDec__Group__2 ;
     public final void rule__TransitionDec__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3405:1: ( rule__TransitionDec__Group__1__Impl rule__TransitionDec__Group__2 )
-            // InternalDepModel.g:3406:2: rule__TransitionDec__Group__1__Impl rule__TransitionDec__Group__2
+            // InternalDepModel.g:3223:1: ( rule__TransitionDec__Group__1__Impl rule__TransitionDec__Group__2 )
+            // InternalDepModel.g:3224:2: rule__TransitionDec__Group__1__Impl rule__TransitionDec__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__TransitionDec__Group__1__Impl();
@@ -10295,21 +9769,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__1__Impl"
-    // InternalDepModel.g:3413:1: rule__TransitionDec__Group__1__Impl : ( ( rule__TransitionDec__NameAssignment_1 ) ) ;
+    // InternalDepModel.g:3231:1: rule__TransitionDec__Group__1__Impl : ( ( rule__TransitionDec__NameAssignment_1 ) ) ;
     public final void rule__TransitionDec__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3417:1: ( ( ( rule__TransitionDec__NameAssignment_1 ) ) )
-            // InternalDepModel.g:3418:1: ( ( rule__TransitionDec__NameAssignment_1 ) )
+            // InternalDepModel.g:3235:1: ( ( ( rule__TransitionDec__NameAssignment_1 ) ) )
+            // InternalDepModel.g:3236:1: ( ( rule__TransitionDec__NameAssignment_1 ) )
             {
-            // InternalDepModel.g:3418:1: ( ( rule__TransitionDec__NameAssignment_1 ) )
-            // InternalDepModel.g:3419:2: ( rule__TransitionDec__NameAssignment_1 )
+            // InternalDepModel.g:3236:1: ( ( rule__TransitionDec__NameAssignment_1 ) )
+            // InternalDepModel.g:3237:2: ( rule__TransitionDec__NameAssignment_1 )
             {
              before(grammarAccess.getTransitionDecAccess().getNameAssignment_1()); 
-            // InternalDepModel.g:3420:2: ( rule__TransitionDec__NameAssignment_1 )
-            // InternalDepModel.g:3420:3: rule__TransitionDec__NameAssignment_1
+            // InternalDepModel.g:3238:2: ( rule__TransitionDec__NameAssignment_1 )
+            // InternalDepModel.g:3238:3: rule__TransitionDec__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TransitionDec__NameAssignment_1();
@@ -10342,16 +9816,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__2"
-    // InternalDepModel.g:3428:1: rule__TransitionDec__Group__2 : rule__TransitionDec__Group__2__Impl rule__TransitionDec__Group__3 ;
+    // InternalDepModel.g:3246:1: rule__TransitionDec__Group__2 : rule__TransitionDec__Group__2__Impl rule__TransitionDec__Group__3 ;
     public final void rule__TransitionDec__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3432:1: ( rule__TransitionDec__Group__2__Impl rule__TransitionDec__Group__3 )
-            // InternalDepModel.g:3433:2: rule__TransitionDec__Group__2__Impl rule__TransitionDec__Group__3
+            // InternalDepModel.g:3250:1: ( rule__TransitionDec__Group__2__Impl rule__TransitionDec__Group__3 )
+            // InternalDepModel.g:3251:2: rule__TransitionDec__Group__2__Impl rule__TransitionDec__Group__3
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_27);
             rule__TransitionDec__Group__2__Impl();
 
             state._fsp--;
@@ -10380,17 +9854,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__2__Impl"
-    // InternalDepModel.g:3440:1: rule__TransitionDec__Group__2__Impl : ( '{' ) ;
+    // InternalDepModel.g:3258:1: rule__TransitionDec__Group__2__Impl : ( '{' ) ;
     public final void rule__TransitionDec__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3444:1: ( ( '{' ) )
-            // InternalDepModel.g:3445:1: ( '{' )
+            // InternalDepModel.g:3262:1: ( ( '{' ) )
+            // InternalDepModel.g:3263:1: ( '{' )
             {
-            // InternalDepModel.g:3445:1: ( '{' )
-            // InternalDepModel.g:3446:2: '{'
+            // InternalDepModel.g:3263:1: ( '{' )
+            // InternalDepModel.g:3264:2: '{'
             {
              before(grammarAccess.getTransitionDecAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,14,FOLLOW_2); 
@@ -10417,16 +9891,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__3"
-    // InternalDepModel.g:3455:1: rule__TransitionDec__Group__3 : rule__TransitionDec__Group__3__Impl rule__TransitionDec__Group__4 ;
+    // InternalDepModel.g:3273:1: rule__TransitionDec__Group__3 : rule__TransitionDec__Group__3__Impl rule__TransitionDec__Group__4 ;
     public final void rule__TransitionDec__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3459:1: ( rule__TransitionDec__Group__3__Impl rule__TransitionDec__Group__4 )
-            // InternalDepModel.g:3460:2: rule__TransitionDec__Group__3__Impl rule__TransitionDec__Group__4
+            // InternalDepModel.g:3277:1: ( rule__TransitionDec__Group__3__Impl rule__TransitionDec__Group__4 )
+            // InternalDepModel.g:3278:2: rule__TransitionDec__Group__3__Impl rule__TransitionDec__Group__4
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_27);
             rule__TransitionDec__Group__3__Impl();
 
             state._fsp--;
@@ -10455,35 +9929,35 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__3__Impl"
-    // InternalDepModel.g:3467:1: rule__TransitionDec__Group__3__Impl : ( ( rule__TransitionDec__TransFeaturesAssignment_3 )* ) ;
+    // InternalDepModel.g:3285:1: rule__TransitionDec__Group__3__Impl : ( ( rule__TransitionDec__TransFeaturesAssignment_3 )* ) ;
     public final void rule__TransitionDec__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3471:1: ( ( ( rule__TransitionDec__TransFeaturesAssignment_3 )* ) )
-            // InternalDepModel.g:3472:1: ( ( rule__TransitionDec__TransFeaturesAssignment_3 )* )
+            // InternalDepModel.g:3289:1: ( ( ( rule__TransitionDec__TransFeaturesAssignment_3 )* ) )
+            // InternalDepModel.g:3290:1: ( ( rule__TransitionDec__TransFeaturesAssignment_3 )* )
             {
-            // InternalDepModel.g:3472:1: ( ( rule__TransitionDec__TransFeaturesAssignment_3 )* )
-            // InternalDepModel.g:3473:2: ( rule__TransitionDec__TransFeaturesAssignment_3 )*
+            // InternalDepModel.g:3290:1: ( ( rule__TransitionDec__TransFeaturesAssignment_3 )* )
+            // InternalDepModel.g:3291:2: ( rule__TransitionDec__TransFeaturesAssignment_3 )*
             {
              before(grammarAccess.getTransitionDecAccess().getTransFeaturesAssignment_3()); 
-            // InternalDepModel.g:3474:2: ( rule__TransitionDec__TransFeaturesAssignment_3 )*
+            // InternalDepModel.g:3292:2: ( rule__TransitionDec__TransFeaturesAssignment_3 )*
             loop16:
             do {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( ((LA16_0>=33 && LA16_0<=34)||(LA16_0>=36 && LA16_0<=37)) ) {
+                if ( ((LA16_0>=30 && LA16_0<=31)||(LA16_0>=33 && LA16_0<=34)) ) {
                     alt16=1;
                 }
 
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalDepModel.g:3474:3: rule__TransitionDec__TransFeaturesAssignment_3
+            	    // InternalDepModel.g:3292:3: rule__TransitionDec__TransFeaturesAssignment_3
             	    {
-            	    pushFollow(FOLLOW_32);
+            	    pushFollow(FOLLOW_28);
             	    rule__TransitionDec__TransFeaturesAssignment_3();
 
             	    state._fsp--;
@@ -10520,14 +9994,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__4"
-    // InternalDepModel.g:3482:1: rule__TransitionDec__Group__4 : rule__TransitionDec__Group__4__Impl ;
+    // InternalDepModel.g:3300:1: rule__TransitionDec__Group__4 : rule__TransitionDec__Group__4__Impl ;
     public final void rule__TransitionDec__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3486:1: ( rule__TransitionDec__Group__4__Impl )
-            // InternalDepModel.g:3487:2: rule__TransitionDec__Group__4__Impl
+            // InternalDepModel.g:3304:1: ( rule__TransitionDec__Group__4__Impl )
+            // InternalDepModel.g:3305:2: rule__TransitionDec__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TransitionDec__Group__4__Impl();
@@ -10553,17 +10027,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__Group__4__Impl"
-    // InternalDepModel.g:3493:1: rule__TransitionDec__Group__4__Impl : ( '}' ) ;
+    // InternalDepModel.g:3311:1: rule__TransitionDec__Group__4__Impl : ( '}' ) ;
     public final void rule__TransitionDec__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3497:1: ( ( '}' ) )
-            // InternalDepModel.g:3498:1: ( '}' )
+            // InternalDepModel.g:3315:1: ( ( '}' ) )
+            // InternalDepModel.g:3316:1: ( '}' )
             {
-            // InternalDepModel.g:3498:1: ( '}' )
-            // InternalDepModel.g:3499:2: '}'
+            // InternalDepModel.g:3316:1: ( '}' )
+            // InternalDepModel.g:3317:2: '}'
             {
              before(grammarAccess.getTransitionDecAccess().getRightCurlyBracketKeyword_4()); 
             match(input,15,FOLLOW_2); 
@@ -10590,16 +10064,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionFeatureDec__Group_3__0"
-    // InternalDepModel.g:3509:1: rule__TransitionFeatureDec__Group_3__0 : rule__TransitionFeatureDec__Group_3__0__Impl rule__TransitionFeatureDec__Group_3__1 ;
+    // InternalDepModel.g:3327:1: rule__TransitionFeatureDec__Group_3__0 : rule__TransitionFeatureDec__Group_3__0__Impl rule__TransitionFeatureDec__Group_3__1 ;
     public final void rule__TransitionFeatureDec__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3513:1: ( rule__TransitionFeatureDec__Group_3__0__Impl rule__TransitionFeatureDec__Group_3__1 )
-            // InternalDepModel.g:3514:2: rule__TransitionFeatureDec__Group_3__0__Impl rule__TransitionFeatureDec__Group_3__1
+            // InternalDepModel.g:3331:1: ( rule__TransitionFeatureDec__Group_3__0__Impl rule__TransitionFeatureDec__Group_3__1 )
+            // InternalDepModel.g:3332:2: rule__TransitionFeatureDec__Group_3__0__Impl rule__TransitionFeatureDec__Group_3__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_29);
             rule__TransitionFeatureDec__Group_3__0__Impl();
 
             state._fsp--;
@@ -10628,20 +10102,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionFeatureDec__Group_3__0__Impl"
-    // InternalDepModel.g:3521:1: rule__TransitionFeatureDec__Group_3__0__Impl : ( 'occurrence' ) ;
+    // InternalDepModel.g:3339:1: rule__TransitionFeatureDec__Group_3__0__Impl : ( 'occurrence' ) ;
     public final void rule__TransitionFeatureDec__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3525:1: ( ( 'occurrence' ) )
-            // InternalDepModel.g:3526:1: ( 'occurrence' )
+            // InternalDepModel.g:3343:1: ( ( 'occurrence' ) )
+            // InternalDepModel.g:3344:1: ( 'occurrence' )
             {
-            // InternalDepModel.g:3526:1: ( 'occurrence' )
-            // InternalDepModel.g:3527:2: 'occurrence'
+            // InternalDepModel.g:3344:1: ( 'occurrence' )
+            // InternalDepModel.g:3345:2: 'occurrence'
             {
              before(grammarAccess.getTransitionFeatureDecAccess().getOccurrenceKeyword_3_0()); 
-            match(input,33,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getTransitionFeatureDecAccess().getOccurrenceKeyword_3_0()); 
 
             }
@@ -10665,16 +10139,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionFeatureDec__Group_3__1"
-    // InternalDepModel.g:3536:1: rule__TransitionFeatureDec__Group_3__1 : rule__TransitionFeatureDec__Group_3__1__Impl rule__TransitionFeatureDec__Group_3__2 ;
+    // InternalDepModel.g:3354:1: rule__TransitionFeatureDec__Group_3__1 : rule__TransitionFeatureDec__Group_3__1__Impl rule__TransitionFeatureDec__Group_3__2 ;
     public final void rule__TransitionFeatureDec__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3540:1: ( rule__TransitionFeatureDec__Group_3__1__Impl rule__TransitionFeatureDec__Group_3__2 )
-            // InternalDepModel.g:3541:2: rule__TransitionFeatureDec__Group_3__1__Impl rule__TransitionFeatureDec__Group_3__2
+            // InternalDepModel.g:3358:1: ( rule__TransitionFeatureDec__Group_3__1__Impl rule__TransitionFeatureDec__Group_3__2 )
+            // InternalDepModel.g:3359:2: rule__TransitionFeatureDec__Group_3__1__Impl rule__TransitionFeatureDec__Group_3__2
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_29);
             rule__TransitionFeatureDec__Group_3__1__Impl();
 
             state._fsp--;
@@ -10703,21 +10177,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionFeatureDec__Group_3__1__Impl"
-    // InternalDepModel.g:3548:1: rule__TransitionFeatureDec__Group_3__1__Impl : ( () ) ;
+    // InternalDepModel.g:3366:1: rule__TransitionFeatureDec__Group_3__1__Impl : ( () ) ;
     public final void rule__TransitionFeatureDec__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3552:1: ( ( () ) )
-            // InternalDepModel.g:3553:1: ( () )
+            // InternalDepModel.g:3370:1: ( ( () ) )
+            // InternalDepModel.g:3371:1: ( () )
             {
-            // InternalDepModel.g:3553:1: ( () )
-            // InternalDepModel.g:3554:2: ()
+            // InternalDepModel.g:3371:1: ( () )
+            // InternalDepModel.g:3372:2: ()
             {
              before(grammarAccess.getTransitionFeatureDecAccess().getOccurrenceAction_3_1()); 
-            // InternalDepModel.g:3555:2: ()
-            // InternalDepModel.g:3555:3: 
+            // InternalDepModel.g:3373:2: ()
+            // InternalDepModel.g:3373:3: 
             {
             }
 
@@ -10740,14 +10214,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionFeatureDec__Group_3__2"
-    // InternalDepModel.g:3563:1: rule__TransitionFeatureDec__Group_3__2 : rule__TransitionFeatureDec__Group_3__2__Impl ;
+    // InternalDepModel.g:3381:1: rule__TransitionFeatureDec__Group_3__2 : rule__TransitionFeatureDec__Group_3__2__Impl ;
     public final void rule__TransitionFeatureDec__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3567:1: ( rule__TransitionFeatureDec__Group_3__2__Impl )
-            // InternalDepModel.g:3568:2: rule__TransitionFeatureDec__Group_3__2__Impl
+            // InternalDepModel.g:3385:1: ( rule__TransitionFeatureDec__Group_3__2__Impl )
+            // InternalDepModel.g:3386:2: rule__TransitionFeatureDec__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TransitionFeatureDec__Group_3__2__Impl();
@@ -10773,17 +10247,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionFeatureDec__Group_3__2__Impl"
-    // InternalDepModel.g:3574:1: rule__TransitionFeatureDec__Group_3__2__Impl : ( ruleDOUBLE ) ;
+    // InternalDepModel.g:3392:1: rule__TransitionFeatureDec__Group_3__2__Impl : ( ruleDOUBLE ) ;
     public final void rule__TransitionFeatureDec__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3578:1: ( ( ruleDOUBLE ) )
-            // InternalDepModel.g:3579:1: ( ruleDOUBLE )
+            // InternalDepModel.g:3396:1: ( ( ruleDOUBLE ) )
+            // InternalDepModel.g:3397:1: ( ruleDOUBLE )
             {
-            // InternalDepModel.g:3579:1: ( ruleDOUBLE )
-            // InternalDepModel.g:3580:2: ruleDOUBLE
+            // InternalDepModel.g:3397:1: ( ruleDOUBLE )
+            // InternalDepModel.g:3398:2: ruleDOUBLE
             {
              before(grammarAccess.getTransitionFeatureDecAccess().getDOUBLEParserRuleCall_3_2()); 
             pushFollow(FOLLOW_2);
@@ -10814,14 +10288,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__Group__0"
-    // InternalDepModel.g:3590:1: rule__TransitionState__Group__0 : rule__TransitionState__Group__0__Impl rule__TransitionState__Group__1 ;
+    // InternalDepModel.g:3408:1: rule__TransitionState__Group__0 : rule__TransitionState__Group__0__Impl rule__TransitionState__Group__1 ;
     public final void rule__TransitionState__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3594:1: ( rule__TransitionState__Group__0__Impl rule__TransitionState__Group__1 )
-            // InternalDepModel.g:3595:2: rule__TransitionState__Group__0__Impl rule__TransitionState__Group__1
+            // InternalDepModel.g:3412:1: ( rule__TransitionState__Group__0__Impl rule__TransitionState__Group__1 )
+            // InternalDepModel.g:3413:2: rule__TransitionState__Group__0__Impl rule__TransitionState__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__TransitionState__Group__0__Impl();
@@ -10852,20 +10326,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__Group__0__Impl"
-    // InternalDepModel.g:3602:1: rule__TransitionState__Group__0__Impl : ( 'states' ) ;
+    // InternalDepModel.g:3420:1: rule__TransitionState__Group__0__Impl : ( 'states' ) ;
     public final void rule__TransitionState__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3606:1: ( ( 'states' ) )
-            // InternalDepModel.g:3607:1: ( 'states' )
+            // InternalDepModel.g:3424:1: ( ( 'states' ) )
+            // InternalDepModel.g:3425:1: ( 'states' )
             {
-            // InternalDepModel.g:3607:1: ( 'states' )
-            // InternalDepModel.g:3608:2: 'states'
+            // InternalDepModel.g:3425:1: ( 'states' )
+            // InternalDepModel.g:3426:2: 'states'
             {
              before(grammarAccess.getTransitionStateAccess().getStatesKeyword_0()); 
-            match(input,34,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getTransitionStateAccess().getStatesKeyword_0()); 
 
             }
@@ -10889,16 +10363,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__Group__1"
-    // InternalDepModel.g:3617:1: rule__TransitionState__Group__1 : rule__TransitionState__Group__1__Impl rule__TransitionState__Group__2 ;
+    // InternalDepModel.g:3435:1: rule__TransitionState__Group__1 : rule__TransitionState__Group__1__Impl rule__TransitionState__Group__2 ;
     public final void rule__TransitionState__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3621:1: ( rule__TransitionState__Group__1__Impl rule__TransitionState__Group__2 )
-            // InternalDepModel.g:3622:2: rule__TransitionState__Group__1__Impl rule__TransitionState__Group__2
+            // InternalDepModel.g:3439:1: ( rule__TransitionState__Group__1__Impl rule__TransitionState__Group__2 )
+            // InternalDepModel.g:3440:2: rule__TransitionState__Group__1__Impl rule__TransitionState__Group__2
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_30);
             rule__TransitionState__Group__1__Impl();
 
             state._fsp--;
@@ -10927,21 +10401,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__Group__1__Impl"
-    // InternalDepModel.g:3629:1: rule__TransitionState__Group__1__Impl : ( ( rule__TransitionState__SourceStateAssignment_1 ) ) ;
+    // InternalDepModel.g:3447:1: rule__TransitionState__Group__1__Impl : ( ( rule__TransitionState__SourceStateAssignment_1 ) ) ;
     public final void rule__TransitionState__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3633:1: ( ( ( rule__TransitionState__SourceStateAssignment_1 ) ) )
-            // InternalDepModel.g:3634:1: ( ( rule__TransitionState__SourceStateAssignment_1 ) )
+            // InternalDepModel.g:3451:1: ( ( ( rule__TransitionState__SourceStateAssignment_1 ) ) )
+            // InternalDepModel.g:3452:1: ( ( rule__TransitionState__SourceStateAssignment_1 ) )
             {
-            // InternalDepModel.g:3634:1: ( ( rule__TransitionState__SourceStateAssignment_1 ) )
-            // InternalDepModel.g:3635:2: ( rule__TransitionState__SourceStateAssignment_1 )
+            // InternalDepModel.g:3452:1: ( ( rule__TransitionState__SourceStateAssignment_1 ) )
+            // InternalDepModel.g:3453:2: ( rule__TransitionState__SourceStateAssignment_1 )
             {
              before(grammarAccess.getTransitionStateAccess().getSourceStateAssignment_1()); 
-            // InternalDepModel.g:3636:2: ( rule__TransitionState__SourceStateAssignment_1 )
-            // InternalDepModel.g:3636:3: rule__TransitionState__SourceStateAssignment_1
+            // InternalDepModel.g:3454:2: ( rule__TransitionState__SourceStateAssignment_1 )
+            // InternalDepModel.g:3454:3: rule__TransitionState__SourceStateAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TransitionState__SourceStateAssignment_1();
@@ -10974,14 +10448,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__Group__2"
-    // InternalDepModel.g:3644:1: rule__TransitionState__Group__2 : rule__TransitionState__Group__2__Impl rule__TransitionState__Group__3 ;
+    // InternalDepModel.g:3462:1: rule__TransitionState__Group__2 : rule__TransitionState__Group__2__Impl rule__TransitionState__Group__3 ;
     public final void rule__TransitionState__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3648:1: ( rule__TransitionState__Group__2__Impl rule__TransitionState__Group__3 )
-            // InternalDepModel.g:3649:2: rule__TransitionState__Group__2__Impl rule__TransitionState__Group__3
+            // InternalDepModel.g:3466:1: ( rule__TransitionState__Group__2__Impl rule__TransitionState__Group__3 )
+            // InternalDepModel.g:3467:2: rule__TransitionState__Group__2__Impl rule__TransitionState__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__TransitionState__Group__2__Impl();
@@ -11012,20 +10486,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__Group__2__Impl"
-    // InternalDepModel.g:3656:1: rule__TransitionState__Group__2__Impl : ( '->' ) ;
+    // InternalDepModel.g:3474:1: rule__TransitionState__Group__2__Impl : ( '->' ) ;
     public final void rule__TransitionState__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3660:1: ( ( '->' ) )
-            // InternalDepModel.g:3661:1: ( '->' )
+            // InternalDepModel.g:3478:1: ( ( '->' ) )
+            // InternalDepModel.g:3479:1: ( '->' )
             {
-            // InternalDepModel.g:3661:1: ( '->' )
-            // InternalDepModel.g:3662:2: '->'
+            // InternalDepModel.g:3479:1: ( '->' )
+            // InternalDepModel.g:3480:2: '->'
             {
              before(grammarAccess.getTransitionStateAccess().getHyphenMinusGreaterThanSignKeyword_2()); 
-            match(input,35,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getTransitionStateAccess().getHyphenMinusGreaterThanSignKeyword_2()); 
 
             }
@@ -11049,14 +10523,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__Group__3"
-    // InternalDepModel.g:3671:1: rule__TransitionState__Group__3 : rule__TransitionState__Group__3__Impl ;
+    // InternalDepModel.g:3489:1: rule__TransitionState__Group__3 : rule__TransitionState__Group__3__Impl ;
     public final void rule__TransitionState__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3675:1: ( rule__TransitionState__Group__3__Impl )
-            // InternalDepModel.g:3676:2: rule__TransitionState__Group__3__Impl
+            // InternalDepModel.g:3493:1: ( rule__TransitionState__Group__3__Impl )
+            // InternalDepModel.g:3494:2: rule__TransitionState__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TransitionState__Group__3__Impl();
@@ -11082,21 +10556,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__Group__3__Impl"
-    // InternalDepModel.g:3682:1: rule__TransitionState__Group__3__Impl : ( ( rule__TransitionState__TargetStateAssignment_3 ) ) ;
+    // InternalDepModel.g:3500:1: rule__TransitionState__Group__3__Impl : ( ( rule__TransitionState__TargetStateAssignment_3 ) ) ;
     public final void rule__TransitionState__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3686:1: ( ( ( rule__TransitionState__TargetStateAssignment_3 ) ) )
-            // InternalDepModel.g:3687:1: ( ( rule__TransitionState__TargetStateAssignment_3 ) )
+            // InternalDepModel.g:3504:1: ( ( ( rule__TransitionState__TargetStateAssignment_3 ) ) )
+            // InternalDepModel.g:3505:1: ( ( rule__TransitionState__TargetStateAssignment_3 ) )
             {
-            // InternalDepModel.g:3687:1: ( ( rule__TransitionState__TargetStateAssignment_3 ) )
-            // InternalDepModel.g:3688:2: ( rule__TransitionState__TargetStateAssignment_3 )
+            // InternalDepModel.g:3505:1: ( ( rule__TransitionState__TargetStateAssignment_3 ) )
+            // InternalDepModel.g:3506:2: ( rule__TransitionState__TargetStateAssignment_3 )
             {
              before(grammarAccess.getTransitionStateAccess().getTargetStateAssignment_3()); 
-            // InternalDepModel.g:3689:2: ( rule__TransitionState__TargetStateAssignment_3 )
-            // InternalDepModel.g:3689:3: rule__TransitionState__TargetStateAssignment_3
+            // InternalDepModel.g:3507:2: ( rule__TransitionState__TargetStateAssignment_3 )
+            // InternalDepModel.g:3507:3: rule__TransitionState__TargetStateAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__TransitionState__TargetStateAssignment_3();
@@ -11129,14 +10603,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Trigger__Group__0"
-    // InternalDepModel.g:3698:1: rule__Trigger__Group__0 : rule__Trigger__Group__0__Impl rule__Trigger__Group__1 ;
+    // InternalDepModel.g:3516:1: rule__Trigger__Group__0 : rule__Trigger__Group__0__Impl rule__Trigger__Group__1 ;
     public final void rule__Trigger__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3702:1: ( rule__Trigger__Group__0__Impl rule__Trigger__Group__1 )
-            // InternalDepModel.g:3703:2: rule__Trigger__Group__0__Impl rule__Trigger__Group__1
+            // InternalDepModel.g:3520:1: ( rule__Trigger__Group__0__Impl rule__Trigger__Group__1 )
+            // InternalDepModel.g:3521:2: rule__Trigger__Group__0__Impl rule__Trigger__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Trigger__Group__0__Impl();
@@ -11167,20 +10641,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Trigger__Group__0__Impl"
-    // InternalDepModel.g:3710:1: rule__Trigger__Group__0__Impl : ( 'trigger' ) ;
+    // InternalDepModel.g:3528:1: rule__Trigger__Group__0__Impl : ( 'trigger' ) ;
     public final void rule__Trigger__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3714:1: ( ( 'trigger' ) )
-            // InternalDepModel.g:3715:1: ( 'trigger' )
+            // InternalDepModel.g:3532:1: ( ( 'trigger' ) )
+            // InternalDepModel.g:3533:1: ( 'trigger' )
             {
-            // InternalDepModel.g:3715:1: ( 'trigger' )
-            // InternalDepModel.g:3716:2: 'trigger'
+            // InternalDepModel.g:3533:1: ( 'trigger' )
+            // InternalDepModel.g:3534:2: 'trigger'
             {
              before(grammarAccess.getTriggerAccess().getTriggerKeyword_0()); 
-            match(input,36,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getTriggerAccess().getTriggerKeyword_0()); 
 
             }
@@ -11204,16 +10678,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Trigger__Group__1"
-    // InternalDepModel.g:3725:1: rule__Trigger__Group__1 : rule__Trigger__Group__1__Impl rule__Trigger__Group__2 ;
+    // InternalDepModel.g:3543:1: rule__Trigger__Group__1 : rule__Trigger__Group__1__Impl rule__Trigger__Group__2 ;
     public final void rule__Trigger__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3729:1: ( rule__Trigger__Group__1__Impl rule__Trigger__Group__2 )
-            // InternalDepModel.g:3730:2: rule__Trigger__Group__1__Impl rule__Trigger__Group__2
+            // InternalDepModel.g:3547:1: ( rule__Trigger__Group__1__Impl rule__Trigger__Group__2 )
+            // InternalDepModel.g:3548:2: rule__Trigger__Group__1__Impl rule__Trigger__Group__2
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_4);
             rule__Trigger__Group__1__Impl();
 
             state._fsp--;
@@ -11242,31 +10716,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Trigger__Group__1__Impl"
-    // InternalDepModel.g:3737:1: rule__Trigger__Group__1__Impl : ( ( rule__Trigger__NameAssignment_1 ) ) ;
+    // InternalDepModel.g:3555:1: rule__Trigger__Group__1__Impl : ( ( rule__Trigger__PortInstanceAssignment_1 ) ) ;
     public final void rule__Trigger__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3741:1: ( ( ( rule__Trigger__NameAssignment_1 ) ) )
-            // InternalDepModel.g:3742:1: ( ( rule__Trigger__NameAssignment_1 ) )
+            // InternalDepModel.g:3559:1: ( ( ( rule__Trigger__PortInstanceAssignment_1 ) ) )
+            // InternalDepModel.g:3560:1: ( ( rule__Trigger__PortInstanceAssignment_1 ) )
             {
-            // InternalDepModel.g:3742:1: ( ( rule__Trigger__NameAssignment_1 ) )
-            // InternalDepModel.g:3743:2: ( rule__Trigger__NameAssignment_1 )
+            // InternalDepModel.g:3560:1: ( ( rule__Trigger__PortInstanceAssignment_1 ) )
+            // InternalDepModel.g:3561:2: ( rule__Trigger__PortInstanceAssignment_1 )
             {
-             before(grammarAccess.getTriggerAccess().getNameAssignment_1()); 
-            // InternalDepModel.g:3744:2: ( rule__Trigger__NameAssignment_1 )
-            // InternalDepModel.g:3744:3: rule__Trigger__NameAssignment_1
+             before(grammarAccess.getTriggerAccess().getPortInstanceAssignment_1()); 
+            // InternalDepModel.g:3562:2: ( rule__Trigger__PortInstanceAssignment_1 )
+            // InternalDepModel.g:3562:3: rule__Trigger__PortInstanceAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Trigger__NameAssignment_1();
+            rule__Trigger__PortInstanceAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTriggerAccess().getNameAssignment_1()); 
+             after(grammarAccess.getTriggerAccess().getPortInstanceAssignment_1()); 
 
             }
 
@@ -11289,14 +10763,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Trigger__Group__2"
-    // InternalDepModel.g:3752:1: rule__Trigger__Group__2 : rule__Trigger__Group__2__Impl rule__Trigger__Group__3 ;
+    // InternalDepModel.g:3570:1: rule__Trigger__Group__2 : rule__Trigger__Group__2__Impl rule__Trigger__Group__3 ;
     public final void rule__Trigger__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3756:1: ( rule__Trigger__Group__2__Impl rule__Trigger__Group__3 )
-            // InternalDepModel.g:3757:2: rule__Trigger__Group__2__Impl rule__Trigger__Group__3
+            // InternalDepModel.g:3574:1: ( rule__Trigger__Group__2__Impl rule__Trigger__Group__3 )
+            // InternalDepModel.g:3575:2: rule__Trigger__Group__2__Impl rule__Trigger__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Trigger__Group__2__Impl();
@@ -11327,21 +10801,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Trigger__Group__2__Impl"
-    // InternalDepModel.g:3764:1: rule__Trigger__Group__2__Impl : ( ':' ) ;
+    // InternalDepModel.g:3582:1: rule__Trigger__Group__2__Impl : ( '.' ) ;
     public final void rule__Trigger__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3768:1: ( ( ':' ) )
-            // InternalDepModel.g:3769:1: ( ':' )
+            // InternalDepModel.g:3586:1: ( ( '.' ) )
+            // InternalDepModel.g:3587:1: ( '.' )
             {
-            // InternalDepModel.g:3769:1: ( ':' )
-            // InternalDepModel.g:3770:2: ':'
+            // InternalDepModel.g:3587:1: ( '.' )
+            // InternalDepModel.g:3588:2: '.'
             {
-             before(grammarAccess.getTriggerAccess().getColonKeyword_2()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getTriggerAccess().getColonKeyword_2()); 
+             before(grammarAccess.getTriggerAccess().getFullStopKeyword_2()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getTriggerAccess().getFullStopKeyword_2()); 
 
             }
 
@@ -11364,22 +10838,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Trigger__Group__3"
-    // InternalDepModel.g:3779:1: rule__Trigger__Group__3 : rule__Trigger__Group__3__Impl rule__Trigger__Group__4 ;
+    // InternalDepModel.g:3597:1: rule__Trigger__Group__3 : rule__Trigger__Group__3__Impl ;
     public final void rule__Trigger__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3783:1: ( rule__Trigger__Group__3__Impl rule__Trigger__Group__4 )
-            // InternalDepModel.g:3784:2: rule__Trigger__Group__3__Impl rule__Trigger__Group__4
+            // InternalDepModel.g:3601:1: ( rule__Trigger__Group__3__Impl )
+            // InternalDepModel.g:3602:2: rule__Trigger__Group__3__Impl
             {
-            pushFollow(FOLLOW_4);
-            rule__Trigger__Group__3__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Trigger__Group__4();
+            rule__Trigger__Group__3__Impl();
 
             state._fsp--;
 
@@ -11402,31 +10871,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Trigger__Group__3__Impl"
-    // InternalDepModel.g:3791:1: rule__Trigger__Group__3__Impl : ( ( rule__Trigger__PortInstanceAssignment_3 ) ) ;
+    // InternalDepModel.g:3608:1: rule__Trigger__Group__3__Impl : ( ( rule__Trigger__ErrorModeAssignment_3 ) ) ;
     public final void rule__Trigger__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3795:1: ( ( ( rule__Trigger__PortInstanceAssignment_3 ) ) )
-            // InternalDepModel.g:3796:1: ( ( rule__Trigger__PortInstanceAssignment_3 ) )
+            // InternalDepModel.g:3612:1: ( ( ( rule__Trigger__ErrorModeAssignment_3 ) ) )
+            // InternalDepModel.g:3613:1: ( ( rule__Trigger__ErrorModeAssignment_3 ) )
             {
-            // InternalDepModel.g:3796:1: ( ( rule__Trigger__PortInstanceAssignment_3 ) )
-            // InternalDepModel.g:3797:2: ( rule__Trigger__PortInstanceAssignment_3 )
+            // InternalDepModel.g:3613:1: ( ( rule__Trigger__ErrorModeAssignment_3 ) )
+            // InternalDepModel.g:3614:2: ( rule__Trigger__ErrorModeAssignment_3 )
             {
-             before(grammarAccess.getTriggerAccess().getPortInstanceAssignment_3()); 
-            // InternalDepModel.g:3798:2: ( rule__Trigger__PortInstanceAssignment_3 )
-            // InternalDepModel.g:3798:3: rule__Trigger__PortInstanceAssignment_3
+             before(grammarAccess.getTriggerAccess().getErrorModeAssignment_3()); 
+            // InternalDepModel.g:3615:2: ( rule__Trigger__ErrorModeAssignment_3 )
+            // InternalDepModel.g:3615:3: rule__Trigger__ErrorModeAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Trigger__PortInstanceAssignment_3();
+            rule__Trigger__ErrorModeAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTriggerAccess().getPortInstanceAssignment_3()); 
+             after(grammarAccess.getTriggerAccess().getErrorModeAssignment_3()); 
 
             }
 
@@ -11448,170 +10917,15 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Trigger__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Trigger__Group__4"
-    // InternalDepModel.g:3806:1: rule__Trigger__Group__4 : rule__Trigger__Group__4__Impl rule__Trigger__Group__5 ;
-    public final void rule__Trigger__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3810:1: ( rule__Trigger__Group__4__Impl rule__Trigger__Group__5 )
-            // InternalDepModel.g:3811:2: rule__Trigger__Group__4__Impl rule__Trigger__Group__5
-            {
-            pushFollow(FOLLOW_6);
-            rule__Trigger__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Trigger__Group__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Trigger__Group__4"
-
-
-    // $ANTLR start "rule__Trigger__Group__4__Impl"
-    // InternalDepModel.g:3818:1: rule__Trigger__Group__4__Impl : ( '.' ) ;
-    public final void rule__Trigger__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3822:1: ( ( '.' ) )
-            // InternalDepModel.g:3823:1: ( '.' )
-            {
-            // InternalDepModel.g:3823:1: ( '.' )
-            // InternalDepModel.g:3824:2: '.'
-            {
-             before(grammarAccess.getTriggerAccess().getFullStopKeyword_4()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getTriggerAccess().getFullStopKeyword_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Trigger__Group__4__Impl"
-
-
-    // $ANTLR start "rule__Trigger__Group__5"
-    // InternalDepModel.g:3833:1: rule__Trigger__Group__5 : rule__Trigger__Group__5__Impl ;
-    public final void rule__Trigger__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3837:1: ( rule__Trigger__Group__5__Impl )
-            // InternalDepModel.g:3838:2: rule__Trigger__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Trigger__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Trigger__Group__5"
-
-
-    // $ANTLR start "rule__Trigger__Group__5__Impl"
-    // InternalDepModel.g:3844:1: rule__Trigger__Group__5__Impl : ( ( rule__Trigger__ErrorModeAssignment_5 ) ) ;
-    public final void rule__Trigger__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3848:1: ( ( ( rule__Trigger__ErrorModeAssignment_5 ) ) )
-            // InternalDepModel.g:3849:1: ( ( rule__Trigger__ErrorModeAssignment_5 ) )
-            {
-            // InternalDepModel.g:3849:1: ( ( rule__Trigger__ErrorModeAssignment_5 ) )
-            // InternalDepModel.g:3850:2: ( rule__Trigger__ErrorModeAssignment_5 )
-            {
-             before(grammarAccess.getTriggerAccess().getErrorModeAssignment_5()); 
-            // InternalDepModel.g:3851:2: ( rule__Trigger__ErrorModeAssignment_5 )
-            // InternalDepModel.g:3851:3: rule__Trigger__ErrorModeAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Trigger__ErrorModeAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTriggerAccess().getErrorModeAssignment_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Trigger__Group__5__Impl"
-
-
     // $ANTLR start "rule__Action__Group__0"
-    // InternalDepModel.g:3860:1: rule__Action__Group__0 : rule__Action__Group__0__Impl rule__Action__Group__1 ;
+    // InternalDepModel.g:3624:1: rule__Action__Group__0 : rule__Action__Group__0__Impl rule__Action__Group__1 ;
     public final void rule__Action__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3864:1: ( rule__Action__Group__0__Impl rule__Action__Group__1 )
-            // InternalDepModel.g:3865:2: rule__Action__Group__0__Impl rule__Action__Group__1
+            // InternalDepModel.g:3628:1: ( rule__Action__Group__0__Impl rule__Action__Group__1 )
+            // InternalDepModel.g:3629:2: rule__Action__Group__0__Impl rule__Action__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Action__Group__0__Impl();
@@ -11642,20 +10956,20 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__0__Impl"
-    // InternalDepModel.g:3872:1: rule__Action__Group__0__Impl : ( 'action' ) ;
+    // InternalDepModel.g:3636:1: rule__Action__Group__0__Impl : ( 'action' ) ;
     public final void rule__Action__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3876:1: ( ( 'action' ) )
-            // InternalDepModel.g:3877:1: ( 'action' )
+            // InternalDepModel.g:3640:1: ( ( 'action' ) )
+            // InternalDepModel.g:3641:1: ( 'action' )
             {
-            // InternalDepModel.g:3877:1: ( 'action' )
-            // InternalDepModel.g:3878:2: 'action'
+            // InternalDepModel.g:3641:1: ( 'action' )
+            // InternalDepModel.g:3642:2: 'action'
             {
              before(grammarAccess.getActionAccess().getActionKeyword_0()); 
-            match(input,37,FOLLOW_2); 
+            match(input,34,FOLLOW_2); 
              after(grammarAccess.getActionAccess().getActionKeyword_0()); 
 
             }
@@ -11679,16 +10993,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__1"
-    // InternalDepModel.g:3887:1: rule__Action__Group__1 : rule__Action__Group__1__Impl rule__Action__Group__2 ;
+    // InternalDepModel.g:3651:1: rule__Action__Group__1 : rule__Action__Group__1__Impl rule__Action__Group__2 ;
     public final void rule__Action__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3891:1: ( rule__Action__Group__1__Impl rule__Action__Group__2 )
-            // InternalDepModel.g:3892:2: rule__Action__Group__1__Impl rule__Action__Group__2
+            // InternalDepModel.g:3655:1: ( rule__Action__Group__1__Impl rule__Action__Group__2 )
+            // InternalDepModel.g:3656:2: rule__Action__Group__1__Impl rule__Action__Group__2
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_4);
             rule__Action__Group__1__Impl();
 
             state._fsp--;
@@ -11717,31 +11031,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__1__Impl"
-    // InternalDepModel.g:3899:1: rule__Action__Group__1__Impl : ( ( rule__Action__NameAssignment_1 ) ) ;
+    // InternalDepModel.g:3663:1: rule__Action__Group__1__Impl : ( ( rule__Action__PortInstanceAssignment_1 ) ) ;
     public final void rule__Action__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3903:1: ( ( ( rule__Action__NameAssignment_1 ) ) )
-            // InternalDepModel.g:3904:1: ( ( rule__Action__NameAssignment_1 ) )
+            // InternalDepModel.g:3667:1: ( ( ( rule__Action__PortInstanceAssignment_1 ) ) )
+            // InternalDepModel.g:3668:1: ( ( rule__Action__PortInstanceAssignment_1 ) )
             {
-            // InternalDepModel.g:3904:1: ( ( rule__Action__NameAssignment_1 ) )
-            // InternalDepModel.g:3905:2: ( rule__Action__NameAssignment_1 )
+            // InternalDepModel.g:3668:1: ( ( rule__Action__PortInstanceAssignment_1 ) )
+            // InternalDepModel.g:3669:2: ( rule__Action__PortInstanceAssignment_1 )
             {
-             before(grammarAccess.getActionAccess().getNameAssignment_1()); 
-            // InternalDepModel.g:3906:2: ( rule__Action__NameAssignment_1 )
-            // InternalDepModel.g:3906:3: rule__Action__NameAssignment_1
+             before(grammarAccess.getActionAccess().getPortInstanceAssignment_1()); 
+            // InternalDepModel.g:3670:2: ( rule__Action__PortInstanceAssignment_1 )
+            // InternalDepModel.g:3670:3: rule__Action__PortInstanceAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Action__NameAssignment_1();
+            rule__Action__PortInstanceAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getActionAccess().getNameAssignment_1()); 
+             after(grammarAccess.getActionAccess().getPortInstanceAssignment_1()); 
 
             }
 
@@ -11764,14 +11078,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__2"
-    // InternalDepModel.g:3914:1: rule__Action__Group__2 : rule__Action__Group__2__Impl rule__Action__Group__3 ;
+    // InternalDepModel.g:3678:1: rule__Action__Group__2 : rule__Action__Group__2__Impl rule__Action__Group__3 ;
     public final void rule__Action__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3918:1: ( rule__Action__Group__2__Impl rule__Action__Group__3 )
-            // InternalDepModel.g:3919:2: rule__Action__Group__2__Impl rule__Action__Group__3
+            // InternalDepModel.g:3682:1: ( rule__Action__Group__2__Impl rule__Action__Group__3 )
+            // InternalDepModel.g:3683:2: rule__Action__Group__2__Impl rule__Action__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Action__Group__2__Impl();
@@ -11802,21 +11116,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__2__Impl"
-    // InternalDepModel.g:3926:1: rule__Action__Group__2__Impl : ( ':' ) ;
+    // InternalDepModel.g:3690:1: rule__Action__Group__2__Impl : ( '.' ) ;
     public final void rule__Action__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3930:1: ( ( ':' ) )
-            // InternalDepModel.g:3931:1: ( ':' )
+            // InternalDepModel.g:3694:1: ( ( '.' ) )
+            // InternalDepModel.g:3695:1: ( '.' )
             {
-            // InternalDepModel.g:3931:1: ( ':' )
-            // InternalDepModel.g:3932:2: ':'
+            // InternalDepModel.g:3695:1: ( '.' )
+            // InternalDepModel.g:3696:2: '.'
             {
-             before(grammarAccess.getActionAccess().getColonKeyword_2()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getActionAccess().getColonKeyword_2()); 
+             before(grammarAccess.getActionAccess().getFullStopKeyword_2()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getActionAccess().getFullStopKeyword_2()); 
 
             }
 
@@ -11839,22 +11153,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__3"
-    // InternalDepModel.g:3941:1: rule__Action__Group__3 : rule__Action__Group__3__Impl rule__Action__Group__4 ;
+    // InternalDepModel.g:3705:1: rule__Action__Group__3 : rule__Action__Group__3__Impl ;
     public final void rule__Action__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3945:1: ( rule__Action__Group__3__Impl rule__Action__Group__4 )
-            // InternalDepModel.g:3946:2: rule__Action__Group__3__Impl rule__Action__Group__4
+            // InternalDepModel.g:3709:1: ( rule__Action__Group__3__Impl )
+            // InternalDepModel.g:3710:2: rule__Action__Group__3__Impl
             {
-            pushFollow(FOLLOW_4);
-            rule__Action__Group__3__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Action__Group__4();
+            rule__Action__Group__3__Impl();
 
             state._fsp--;
 
@@ -11877,31 +11186,31 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Action__Group__3__Impl"
-    // InternalDepModel.g:3953:1: rule__Action__Group__3__Impl : ( ( rule__Action__PortInstanceAssignment_3 ) ) ;
+    // InternalDepModel.g:3716:1: rule__Action__Group__3__Impl : ( ( rule__Action__ErrorModeAssignment_3 ) ) ;
     public final void rule__Action__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:3957:1: ( ( ( rule__Action__PortInstanceAssignment_3 ) ) )
-            // InternalDepModel.g:3958:1: ( ( rule__Action__PortInstanceAssignment_3 ) )
+            // InternalDepModel.g:3720:1: ( ( ( rule__Action__ErrorModeAssignment_3 ) ) )
+            // InternalDepModel.g:3721:1: ( ( rule__Action__ErrorModeAssignment_3 ) )
             {
-            // InternalDepModel.g:3958:1: ( ( rule__Action__PortInstanceAssignment_3 ) )
-            // InternalDepModel.g:3959:2: ( rule__Action__PortInstanceAssignment_3 )
+            // InternalDepModel.g:3721:1: ( ( rule__Action__ErrorModeAssignment_3 ) )
+            // InternalDepModel.g:3722:2: ( rule__Action__ErrorModeAssignment_3 )
             {
-             before(grammarAccess.getActionAccess().getPortInstanceAssignment_3()); 
-            // InternalDepModel.g:3960:2: ( rule__Action__PortInstanceAssignment_3 )
-            // InternalDepModel.g:3960:3: rule__Action__PortInstanceAssignment_3
+             before(grammarAccess.getActionAccess().getErrorModeAssignment_3()); 
+            // InternalDepModel.g:3723:2: ( rule__Action__ErrorModeAssignment_3 )
+            // InternalDepModel.g:3723:3: rule__Action__ErrorModeAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Action__PortInstanceAssignment_3();
+            rule__Action__ErrorModeAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getActionAccess().getPortInstanceAssignment_3()); 
+             after(grammarAccess.getActionAccess().getErrorModeAssignment_3()); 
 
             }
 
@@ -11923,170 +11232,15 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Action__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Action__Group__4"
-    // InternalDepModel.g:3968:1: rule__Action__Group__4 : rule__Action__Group__4__Impl rule__Action__Group__5 ;
-    public final void rule__Action__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3972:1: ( rule__Action__Group__4__Impl rule__Action__Group__5 )
-            // InternalDepModel.g:3973:2: rule__Action__Group__4__Impl rule__Action__Group__5
-            {
-            pushFollow(FOLLOW_6);
-            rule__Action__Group__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Action__Group__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Action__Group__4"
-
-
-    // $ANTLR start "rule__Action__Group__4__Impl"
-    // InternalDepModel.g:3980:1: rule__Action__Group__4__Impl : ( '.' ) ;
-    public final void rule__Action__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3984:1: ( ( '.' ) )
-            // InternalDepModel.g:3985:1: ( '.' )
-            {
-            // InternalDepModel.g:3985:1: ( '.' )
-            // InternalDepModel.g:3986:2: '.'
-            {
-             before(grammarAccess.getActionAccess().getFullStopKeyword_4()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getActionAccess().getFullStopKeyword_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Action__Group__4__Impl"
-
-
-    // $ANTLR start "rule__Action__Group__5"
-    // InternalDepModel.g:3995:1: rule__Action__Group__5 : rule__Action__Group__5__Impl ;
-    public final void rule__Action__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:3999:1: ( rule__Action__Group__5__Impl )
-            // InternalDepModel.g:4000:2: rule__Action__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Action__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Action__Group__5"
-
-
-    // $ANTLR start "rule__Action__Group__5__Impl"
-    // InternalDepModel.g:4006:1: rule__Action__Group__5__Impl : ( ( rule__Action__ErrorModeAssignment_5 ) ) ;
-    public final void rule__Action__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:4010:1: ( ( ( rule__Action__ErrorModeAssignment_5 ) ) )
-            // InternalDepModel.g:4011:1: ( ( rule__Action__ErrorModeAssignment_5 ) )
-            {
-            // InternalDepModel.g:4011:1: ( ( rule__Action__ErrorModeAssignment_5 ) )
-            // InternalDepModel.g:4012:2: ( rule__Action__ErrorModeAssignment_5 )
-            {
-             before(grammarAccess.getActionAccess().getErrorModeAssignment_5()); 
-            // InternalDepModel.g:4013:2: ( rule__Action__ErrorModeAssignment_5 )
-            // InternalDepModel.g:4013:3: rule__Action__ErrorModeAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Action__ErrorModeAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getActionAccess().getErrorModeAssignment_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Action__Group__5__Impl"
-
-
     // $ANTLR start "rule__DOUBLE__Group__0"
-    // InternalDepModel.g:4022:1: rule__DOUBLE__Group__0 : rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1 ;
+    // InternalDepModel.g:3732:1: rule__DOUBLE__Group__0 : rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1 ;
     public final void rule__DOUBLE__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4026:1: ( rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1 )
-            // InternalDepModel.g:4027:2: rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1
+            // InternalDepModel.g:3736:1: ( rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1 )
+            // InternalDepModel.g:3737:2: rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__DOUBLE__Group__0__Impl();
@@ -12117,17 +11271,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DOUBLE__Group__0__Impl"
-    // InternalDepModel.g:4034:1: rule__DOUBLE__Group__0__Impl : ( RULE_INT ) ;
+    // InternalDepModel.g:3744:1: rule__DOUBLE__Group__0__Impl : ( RULE_INT ) ;
     public final void rule__DOUBLE__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4038:1: ( ( RULE_INT ) )
-            // InternalDepModel.g:4039:1: ( RULE_INT )
+            // InternalDepModel.g:3748:1: ( ( RULE_INT ) )
+            // InternalDepModel.g:3749:1: ( RULE_INT )
             {
-            // InternalDepModel.g:4039:1: ( RULE_INT )
-            // InternalDepModel.g:4040:2: RULE_INT
+            // InternalDepModel.g:3749:1: ( RULE_INT )
+            // InternalDepModel.g:3750:2: RULE_INT
             {
              before(grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -12154,16 +11308,16 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DOUBLE__Group__1"
-    // InternalDepModel.g:4049:1: rule__DOUBLE__Group__1 : rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2 ;
+    // InternalDepModel.g:3759:1: rule__DOUBLE__Group__1 : rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2 ;
     public final void rule__DOUBLE__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4053:1: ( rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2 )
-            // InternalDepModel.g:4054:2: rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2
+            // InternalDepModel.g:3763:1: ( rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2 )
+            // InternalDepModel.g:3764:2: rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_29);
             rule__DOUBLE__Group__1__Impl();
 
             state._fsp--;
@@ -12192,17 +11346,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DOUBLE__Group__1__Impl"
-    // InternalDepModel.g:4061:1: rule__DOUBLE__Group__1__Impl : ( '.' ) ;
+    // InternalDepModel.g:3771:1: rule__DOUBLE__Group__1__Impl : ( '.' ) ;
     public final void rule__DOUBLE__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4065:1: ( ( '.' ) )
-            // InternalDepModel.g:4066:1: ( '.' )
+            // InternalDepModel.g:3775:1: ( ( '.' ) )
+            // InternalDepModel.g:3776:1: ( '.' )
             {
-            // InternalDepModel.g:4066:1: ( '.' )
-            // InternalDepModel.g:4067:2: '.'
+            // InternalDepModel.g:3776:1: ( '.' )
+            // InternalDepModel.g:3777:2: '.'
             {
              before(grammarAccess.getDOUBLEAccess().getFullStopKeyword_1()); 
             match(input,11,FOLLOW_2); 
@@ -12229,14 +11383,14 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DOUBLE__Group__2"
-    // InternalDepModel.g:4076:1: rule__DOUBLE__Group__2 : rule__DOUBLE__Group__2__Impl ;
+    // InternalDepModel.g:3786:1: rule__DOUBLE__Group__2 : rule__DOUBLE__Group__2__Impl ;
     public final void rule__DOUBLE__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4080:1: ( rule__DOUBLE__Group__2__Impl )
-            // InternalDepModel.g:4081:2: rule__DOUBLE__Group__2__Impl
+            // InternalDepModel.g:3790:1: ( rule__DOUBLE__Group__2__Impl )
+            // InternalDepModel.g:3791:2: rule__DOUBLE__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DOUBLE__Group__2__Impl();
@@ -12262,17 +11416,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DOUBLE__Group__2__Impl"
-    // InternalDepModel.g:4087:1: rule__DOUBLE__Group__2__Impl : ( RULE_INT ) ;
+    // InternalDepModel.g:3797:1: rule__DOUBLE__Group__2__Impl : ( RULE_INT ) ;
     public final void rule__DOUBLE__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4091:1: ( ( RULE_INT ) )
-            // InternalDepModel.g:4092:1: ( RULE_INT )
+            // InternalDepModel.g:3801:1: ( ( RULE_INT ) )
+            // InternalDepModel.g:3802:1: ( RULE_INT )
             {
-            // InternalDepModel.g:4092:1: ( RULE_INT )
-            // InternalDepModel.g:4093:2: RULE_INT
+            // InternalDepModel.g:3802:1: ( RULE_INT )
+            // InternalDepModel.g:3803:2: RULE_INT
             {
              before(grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_2()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -12299,17 +11453,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__DepModel__ElementsAssignment"
-    // InternalDepModel.g:4103:1: rule__DepModel__ElementsAssignment : ( ruleAbstractElement ) ;
+    // InternalDepModel.g:3813:1: rule__DepModel__ElementsAssignment : ( ruleAbstractElement ) ;
     public final void rule__DepModel__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4107:1: ( ( ruleAbstractElement ) )
-            // InternalDepModel.g:4108:2: ( ruleAbstractElement )
+            // InternalDepModel.g:3817:1: ( ( ruleAbstractElement ) )
+            // InternalDepModel.g:3818:2: ( ruleAbstractElement )
             {
-            // InternalDepModel.g:4108:2: ( ruleAbstractElement )
-            // InternalDepModel.g:4109:3: ruleAbstractElement
+            // InternalDepModel.g:3818:2: ( ruleAbstractElement )
+            // InternalDepModel.g:3819:3: ruleAbstractElement
             {
              before(grammarAccess.getDepModelAccess().getElementsAbstractElementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -12340,17 +11494,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortType__NameAssignment_2"
-    // InternalDepModel.g:4118:1: rule__PortType__NameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalDepModel.g:3828:1: rule__PortType__NameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__PortType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4122:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4123:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3832:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:3833:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4123:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4124:3: ruleQualifiedName
+            // InternalDepModel.g:3833:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3834:3: ruleQualifiedName
             {
              before(grammarAccess.getPortTypeAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -12381,17 +11535,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__PortType__EModesAssignment_4"
-    // InternalDepModel.g:4133:1: rule__PortType__EModesAssignment_4 : ( ruleErrorModes ) ;
+    // InternalDepModel.g:3843:1: rule__PortType__EModesAssignment_4 : ( ruleErrorModes ) ;
     public final void rule__PortType__EModesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4137:1: ( ( ruleErrorModes ) )
-            // InternalDepModel.g:4138:2: ( ruleErrorModes )
+            // InternalDepModel.g:3847:1: ( ( ruleErrorModes ) )
+            // InternalDepModel.g:3848:2: ( ruleErrorModes )
             {
-            // InternalDepModel.g:4138:2: ( ruleErrorModes )
-            // InternalDepModel.g:4139:3: ruleErrorModes
+            // InternalDepModel.g:3848:2: ( ruleErrorModes )
+            // InternalDepModel.g:3849:3: ruleErrorModes
             {
              before(grammarAccess.getPortTypeAccess().getEModesErrorModesParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -12422,17 +11576,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModes__NameAssignment_2"
-    // InternalDepModel.g:4148:1: rule__ErrorModes__NameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalDepModel.g:3858:1: rule__ErrorModes__NameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__ErrorModes__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4152:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4153:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3862:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:3863:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4153:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4154:3: ruleQualifiedName
+            // InternalDepModel.g:3863:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3864:3: ruleQualifiedName
             {
              before(grammarAccess.getErrorModesAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -12462,26 +11616,26 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__ErrorModes__NameAssignment_2"
 
 
-    // $ANTLR start "rule__SystemConnDec__NameAssignment_2"
-    // InternalDepModel.g:4163:1: rule__SystemConnDec__NameAssignment_2 : ( ruleQualifiedName ) ;
-    public final void rule__SystemConnDec__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SystemConnDec__NameAssignment_1"
+    // InternalDepModel.g:3873:1: rule__SystemConnDec__NameAssignment_1 : ( ruleQualifiedName ) ;
+    public final void rule__SystemConnDec__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4167:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4168:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3877:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:3878:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4168:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4169:3: ruleQualifiedName
+            // InternalDepModel.g:3878:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3879:3: ruleQualifiedName
             {
-             before(grammarAccess.getSystemConnDecAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             before(grammarAccess.getSystemConnDecAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getSystemConnDecAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             after(grammarAccess.getSystemConnDecAccess().getNameQualifiedNameParserRuleCall_1_0()); 
 
             }
 
@@ -12500,33 +11654,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__SystemConnDec__NameAssignment_2"
+    // $ANTLR end "rule__SystemConnDec__NameAssignment_1"
 
 
-    // $ANTLR start "rule__SystemConnDec__SourceSystemAssignment_4"
-    // InternalDepModel.g:4178:1: rule__SystemConnDec__SourceSystemAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__SystemConnDec__SourceSystemAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__SystemConnDec__SourceSystemAssignment_3"
+    // InternalDepModel.g:3888:1: rule__SystemConnDec__SourceSystemAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__SystemConnDec__SourceSystemAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4182:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4183:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:3892:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:3893:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4183:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4184:3: ( RULE_ID )
+            // InternalDepModel.g:3893:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:3894:3: ( RULE_ID )
             {
-             before(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecCrossReference_4_0()); 
-            // InternalDepModel.g:4185:3: ( RULE_ID )
-            // InternalDepModel.g:4186:4: RULE_ID
+             before(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecCrossReference_3_0()); 
+            // InternalDepModel.g:3895:3: ( RULE_ID )
+            // InternalDepModel.g:3896:4: RULE_ID
             {
-             before(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecIDTerminalRuleCall_4_0_1()); 
+             after(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecIDTerminalRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecCrossReference_4_0()); 
+             after(grammarAccess.getSystemConnDecAccess().getSourceSystemSystemDecCrossReference_3_0()); 
 
             }
 
@@ -12545,33 +11699,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__SystemConnDec__SourceSystemAssignment_4"
+    // $ANTLR end "rule__SystemConnDec__SourceSystemAssignment_3"
 
 
-    // $ANTLR start "rule__SystemConnDec__SourcePortAssignment_6"
-    // InternalDepModel.g:4197:1: rule__SystemConnDec__SourcePortAssignment_6 : ( ( RULE_ID ) ) ;
-    public final void rule__SystemConnDec__SourcePortAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__SystemConnDec__SourcePortAssignment_5"
+    // InternalDepModel.g:3907:1: rule__SystemConnDec__SourcePortAssignment_5 : ( ( RULE_ID ) ) ;
+    public final void rule__SystemConnDec__SourcePortAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4201:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4202:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:3911:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:3912:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4202:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4203:3: ( RULE_ID )
+            // InternalDepModel.g:3912:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:3913:3: ( RULE_ID )
             {
-             before(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutCrossReference_6_0()); 
-            // InternalDepModel.g:4204:3: ( RULE_ID )
-            // InternalDepModel.g:4205:4: RULE_ID
+             before(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutCrossReference_5_0()); 
+            // InternalDepModel.g:3914:3: ( RULE_ID )
+            // InternalDepModel.g:3915:4: RULE_ID
             {
-             before(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutIDTerminalRuleCall_6_0_1()); 
+             before(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutIDTerminalRuleCall_5_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutIDTerminalRuleCall_6_0_1()); 
+             after(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutIDTerminalRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutCrossReference_6_0()); 
+             after(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutCrossReference_5_0()); 
 
             }
 
@@ -12590,33 +11744,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__SystemConnDec__SourcePortAssignment_6"
+    // $ANTLR end "rule__SystemConnDec__SourcePortAssignment_5"
 
 
-    // $ANTLR start "rule__SystemConnDec__TargetSystemAssignment_8"
-    // InternalDepModel.g:4216:1: rule__SystemConnDec__TargetSystemAssignment_8 : ( ( RULE_ID ) ) ;
-    public final void rule__SystemConnDec__TargetSystemAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__SystemConnDec__TargetSystemAssignment_7"
+    // InternalDepModel.g:3926:1: rule__SystemConnDec__TargetSystemAssignment_7 : ( ( RULE_ID ) ) ;
+    public final void rule__SystemConnDec__TargetSystemAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4220:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4221:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:3930:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:3931:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4221:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4222:3: ( RULE_ID )
+            // InternalDepModel.g:3931:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:3932:3: ( RULE_ID )
             {
-             before(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecCrossReference_8_0()); 
-            // InternalDepModel.g:4223:3: ( RULE_ID )
-            // InternalDepModel.g:4224:4: RULE_ID
+             before(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecCrossReference_7_0()); 
+            // InternalDepModel.g:3933:3: ( RULE_ID )
+            // InternalDepModel.g:3934:4: RULE_ID
             {
-             before(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecIDTerminalRuleCall_8_0_1()); 
+             before(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecIDTerminalRuleCall_7_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecIDTerminalRuleCall_8_0_1()); 
+             after(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecIDTerminalRuleCall_7_0_1()); 
 
             }
 
-             after(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecCrossReference_8_0()); 
+             after(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecCrossReference_7_0()); 
 
             }
 
@@ -12635,33 +11789,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__SystemConnDec__TargetSystemAssignment_8"
+    // $ANTLR end "rule__SystemConnDec__TargetSystemAssignment_7"
 
 
-    // $ANTLR start "rule__SystemConnDec__TargetPortAssignment_10"
-    // InternalDepModel.g:4235:1: rule__SystemConnDec__TargetPortAssignment_10 : ( ( RULE_ID ) ) ;
-    public final void rule__SystemConnDec__TargetPortAssignment_10() throws RecognitionException {
+    // $ANTLR start "rule__SystemConnDec__TargetPortAssignment_9"
+    // InternalDepModel.g:3945:1: rule__SystemConnDec__TargetPortAssignment_9 : ( ( RULE_ID ) ) ;
+    public final void rule__SystemConnDec__TargetPortAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4239:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4240:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:3949:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:3950:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4240:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4241:3: ( RULE_ID )
+            // InternalDepModel.g:3950:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:3951:3: ( RULE_ID )
             {
-             before(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInCrossReference_10_0()); 
-            // InternalDepModel.g:4242:3: ( RULE_ID )
-            // InternalDepModel.g:4243:4: RULE_ID
+             before(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInCrossReference_9_0()); 
+            // InternalDepModel.g:3952:3: ( RULE_ID )
+            // InternalDepModel.g:3953:4: RULE_ID
             {
-             before(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInIDTerminalRuleCall_10_0_1()); 
+             before(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInIDTerminalRuleCall_9_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInIDTerminalRuleCall_10_0_1()); 
+             after(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInIDTerminalRuleCall_9_0_1()); 
 
             }
 
-             after(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInCrossReference_10_0()); 
+             after(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInCrossReference_9_0()); 
 
             }
 
@@ -12680,29 +11834,29 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__SystemConnDec__TargetPortAssignment_10"
+    // $ANTLR end "rule__SystemConnDec__TargetPortAssignment_9"
 
 
-    // $ANTLR start "rule__SystemDec__NameAssignment_2"
-    // InternalDepModel.g:4254:1: rule__SystemDec__NameAssignment_2 : ( ruleQualifiedName ) ;
-    public final void rule__SystemDec__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SystemDec__NameAssignment_1"
+    // InternalDepModel.g:3964:1: rule__SystemDec__NameAssignment_1 : ( ruleQualifiedName ) ;
+    public final void rule__SystemDec__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4258:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4259:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3968:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:3969:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4259:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4260:3: ruleQualifiedName
+            // InternalDepModel.g:3969:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3970:3: ruleQualifiedName
             {
-             before(grammarAccess.getSystemDecAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             before(grammarAccess.getSystemDecAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getSystemDecAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             after(grammarAccess.getSystemDecAccess().getNameQualifiedNameParserRuleCall_1_0()); 
 
             }
 
@@ -12721,29 +11875,29 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__SystemDec__NameAssignment_2"
+    // $ANTLR end "rule__SystemDec__NameAssignment_1"
 
 
-    // $ANTLR start "rule__SystemDec__SysFeaturesAssignment_4"
-    // InternalDepModel.g:4269:1: rule__SystemDec__SysFeaturesAssignment_4 : ( ruleSysFeaturesDec ) ;
-    public final void rule__SystemDec__SysFeaturesAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__SystemDec__SysFeaturesAssignment_3"
+    // InternalDepModel.g:3979:1: rule__SystemDec__SysFeaturesAssignment_3 : ( ruleSysFeaturesDec ) ;
+    public final void rule__SystemDec__SysFeaturesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4273:1: ( ( ruleSysFeaturesDec ) )
-            // InternalDepModel.g:4274:2: ( ruleSysFeaturesDec )
+            // InternalDepModel.g:3983:1: ( ( ruleSysFeaturesDec ) )
+            // InternalDepModel.g:3984:2: ( ruleSysFeaturesDec )
             {
-            // InternalDepModel.g:4274:2: ( ruleSysFeaturesDec )
-            // InternalDepModel.g:4275:3: ruleSysFeaturesDec
+            // InternalDepModel.g:3984:2: ( ruleSysFeaturesDec )
+            // InternalDepModel.g:3985:3: ruleSysFeaturesDec
             {
-             before(grammarAccess.getSystemDecAccess().getSysFeaturesSysFeaturesDecParserRuleCall_4_0()); 
+             before(grammarAccess.getSystemDecAccess().getSysFeaturesSysFeaturesDecParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleSysFeaturesDec();
 
             state._fsp--;
 
-             after(grammarAccess.getSystemDecAccess().getSysFeaturesSysFeaturesDecParserRuleCall_4_0()); 
+             after(grammarAccess.getSystemDecAccess().getSysFeaturesSysFeaturesDecParserRuleCall_3_0()); 
 
             }
 
@@ -12762,21 +11916,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__SystemDec__SysFeaturesAssignment_4"
+    // $ANTLR end "rule__SystemDec__SysFeaturesAssignment_3"
 
 
     // $ANTLR start "rule__SystemPortIn__NameAssignment_3"
-    // InternalDepModel.g:4284:1: rule__SystemPortIn__NameAssignment_3 : ( ruleQualifiedName ) ;
+    // InternalDepModel.g:3994:1: rule__SystemPortIn__NameAssignment_3 : ( ruleQualifiedName ) ;
     public final void rule__SystemPortIn__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4288:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4289:2: ( ruleQualifiedName )
+            // InternalDepModel.g:3998:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:3999:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4289:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4290:3: ruleQualifiedName
+            // InternalDepModel.g:3999:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4000:3: ruleQualifiedName
             {
              before(grammarAccess.getSystemPortInAccess().getNameQualifiedNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -12807,21 +11961,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__InCompAssignment_5"
-    // InternalDepModel.g:4299:1: rule__SystemPortIn__InCompAssignment_5 : ( ( RULE_ID ) ) ;
+    // InternalDepModel.g:4009:1: rule__SystemPortIn__InCompAssignment_5 : ( ( RULE_ID ) ) ;
     public final void rule__SystemPortIn__InCompAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4303:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4304:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4013:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4014:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4304:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4305:3: ( RULE_ID )
+            // InternalDepModel.g:4014:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4015:3: ( RULE_ID )
             {
              before(grammarAccess.getSystemPortInAccess().getInCompComponentImplCrossReference_5_0()); 
-            // InternalDepModel.g:4306:3: ( RULE_ID )
-            // InternalDepModel.g:4307:4: RULE_ID
+            // InternalDepModel.g:4016:3: ( RULE_ID )
+            // InternalDepModel.g:4017:4: RULE_ID
             {
              before(grammarAccess.getSystemPortInAccess().getInCompComponentImplIDTerminalRuleCall_5_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -12852,21 +12006,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortIn__InPortAssignment_7"
-    // InternalDepModel.g:4318:1: rule__SystemPortIn__InPortAssignment_7 : ( ( RULE_ID ) ) ;
+    // InternalDepModel.g:4028:1: rule__SystemPortIn__InPortAssignment_7 : ( ( RULE_ID ) ) ;
     public final void rule__SystemPortIn__InPortAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4322:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4323:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4032:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4033:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4323:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4324:3: ( RULE_ID )
+            // InternalDepModel.g:4033:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4034:3: ( RULE_ID )
             {
              before(grammarAccess.getSystemPortInAccess().getInPortPortInCrossReference_7_0()); 
-            // InternalDepModel.g:4325:3: ( RULE_ID )
-            // InternalDepModel.g:4326:4: RULE_ID
+            // InternalDepModel.g:4035:3: ( RULE_ID )
+            // InternalDepModel.g:4036:4: RULE_ID
             {
              before(grammarAccess.getSystemPortInAccess().getInPortPortInIDTerminalRuleCall_7_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -12897,17 +12051,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__NameAssignment_3"
-    // InternalDepModel.g:4337:1: rule__SystemPortOut__NameAssignment_3 : ( ruleQualifiedName ) ;
+    // InternalDepModel.g:4047:1: rule__SystemPortOut__NameAssignment_3 : ( ruleQualifiedName ) ;
     public final void rule__SystemPortOut__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4341:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4342:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4051:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4052:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4342:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4343:3: ruleQualifiedName
+            // InternalDepModel.g:4052:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4053:3: ruleQualifiedName
             {
              before(grammarAccess.getSystemPortOutAccess().getNameQualifiedNameParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -12938,21 +12092,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__OutCompAssignment_5"
-    // InternalDepModel.g:4352:1: rule__SystemPortOut__OutCompAssignment_5 : ( ( RULE_ID ) ) ;
+    // InternalDepModel.g:4062:1: rule__SystemPortOut__OutCompAssignment_5 : ( ( RULE_ID ) ) ;
     public final void rule__SystemPortOut__OutCompAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4356:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4357:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4066:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4067:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4357:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4358:3: ( RULE_ID )
+            // InternalDepModel.g:4067:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4068:3: ( RULE_ID )
             {
              before(grammarAccess.getSystemPortOutAccess().getOutCompComponentImplCrossReference_5_0()); 
-            // InternalDepModel.g:4359:3: ( RULE_ID )
-            // InternalDepModel.g:4360:4: RULE_ID
+            // InternalDepModel.g:4069:3: ( RULE_ID )
+            // InternalDepModel.g:4070:4: RULE_ID
             {
              before(grammarAccess.getSystemPortOutAccess().getOutCompComponentImplIDTerminalRuleCall_5_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -12983,21 +12137,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__SystemPortOut__OutPortAssignment_7"
-    // InternalDepModel.g:4371:1: rule__SystemPortOut__OutPortAssignment_7 : ( ( RULE_ID ) ) ;
+    // InternalDepModel.g:4081:1: rule__SystemPortOut__OutPortAssignment_7 : ( ( RULE_ID ) ) ;
     public final void rule__SystemPortOut__OutPortAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4375:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4376:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4085:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4086:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4376:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4377:3: ( RULE_ID )
+            // InternalDepModel.g:4086:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4087:3: ( RULE_ID )
             {
              before(grammarAccess.getSystemPortOutAccess().getOutPortPortOutCrossReference_7_0()); 
-            // InternalDepModel.g:4378:3: ( RULE_ID )
-            // InternalDepModel.g:4379:4: RULE_ID
+            // InternalDepModel.g:4088:3: ( RULE_ID )
+            // InternalDepModel.g:4089:4: RULE_ID
             {
              before(grammarAccess.getSystemPortOutAccess().getOutPortPortOutIDTerminalRuleCall_7_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13027,26 +12181,26 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__SystemPortOut__OutPortAssignment_7"
 
 
-    // $ANTLR start "rule__ComponentConnDec__NameAssignment_2"
-    // InternalDepModel.g:4390:1: rule__ComponentConnDec__NameAssignment_2 : ( ruleQualifiedName ) ;
-    public final void rule__ComponentConnDec__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ComponentConnDec__NameAssignment_1"
+    // InternalDepModel.g:4100:1: rule__ComponentConnDec__NameAssignment_1 : ( ruleQualifiedName ) ;
+    public final void rule__ComponentConnDec__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4394:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4395:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4104:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4105:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4395:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4396:3: ruleQualifiedName
+            // InternalDepModel.g:4105:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4106:3: ruleQualifiedName
             {
-             before(grammarAccess.getComponentConnDecAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             before(grammarAccess.getComponentConnDecAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getComponentConnDecAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             after(grammarAccess.getComponentConnDecAccess().getNameQualifiedNameParserRuleCall_1_0()); 
 
             }
 
@@ -13065,33 +12219,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentConnDec__NameAssignment_2"
+    // $ANTLR end "rule__ComponentConnDec__NameAssignment_1"
 
 
-    // $ANTLR start "rule__ComponentConnDec__SourceCompAssignment_4"
-    // InternalDepModel.g:4405:1: rule__ComponentConnDec__SourceCompAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__ComponentConnDec__SourceCompAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ComponentConnDec__SourceCompAssignment_3"
+    // InternalDepModel.g:4115:1: rule__ComponentConnDec__SourceCompAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__ComponentConnDec__SourceCompAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4409:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4410:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4119:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4120:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4410:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4411:3: ( RULE_ID )
+            // InternalDepModel.g:4120:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4121:3: ( RULE_ID )
             {
-             before(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplCrossReference_4_0()); 
-            // InternalDepModel.g:4412:3: ( RULE_ID )
-            // InternalDepModel.g:4413:4: RULE_ID
+             before(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplCrossReference_3_0()); 
+            // InternalDepModel.g:4122:3: ( RULE_ID )
+            // InternalDepModel.g:4123:4: RULE_ID
             {
-             before(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplIDTerminalRuleCall_4_0_1()); 
+             after(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplIDTerminalRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplCrossReference_4_0()); 
+             after(grammarAccess.getComponentConnDecAccess().getSourceCompComponentImplCrossReference_3_0()); 
 
             }
 
@@ -13110,33 +12264,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentConnDec__SourceCompAssignment_4"
+    // $ANTLR end "rule__ComponentConnDec__SourceCompAssignment_3"
 
 
-    // $ANTLR start "rule__ComponentConnDec__SourcePortAssignment_6"
-    // InternalDepModel.g:4424:1: rule__ComponentConnDec__SourcePortAssignment_6 : ( ( RULE_ID ) ) ;
-    public final void rule__ComponentConnDec__SourcePortAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__ComponentConnDec__SourcePortAssignment_5"
+    // InternalDepModel.g:4134:1: rule__ComponentConnDec__SourcePortAssignment_5 : ( ( RULE_ID ) ) ;
+    public final void rule__ComponentConnDec__SourcePortAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4428:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4429:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4138:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4139:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4429:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4430:3: ( RULE_ID )
+            // InternalDepModel.g:4139:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4140:3: ( RULE_ID )
             {
-             before(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutCrossReference_6_0()); 
-            // InternalDepModel.g:4431:3: ( RULE_ID )
-            // InternalDepModel.g:4432:4: RULE_ID
+             before(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutCrossReference_5_0()); 
+            // InternalDepModel.g:4141:3: ( RULE_ID )
+            // InternalDepModel.g:4142:4: RULE_ID
             {
-             before(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutIDTerminalRuleCall_6_0_1()); 
+             before(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutIDTerminalRuleCall_5_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutIDTerminalRuleCall_6_0_1()); 
+             after(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutIDTerminalRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutCrossReference_6_0()); 
+             after(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutCrossReference_5_0()); 
 
             }
 
@@ -13155,33 +12309,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentConnDec__SourcePortAssignment_6"
+    // $ANTLR end "rule__ComponentConnDec__SourcePortAssignment_5"
 
 
-    // $ANTLR start "rule__ComponentConnDec__TargetCompAssignment_8"
-    // InternalDepModel.g:4443:1: rule__ComponentConnDec__TargetCompAssignment_8 : ( ( RULE_ID ) ) ;
-    public final void rule__ComponentConnDec__TargetCompAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__ComponentConnDec__TargetCompAssignment_7"
+    // InternalDepModel.g:4153:1: rule__ComponentConnDec__TargetCompAssignment_7 : ( ( RULE_ID ) ) ;
+    public final void rule__ComponentConnDec__TargetCompAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4447:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4448:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4157:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4158:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4448:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4449:3: ( RULE_ID )
+            // InternalDepModel.g:4158:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4159:3: ( RULE_ID )
             {
-             before(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplCrossReference_8_0()); 
-            // InternalDepModel.g:4450:3: ( RULE_ID )
-            // InternalDepModel.g:4451:4: RULE_ID
+             before(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplCrossReference_7_0()); 
+            // InternalDepModel.g:4160:3: ( RULE_ID )
+            // InternalDepModel.g:4161:4: RULE_ID
             {
-             before(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplIDTerminalRuleCall_8_0_1()); 
+             before(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplIDTerminalRuleCall_7_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplIDTerminalRuleCall_8_0_1()); 
+             after(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplIDTerminalRuleCall_7_0_1()); 
 
             }
 
-             after(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplCrossReference_8_0()); 
+             after(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplCrossReference_7_0()); 
 
             }
 
@@ -13200,33 +12354,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentConnDec__TargetCompAssignment_8"
+    // $ANTLR end "rule__ComponentConnDec__TargetCompAssignment_7"
 
 
-    // $ANTLR start "rule__ComponentConnDec__TargetPortAssignment_10"
-    // InternalDepModel.g:4462:1: rule__ComponentConnDec__TargetPortAssignment_10 : ( ( RULE_ID ) ) ;
-    public final void rule__ComponentConnDec__TargetPortAssignment_10() throws RecognitionException {
+    // $ANTLR start "rule__ComponentConnDec__TargetPortAssignment_9"
+    // InternalDepModel.g:4172:1: rule__ComponentConnDec__TargetPortAssignment_9 : ( ( RULE_ID ) ) ;
+    public final void rule__ComponentConnDec__TargetPortAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4466:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4467:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4176:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4177:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4467:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4468:3: ( RULE_ID )
+            // InternalDepModel.g:4177:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4178:3: ( RULE_ID )
             {
-             before(grammarAccess.getComponentConnDecAccess().getTargetPortPortInCrossReference_10_0()); 
-            // InternalDepModel.g:4469:3: ( RULE_ID )
-            // InternalDepModel.g:4470:4: RULE_ID
+             before(grammarAccess.getComponentConnDecAccess().getTargetPortPortInCrossReference_9_0()); 
+            // InternalDepModel.g:4179:3: ( RULE_ID )
+            // InternalDepModel.g:4180:4: RULE_ID
             {
-             before(grammarAccess.getComponentConnDecAccess().getTargetPortPortInIDTerminalRuleCall_10_0_1()); 
+             before(grammarAccess.getComponentConnDecAccess().getTargetPortPortInIDTerminalRuleCall_9_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComponentConnDecAccess().getTargetPortPortInIDTerminalRuleCall_10_0_1()); 
+             after(grammarAccess.getComponentConnDecAccess().getTargetPortPortInIDTerminalRuleCall_9_0_1()); 
 
             }
 
-             after(grammarAccess.getComponentConnDecAccess().getTargetPortPortInCrossReference_10_0()); 
+             after(grammarAccess.getComponentConnDecAccess().getTargetPortPortInCrossReference_9_0()); 
 
             }
 
@@ -13245,29 +12399,29 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentConnDec__TargetPortAssignment_10"
+    // $ANTLR end "rule__ComponentConnDec__TargetPortAssignment_9"
 
 
-    // $ANTLR start "rule__ComponentImpl__NameAssignment_2"
-    // InternalDepModel.g:4481:1: rule__ComponentImpl__NameAssignment_2 : ( ruleQualifiedName ) ;
-    public final void rule__ComponentImpl__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ComponentImpl__NameAssignment_1"
+    // InternalDepModel.g:4191:1: rule__ComponentImpl__NameAssignment_1 : ( ruleQualifiedName ) ;
+    public final void rule__ComponentImpl__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4485:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4486:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4195:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4196:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4486:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4487:3: ruleQualifiedName
+            // InternalDepModel.g:4196:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4197:3: ruleQualifiedName
             {
-             before(grammarAccess.getComponentImplAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             before(grammarAccess.getComponentImplAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getComponentImplAccess().getNameQualifiedNameParserRuleCall_2_0()); 
+             after(grammarAccess.getComponentImplAccess().getNameQualifiedNameParserRuleCall_1_0()); 
 
             }
 
@@ -13286,33 +12440,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentImpl__NameAssignment_2"
+    // $ANTLR end "rule__ComponentImpl__NameAssignment_1"
 
 
-    // $ANTLR start "rule__ComponentImpl__SuperTypeAssignment_4"
-    // InternalDepModel.g:4496:1: rule__ComponentImpl__SuperTypeAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__ComponentImpl__SuperTypeAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__ComponentImpl__SuperTypeAssignment_3"
+    // InternalDepModel.g:4206:1: rule__ComponentImpl__SuperTypeAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__ComponentImpl__SuperTypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4500:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4501:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4210:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4211:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4501:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4502:3: ( RULE_ID )
+            // InternalDepModel.g:4211:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4212:3: ( RULE_ID )
             {
-             before(grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeCrossReference_4_0()); 
-            // InternalDepModel.g:4503:3: ( RULE_ID )
-            // InternalDepModel.g:4504:4: RULE_ID
+             before(grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeCrossReference_3_0()); 
+            // InternalDepModel.g:4213:3: ( RULE_ID )
+            // InternalDepModel.g:4214:4: RULE_ID
             {
-             before(grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeIDTerminalRuleCall_4_0_1()); 
+             after(grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeIDTerminalRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeCrossReference_4_0()); 
+             after(grammarAccess.getComponentImplAccess().getSuperTypeComponentTypeCrossReference_3_0()); 
 
             }
 
@@ -13331,21 +12485,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentImpl__SuperTypeAssignment_4"
+    // $ANTLR end "rule__ComponentImpl__SuperTypeAssignment_3"
 
 
     // $ANTLR start "rule__ComponentType__NameAssignment_2"
-    // InternalDepModel.g:4515:1: rule__ComponentType__NameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalDepModel.g:4225:1: rule__ComponentType__NameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__ComponentType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4519:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4520:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4229:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4230:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4520:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4521:3: ruleQualifiedName
+            // InternalDepModel.g:4230:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4231:3: ruleQualifiedName
             {
              before(grammarAccess.getComponentTypeAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -13376,17 +12530,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ComponentType__ComponentFeaturesAssignment_4"
-    // InternalDepModel.g:4530:1: rule__ComponentType__ComponentFeaturesAssignment_4 : ( ruleComponentFeaturesDec ) ;
+    // InternalDepModel.g:4240:1: rule__ComponentType__ComponentFeaturesAssignment_4 : ( ruleComponentFeaturesDec ) ;
     public final void rule__ComponentType__ComponentFeaturesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4534:1: ( ( ruleComponentFeaturesDec ) )
-            // InternalDepModel.g:4535:2: ( ruleComponentFeaturesDec )
+            // InternalDepModel.g:4244:1: ( ( ruleComponentFeaturesDec ) )
+            // InternalDepModel.g:4245:2: ( ruleComponentFeaturesDec )
             {
-            // InternalDepModel.g:4535:2: ( ruleComponentFeaturesDec )
-            // InternalDepModel.g:4536:3: ruleComponentFeaturesDec
+            // InternalDepModel.g:4245:2: ( ruleComponentFeaturesDec )
+            // InternalDepModel.g:4246:3: ruleComponentFeaturesDec
             {
              before(grammarAccess.getComponentTypeAccess().getComponentFeaturesComponentFeaturesDecParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -13416,26 +12570,26 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__ComponentType__ComponentFeaturesAssignment_4"
 
 
-    // $ANTLR start "rule__PortIn__NameAssignment_3"
-    // InternalDepModel.g:4545:1: rule__PortIn__NameAssignment_3 : ( ruleQualifiedName ) ;
-    public final void rule__PortIn__NameAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__PortIn__NameAssignment_2"
+    // InternalDepModel.g:4255:1: rule__PortIn__NameAssignment_2 : ( ruleQualifiedName ) ;
+    public final void rule__PortIn__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4549:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4550:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4259:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4260:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4550:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4551:3: ruleQualifiedName
+            // InternalDepModel.g:4260:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4261:3: ruleQualifiedName
             {
-             before(grammarAccess.getPortInAccess().getNameQualifiedNameParserRuleCall_3_0()); 
+             before(grammarAccess.getPortInAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getPortInAccess().getNameQualifiedNameParserRuleCall_3_0()); 
+             after(grammarAccess.getPortInAccess().getNameQualifiedNameParserRuleCall_2_0()); 
 
             }
 
@@ -13454,33 +12608,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__PortIn__NameAssignment_3"
+    // $ANTLR end "rule__PortIn__NameAssignment_2"
 
 
-    // $ANTLR start "rule__PortIn__PortInSuperTypeAssignment_5"
-    // InternalDepModel.g:4560:1: rule__PortIn__PortInSuperTypeAssignment_5 : ( ( RULE_ID ) ) ;
-    public final void rule__PortIn__PortInSuperTypeAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__PortIn__PortInSuperTypeAssignment_4"
+    // InternalDepModel.g:4270:1: rule__PortIn__PortInSuperTypeAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__PortIn__PortInSuperTypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4564:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4565:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4274:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4275:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4565:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4566:3: ( RULE_ID )
+            // InternalDepModel.g:4275:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4276:3: ( RULE_ID )
             {
-             before(grammarAccess.getPortInAccess().getPortInSuperTypePortTypeCrossReference_5_0()); 
-            // InternalDepModel.g:4567:3: ( RULE_ID )
-            // InternalDepModel.g:4568:4: RULE_ID
+             before(grammarAccess.getPortInAccess().getPortInSuperTypePortTypeCrossReference_4_0()); 
+            // InternalDepModel.g:4277:3: ( RULE_ID )
+            // InternalDepModel.g:4278:4: RULE_ID
             {
-             before(grammarAccess.getPortInAccess().getPortInSuperTypePortTypeIDTerminalRuleCall_5_0_1()); 
+             before(grammarAccess.getPortInAccess().getPortInSuperTypePortTypeIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getPortInAccess().getPortInSuperTypePortTypeIDTerminalRuleCall_5_0_1()); 
+             after(grammarAccess.getPortInAccess().getPortInSuperTypePortTypeIDTerminalRuleCall_4_0_1()); 
 
             }
 
-             after(grammarAccess.getPortInAccess().getPortInSuperTypePortTypeCrossReference_5_0()); 
+             after(grammarAccess.getPortInAccess().getPortInSuperTypePortTypeCrossReference_4_0()); 
 
             }
 
@@ -13499,29 +12653,29 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__PortIn__PortInSuperTypeAssignment_5"
+    // $ANTLR end "rule__PortIn__PortInSuperTypeAssignment_4"
 
 
-    // $ANTLR start "rule__PortOut__NameAssignment_3"
-    // InternalDepModel.g:4579:1: rule__PortOut__NameAssignment_3 : ( ruleQualifiedName ) ;
-    public final void rule__PortOut__NameAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__PortOut__NameAssignment_2"
+    // InternalDepModel.g:4289:1: rule__PortOut__NameAssignment_2 : ( ruleQualifiedName ) ;
+    public final void rule__PortOut__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4583:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4584:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4293:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4294:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4584:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4585:3: ruleQualifiedName
+            // InternalDepModel.g:4294:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4295:3: ruleQualifiedName
             {
-             before(grammarAccess.getPortOutAccess().getNameQualifiedNameParserRuleCall_3_0()); 
+             before(grammarAccess.getPortOutAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getPortOutAccess().getNameQualifiedNameParserRuleCall_3_0()); 
+             after(grammarAccess.getPortOutAccess().getNameQualifiedNameParserRuleCall_2_0()); 
 
             }
 
@@ -13540,33 +12694,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__PortOut__NameAssignment_3"
+    // $ANTLR end "rule__PortOut__NameAssignment_2"
 
 
-    // $ANTLR start "rule__PortOut__PortOutSuperTypeAssignment_5"
-    // InternalDepModel.g:4594:1: rule__PortOut__PortOutSuperTypeAssignment_5 : ( ( RULE_ID ) ) ;
-    public final void rule__PortOut__PortOutSuperTypeAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__PortOut__PortOutSuperTypeAssignment_4"
+    // InternalDepModel.g:4304:1: rule__PortOut__PortOutSuperTypeAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__PortOut__PortOutSuperTypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4598:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4599:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4308:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4309:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4599:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4600:3: ( RULE_ID )
+            // InternalDepModel.g:4309:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4310:3: ( RULE_ID )
             {
-             before(grammarAccess.getPortOutAccess().getPortOutSuperTypePortTypeCrossReference_5_0()); 
-            // InternalDepModel.g:4601:3: ( RULE_ID )
-            // InternalDepModel.g:4602:4: RULE_ID
+             before(grammarAccess.getPortOutAccess().getPortOutSuperTypePortTypeCrossReference_4_0()); 
+            // InternalDepModel.g:4311:3: ( RULE_ID )
+            // InternalDepModel.g:4312:4: RULE_ID
             {
-             before(grammarAccess.getPortOutAccess().getPortOutSuperTypePortTypeIDTerminalRuleCall_5_0_1()); 
+             before(grammarAccess.getPortOutAccess().getPortOutSuperTypePortTypeIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getPortOutAccess().getPortOutSuperTypePortTypeIDTerminalRuleCall_5_0_1()); 
+             after(grammarAccess.getPortOutAccess().getPortOutSuperTypePortTypeIDTerminalRuleCall_4_0_1()); 
 
             }
 
-             after(grammarAccess.getPortOutAccess().getPortOutSuperTypePortTypeCrossReference_5_0()); 
+             after(grammarAccess.getPortOutAccess().getPortOutSuperTypePortTypeCrossReference_4_0()); 
 
             }
 
@@ -13585,21 +12739,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__PortOut__PortOutSuperTypeAssignment_5"
+    // $ANTLR end "rule__PortOut__PortOutSuperTypeAssignment_4"
 
 
     // $ANTLR start "rule__ErrorModelDec__NameAssignment_2"
-    // InternalDepModel.g:4613:1: rule__ErrorModelDec__NameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalDepModel.g:4323:1: rule__ErrorModelDec__NameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__ErrorModelDec__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4617:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4618:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4327:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4328:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4618:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4619:3: ruleQualifiedName
+            // InternalDepModel.g:4328:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4329:3: ruleQualifiedName
             {
              before(grammarAccess.getErrorModelDecAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -13630,17 +12784,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ErrorModelDec__EmodelElementsAssignment_4"
-    // InternalDepModel.g:4628:1: rule__ErrorModelDec__EmodelElementsAssignment_4 : ( ruleErrorModelElement ) ;
+    // InternalDepModel.g:4338:1: rule__ErrorModelDec__EmodelElementsAssignment_4 : ( ruleErrorModelElement ) ;
     public final void rule__ErrorModelDec__EmodelElementsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4632:1: ( ( ruleErrorModelElement ) )
-            // InternalDepModel.g:4633:2: ( ruleErrorModelElement )
+            // InternalDepModel.g:4342:1: ( ( ruleErrorModelElement ) )
+            // InternalDepModel.g:4343:2: ( ruleErrorModelElement )
             {
-            // InternalDepModel.g:4633:2: ( ruleErrorModelElement )
-            // InternalDepModel.g:4634:3: ruleErrorModelElement
+            // InternalDepModel.g:4343:2: ( ruleErrorModelElement )
+            // InternalDepModel.g:4344:3: ruleErrorModelElement
             {
              before(grammarAccess.getErrorModelDecAccess().getEmodelElementsErrorModelElementParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -13670,26 +12824,26 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__ErrorModelDec__EmodelElementsAssignment_4"
 
 
-    // $ANTLR start "rule__State__NameAssignment_3"
-    // InternalDepModel.g:4643:1: rule__State__NameAssignment_3 : ( ruleQualifiedName ) ;
-    public final void rule__State__NameAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__State__NameAssignment_2"
+    // InternalDepModel.g:4353:1: rule__State__NameAssignment_2 : ( ruleQualifiedName ) ;
+    public final void rule__State__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4647:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4648:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4357:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4358:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4648:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4649:3: ruleQualifiedName
+            // InternalDepModel.g:4358:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4359:3: ruleQualifiedName
             {
-             before(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_3_0()); 
+             before(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_3_0()); 
+             after(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_2_0()); 
 
             }
 
@@ -13708,21 +12862,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__State__NameAssignment_3"
+    // $ANTLR end "rule__State__NameAssignment_2"
 
 
     // $ANTLR start "rule__TransitionDec__NameAssignment_1"
-    // InternalDepModel.g:4658:1: rule__TransitionDec__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // InternalDepModel.g:4368:1: rule__TransitionDec__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__TransitionDec__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4662:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4663:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4372:1: ( ( ruleQualifiedName ) )
+            // InternalDepModel.g:4373:2: ( ruleQualifiedName )
             {
-            // InternalDepModel.g:4663:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4664:3: ruleQualifiedName
+            // InternalDepModel.g:4373:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4374:3: ruleQualifiedName
             {
              before(grammarAccess.getTransitionDecAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13753,17 +12907,17 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionDec__TransFeaturesAssignment_3"
-    // InternalDepModel.g:4673:1: rule__TransitionDec__TransFeaturesAssignment_3 : ( ruleTransitionFeatureDec ) ;
+    // InternalDepModel.g:4383:1: rule__TransitionDec__TransFeaturesAssignment_3 : ( ruleTransitionFeatureDec ) ;
     public final void rule__TransitionDec__TransFeaturesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4677:1: ( ( ruleTransitionFeatureDec ) )
-            // InternalDepModel.g:4678:2: ( ruleTransitionFeatureDec )
+            // InternalDepModel.g:4387:1: ( ( ruleTransitionFeatureDec ) )
+            // InternalDepModel.g:4388:2: ( ruleTransitionFeatureDec )
             {
-            // InternalDepModel.g:4678:2: ( ruleTransitionFeatureDec )
-            // InternalDepModel.g:4679:3: ruleTransitionFeatureDec
+            // InternalDepModel.g:4388:2: ( ruleTransitionFeatureDec )
+            // InternalDepModel.g:4389:3: ruleTransitionFeatureDec
             {
              before(grammarAccess.getTransitionDecAccess().getTransFeaturesTransitionFeatureDecParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -13794,21 +12948,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__SourceStateAssignment_1"
-    // InternalDepModel.g:4688:1: rule__TransitionState__SourceStateAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalDepModel.g:4398:1: rule__TransitionState__SourceStateAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__TransitionState__SourceStateAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4692:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4693:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4402:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4403:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4693:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4694:3: ( RULE_ID )
+            // InternalDepModel.g:4403:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4404:3: ( RULE_ID )
             {
              before(grammarAccess.getTransitionStateAccess().getSourceStateStateCrossReference_1_0()); 
-            // InternalDepModel.g:4695:3: ( RULE_ID )
-            // InternalDepModel.g:4696:4: RULE_ID
+            // InternalDepModel.g:4405:3: ( RULE_ID )
+            // InternalDepModel.g:4406:4: RULE_ID
             {
              before(grammarAccess.getTransitionStateAccess().getSourceStateStateIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13839,21 +12993,21 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TransitionState__TargetStateAssignment_3"
-    // InternalDepModel.g:4707:1: rule__TransitionState__TargetStateAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalDepModel.g:4417:1: rule__TransitionState__TargetStateAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__TransitionState__TargetStateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4711:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4712:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4421:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4422:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4712:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4713:3: ( RULE_ID )
+            // InternalDepModel.g:4422:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4423:3: ( RULE_ID )
             {
              before(grammarAccess.getTransitionStateAccess().getTargetStateStateCrossReference_3_0()); 
-            // InternalDepModel.g:4714:3: ( RULE_ID )
-            // InternalDepModel.g:4715:4: RULE_ID
+            // InternalDepModel.g:4424:3: ( RULE_ID )
+            // InternalDepModel.g:4425:4: RULE_ID
             {
              before(grammarAccess.getTransitionStateAccess().getTargetStateStateIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13883,71 +13037,30 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__TransitionState__TargetStateAssignment_3"
 
 
-    // $ANTLR start "rule__Trigger__NameAssignment_1"
-    // InternalDepModel.g:4726:1: rule__Trigger__NameAssignment_1 : ( ruleQualifiedName ) ;
-    public final void rule__Trigger__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Trigger__PortInstanceAssignment_1"
+    // InternalDepModel.g:4436:1: rule__Trigger__PortInstanceAssignment_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Trigger__PortInstanceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4730:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4731:2: ( ruleQualifiedName )
+            // InternalDepModel.g:4440:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4441:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4731:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4732:3: ruleQualifiedName
+            // InternalDepModel.g:4441:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4442:3: ( RULE_ID )
             {
-             before(grammarAccess.getTriggerAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getTriggerAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Trigger__NameAssignment_1"
-
-
-    // $ANTLR start "rule__Trigger__PortInstanceAssignment_3"
-    // InternalDepModel.g:4741:1: rule__Trigger__PortInstanceAssignment_3 : ( ( RULE_ID ) ) ;
-    public final void rule__Trigger__PortInstanceAssignment_3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:4745:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4746:2: ( ( RULE_ID ) )
+             before(grammarAccess.getTriggerAccess().getPortInstancePortInCrossReference_1_0()); 
+            // InternalDepModel.g:4443:3: ( RULE_ID )
+            // InternalDepModel.g:4444:4: RULE_ID
             {
-            // InternalDepModel.g:4746:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4747:3: ( RULE_ID )
-            {
-             before(grammarAccess.getTriggerAccess().getPortInstancePortDecCrossReference_3_0()); 
-            // InternalDepModel.g:4748:3: ( RULE_ID )
-            // InternalDepModel.g:4749:4: RULE_ID
-            {
-             before(grammarAccess.getTriggerAccess().getPortInstancePortDecIDTerminalRuleCall_3_0_1()); 
+             before(grammarAccess.getTriggerAccess().getPortInstancePortInIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getTriggerAccess().getPortInstancePortDecIDTerminalRuleCall_3_0_1()); 
+             after(grammarAccess.getTriggerAccess().getPortInstancePortInIDTerminalRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getTriggerAccess().getPortInstancePortDecCrossReference_3_0()); 
+             after(grammarAccess.getTriggerAccess().getPortInstancePortInCrossReference_1_0()); 
 
             }
 
@@ -13966,74 +13079,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Trigger__PortInstanceAssignment_3"
+    // $ANTLR end "rule__Trigger__PortInstanceAssignment_1"
 
 
-    // $ANTLR start "rule__Trigger__ErrorModeAssignment_5"
-    // InternalDepModel.g:4760:1: rule__Trigger__ErrorModeAssignment_5 : ( ( RULE_ID ) ) ;
-    public final void rule__Trigger__ErrorModeAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Trigger__ErrorModeAssignment_3"
+    // InternalDepModel.g:4455:1: rule__Trigger__ErrorModeAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__Trigger__ErrorModeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4764:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4765:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4459:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4460:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4765:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4766:3: ( RULE_ID )
+            // InternalDepModel.g:4460:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4461:3: ( RULE_ID )
             {
-             before(grammarAccess.getTriggerAccess().getErrorModeErrorModesCrossReference_5_0()); 
-            // InternalDepModel.g:4767:3: ( RULE_ID )
-            // InternalDepModel.g:4768:4: RULE_ID
+             before(grammarAccess.getTriggerAccess().getErrorModeErrorModesCrossReference_3_0()); 
+            // InternalDepModel.g:4462:3: ( RULE_ID )
+            // InternalDepModel.g:4463:4: RULE_ID
             {
-             before(grammarAccess.getTriggerAccess().getErrorModeErrorModesIDTerminalRuleCall_5_0_1()); 
+             before(grammarAccess.getTriggerAccess().getErrorModeErrorModesIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getTriggerAccess().getErrorModeErrorModesIDTerminalRuleCall_5_0_1()); 
+             after(grammarAccess.getTriggerAccess().getErrorModeErrorModesIDTerminalRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getTriggerAccess().getErrorModeErrorModesCrossReference_5_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Trigger__ErrorModeAssignment_5"
-
-
-    // $ANTLR start "rule__Action__NameAssignment_1"
-    // InternalDepModel.g:4779:1: rule__Action__NameAssignment_1 : ( ruleQualifiedName ) ;
-    public final void rule__Action__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDepModel.g:4783:1: ( ( ruleQualifiedName ) )
-            // InternalDepModel.g:4784:2: ( ruleQualifiedName )
-            {
-            // InternalDepModel.g:4784:2: ( ruleQualifiedName )
-            // InternalDepModel.g:4785:3: ruleQualifiedName
-            {
-             before(grammarAccess.getActionAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getActionAccess().getNameQualifiedNameParserRuleCall_1_0()); 
+             after(grammarAccess.getTriggerAccess().getErrorModeErrorModesCrossReference_3_0()); 
 
             }
 
@@ -14052,33 +13124,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Action__NameAssignment_1"
+    // $ANTLR end "rule__Trigger__ErrorModeAssignment_3"
 
 
-    // $ANTLR start "rule__Action__PortInstanceAssignment_3"
-    // InternalDepModel.g:4794:1: rule__Action__PortInstanceAssignment_3 : ( ( RULE_ID ) ) ;
-    public final void rule__Action__PortInstanceAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Action__PortInstanceAssignment_1"
+    // InternalDepModel.g:4474:1: rule__Action__PortInstanceAssignment_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Action__PortInstanceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4798:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4799:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4478:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4479:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4799:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4800:3: ( RULE_ID )
+            // InternalDepModel.g:4479:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4480:3: ( RULE_ID )
             {
-             before(grammarAccess.getActionAccess().getPortInstancePortDecCrossReference_3_0()); 
-            // InternalDepModel.g:4801:3: ( RULE_ID )
-            // InternalDepModel.g:4802:4: RULE_ID
+             before(grammarAccess.getActionAccess().getPortInstancePortOutCrossReference_1_0()); 
+            // InternalDepModel.g:4481:3: ( RULE_ID )
+            // InternalDepModel.g:4482:4: RULE_ID
             {
-             before(grammarAccess.getActionAccess().getPortInstancePortDecIDTerminalRuleCall_3_0_1()); 
+             before(grammarAccess.getActionAccess().getPortInstancePortOutIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getActionAccess().getPortInstancePortDecIDTerminalRuleCall_3_0_1()); 
+             after(grammarAccess.getActionAccess().getPortInstancePortOutIDTerminalRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getActionAccess().getPortInstancePortDecCrossReference_3_0()); 
+             after(grammarAccess.getActionAccess().getPortInstancePortOutCrossReference_1_0()); 
 
             }
 
@@ -14097,33 +13169,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Action__PortInstanceAssignment_3"
+    // $ANTLR end "rule__Action__PortInstanceAssignment_1"
 
 
-    // $ANTLR start "rule__Action__ErrorModeAssignment_5"
-    // InternalDepModel.g:4813:1: rule__Action__ErrorModeAssignment_5 : ( ( RULE_ID ) ) ;
-    public final void rule__Action__ErrorModeAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Action__ErrorModeAssignment_3"
+    // InternalDepModel.g:4493:1: rule__Action__ErrorModeAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__Action__ErrorModeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDepModel.g:4817:1: ( ( ( RULE_ID ) ) )
-            // InternalDepModel.g:4818:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4497:1: ( ( ( RULE_ID ) ) )
+            // InternalDepModel.g:4498:2: ( ( RULE_ID ) )
             {
-            // InternalDepModel.g:4818:2: ( ( RULE_ID ) )
-            // InternalDepModel.g:4819:3: ( RULE_ID )
+            // InternalDepModel.g:4498:2: ( ( RULE_ID ) )
+            // InternalDepModel.g:4499:3: ( RULE_ID )
             {
-             before(grammarAccess.getActionAccess().getErrorModeErrorModesCrossReference_5_0()); 
-            // InternalDepModel.g:4820:3: ( RULE_ID )
-            // InternalDepModel.g:4821:4: RULE_ID
+             before(grammarAccess.getActionAccess().getErrorModeErrorModesCrossReference_3_0()); 
+            // InternalDepModel.g:4500:3: ( RULE_ID )
+            // InternalDepModel.g:4501:4: RULE_ID
             {
-             before(grammarAccess.getActionAccess().getErrorModeErrorModesIDTerminalRuleCall_5_0_1()); 
+             before(grammarAccess.getActionAccess().getErrorModeErrorModesIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getActionAccess().getErrorModeErrorModesIDTerminalRuleCall_5_0_1()); 
+             after(grammarAccess.getActionAccess().getErrorModeErrorModesIDTerminalRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getActionAccess().getErrorModeErrorModesCrossReference_5_0()); 
+             after(grammarAccess.getActionAccess().getErrorModeErrorModesCrossReference_3_0()); 
 
             }
 
@@ -14142,7 +13214,7 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__Action__ErrorModeAssignment_5"
+    // $ANTLR end "rule__Action__ErrorModeAssignment_3"
 
     // Delegated rules
 
@@ -14151,37 +13223,33 @@ public class InternalDepModelParser extends AbstractInternalContentAssistParser 
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000002041002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000001241002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002048000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002040002L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001248000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001240002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000019000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000011002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000140018000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000140010002L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000040010000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000003600008000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000003600000002L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000019000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000011002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000038008000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000038000002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000018000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x00000006C0008000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x00000006C0000002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000100000000L});
 
 }

@@ -62,7 +62,7 @@ public class DepModelSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'initial'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) 'error' 'state' name=QualifiedName
+	 *     (rule start) (ambiguity) 'state' name=QualifiedName
 	 */
 	protected void emit_State_InitialKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

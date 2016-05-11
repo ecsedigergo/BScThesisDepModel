@@ -78,12 +78,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//TransitionState/targetState"/>
     </genClasses>
     <genClasses ecoreClass="DepModel.ecore#//Trigger">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DepModel.ecore#//Trigger/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//Trigger/portInstance"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//Trigger/errorMode"/>
     </genClasses>
     <genClasses ecoreClass="DepModel.ecore#//Action">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DepModel.ecore#//Action/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//Action/portInstance"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//Action/errorMode"/>
     </genClasses>
