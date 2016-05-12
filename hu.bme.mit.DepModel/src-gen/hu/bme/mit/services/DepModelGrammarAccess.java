@@ -201,14 +201,17 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetPortAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final CrossReference cTargetPortSystemPortInCrossReference_9_0 = (CrossReference)cTargetPortAssignment_9.eContents().get(0);
 		private final RuleCall cTargetPortSystemPortInIDTerminalRuleCall_9_0_1 = (RuleCall)cTargetPortSystemPortInCrossReference_9_0.eContents().get(1);
+		private final Keyword cWithKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cProbAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cProbDOUBLEParserRuleCall_11_0 = (RuleCall)cProbAssignment_11.eContents().get(0);
 		
 		//SystemConnDec:
 		//	'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut] 'to'
-		//	targetSystem=[SystemDec] '.' targetPort=[SystemPortIn];
+		//	targetSystem=[SystemDec] '.' targetPort=[SystemPortIn] 'with' prob=DOUBLE;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut] 'to'
-		//targetSystem=[SystemDec] '.' targetPort=[SystemPortIn]
+		//targetSystem=[SystemDec] '.' targetPort=[SystemPortIn] 'with' prob=DOUBLE
 		public Group getGroup() { return cGroup; }
 		
 		//'connection'
@@ -267,6 +270,15 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getTargetPortSystemPortInIDTerminalRuleCall_9_0_1() { return cTargetPortSystemPortInIDTerminalRuleCall_9_0_1; }
+		
+		//'with'
+		public Keyword getWithKeyword_10() { return cWithKeyword_10; }
+		
+		//prob=DOUBLE
+		public Assignment getProbAssignment_11() { return cProbAssignment_11; }
+		
+		//DOUBLE
+		public RuleCall getProbDOUBLEParserRuleCall_11_0() { return cProbDOUBLEParserRuleCall_11_0; }
 	}
 	public class SystemDecElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.SystemDec");
@@ -497,14 +509,17 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetPortAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final CrossReference cTargetPortPortInCrossReference_9_0 = (CrossReference)cTargetPortAssignment_9.eContents().get(0);
 		private final RuleCall cTargetPortPortInIDTerminalRuleCall_9_0_1 = (RuleCall)cTargetPortPortInCrossReference_9_0.eContents().get(1);
+		private final Keyword cWithKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cProbAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cProbDOUBLEParserRuleCall_11_0 = (RuleCall)cProbAssignment_11.eContents().get(0);
 		
 		//ComponentConnDec:
 		//	'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
-		//	targetComp=[ComponentImpl] '.' targetPort=[PortIn];
+		//	targetComp=[ComponentImpl] '.' targetPort=[PortIn] 'with' prob=DOUBLE;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
-		//targetComp=[ComponentImpl] '.' targetPort=[PortIn]
+		//targetComp=[ComponentImpl] '.' targetPort=[PortIn] 'with' prob=DOUBLE
 		public Group getGroup() { return cGroup; }
 		
 		//'connection'
@@ -563,6 +578,15 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getTargetPortPortInIDTerminalRuleCall_9_0_1() { return cTargetPortPortInIDTerminalRuleCall_9_0_1; }
+		
+		//'with'
+		public Keyword getWithKeyword_10() { return cWithKeyword_10; }
+		
+		//prob=DOUBLE
+		public Assignment getProbAssignment_11() { return cProbAssignment_11; }
+		
+		//DOUBLE
+		public RuleCall getProbDOUBLEParserRuleCall_11_0() { return cProbDOUBLEParserRuleCall_11_0; }
 	}
 	public class ComponentImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.DepModel.ComponentImpl");
@@ -1250,7 +1274,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//SystemConnDec:
 	//	'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut] 'to'
-	//	targetSystem=[SystemDec] '.' targetPort=[SystemPortIn];
+	//	targetSystem=[SystemDec] '.' targetPort=[SystemPortIn] 'with' prob=DOUBLE;
 	public SystemConnDecElements getSystemConnDecAccess() {
 		return pSystemConnDec;
 	}
@@ -1311,7 +1335,7 @@ public class DepModelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ComponentConnDec:
 	//	'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut] 'to'
-	//	targetComp=[ComponentImpl] '.' targetPort=[PortIn];
+	//	targetComp=[ComponentImpl] '.' targetPort=[PortIn] 'with' prob=DOUBLE;
 	public ComponentConnDecElements getComponentConnDecAccess() {
 		return pComponentConnDec;
 	}

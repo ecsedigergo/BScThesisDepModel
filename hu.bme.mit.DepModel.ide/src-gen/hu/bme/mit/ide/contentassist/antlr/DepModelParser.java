@@ -73,6 +73,7 @@ public class DepModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSystemConnDecAccess().getSourcePortAssignment_5(), "rule__SystemConnDec__SourcePortAssignment_5");
 					put(grammarAccess.getSystemConnDecAccess().getTargetSystemAssignment_7(), "rule__SystemConnDec__TargetSystemAssignment_7");
 					put(grammarAccess.getSystemConnDecAccess().getTargetPortAssignment_9(), "rule__SystemConnDec__TargetPortAssignment_9");
+					put(grammarAccess.getSystemConnDecAccess().getProbAssignment_11(), "rule__SystemConnDec__ProbAssignment_11");
 					put(grammarAccess.getSystemDecAccess().getNameAssignment_1(), "rule__SystemDec__NameAssignment_1");
 					put(grammarAccess.getSystemDecAccess().getSysFeaturesAssignment_3(), "rule__SystemDec__SysFeaturesAssignment_3");
 					put(grammarAccess.getSystemPortInAccess().getNameAssignment_3(), "rule__SystemPortIn__NameAssignment_3");
@@ -86,6 +87,7 @@ public class DepModelParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComponentConnDecAccess().getSourcePortAssignment_5(), "rule__ComponentConnDec__SourcePortAssignment_5");
 					put(grammarAccess.getComponentConnDecAccess().getTargetCompAssignment_7(), "rule__ComponentConnDec__TargetCompAssignment_7");
 					put(grammarAccess.getComponentConnDecAccess().getTargetPortAssignment_9(), "rule__ComponentConnDec__TargetPortAssignment_9");
+					put(grammarAccess.getComponentConnDecAccess().getProbAssignment_11(), "rule__ComponentConnDec__ProbAssignment_11");
 					put(grammarAccess.getComponentImplAccess().getNameAssignment_1(), "rule__ComponentImpl__NameAssignment_1");
 					put(grammarAccess.getComponentImplAccess().getSuperTypeAssignment_3(), "rule__ComponentImpl__SuperTypeAssignment_3");
 					put(grammarAccess.getComponentTypeAccess().getNameAssignment_2(), "rule__ComponentType__NameAssignment_2");

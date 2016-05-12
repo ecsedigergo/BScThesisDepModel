@@ -24,6 +24,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//SystemConnDec/sourcePort"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//SystemConnDec/targetSystem"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//SystemConnDec/targetPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DepModel.ecore#//SystemConnDec/prob"/>
     </genClasses>
     <genClasses ecoreClass="DepModel.ecore#//SystemDec">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DepModel.ecore#//SystemDec/sysFeatures"/>
@@ -45,6 +46,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//ComponentConnDec/sourcePort"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//ComponentConnDec/targetComp"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//ComponentConnDec/targetPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DepModel.ecore#//ComponentConnDec/prob"/>
     </genClasses>
     <genClasses ecoreClass="DepModel.ecore#//ComponentImpl">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DepModel.ecore#//ComponentImpl/superType"/>

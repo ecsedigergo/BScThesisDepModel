@@ -139,7 +139,14 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ComponentConnDec returns ComponentConnDec
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName sourceComp=[ComponentImpl|ID] sourcePort=[PortOut|ID] targetComp=[ComponentImpl|ID] targetPort=[PortIn|ID])
+	 *     (
+	 *         name=QualifiedName 
+	 *         sourceComp=[ComponentImpl|ID] 
+	 *         sourcePort=[PortOut|ID] 
+	 *         targetComp=[ComponentImpl|ID] 
+	 *         targetPort=[PortIn|ID] 
+	 *         prob=DOUBLE
+	 *     )
 	 */
 	protected void sequence_ComponentConnDec(ISerializationContext context, ComponentConnDec semanticObject) {
 		if (errorAcceptor != null) {
@@ -153,6 +160,8 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.COMPONENT_CONN_DEC__TARGET_COMP));
 			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.COMPONENT_CONN_DEC__TARGET_PORT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.COMPONENT_CONN_DEC__TARGET_PORT));
+			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.COMPONENT_CONN_DEC__PROB) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.COMPONENT_CONN_DEC__PROB));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getComponentConnDecAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
@@ -160,6 +169,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getComponentConnDecAccess().getSourcePortPortOutIDTerminalRuleCall_5_0_1(), semanticObject.getSourcePort());
 		feeder.accept(grammarAccess.getComponentConnDecAccess().getTargetCompComponentImplIDTerminalRuleCall_7_0_1(), semanticObject.getTargetComp());
 		feeder.accept(grammarAccess.getComponentConnDecAccess().getTargetPortPortInIDTerminalRuleCall_9_0_1(), semanticObject.getTargetPort());
+		feeder.accept(grammarAccess.getComponentConnDecAccess().getProbDOUBLEParserRuleCall_11_0(), semanticObject.getProb());
 		feeder.finish();
 	}
 	
@@ -327,7 +337,14 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     SystemConnDec returns SystemConnDec
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName sourceSystem=[SystemDec|ID] sourcePort=[SystemPortOut|ID] targetSystem=[SystemDec|ID] targetPort=[SystemPortIn|ID])
+	 *     (
+	 *         name=QualifiedName 
+	 *         sourceSystem=[SystemDec|ID] 
+	 *         sourcePort=[SystemPortOut|ID] 
+	 *         targetSystem=[SystemDec|ID] 
+	 *         targetPort=[SystemPortIn|ID] 
+	 *         prob=DOUBLE
+	 *     )
 	 */
 	protected void sequence_SystemConnDec(ISerializationContext context, SystemConnDec semanticObject) {
 		if (errorAcceptor != null) {
@@ -341,6 +358,8 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.SYSTEM_CONN_DEC__TARGET_SYSTEM));
 			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.SYSTEM_CONN_DEC__TARGET_PORT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.SYSTEM_CONN_DEC__TARGET_PORT));
+			if (transientValues.isValueTransient(semanticObject, DepModelPackage.Literals.SYSTEM_CONN_DEC__PROB) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DepModelPackage.Literals.SYSTEM_CONN_DEC__PROB));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSystemConnDecAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
@@ -348,6 +367,7 @@ public class DepModelSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getSystemConnDecAccess().getSourcePortSystemPortOutIDTerminalRuleCall_5_0_1(), semanticObject.getSourcePort());
 		feeder.accept(grammarAccess.getSystemConnDecAccess().getTargetSystemSystemDecIDTerminalRuleCall_7_0_1(), semanticObject.getTargetSystem());
 		feeder.accept(grammarAccess.getSystemConnDecAccess().getTargetPortSystemPortInIDTerminalRuleCall_9_0_1(), semanticObject.getTargetPort());
+		feeder.accept(grammarAccess.getSystemConnDecAccess().getProbDOUBLEParserRuleCall_11_0(), semanticObject.getProb());
 		feeder.finish();
 	}
 	

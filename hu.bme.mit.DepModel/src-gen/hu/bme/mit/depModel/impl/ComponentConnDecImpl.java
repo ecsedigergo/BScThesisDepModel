@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl#getTargetComp <em>Target Comp</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl#getTargetPort <em>Target Port</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.impl.ComponentConnDecImpl#getProb <em>Prob</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,6 +74,26 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
    * @ordered
    */
   protected PortIn targetPort;
+
+  /**
+   * The default value of the '{@link #getProb() <em>Prob</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProb()
+   * @generated
+   * @ordered
+   */
+  protected static final String PROB_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getProb() <em>Prob</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProb()
+   * @generated
+   * @ordered
+   */
+  protected String prob = PROB_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -272,6 +293,29 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getProb()
+  {
+    return prob;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setProb(String newProb)
+  {
+    String oldProb = prob;
+    prob = newProb;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DepModelPackage.COMPONENT_CONN_DEC__PROB, oldProb, prob));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -289,6 +333,8 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
       case DepModelPackage.COMPONENT_CONN_DEC__TARGET_PORT:
         if (resolve) return getTargetPort();
         return basicGetTargetPort();
+      case DepModelPackage.COMPONENT_CONN_DEC__PROB:
+        return getProb();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -314,6 +360,9 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
         return;
       case DepModelPackage.COMPONENT_CONN_DEC__TARGET_PORT:
         setTargetPort((PortIn)newValue);
+        return;
+      case DepModelPackage.COMPONENT_CONN_DEC__PROB:
+        setProb((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -341,6 +390,9 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
       case DepModelPackage.COMPONENT_CONN_DEC__TARGET_PORT:
         setTargetPort((PortIn)null);
         return;
+      case DepModelPackage.COMPONENT_CONN_DEC__PROB:
+        setProb(PROB_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -363,8 +415,27 @@ public class ComponentConnDecImpl extends SysFeaturesDecImpl implements Componen
         return targetComp != null;
       case DepModelPackage.COMPONENT_CONN_DEC__TARGET_PORT:
         return targetPort != null;
+      case DepModelPackage.COMPONENT_CONN_DEC__PROB:
+        return PROB_EDEFAULT == null ? prob != null : !PROB_EDEFAULT.equals(prob);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (prob: ");
+    result.append(prob);
+    result.append(')');
+    return result.toString();
   }
 
 } //ComponentConnDecImpl

@@ -25,7 +25,7 @@ ComponentModelDec:
 
 SystemConnDec:
 	 'connection' name=QualifiedName 'from' sourceSystem=[SystemDec] '.' sourcePort=[SystemPortOut]
-	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortIn];
+	'to' targetSystem=[SystemDec] '.' targetPort=[SystemPortIn] 'with' prob=DOUBLE;
 
 SystemDec:
 	'system'  name=QualifiedName '{'
@@ -46,7 +46,7 @@ SystemPortOut:
 
 ComponentConnDec:
 	 'connection' name=QualifiedName 'from' sourceComp=[ComponentImpl] '.' sourcePort=[PortOut]
-	'to' targetComp=[ComponentImpl] '.' targetPort=[PortIn];
+	'to' targetComp=[ComponentImpl] '.' targetPort=[PortIn] 'with' prob=DOUBLE;
 
 ComponentImpl:
 	'component'  name=QualifiedName ':' superType=[ComponentType];

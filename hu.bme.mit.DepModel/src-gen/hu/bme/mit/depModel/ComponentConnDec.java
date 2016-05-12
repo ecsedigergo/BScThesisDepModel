@@ -17,6 +17,7 @@ package hu.bme.mit.depModel;
  *   <li>{@link hu.bme.mit.depModel.ComponentConnDec#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ComponentConnDec#getTargetComp <em>Target Comp</em>}</li>
  *   <li>{@link hu.bme.mit.depModel.ComponentConnDec#getTargetPort <em>Target Port</em>}</li>
+ *   <li>{@link hu.bme.mit.depModel.ComponentConnDec#getProb <em>Prob</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.depModel.DepModelPackage#getComponentConnDec()
@@ -128,5 +129,31 @@ public interface ComponentConnDec extends SysFeaturesDec
    * @generated
    */
   void setTargetPort(PortIn value);
+
+  /**
+   * Returns the value of the '<em><b>Prob</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Prob</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Prob</em>' attribute.
+   * @see #setProb(String)
+   * @see hu.bme.mit.depModel.DepModelPackage#getComponentConnDec_Prob()
+   * @model
+   * @generated
+   */
+  String getProb();
+
+  /**
+   * Sets the value of the '{@link hu.bme.mit.depModel.ComponentConnDec#getProb <em>Prob</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Prob</em>' attribute.
+   * @see #getProb()
+   * @generated
+   */
+  void setProb(String value);
 
 } // ComponentConnDec

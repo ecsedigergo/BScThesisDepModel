@@ -443,6 +443,29 @@ ruleSystemConnDec returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_10='with'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getSystemConnDecAccess().getWithKeyword_10());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSystemConnDecAccess().getProbDOUBLEParserRuleCall_11_0());
+				}
+				lv_prob_11_0=ruleDOUBLE
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSystemConnDecRule());
+					}
+					set(
+						$current,
+						"prob",
+						lv_prob_11_0,
+						"hu.bme.mit.DepModel.DOUBLE");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -868,6 +891,29 @@ ruleComponentConnDec returns [EObject current=null]
 				otherlv_9=RULE_ID
 				{
 					newLeafNode(otherlv_9, grammarAccess.getComponentConnDecAccess().getTargetPortPortInCrossReference_9_0());
+				}
+			)
+		)
+		otherlv_10='with'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getComponentConnDecAccess().getWithKeyword_10());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getComponentConnDecAccess().getProbDOUBLEParserRuleCall_11_0());
+				}
+				lv_prob_11_0=ruleDOUBLE
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComponentConnDecRule());
+					}
+					set(
+						$current,
+						"prob",
+						lv_prob_11_0,
+						"hu.bme.mit.DepModel.DOUBLE");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

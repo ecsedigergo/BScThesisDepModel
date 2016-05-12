@@ -445,6 +445,16 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSystemConnDec_Prob()
+  {
+    return (EAttribute)systemConnDecEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSystemDec()
   {
     return systemDecEClass;
@@ -598,6 +608,16 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
   public EReference getComponentConnDec_TargetPort()
   {
     return (EReference)componentConnDecEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getComponentConnDec_Prob()
+  {
+    return (EAttribute)componentConnDecEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -939,6 +959,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__SOURCE_PORT);
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__TARGET_SYSTEM);
     createEReference(systemConnDecEClass, SYSTEM_CONN_DEC__TARGET_PORT);
+    createEAttribute(systemConnDecEClass, SYSTEM_CONN_DEC__PROB);
 
     systemDecEClass = createEClass(SYSTEM_DEC);
     createEReference(systemDecEClass, SYSTEM_DEC__SYS_FEATURES);
@@ -961,6 +982,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     createEReference(componentConnDecEClass, COMPONENT_CONN_DEC__SOURCE_PORT);
     createEReference(componentConnDecEClass, COMPONENT_CONN_DEC__TARGET_COMP);
     createEReference(componentConnDecEClass, COMPONENT_CONN_DEC__TARGET_PORT);
+    createEAttribute(componentConnDecEClass, COMPONENT_CONN_DEC__PROB);
 
     componentImplEClass = createEClass(COMPONENT_IMPL);
     createEReference(componentImplEClass, COMPONENT_IMPL__SUPER_TYPE);
@@ -1077,6 +1099,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     initEReference(getSystemConnDec_SourcePort(), this.getSystemPortOut(), null, "sourcePort", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystemConnDec_TargetSystem(), this.getSystemDec(), null, "targetSystem", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystemConnDec_TargetPort(), this.getSystemPortIn(), null, "targetPort", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystemConnDec_Prob(), ecorePackage.getEString(), "prob", null, 0, 1, SystemConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(systemDecEClass, SystemDec.class, "SystemDec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSystemDec_SysFeatures(), this.getSysFeaturesDec(), null, "sysFeatures", null, 0, -1, SystemDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1099,6 +1122,7 @@ public class DepModelPackageImpl extends EPackageImpl implements DepModelPackage
     initEReference(getComponentConnDec_SourcePort(), this.getPortOut(), null, "sourcePort", null, 0, 1, ComponentConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentConnDec_TargetComp(), this.getComponentImpl(), null, "targetComp", null, 0, 1, ComponentConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentConnDec_TargetPort(), this.getPortIn(), null, "targetPort", null, 0, 1, ComponentConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentConnDec_Prob(), ecorePackage.getEString(), "prob", null, 0, 1, ComponentConnDec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentImplEClass, ComponentImpl.class, "ComponentImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComponentImpl_SuperType(), this.getComponentType(), null, "superType", null, 0, 1, ComponentImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

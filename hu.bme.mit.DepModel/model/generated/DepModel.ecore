@@ -21,6 +21,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" eType="#//SystemPortOut"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetSystem" eType="#//SystemDec"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" eType="#//SystemPortIn"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prob" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemDec" eSuperTypes="#//ComponentModelDec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sysFeatures" upperBound="-1"
@@ -43,6 +44,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" eType="#//PortOut"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetComp" eType="#//ComponentImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" eType="#//PortIn"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prob" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentImpl" eSuperTypes="#//SysFeaturesDec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//ComponentType"/>

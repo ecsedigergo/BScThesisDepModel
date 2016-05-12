@@ -262,13 +262,22 @@ public interface DepModelPackage extends EPackage
   int SYSTEM_CONN_DEC__TARGET_PORT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Prob</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM_CONN_DEC__PROB = COMPONENT_MODEL_DEC_FEATURE_COUNT + 4;
+
+  /**
    * The number of structural features of the '<em>System Conn Dec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM_CONN_DEC_FEATURE_COUNT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 4;
+  int SYSTEM_CONN_DEC_FEATURE_COUNT = COMPONENT_MODEL_DEC_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.SystemDecImpl <em>System Dec</em>}' class.
@@ -511,13 +520,22 @@ public interface DepModelPackage extends EPackage
   int COMPONENT_CONN_DEC__TARGET_PORT = SYS_FEATURES_DEC_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Prob</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_CONN_DEC__PROB = SYS_FEATURES_DEC_FEATURE_COUNT + 4;
+
+  /**
    * The number of structural features of the '<em>Component Conn Dec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_CONN_DEC_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 4;
+  int COMPONENT_CONN_DEC_FEATURE_COUNT = SYS_FEATURES_DEC_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link hu.bme.mit.depModel.impl.ComponentImplImpl <em>Component Impl</em>}' class.
@@ -1152,6 +1170,17 @@ public interface DepModelPackage extends EPackage
   EReference getSystemConnDec_TargetPort();
 
   /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.SystemConnDec#getProb <em>Prob</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prob</em>'.
+   * @see hu.bme.mit.depModel.SystemConnDec#getProb()
+   * @see #getSystemConnDec()
+   * @generated
+   */
+  EAttribute getSystemConnDec_Prob();
+
+  /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.SystemDec <em>System Dec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1320,6 +1349,17 @@ public interface DepModelPackage extends EPackage
    * @generated
    */
   EReference getComponentConnDec_TargetPort();
+
+  /**
+   * Returns the meta object for the attribute '{@link hu.bme.mit.depModel.ComponentConnDec#getProb <em>Prob</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prob</em>'.
+   * @see hu.bme.mit.depModel.ComponentConnDec#getProb()
+   * @see #getComponentConnDec()
+   * @generated
+   */
+  EAttribute getComponentConnDec_Prob();
 
   /**
    * Returns the meta object for class '{@link hu.bme.mit.depModel.ComponentImpl <em>Component Impl</em>}'.
@@ -1773,6 +1813,14 @@ public interface DepModelPackage extends EPackage
     EReference SYSTEM_CONN_DEC__TARGET_PORT = eINSTANCE.getSystemConnDec_TargetPort();
 
     /**
+     * The meta object literal for the '<em><b>Prob</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYSTEM_CONN_DEC__PROB = eINSTANCE.getSystemConnDec_Prob();
+
+    /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.SystemDecImpl <em>System Dec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1911,6 +1959,14 @@ public interface DepModelPackage extends EPackage
      * @generated
      */
     EReference COMPONENT_CONN_DEC__TARGET_PORT = eINSTANCE.getComponentConnDec_TargetPort();
+
+    /**
+     * The meta object literal for the '<em><b>Prob</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_CONN_DEC__PROB = eINSTANCE.getComponentConnDec_Prob();
 
     /**
      * The meta object literal for the '{@link hu.bme.mit.depModel.impl.ComponentImplImpl <em>Component Impl</em>}' class.

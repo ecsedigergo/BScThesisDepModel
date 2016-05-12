@@ -1548,6 +1548,7 @@ rule__SystemConnDec__Group__9
 	}
 :
 	rule__SystemConnDec__Group__9__Impl
+	rule__SystemConnDec__Group__10
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1562,6 +1563,59 @@ rule__SystemConnDec__Group__9__Impl
 	{ before(grammarAccess.getSystemConnDecAccess().getTargetPortAssignment_9()); }
 	(rule__SystemConnDec__TargetPortAssignment_9)
 	{ after(grammarAccess.getSystemConnDecAccess().getTargetPortAssignment_9()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SystemConnDec__Group__10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SystemConnDec__Group__10__Impl
+	rule__SystemConnDec__Group__11
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SystemConnDec__Group__10__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSystemConnDecAccess().getWithKeyword_10()); }
+	'with'
+	{ after(grammarAccess.getSystemConnDecAccess().getWithKeyword_10()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SystemConnDec__Group__11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SystemConnDec__Group__11__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SystemConnDec__Group__11__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSystemConnDecAccess().getProbAssignment_11()); }
+	(rule__SystemConnDec__ProbAssignment_11)
+	{ after(grammarAccess.getSystemConnDecAccess().getProbAssignment_11()); }
 )
 ;
 finally {
@@ -2385,6 +2439,7 @@ rule__ComponentConnDec__Group__9
 	}
 :
 	rule__ComponentConnDec__Group__9__Impl
+	rule__ComponentConnDec__Group__10
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2399,6 +2454,59 @@ rule__ComponentConnDec__Group__9__Impl
 	{ before(grammarAccess.getComponentConnDecAccess().getTargetPortAssignment_9()); }
 	(rule__ComponentConnDec__TargetPortAssignment_9)
 	{ after(grammarAccess.getComponentConnDecAccess().getTargetPortAssignment_9()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ComponentConnDec__Group__10
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ComponentConnDec__Group__10__Impl
+	rule__ComponentConnDec__Group__11
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ComponentConnDec__Group__10__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getComponentConnDecAccess().getWithKeyword_10()); }
+	'with'
+	{ after(grammarAccess.getComponentConnDecAccess().getWithKeyword_10()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ComponentConnDec__Group__11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ComponentConnDec__Group__11__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ComponentConnDec__Group__11__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getComponentConnDecAccess().getProbAssignment_11()); }
+	(rule__ComponentConnDec__ProbAssignment_11)
+	{ after(grammarAccess.getComponentConnDecAccess().getProbAssignment_11()); }
 )
 ;
 finally {
@@ -3961,6 +4069,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__SystemConnDec__ProbAssignment_11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSystemConnDecAccess().getProbDOUBLEParserRuleCall_11_0()); }
+		ruleDOUBLE
+		{ after(grammarAccess.getSystemConnDecAccess().getProbDOUBLEParserRuleCall_11_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__SystemDec__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
@@ -4182,6 +4305,21 @@ rule__ComponentConnDec__TargetPortAssignment_9
 			{ after(grammarAccess.getComponentConnDecAccess().getTargetPortPortInIDTerminalRuleCall_9_0_1()); }
 		)
 		{ after(grammarAccess.getComponentConnDecAccess().getTargetPortPortInCrossReference_9_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ComponentConnDec__ProbAssignment_11
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getComponentConnDecAccess().getProbDOUBLEParserRuleCall_11_0()); }
+		ruleDOUBLE
+		{ after(grammarAccess.getComponentConnDecAccess().getProbDOUBLEParserRuleCall_11_0()); }
 	)
 ;
 finally {
