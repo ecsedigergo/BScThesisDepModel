@@ -1,0 +1,37 @@
+package hu.bme.mit.depmodeltogpsn
+
+import "http://www.bme.hu/mit/DepModel"
+import "http://www.example.org/viatraTraceability"
+
+pattern dependabilityModel(depmodel : DepModel) {
+	DepModel(depmodel);
+}
+ 
+pattern depToGSPN(deptogspn, trace, depElement, petriElement) {
+	DepToGSPN.deptogspntrace(deptogspn, trace);
+	DepToGSPNTrace.abstractelement(trace, depElement);
+	DepToGSPNTrace.identification(trace, petriElement);
+
+}
+
+pattern portType(portT : PortType) {
+	PortType(portT);
+	PortType.eModes(portT,e);
+}
+
+pattern eModes(errorM : ErrorModes) {
+	//find componenttype
+	ErrorModes(errorM);
+}
+
+pattern state(errorState : State) {
+	State(errorState);
+}
+
+pattern trans(t : TransitionDec) {
+	TransitionDec(t);
+}
+
+pattern compConn(c : ComponentConnDec) {
+	ComponentConnDec(c);
+}

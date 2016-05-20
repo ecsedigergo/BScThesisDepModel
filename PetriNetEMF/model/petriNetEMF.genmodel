@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/PetriNetEMF/src" modelPluginID="PetriNetEMF" modelName="PetriNetEMF"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>petriNetEMF.ecore</foreignModel>
+  <genPackages prefix="PetriNetEMF" basePackage="model" disposableProviderFactory="true"
+      ecorePackage="petriNetEMF.ecore#/">
+    <genClasses ecoreClass="petriNetEMF.ecore#//PetriNet">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//PetriNet/Places"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//PetriNet/Transitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//PetriNet/Arcs"/>
+    </genClasses>
+    <genClasses ecoreClass="petriNetEMF.ecore#//Place">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//Place/outgoingArcs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//Place/incomingArcs"/>
+    </genClasses>
+    <genClasses ecoreClass="petriNetEMF.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//Transition/outgoingArcs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//Transition/incomingArcs"/>
+    </genClasses>
+    <genClasses ecoreClass="petriNetEMF.ecore#//PlaceToTransitionArc">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//PlaceToTransitionArc/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//PlaceToTransitionArc/from"/>
+    </genClasses>
+    <genClasses ecoreClass="petriNetEMF.ecore#//TransitionToPlaceArc">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//TransitionToPlaceArc/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference petriNetEMF.ecore#//TransitionToPlaceArc/to"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="petriNetEMF.ecore#//Identification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute petriNetEMF.ecore#//Identification/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute petriNetEMF.ecore#//Identification/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="petriNetEMF.ecore#//Arc"/>
+  </genPackages>
+</genmodel:GenModel>

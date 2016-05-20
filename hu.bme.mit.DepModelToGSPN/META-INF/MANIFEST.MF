@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.DepModelToGSPN
+Bundle-SymbolicName: hu.bme.mit.DepModelToGSPN;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Export-Package: hu.bme.mit.depmodeltogpsn,
+ hu.bme.mit.depmodeltogpsn.util
+Require-Bundle: org.eclipse.viatra.transformation.runtime.emf,
+ org.eclipse.viatra.transformation.evm,
+ org.eclipse.emf.ecore,
+ org.eclipse.viatra.query.runtime,
+ org.eclipse.xtext.xbase.lib,
+ hu.bme.mit.DepModel;bundle-version="1.0.0",
+ PetriNetEMF;bundle-version="0.1.0",
+ ViatraTraceability;bundle-version="0.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.apache.log4j

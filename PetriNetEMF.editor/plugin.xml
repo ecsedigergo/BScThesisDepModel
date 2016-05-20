@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated petriNetEMF -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="model.petriNetEMF.presentation.PetriNetEMFModelWizardID"
+            name="%_UI_PetriNetEMFModelWizard_label"
+            class="model.petriNetEMF.presentation.PetriNetEMFModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PetriNetEMFModelFile.gif">
+         <description>%_UI_PetriNetEMFModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated petriNetEMF -->
+      <editor
+            id="model.petriNetEMF.presentation.PetriNetEMFEditorID"
+            name="%_UI_PetriNetEMFEditor_label"
+            icon="icons/full/obj16/PetriNetEMFModelFile.gif"
+            extensions="petrinetemf"
+            class="model.petriNetEMF.presentation.PetriNetEMFEditor"
+            contributorClass="model.petriNetEMF.presentation.PetriNetEMFActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
